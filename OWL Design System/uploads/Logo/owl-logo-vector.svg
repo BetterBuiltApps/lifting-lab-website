@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<svg viewBox="37 466 1181 304" role="img" aria-labelledby="title desc" version="1.1" id="svg34" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="defs34"></defs>
+  <namedview id="namedview34" pagecolor="#505050" bordercolor="#eeeeee" borderopacity="1" showguides="true"></namedview>
+  <title id="title">OWL — Olympic Weightlifting Lab</title>
+  <desc id="desc">Vector logo with a gold OWL wordmark integrated into a stylized red and blue Olympic barbell.</desc>
+  <g id="logo" shape-rendering="geometricPrecision">
+    <g id="barbell">
+      <g id="g36">
+        <path fill="#fdb402" d="m 953.18403,569 h 96.99997 v 25 h -96.99997 z" id="path5"></path>
+        <rect x="1138.7504" y="541" width="20" height="80" rx="3" fill="#fdb402" id="rect7"></rect>
+        <rect x="1098.6841" y="494.25546" width="31.632496" height="175.75713" rx="4.7448745" fill="#fdb402" id="rect7-7" style="fill:#1557a5;fill-opacity:1;stroke-width:1.86406"></rect>
+        <rect x="1058.6178" y="494.15155" width="31.632496" height="175.75713" rx="4.7448745" fill="#fdb402" id="rect7-7-7" style="fill:#d42028;fill-opacity:1;stroke-width:1.86406"></rect>
+        <path fill="#fdb402" d="m 1167.184,569 h 26 v 25 h -26 z" id="path8"></path>
+      </g>
+      <g id="g36-5" transform="matrix(-1,0,0,1,1251.7391,7.3126629)">
+        <path fill="#fdb402" d="M 946.55063,568.73466 1050.184,569 v 25 h -96.99997 z" id="path5-4"></path>
+        <rect x="1138.7504" y="541" width="20" height="80" rx="3" fill="#fdb402" id="rect7-9"></rect>
+        <rect x="1098.6841" y="494.25546" width="31.632496" height="175.75713" rx="4.7448745" fill="#fdb402" id="rect7-7-1" style="fill:#1557a5;fill-opacity:1;stroke-width:1.86406"></rect>
+        <rect x="1058.6178" y="494.15155" width="31.632496" height="175.75713" rx="4.7448745" fill="#fdb402" id="rect7-7-7-7" style="fill:#d42028;fill-opacity:1;stroke-width:1.86406"></rect>
+        <path fill="#fdb402" d="m 1167.184,569 h 26 v 25 h -26 z" id="path8-5"></path>
+      </g>
+    </g>
+    <g id="owl-wordmark" fill="#FDB402">
+      <path fill-rule="evenodd" d="M365 494 L500 494 L528 518 L499 640 L470 670 L333 670 L304 641 L334 520 Z M379 538 L479 538 L453 626 L355 626 Z" id="path9"></path>
+      <path d="M542 494 L600 494 L604 608 L674 494 L717 494 L728 595 L788 494 L843 494 L750 670 L693 670 L676 585 L622 670 L565 670 Z" id="path10"></path>
+      <path d="M866 494 L923 494 L868 624 L999 624 L972 670 L794 670 Z" id="path11"></path>
+    </g>
+    <g id="tagline" fill="#626262" transform="translate(-9.1304492)" style="fill:#fdb402;fill-opacity:1">
+      <path d="m 870,1241 q -176,0 -273,-130 -97,-130 -97,-366 0,-235 97,-365 97,-130 273,-130 177,0 274,130 97,130 97,365 0,236 -97,366 -97,130 -274,130 z m 0,279 q 360,0 564,-206 204,-206 204,-569 0,-362 -204,-568 Q 1230,-29 870,-29 511,-29 306.5,177 102,383 102,745 q 0,363 204.5,569 204.5,206 563.5,206 z" transform="matrix(0.02213542,0,0,-0.02130407,188.74219,749.38219)" id="path12" style="fill:#fdb402;fill-opacity:1"></path>
+      <path d="M 188,1493 H 573 V 291 h 676 V 0 H 188 Z" transform="matrix(0.01979265,0,0,-0.02143336,235.27898,750.00001)" id="path13" style="fill:#fdb402;fill-opacity:1"></path>
+      <path d="m -20,1493 h 421 l 340,-532 340,532 h 422 L 934,629 V 0 H 549 v 629 z" transform="matrix(0.01969796,0,0,-0.02143336,270.39396,750.00001)" id="path14" style="fill:#fdb402;fill-opacity:1"></path>
+      <path d="m 188,1493 h 490 l 340,-799 342,799 h 489 V 0 H 1485 V 1092 L 1141,287 H 897 L 553,1092 V 0 H 188 Z" transform="matrix(0.02107164,0,0,-0.02143336,310.03853,750.00001)" id="path15" style="fill:#fdb402;fill-opacity:1"></path>
+      <path d="m 188,1493 h 639 q 285,0 437.5,-126.5 Q 1417,1240 1417,1006 1417,771 1264.5,644.5 1112,518 827,518 H 573 V 0 H 188 Z M 573,1214 V 797 h 213 q 112,0 173,54.5 61,54.5 61,154.5 0,100 -61,154 -61,54 -173,54 z" transform="matrix(0.02034174,0,0,-0.02143336,360.17575,750.00001)" id="path16" style="fill:#fdb402;fill-opacity:1"></path>
+      <path d="M 188,1493 H 573 V 0 H 188 Z" transform="matrix(0.01818182,0,0,-0.02143336,400.58182,750.00001)" id="path17" style="fill:#fdb402;fill-opacity:1"></path>
+      <path d="M 1372,82 Q 1266,27 1151,-1 1036,-29 911,-29 538,-29 320,179.5 102,388 102,745 q 0,358 218,566.5 218,208.5 591,208.5 125,0 240,-28 115,-28 221,-83 v -309 q -107,73 -211,107 -104,34 -219,34 -206,0 -324,-132 Q 500,977 500,745 500,514 618,382 736,250 942,250 q 115,0 219,34 104,34 211,107 z" transform="matrix(0.02283465,0,0,-0.02130407,423.67087,749.38219)" id="path18" style="fill:#fdb402;fill-opacity:1"></path>
+      <path d="M 61,1493 H 430 L 688,408 944,1493 h 371 l 256,-1085 258,1085 h 366 L 1843,0 H 1399 L 1128,1135 860,0 H 416 Z" transform="matrix(0.02155576,0,0,-0.02143336,487.6851,750.00001)" id="path19" style="fill:#fdb402;fill-opacity:1"></path>
+      <path d="M 188,1493 H 1227 V 1202 H 573 V 924 h 615 V 633 H 573 V 291 h 676 V 0 H 188 Z" transform="matrix(0.01979265,0,0,-0.02143336,545.27898,750.00001)" id="path20" style="fill:#fdb402;fill-opacity:1"></path>
+      <path d="M 188,1493 H 573 V 0 H 188 Z" transform="matrix(0.01818182,0,0,-0.02143336,581.58182,750.00001)" id="path21" style="fill:#fdb402;fill-opacity:1"></path>
+      <path d="M 1530,111 Q 1386,41 1231,6 1076,-29 911,-29 538,-29 320,179.5 102,388 102,745 q 0,361 222,568 222,207 608,207 149,0 285.5,-28 136.5,-28 257.5,-83 v -309 q -125,71 -248.5,106 Q 1103,1241 979,1241 749,1241 624.5,1112.5 500,984 500,745 500,508 620,379 740,250 961,250 q 60,0 111.5,7.5 51.5,7.5 92.5,23.5 V 571 H 930 v 258 h 600 z" transform="matrix(0.02170868,0,0,-0.02130407,604.78571,749.38219)" id="path22" style="fill:#fdb402;fill-opacity:1"></path>
+      <path d="M 188,1493 H 573 V 924 h 568 v 569 h 385 V 0 H 1141 V 633 H 573 V 0 H 188 Z" transform="matrix(0.02017937,0,0,-0.02143336,648.20628,750.00001)" id="path23" style="fill:#fdb402;fill-opacity:1"></path>
+      <path d="M 10,1493 H 1386 V 1202 H 891 V 0 H 506 V 1202 H 10 Z" transform="matrix(0.01671512,0,0,-0.02143336,691.83285,750.00001)" id="path24" style="fill:#fdb402;fill-opacity:1"></path>
+      <path d="M 188,1493 H 573 V 291 h 676 V 0 H 188 Z" transform="matrix(0.01885014,0,0,-0.02143336,724.45617,750.00001)" id="path25" style="fill:#fdb402;fill-opacity:1"></path>
+      <path d="M 188,1493 H 573 V 0 H 188 Z" transform="matrix(0.02077922,0,0,-0.02143336,757.09351,750.00001)" id="path26" style="fill:#fdb402;fill-opacity:1"></path>
+      <path d="M 188,1493 H 1227 V 1202 H 573 V 924 h 615 V 633 H 573 V 0 H 188 Z" transform="matrix(0.02021174,0,0,-0.02143336,780.20019,750.00001)" id="path27" style="fill:#fdb402;fill-opacity:1"></path>
+      <path d="M 10,1493 H 1386 V 1202 H 891 V 0 H 506 V 1202 H 10 Z" transform="matrix(0.01744186,0,0,-0.02143336,814.82558,750.00001)" id="path28" style="fill:#fdb402;fill-opacity:1"></path>
+      <path d="M 188,1493 H 573 V 0 H 188 Z" transform="matrix(0.01818182,0,0,-0.02143336,848.58182,750.00001)" id="path29" style="fill:#fdb402;fill-opacity:1"></path>
+      <path d="M 188,1493 H 618 L 1161,469 v 1024 h 365 V 0 H 1096 L 553,1024 V 0 H 188 Z" transform="matrix(0.02017937,0,0,-0.02143336,870.20628,750.00001)" id="path30" style="fill:#fdb402;fill-opacity:1"></path>
+      <path d="M 1530,111 Q 1386,41 1231,6 1076,-29 911,-29 538,-29 320,179.5 102,388 102,745 q 0,361 222,568 222,207 608,207 149,0 285.5,-28 136.5,-28 257.5,-83 v -309 q -125,71 -248.5,106 Q 1103,1241 979,1241 749,1241 624.5,1112.5 500,984 500,745 500,508 620,379 740,250 961,250 q 60,0 111.5,7.5 51.5,7.5 92.5,23.5 V 571 H 930 v 258 h 600 z" transform="matrix(0.02170868,0,0,-0.02065849,912.78571,749.4009)" id="path31" style="fill:#fdb402;fill-opacity:1"></path>
+      <path d="M 188,1493 H 573 V 291 h 676 V 0 H 188 Z" transform="matrix(0.01885014,0,0,-0.02143336,976.45617,750.00001)" id="path32" style="fill:#fdb402;fill-opacity:1"></path>
+      <path d="M 1094,272 H 492 L 397,0 H 10 l 553,1493 h 459 L 1575,0 H 1188 Z M 588,549 h 409 l -204,594 z" transform="matrix(0.01980831,0,0,-0.02143336,1010.8019,750.00001)" id="path33" style="fill:#fdb402;fill-opacity:1"></path>
+      <path d="m 786,915 q 91,0 138,40 47,40 47,118 0,77 -47,117.5 -47,40.5 -138,40.5 H 573 V 915 Z m 13,-653 q 116,0 174.5,49 58.5,49 58.5,148 0,97 -58,145.5 Q 916,653 799,653 H 573 V 262 Z m 358,537 q 124,-36 192,-133 68,-97 68,-238 0,-216 -146,-322 Q 1125,0 827,0 H 188 v 1493 h 578 q 311,0 450.5,-94 139.5,-94 139.5,-301 0,-109 -51,-185.5 Q 1254,836 1157,799 Z" transform="matrix(0.02034174,0,0,-0.02143336,1050.1758,750.00001)" id="path34" style="fill:#fdb402;fill-opacity:1"></path>
+    </g>
+  </g>
+</svg>
