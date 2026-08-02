@@ -1,0 +1,98 @@
+<!-- @dsCard group="iPhone app" viewport="1180x900" name="OWL for iPhone" subtitle="Train → session, Tools → Bar Trace → analysis. Click through." -->
+<!-- @startingPoint section="iPhone app" subtitle="Dark-first OWL app screens, click-through" viewport="1180x900" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>OWL — iPhone app kit</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel" src="./ios-frame.jsx"></script>
+<script type="text/babel" src="./Shell.jsx"></script>
+<script type="text/babel" src="./Dashboard.jsx"></script>
+<script type="text/babel" src="./ActiveSession.jsx"></script>
+<script type="text/babel" src="./ToolsHub.jsx"></script>
+<script type="text/babel" src="./BarTraceHome.jsx"></script>
+<script type="text/babel" src="./BarTracePlayer.jsx"></script>
+<style>body{margin:0;background:#0d0d0d;font:var(--type-body)}#root{padding:28px;display:flex;gap:28px;flex-wrap:wrap;justify-content:center}.stage{display:grid;gap:10px;justify-items:center}.cap{font:var(--type-label);letter-spacing:var(--tracking-label);text-transform:uppercase;color:rgba(255,255,255,.4)}</style>
+</head><body><div id="root"></div>
+<script type="text/babel">
+const { TabBar } = window.OWLDesignSystem_875173;
+
+function Phone({ label, children }) {
+  return <div className="stage"><IOSDevice dark>{children}</IOSDevice><div className="cap">{label}</div></div>;
+}
+
+function TabScreen({ tab, setTab, children }) {
+  return <div style={{...owlKitShell.screen, height:'100%'}}>
+    <div style={owlKitShell.scroll}>{children}</div>
+    <TabBar active={tab} onChange={setTab} />
+  </div>;
+}
+
+function App() {
+  const [tab, setTab] = React.useState('train');
+  const [route, setRoute] = React.useState(null); // 'session' | 'barTraceHome' | 'player'
+
+  if (route === 'session') return <div style={{...owlKitShell.screen, height:'100%'}}>
+    <OwlInlineNav title="Snatch + Squat" backLabel="Exercises" onBack={() => setRoute(null)} />
+    <div style={owlKitShell.scroll}><ActiveSession onExit={() => setRoute(null)} /></div>
+  </div>;
+
+  if (route === 'barTraceHome') return <div style={{...owlKitShell.screen, height:'100%'}}>
+    <OwlInlineNav title="Bar Trace" backLabel="Tools" onBack={() => setRoute(null)} />
+    <div style={owlKitShell.scroll}><BarTraceHome onOpen={() => setRoute('player')} /></div>
+  </div>;
+
+  if (route === 'player') return <div style={{...owlKitShell.screen, height:'100%'}}>
+    <OwlInlineNav title="Snatch · 102.5 kg" backLabel="Bar Trace" onBack={() => setRoute('barTraceHome')} />
+    <div style={owlKitShell.scroll}><BarTracePlayer /></div>
+  </div>;
+
+  if (tab === 'tools') return <TabScreen tab={tab} setTab={setTab}>
+    <OwlLargeTitle title="Tools" />
+    <ToolsHub onOpenBarTrace={() => setRoute('barTraceHome')} />
+  </TabScreen>;
+
+  if (tab === 'me') return <TabScreen tab={tab} setTab={setTab}>
+    <OwlLargeTitle title="Me" />
+    <MeHub />
+  </TabScreen>;
+
+  return <TabScreen tab={tab} setTab={setTab}>
+    <OwlLargeTitle title="Dana" trailing={<OwlStreakChip streak={4} />} />
+    <Dashboard onStart={() => setRoute('session')} />
+  </TabScreen>;
+}
+
+function MeHub() {
+  const { Card, SectionLabel, NavRow, StatCard, Badge } = window.OWLDesignSystem_875173;
+  return <div style={owlKitShell.pad}>
+    <Card style={{display:'grid',gap:8}}>
+      <SectionLabel>Profile</SectionLabel>
+      <div style={{font:'var(--type-title)'}}>Dana Reyes</div>
+      <div style={{display:'flex',gap:6}}><Badge tone="neutral">Senior</Badge><Badge tone="neutral">88 kg class</Badge><Badge>Sinclair 251</Badge></div>
+    </Card>
+    <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:12}}>
+      <StatCard value="232.5" label="Total kg" accent="var(--amber)" />
+      <StatCard value="41" label="Sessions" />
+      <StatCard value="9" label="Badges" />
+    </div>
+    <SectionLabel>Setup</SectionLabel>
+    <div style={{display:'grid',gap:12}}>
+      <NavRow title="My Gym" caption="20 kg bar · 4×25, 2×20, 2×15, 2×10" icon="dumbbell" />
+      <NavRow title="Analytics" caption="Volume, intensity, training-day heat map" icon="chart-column" />
+      <NavRow title="Settings" caption="Units, rest timer, notifications" icon="settings" />
+    </div>
+  </div>;
+}
+
+function Kit() {
+  return <>
+    <Phone label="Interactive — Train / Tools / Me"><App /></Phone>
+    <Phone label="Active session"><div style={{...owlKitShell.screen,height:'100%'}}><OwlInlineNav title="Snatch + Squat" backLabel="Exercises" /><div style={owlKitShell.scroll}><ActiveSession /></div></div></Phone>
+    <Phone label="Bar Trace — analysis"><div style={{...owlKitShell.screen,height:'100%'}}><OwlInlineNav title="Snatch · 102.5 kg" backLabel="Bar Trace" /><div style={owlKitShell.scroll}><BarTracePlayer /></div></div></Phone>
+  </>;
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<Kit />);
+</script></body></html>

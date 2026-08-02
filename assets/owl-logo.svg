@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<svg viewBox="37 466 1181 304" role="img" aria-labelledby="title desc" version="1.1" id="svg34" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="defs34"></defs>
+  <namedview id="namedview34" pagecolor="#505050" bordercolor="#eeeeee" borderopacity="1" showguides="true"></namedview>
+  <title id="title">OWL — Olympic Weightlifting Lab</title>
+  <desc id="desc">Vector logo with a gold OWL wordmark integrated into a stylized red and blue Olympic barbell.</desc>
+  <g id="logo" shape-rendering="geometricPrecision">
+    <g id="g1" transform="translate(0,32.337374)">
+      <g id="barbell">
+        <g id="g36">
+          <path fill="#fdb402" d="m 953.18403,569 h 96.99997 v 25 h -96.99997 z" id="path5"></path>
+          <rect x="1138.7504" y="541" width="20" height="80" rx="3" fill="#fdb402" id="rect7"></rect>
+          <rect x="1098.6841" y="494.25546" width="31.632496" height="175.75713" rx="4.7448745" fill="#fdb402" id="rect7-7" style="fill:#1557a5;fill-opacity:1;stroke-width:1.86406"></rect>
+          <rect x="1058.6178" y="494.15155" width="31.632496" height="175.75713" rx="4.7448745" fill="#fdb402" id="rect7-7-7" style="fill:#d42028;fill-opacity:1;stroke-width:1.86406"></rect>
+          <path fill="#fdb402" d="m 1167.184,569 h 26 v 25 h -26 z" id="path8"></path>
+        </g>
+        <g id="g36-5" transform="matrix(-1,0,0,1,1251.7391,7.3126629)">
+          <path fill="#fdb402" d="M 946.55063,568.73466 1050.184,569 v 25 h -96.99997 z" id="path5-4"></path>
+          <rect x="1138.7504" y="541" width="20" height="80" rx="3" fill="#fdb402" id="rect7-9"></rect>
+          <rect x="1098.6841" y="494.25546" width="31.632496" height="175.75713" rx="4.7448745" fill="#fdb402" id="rect7-7-1" style="fill:#1557a5;fill-opacity:1;stroke-width:1.86406"></rect>
+          <rect x="1058.6178" y="494.15155" width="31.632496" height="175.75713" rx="4.7448745" fill="#fdb402" id="rect7-7-7-7" style="fill:#d42028;fill-opacity:1;stroke-width:1.86406"></rect>
+          <path fill="#fdb402" d="m 1167.184,569 h 26 v 25 h -26 z" id="path8-5"></path>
+        </g>
+      </g>
+      <g id="owl-wordmark" fill="#fdb402">
+        <path fill-rule="evenodd" d="m 365,494 h 135 l 28,24 -29,122 -29,30 H 333 l -29,-29 30,-121 z m 14,44 h 100 l -26,88 h -98 z" id="path9"></path>
+        <path d="m 542,494 h 58 l 4,114 70,-114 h 43 l 11,101 60,-101 h 55 l -93,176 h -57 l -17,-85 -54,85 h -57 z" id="path10"></path>
+        <path d="m 866,494 h 57 l -55,130 h 131 l -27,46 H 794 Z" id="path11"></path>
+      </g>
+    </g>
+  </g>
+</svg>
