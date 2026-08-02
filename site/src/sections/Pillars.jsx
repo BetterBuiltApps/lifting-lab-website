@@ -20,9 +20,9 @@ function Pillar({ eyebrow, title, body, shots, reverse }) {
     >
       {reverse ? <>
         <motion.div variants={leftVariant} style={{ display: 'grid', gap: 22 }}><SiteHead eyebrow={eyebrow} title={title} body={body} max={520} /></motion.div>
-        <motion.div variants={rightVariant} style={{ display: 'flex', gap: 18, justifyContent: 'center' }}>{shots}</motion.div>
+        <motion.div variants={rightVariant} className="shot-row" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(160px,1fr))', gap: 18, justifyContent: 'center', justifyItems: 'center' }}>{shots}</motion.div>
       </> : <>
-        <motion.div variants={leftVariant} style={{ display: 'flex', gap: 18, justifyContent: 'center' }}>{shots}</motion.div>
+        <motion.div variants={leftVariant} className="shot-row" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(160px,1fr))', gap: 18, justifyContent: 'center', justifyItems: 'center' }}>{shots}</motion.div>
         <motion.div variants={rightVariant} style={{ display: 'grid', gap: 22 }}><SiteHead eyebrow={eyebrow} title={title} body={body} max={520} /></motion.div>
       </>}
     </motion.div>

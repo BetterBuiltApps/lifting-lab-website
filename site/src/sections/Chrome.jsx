@@ -1,14 +1,18 @@
 /* Shared building blocks for the landing page. */
 import React from 'react';
-import { motion } from 'motion/react';
-import { Button, SectionLabel } from '../design-system';
+import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
+import { Button, SectionLabel, Icon } from '../design-system';
 import { OWL_SITE } from '../config';
 import { asset } from '../lib/asset';
 import { DURATION, EASE } from '../lib/motion';
 
 export const owlSiteWrap = { maxWidth: 1240, margin: '0 auto', padding: '0 clamp(20px,5vw,60px)' };
 
+const NAV_LINKS = [['Pillars', '#pillars'], ['Explore', '#explore'], ['Pricing', '#pricing'], ['FAQ', '#faq']];
+
 export function SiteNav() {
+  const [menuOpen, setMenuOpen] = React.useState(false);
+  const prefersReduced = useReducedMotion();
   return (
     <nav style={{
       position: 'sticky', top: 0, zIndex: 40,
@@ -19,7 +23,7 @@ export function SiteNav() {
         <img src={asset('assets/owl-logo.svg')} alt="OWL" style={{ height: 34 }} />
         <span style={{ flex: 1 }} />
         <div style={{ display: 'flex', gap: 26 }} className="site-nav-links">
-          {[['Pillars', '#pillars'], ['Explore', '#explore'], ['Pricing', '#pricing'], ['FAQ', '#faq']].map(([l, h]) => (
+          {NAV_LINKS.map(([l, h]) => (
             <a key={l} href={h} style={{ font: 'var(--type-subheadline)', color: 'var(--text-secondary)' }}>{l}</a>
           ))}
         </div>
@@ -29,7 +33,33 @@ export function SiteNav() {
         }}>
           Get OWL
         </Button>
+        <button
+          onClick={() => setMenuOpen((v) => !v)}
+          aria-label="Menu" aria-expanded={menuOpen}
+          className="site-nav-toggle"
+          style={{ display: 'none', background: 'none', border: 'none', padding: 8, cursor: 'pointer' }}
+        >
+          <Icon name={menuOpen ? 'x' : 'menu'} size={24} color="var(--text-primary)" />
+        </button>
       </div>
+      <AnimatePresence initial={false}>
+        {menuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: prefersReduced ? 0 : DURATION.fade, ease: EASE.inOut }}
+            style={{ overflow: 'hidden', borderTop: 'var(--border-hairline-1)' }}
+          >
+            <div style={{ ...owlSiteWrap, display: 'grid', padding: '8px 0 16px' }}>
+              {NAV_LINKS.map(([l, h]) => (
+                <a key={l} href={h} onClick={() => setMenuOpen(false)}
+                   style={{ font: 'var(--type-headline)', color: 'var(--text-secondary)', padding: '14px 0' }}>{l}</a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
@@ -64,7 +94,7 @@ export function Shot({ src, alt, width = 300, caption, priority = false, lcp = f
         whileHover={{ scale: 1.015, borderColor: 'rgba(255,255,255,0.22)' }}
         transition={{ duration: DURATION.spring, ease: EASE.spring }}
         style={{
-          width, aspectRatio: '9 / 19.5', borderRadius: 34, overflow: 'hidden', background: '#000',
+          width, maxWidth: '100%', aspectRatio: '9 / 19.5', borderRadius: 34, overflow: 'hidden', background: '#000',
           border: '1px solid rgba(255,255,255,0.14)',
           boxShadow: '0 30px 70px rgba(0,0,0,0.55)',
         }}

@@ -23,7 +23,7 @@ export function Progress() {
           variants={staggerContainer(0.08)}
           style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1.1fr)', gap: 'clamp(28px,4vw,60px)', alignItems: 'center' }} className="split"
         >
-          <motion.div variants={fadeUpItem(16)} style={{ display: 'flex', gap: 18, justifyContent: 'center' }}>
+          <motion.div variants={fadeUpItem(16)} className="shot-row" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(160px,1fr))', gap: 18, justifyContent: 'center', justifyItems: 'center' }}>
             <Shot src={asset('assets/screens/27-progress-levels-xp-badges.png')} alt="Level ring and streak, computed from real training" width={240} />
             <Shot src={asset('assets/screens/28-badges-grid-full.png')} alt="Badge grid: unlocked in full color, locked desaturated" width={240} />
           </motion.div>

@@ -6,15 +6,19 @@
 @import "./tokens/motion.css";
 @import "./tokens/base.css";
 
-html { scroll-padding-top: 88px; }
-body { margin: 0; background: var(--bg); }
+html { scroll-padding-top: 88px; overflow-x: hidden; }
+body { margin: 0; background: var(--bg); overflow-x: hidden; }
 a { color: var(--text-secondary); }
 a:hover { color: var(--amber); }
 
 @media (max-width: 980px) {
   .split { grid-template-columns: 1fr !important; }
   .site-nav-links { display: none !important; }
+  .site-nav-toggle { display: inline-flex !important; }
   .compare-head, .compare-row { grid-template-columns: 1.4fr 0.8fr 0.8fr 0.8fr !important; font-size: 13px; }
+  .shot-row { grid-template-columns: 1fr !important; }
+  .pricing-grid { grid-template-columns: 1fr !important; }
+  .explore-shot-col { position: static !important; top: auto !important; }
 }
 
 @media (max-width: 640px) {

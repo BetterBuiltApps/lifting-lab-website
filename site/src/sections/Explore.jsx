@@ -73,7 +73,7 @@ export function Explore() {
               </div>
             ))}
           </div>
-          <div style={{ position: 'sticky', top: 100, display: 'flex', justifyContent: 'center' }}>
+          <div className="explore-shot-col" style={{ position: 'sticky', top: 100, display: 'flex', justifyContent: 'center' }}>
             <AnimatePresence mode="wait">
               <motion.div
                 key={current.k}
