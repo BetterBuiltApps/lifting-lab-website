@@ -1,10 +1,12 @@
 import React from 'react';
+import { motion } from 'motion/react';
+import { DURATION, EASE, PRESS_SCALE } from '../lib/motion';
 
 const base = {
   display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8,
   fontFamily: 'var(--font-display)', fontWeight: 600, border: 'none',
   borderRadius: 'var(--radius-button)', cursor: 'pointer',
-  transition: 'transform var(--duration-press) var(--ease-pop), opacity 150ms linear',
+  transition: 'opacity 150ms linear',
   WebkitTapHighlightColor: 'transparent',
 };
 
@@ -24,30 +26,29 @@ const variants = {
   plain: { background: 'transparent', color: 'var(--amber)' },
 };
 
-/** The app's button. One amber fill, black label — never an amber label on dark. */
+/** The app's button. One amber fill, black label — never an amber label on dark.
+ * Hover settles on the spring idiom (scale + brightness); tap pops on the press
+ * idiom (scale to --press-scale) — two distinct, already-idiomatic feels. */
 export function Button({
   variant = 'primary', size = 'large', full = false, disabled = false,
   icon = null, children, style, ...rest
 }) {
-  const [pressed, setPressed] = React.useState(false);
   return (
-    <button
+    <motion.button
       disabled={disabled}
-      onPointerDown={() => setPressed(true)}
-      onPointerUp={() => setPressed(false)}
-      onPointerLeave={() => setPressed(false)}
+      whileHover={disabled ? undefined : { scale: 1.02, filter: 'brightness(1.08)', transition: { duration: DURATION.spring, ease: EASE.spring } }}
+      whileTap={disabled ? undefined : { scale: PRESS_SCALE, transition: { duration: DURATION.press, ease: EASE.pop } }}
       style={{
         ...base, ...sizes[size], ...variants[variant],
         width: full ? '100%' : undefined,
         opacity: disabled ? 0.35 : 1,
         cursor: disabled ? 'default' : 'pointer',
-        transform: pressed && !disabled ? 'scale(var(--press-scale))' : 'scale(1)',
         ...style,
       }}
       {...rest}
     >
       {icon}
       {children}
-    </button>
+    </motion.button>
   );
 }

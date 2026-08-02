@@ -1,6 +1,9 @@
 import React from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { owlSiteWrap, SiteHead, Shot } from './Chrome';
 import { asset } from '../lib/asset';
+import { DURATION, EASE } from '../lib/motion';
+import { Reveal } from '../lib/Reveal';
 
 const EXPLORE_GROUPS = [
   { g: 'Train', items: [
@@ -37,8 +40,10 @@ export function Explore() {
   return (
     <section id="explore" style={{ padding: 'clamp(60px,7vw,110px) 0' }}>
       <div style={owlSiteWrap}>
-        <SiteHead eyebrow="Everything else" title="Every feature, one tap away." max={640}
-          body="The pillars above are the headline. Here's the rest of what's in the app." />
+        <Reveal>
+          <SiteHead eyebrow="Everything else" title="Every feature, one tap away." max={640}
+            body="The pillars above are the headline. Here's the rest of what's in the app." />
+        </Reveal>
         <div style={{ marginTop: 44, display: 'grid', gridTemplateColumns: 'minmax(0,1.15fr) minmax(0,0.85fr)', gap: 'clamp(28px,4vw,60px)', alignItems: 'start' }} className="split">
           <div style={{ display: 'grid', gap: 28 }}>
             {EXPLORE_GROUPS.map((group) => (
@@ -48,10 +53,18 @@ export function Explore() {
                   const isActive = item.k === active;
                   return (
                     <button key={item.k} onClick={() => setActive(item.k)} style={{
+                      position: 'relative',
                       display: 'grid', gap: 4, textAlign: 'left', width: '100%', cursor: 'pointer',
-                      background: 'none', border: 'none', borderLeft: isActive ? '2px solid var(--amber)' : '2px solid transparent',
+                      background: 'none', border: 'none',
                       padding: '10px 0 10px 16px', borderRadius: 4,
                     }}>
+                      {isActive && (
+                        <motion.span
+                          layoutId="explore-indicator"
+                          transition={{ duration: DURATION.spring, ease: EASE.spring }}
+                          style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 2, background: 'var(--amber)', borderRadius: 2 }}
+                        />
+                      )}
                       <span style={{ font: 'var(--type-headline)', fontWeight: 700, color: isActive ? 'var(--text-primary)' : 'var(--text-secondary)' }}>{item.label}</span>
                       {isActive && <span style={{ font: 'var(--type-subheadline)', color: 'var(--text-secondary)' }}>{item.body}</span>}
                     </button>
@@ -61,7 +74,17 @@ export function Explore() {
             ))}
           </div>
           <div style={{ position: 'sticky', top: 100, display: 'flex', justifyContent: 'center' }}>
-            <Shot key={current.k} src={asset(current.src)} alt={current.label} width={260} />
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={current.k}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: DURATION.fade, ease: EASE.inOut }}
+              >
+                <Shot src={asset(current.src)} alt={current.label} width={260} />
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </div>

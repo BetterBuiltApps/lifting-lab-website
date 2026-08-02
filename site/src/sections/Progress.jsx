@@ -1,6 +1,9 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { owlSiteWrap, SiteHead, Shot } from './Chrome';
 import { asset } from '../lib/asset';
+import { Reveal } from '../lib/Reveal';
+import { fadeUpItem, staggerContainer, VIEWPORT_ONCE } from '../lib/motion';
 
 export function Progress() {
   return (
@@ -9,18 +12,26 @@ export function Progress() {
       padding: 'clamp(60px,7vw,110px) 0',
     }}>
       <div style={{ ...owlSiteWrap, display: 'grid', gap: 'clamp(40px,5vw,64px)' }}>
-        <SiteHead center eyebrow="Progress" title="Every session counts for something." max={680}
-          body="Levels and streaks built from your actual training — sessions finished, sets made, tonnage moved, PRs set, weeks run perfectly. Badges unlock for real milestones across strength, Sinclair, programs completed, and lifts analyzed. No fake points: it's computed straight from your log, so your history counts from day one." />
-        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1.1fr)', gap: 'clamp(28px,4vw,60px)', alignItems: 'center' }} className="split">
-          <div style={{ display: 'flex', gap: 18, justifyContent: 'center' }}>
+        <Reveal>
+          <SiteHead center eyebrow="Progress" title="Every session counts for something." max={680}
+            body="Levels and streaks built from your actual training — sessions finished, sets made, tonnage moved, PRs set, weeks run perfectly. Badges unlock for real milestones across strength, Sinclair, programs completed, and lifts analyzed. No fake points: it's computed straight from your log, so your history counts from day one." />
+        </Reveal>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={VIEWPORT_ONCE}
+          variants={staggerContainer(0.08)}
+          style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1.1fr)', gap: 'clamp(28px,4vw,60px)', alignItems: 'center' }} className="split"
+        >
+          <motion.div variants={fadeUpItem(16)} style={{ display: 'flex', gap: 18, justifyContent: 'center' }}>
             <Shot src={asset('assets/screens/27-progress-levels-xp-badges.png')} alt="Level ring and streak, computed from real training" width={240} />
             <Shot src={asset('assets/screens/28-badges-grid-full.png')} alt="Badge grid: unlocked in full color, locked desaturated" width={240} />
-          </div>
-          <div style={{ display: 'grid', gap: 18, justifyItems: 'center' }}>
+          </motion.div>
+          <motion.div variants={fadeUpItem(16)} style={{ display: 'grid', gap: 18, justifyItems: 'center' }}>
             <Shot src={asset('assets/screens/29-badge-detail-first-blood.png')} alt="Badge unlocked share card" width={260} />
             <span style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>Shareable, one tap</span>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,6 +1,19 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { Card, SectionLabel } from '../design-system';
 import { owlSiteWrap, SiteHead } from './Chrome';
+import { fadeUpItem, slideFade, staggerContainer, VIEWPORT_ONCE } from '../lib/motion';
+
+// Card is both the right-column reveal target (arrives from the right) AND the
+// stagger trigger for its own timeline rows — merge the two into one variant
+// set so a single "visible" state drives both.
+const cardVariant = (() => {
+  const base = slideFade('right', 24);
+  return {
+    hidden: base.hidden,
+    visible: { ...base.visible, transition: { ...base.visible.transition, staggerChildren: 0.06 } },
+  };
+})();
 
 function LogBookTimeline() {
   const entries = [
@@ -10,10 +23,10 @@ function LogBookTimeline() {
     { kind: 'reflection', label: 'Reflection', title: 'Weeks 6–8', sub: 'Fatigue: Wrecked · Consistency: Patchy' },
   ];
   return (
-    <Card style={{ background: 'var(--bg)', padding: 22, display: 'grid', gap: 4 }}>
+    <Card variants={cardVariant} style={{ background: 'var(--bg)', padding: 22, display: 'grid', gap: 4 }}>
       <SectionLabel tone="secondary" style={{ marginBottom: 8 }}>November</SectionLabel>
       {entries.map((e, i) => (
-        <div key={i} style={{ display: 'flex', gap: 14, padding: '12px 0', borderTop: i ? '1px solid rgba(255,255,255,0.06)' : 'none' }}>
+        <motion.div key={i} variants={fadeUpItem(12)} style={{ display: 'flex', gap: 14, padding: '12px 0', borderTop: i ? '1px solid rgba(255,255,255,0.06)' : 'none' }}>
           <span style={{
             flexShrink: 0, marginTop: 3, width: 8, height: 8, borderRadius: '50%',
             background: e.kind === 'reflection' ? 'var(--amber)' : 'var(--text-tertiary)',
@@ -23,7 +36,7 @@ function LogBookTimeline() {
             <span style={{ font: 'var(--type-subheadline)', fontWeight: 700, color: 'var(--text-primary)' }}>{e.title}</span>
             <span style={{ font: 'var(--type-caption)', color: 'var(--text-secondary)' }}>{e.sub}</span>
           </div>
-        </div>
+        </motion.div>
       ))}
     </Card>
   );
@@ -32,11 +45,19 @@ function LogBookTimeline() {
 export function LogBook() {
   return (
     <section id="logbook" style={{ padding: 'clamp(60px,7vw,110px) 0' }}>
-      <div style={{ ...owlSiteWrap, display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)', gap: 'clamp(28px,4vw,60px)', alignItems: 'center' }} className="split">
-        <SiteHead eyebrow="Log book" title="A log book for what a sensor can't measure." max={560}
-          body="Sessions and reflections land on one timeline. Nothing is required, nothing is scored, and the chart knows five-out-of-five sleep is good news while five-out-of-five fatigue is not." />
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={VIEWPORT_ONCE}
+        variants={staggerContainer(0.08)}
+        style={{ ...owlSiteWrap, display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)', gap: 'clamp(28px,4vw,60px)', alignItems: 'center' }} className="split"
+      >
+        <motion.div variants={slideFade('left', 24)}>
+          <SiteHead eyebrow="Log book" title="A log book for what a sensor can't measure." max={560}
+            body="Sessions and reflections land on one timeline. Nothing is required, nothing is scored, and the chart knows five-out-of-five sleep is good news while five-out-of-five fatigue is not." />
+        </motion.div>
         <LogBookTimeline />
-      </div>
+      </motion.div>
     </section>
   );
 }

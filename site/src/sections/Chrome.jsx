@@ -1,8 +1,10 @@
 /* Shared building blocks for the landing page. */
 import React from 'react';
+import { motion } from 'motion/react';
 import { Button, SectionLabel } from '../design-system';
 import { OWL_SITE } from '../config';
 import { asset } from '../lib/asset';
+import { DURATION, EASE } from '../lib/motion';
 
 export const owlSiteWrap = { maxWidth: 1240, margin: '0 auto', padding: '0 clamp(20px,5vw,60px)' };
 
@@ -51,17 +53,30 @@ export function SiteHead({ eyebrow, title, body, center = false, max = 640, acce
   );
 }
 
-/** A real app screenshot in a minimal dark bezel. */
-export function Shot({ src, alt, width = 300, caption }) {
+/** A real app screenshot in a minimal dark bezel. `priority` = above-the-fold
+ * (eager decode, no lazy-load); `lcp` additionally hints this is the largest
+ * contentful paint candidate. Fixed aspect-ratio reserves layout space before
+ * the image decodes, so nothing shifts (CLS) regardless of exact PNG dims. */
+export function Shot({ src, alt, width = 300, caption, priority = false, lcp = false }) {
   return (
     <figure style={{ margin: 0, display: 'grid', gap: 12, justifyItems: 'center' }}>
-      <div style={{
-        width, borderRadius: 34, overflow: 'hidden', background: '#000',
-        border: '1px solid rgba(255,255,255,0.14)',
-        boxShadow: '0 30px 70px rgba(0,0,0,0.55)',
-      }}>
-        <img src={src} alt={alt} style={{ width: '100%', display: 'block' }} />
-      </div>
+      <motion.div
+        whileHover={{ scale: 1.015, borderColor: 'rgba(255,255,255,0.22)' }}
+        transition={{ duration: DURATION.spring, ease: EASE.spring }}
+        style={{
+          width, aspectRatio: '9 / 19.5', borderRadius: 34, overflow: 'hidden', background: '#000',
+          border: '1px solid rgba(255,255,255,0.14)',
+          boxShadow: '0 30px 70px rgba(0,0,0,0.55)',
+        }}
+      >
+        <img
+          src={src} alt={alt}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+          loading={priority ? 'eager' : 'lazy'}
+          decoding="async"
+          {...(lcp ? { fetchpriority: 'high' } : {})}
+        />
+      </motion.div>
       {caption && (
         <figcaption style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)', textAlign: 'center', maxWidth: width }}>
           {caption}
@@ -71,8 +86,16 @@ export function Shot({ src, alt, width = 300, caption }) {
   );
 }
 
-/** App Store CTA button — used in hero, pricing, and footer. */
+/** App Store CTA button — used in hero, pricing, and footer. Reads
+ * OWL_SITE.released: pre-launch it's an inert, muted label, not a link. */
 export function AppStoreButton({ size = 'large' }) {
+  if (!OWL_SITE.released) {
+    return (
+      <Button size={size} variant="secondary" disabled style={{ opacity: 1, cursor: 'default' }}>
+        {OWL_SITE.ctaPrimaryPrelaunch}
+      </Button>
+    );
+  }
   return (
     <a href={OWL_SITE.links.appStore} style={{ textDecoration: 'none' }}>
       <Button size={size}>{OWL_SITE.ctaPrimary}</Button>

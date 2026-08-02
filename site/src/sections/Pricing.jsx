@@ -1,7 +1,9 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { Card, SectionLabel, Icon } from '../design-system';
 import { owlSiteWrap, SiteHead, AppStoreButton } from './Chrome';
 import { OWL_SITE } from '../config';
+import { fadeUpItem, staggerContainer, VIEWPORT_ONCE } from '../lib/motion';
 
 export function Pricing() {
   const { free, pro, coach } = OWL_SITE.pricing;
@@ -26,9 +28,15 @@ export function Pricing() {
       <div style={{ ...owlSiteWrap, display: 'grid', gap: 36 }}>
         <SiteHead center eyebrow="Pricing" title="Free, unlimited, forever." max={720}
           body="The training log, programs, and calculators never expire and never lock. Pro adds full-depth video analysis. Coach adds a roster." />
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 16, maxWidth: 1080, margin: '0 auto', width: '100%' }}>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={VIEWPORT_ONCE}
+          variants={staggerContainer(0.08)}
+          style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 16, maxWidth: 1080, margin: '0 auto', width: '100%' }}
+        >
           {tiers.map((tier) => (
-            <Card key={tier.t} style={{
+            <Card key={tier.t} variants={fadeUpItem(16)} style={{
               background: 'var(--bg)', display: 'grid', gap: 14, alignContent: 'start',
               border: tier.highlight ? 'var(--border-accent-1)' : 'none',
             }}>
@@ -48,7 +56,12 @@ export function Pricing() {
               </div>
             </Card>
           ))}
-        </div>
+        </motion.div>
+        {!OWL_SITE.released && (
+          <p style={{ margin: 0, textAlign: 'center', font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>
+            Pricing shown reflects planned launch pricing and may change before release.
+          </p>
+        )}
         <div style={{ display: 'grid', gap: 14, justifyItems: 'center', marginTop: 8 }}>
           <AppStoreButton />
           <span style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>{OWL_SITE.ctaNote}</span>

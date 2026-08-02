@@ -1,21 +1,31 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { owlSiteWrap, SiteHead, Shot } from './Chrome';
 import { asset } from '../lib/asset';
+import { slideFade, staggerContainer, VIEWPORT_ONCE } from '../lib/motion';
 
 function Pillar({ eyebrow, title, body, shots, reverse }) {
+  const leftVariant = slideFade('left', 24);
+  const rightVariant = slideFade('right', 24);
   return (
-    <div style={{
-      display: 'grid', gridTemplateColumns: reverse ? 'minmax(0,1.1fr) minmax(0,1fr)' : 'minmax(0,1fr) minmax(0,1.1fr)',
-      gap: 'clamp(28px,4vw,60px)', alignItems: 'center',
-    }} className="split">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={VIEWPORT_ONCE}
+      variants={staggerContainer(0.08)}
+      style={{
+        display: 'grid', gridTemplateColumns: reverse ? 'minmax(0,1.1fr) minmax(0,1fr)' : 'minmax(0,1fr) minmax(0,1.1fr)',
+        gap: 'clamp(28px,4vw,60px)', alignItems: 'center',
+      }} className="split"
+    >
       {reverse ? <>
-        <div style={{ display: 'grid', gap: 22 }}><SiteHead eyebrow={eyebrow} title={title} body={body} max={520} /></div>
-        <div style={{ display: 'flex', gap: 18, justifyContent: 'center' }}>{shots}</div>
+        <motion.div variants={leftVariant} style={{ display: 'grid', gap: 22 }}><SiteHead eyebrow={eyebrow} title={title} body={body} max={520} /></motion.div>
+        <motion.div variants={rightVariant} style={{ display: 'flex', gap: 18, justifyContent: 'center' }}>{shots}</motion.div>
       </> : <>
-        <div style={{ display: 'flex', gap: 18, justifyContent: 'center' }}>{shots}</div>
-        <div style={{ display: 'grid', gap: 22 }}><SiteHead eyebrow={eyebrow} title={title} body={body} max={520} /></div>
+        <motion.div variants={leftVariant} style={{ display: 'flex', gap: 18, justifyContent: 'center' }}>{shots}</motion.div>
+        <motion.div variants={rightVariant} style={{ display: 'grid', gap: 22 }}><SiteHead eyebrow={eyebrow} title={title} body={body} max={520} /></motion.div>
       </>}
-    </div>
+    </motion.div>
   );
 }
 

@@ -1,7 +1,9 @@
 import React from 'react';
-import { owlSiteWrap, AppStoreButton } from './Chrome';
+import { motion } from 'motion/react';
+import { owlSiteWrap, AppStoreButton, Shot } from './Chrome';
 import { OWL_SITE } from '../config';
 import { asset } from '../lib/asset';
+import { DURATION, EASE, fadeUpItem, staggerContainer } from '../lib/motion';
 
 export function Hero() {
   return (
@@ -10,12 +12,24 @@ export function Hero() {
       paddingBottom: 'clamp(56px,7vw,104px)',
     }}>
       <div style={{ ...owlSiteWrap, paddingTop: 'clamp(56px,7vw,96px)', display: 'grid', gap: 'clamp(32px,4vw,52px)' }}>
-        <div style={{ display: 'grid', gap: 22, justifyItems: 'start', maxWidth: 680 }}>
-          <span style={{
-            display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 14px',
-            borderRadius: 999, background: 'var(--surface)', border: 'var(--border-hairline-1)',
-            font: 'var(--type-caption)', color: 'var(--text-secondary)',
-          }}>Built for Olympic weightlifting</span>
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: DURATION.fade, ease: EASE.inOut }}
+          style={{ display: 'grid', gap: 22, justifyItems: 'start', maxWidth: 680 }}
+        >
+          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+            <span style={{
+              display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 14px',
+              borderRadius: 999, background: 'var(--amber-16)', border: '1px solid var(--amber-40)',
+              font: 'var(--type-caption)', fontWeight: 700, color: 'var(--amber)',
+            }}>Coming soon</span>
+            <span style={{
+              display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 14px',
+              borderRadius: 999, background: 'var(--surface)', border: 'var(--border-hairline-1)',
+              font: 'var(--type-caption)', color: 'var(--text-secondary)',
+            }}>Built for Olympic weightlifting</span>
+          </div>
           <h1 style={{
             margin: 0, fontFamily: 'var(--font-display)', fontWeight: 900,
             fontSize: 'clamp(44px,5.4vw,64px)', lineHeight: 1.0, letterSpacing: '-2px',
@@ -34,32 +48,41 @@ export function Hero() {
             <AppStoreButton />
             <span style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>{OWL_SITE.ctaNote}</span>
           </div>
-        </div>
+        </motion.div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 28, alignItems: 'end' }} className="hero-pair">
-          <div style={{ display: 'grid', gap: 14, justifyItems: 'center' }}>
-            <div style={{
-              width: '100%', maxWidth: 300, borderRadius: 34, overflow: 'hidden', background: '#000',
-              border: '1px solid rgba(255,255,255,0.14)', boxShadow: '0 30px 70px rgba(0,0,0,0.55)',
-            }}>
-              <img src={asset('assets/screens/08-readiness-checkin.png')} alt="Readiness check-in: energy, soreness and time build today's session" style={{ width: '100%', display: 'block' }} />
-            </div>
-            <span style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)', textAlign: 'center', maxWidth: 300 }}>Tell it how you feel — it builds the session</span>
-          </div>
-          <div style={{ position: 'relative', display: 'grid', gap: 14, justifyItems: 'center' }}>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer(0.1, 0.15)}
+          style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 28, alignItems: 'end' }}
+          className="hero-pair"
+        >
+          <motion.div variants={fadeUpItem(16)}>
+            <Shot
+              src={asset('assets/screens/08-readiness-checkin.png')}
+              alt="Readiness check-in: energy, soreness and time build today's session"
+              width={300}
+              priority
+              lcp
+              caption="Tell it how you feel — it builds the session"
+            />
+          </motion.div>
+          <motion.div variants={fadeUpItem(16)} style={{ position: 'relative' }}>
             <div style={{
               position: 'absolute', inset: '-8% -8% 20%',
               background: 'radial-gradient(circle, rgba(245,166,35,0.14), transparent 65%)', filter: 'blur(8px)',
             }} />
-            <div style={{
-              position: 'relative', width: '100%', maxWidth: 300, borderRadius: 34, overflow: 'hidden', background: '#000',
-              border: '1px solid rgba(255,255,255,0.14)', boxShadow: '0 30px 70px rgba(0,0,0,0.55)',
-            }}>
-              <img src={asset('assets/screens/15-bar-trace-analysis-detail.png')} alt="Bar Trace: skeleton overlay, bar path and phase split on a snatch turnover" style={{ width: '100%', display: 'block' }} />
+            <div style={{ position: 'relative' }}>
+              <Shot
+                src={asset('assets/screens/15-bar-trace-analysis-detail.png')}
+                alt="Bar Trace: skeleton overlay, bar path and phase split on a snatch turnover"
+                width={300}
+                priority
+                caption="Film a set — it reads the pull, phase by phase"
+              />
             </div>
-            <span style={{ position: 'relative', font: 'var(--type-caption)', color: 'var(--text-tertiary)', textAlign: 'center', maxWidth: 300 }}>Film a set — it reads the pull, phase by phase</span>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </header>
   );

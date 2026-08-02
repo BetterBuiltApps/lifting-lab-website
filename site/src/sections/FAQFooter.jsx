@@ -1,27 +1,48 @@
 import React from 'react';
+import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import { owlSiteWrap, SiteHead, AppStoreButton } from './Chrome';
 import { OWL_SITE } from '../config';
 import { asset } from '../lib/asset';
+import { DURATION, EASE, fadeUpItem, staggerContainer, VIEWPORT_ONCE } from '../lib/motion';
 
 function FAQItem({ q, a }) {
   const [open, setOpen] = React.useState(false);
+  const prefersReduced = useReducedMotion();
+  const duration = prefersReduced ? 0 : DURATION.fade;
   return (
-    <div style={{ borderTop: 'var(--border-hairline-1)', padding: '18px 0' }}>
+    <motion.div variants={fadeUpItem(12)} style={{ borderTop: 'var(--border-hairline-1)', padding: '18px 0' }}>
       <button onClick={() => setOpen(!open)} style={{
         width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 16,
         background: 'none', border: 'none', padding: 0, cursor: 'pointer', textAlign: 'left',
         font: 'var(--type-headline)', color: 'var(--text-primary)',
       }}>
         {q}
-        <span style={{ font: 'var(--type-title)', color: 'var(--text-tertiary)', transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 150ms' }}>+</span>
+        <motion.span
+          animate={{ rotate: open ? 45 : 0 }}
+          transition={{ duration, ease: EASE.inOut }}
+          style={{ font: 'var(--type-title)', color: 'var(--text-tertiary)' }}
+        >+</motion.span>
       </button>
-      {open && <p style={{ margin: '12px 0 0', font: 'var(--type-body)', color: 'var(--text-secondary)', maxWidth: '70ch' }}>{a}</p>}
-    </div>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration, ease: EASE.inOut }}
+            style={{ overflow: 'hidden' }}
+          >
+            <p style={{ margin: '12px 0 0', font: 'var(--type-body)', color: 'var(--text-secondary)', maxWidth: '70ch' }}>{a}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
 }
 
 export function FAQ() {
   const items = [
+    ['Is OWL out yet?', 'Not yet — OWL is in active development. This site previews what’s coming, and the App Store link goes live at launch.'],
     ['Is it really free?', 'Yes. Training log, the adaptive daily builder, all five programs, the PR tracker, the illustrated exercise library, every calculator, and three bar-path analyses a month never expire and never lock.'],
     ['Do I have to follow a fixed program?', 'No. Tell OWL how you feel, what’s sore, and how much time you have, and it builds the session — or run one of the five periodized programs if you want a full cycle. Either way, nothing is locked: reorder, swap, or adjust anything before or during the workout.'],
     ['Do I need any hardware?', 'No. Bar Trace reads speed, path and phase timing from a phone video — no sensor, no clip-on unit, no pairing.'],
@@ -35,9 +56,15 @@ export function FAQ() {
     <section id="faq" style={{ padding: 'clamp(60px,7vw,110px) 0' }}>
       <div style={{ ...owlSiteWrap, maxWidth: 760 }}>
         <SiteHead title="Questions." max={640} />
-        <div style={{ marginTop: 20 }}>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={VIEWPORT_ONCE}
+          variants={staggerContainer(0.05)}
+          style={{ marginTop: 20 }}
+        >
           {items.map(([q, a]) => <FAQItem key={q} q={q} a={a} />)}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
