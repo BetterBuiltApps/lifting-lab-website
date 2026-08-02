@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// GitHub Pages serves this project from https://<owner>.github.io/owl-website/,
-// so every built asset URL needs that repo-name prefix. Update this if the
-// repo is ever renamed, or set it to '/' when deploying under a custom domain.
+// Served at the custom domain olympicweightliftinglab.com (see public/CNAME),
+// so assets resolve from the root. Switch back to '/owl-website/' if the
+// custom domain is ever removed and this falls back to the github.io URL.
 export default defineConfig({
-  base: '/owl-website/',
+  base: '/',
   plugins: [react()],
 });
