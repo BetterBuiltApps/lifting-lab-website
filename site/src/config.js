@@ -17,6 +17,13 @@ export const OWL_SITE = {
     terms: '#terms',
     support: 'mailto:support@owl.example',
   },
+  // Official badge, generated per-app at toolbox.marketingtools.apple.com/app-store/
+  // (requires an accepted App Store Marketing Artwork License — only valid once
+  // the app is actually live). Drop the downloaded SVG/PNG at this path before
+  // flipping `released` to true; the license itself only permits use in
+  // connection with an app that's available on the App Store. Black variant is
+  // Apple's preferred default — see App Store Marketing Guidelines.
+  appStoreBadgeSrc: 'assets/app-store-badge-black.svg',
   ctaPrimary: 'Download on the App Store',
   ctaPrimaryPrelaunch: 'Coming soon to the App Store',
   ctaNote: 'Free at launch. No account required.',

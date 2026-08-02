@@ -116,8 +116,17 @@ export function Shot({ src, alt, width = 300, caption, priority = false, lcp = f
   );
 }
 
-/** App Store CTA button — used in hero, pricing, and footer. Reads
- * OWL_SITE.released: pre-launch it's an inert, muted label, not a link. */
+// Apple's on-screen minimum badge height is 40px; these map our size scale to
+// values at or above that floor. Never resize/recolor/modify the badge itself
+// beyond plain scaling — see App Store Marketing Guidelines.
+const APP_STORE_BADGE_HEIGHT = { large: 56, medium: 48, small: 40 };
+
+/** App Store CTA — used in hero, pricing, and footer. Reads OWL_SITE.released:
+ * pre-launch it's an inert, muted label (not a link, no badge — the Marketing
+ * Agreement only permits the real badge once the app is actually live). Once
+ * released, renders Apple's official badge (site/public/assets/, downloaded
+ * per-app from toolbox.marketingtools.apple.com/app-store/) linking straight
+ * to the App Store listing, per Apple's own guidelines. */
 export function AppStoreButton({ size = 'large' }) {
   if (!OWL_SITE.released) {
     return (
@@ -127,8 +136,12 @@ export function AppStoreButton({ size = 'large' }) {
     );
   }
   return (
-    <a href={OWL_SITE.links.appStore} style={{ textDecoration: 'none' }}>
-      <Button size={size}>{OWL_SITE.ctaPrimary}</Button>
+    <a href={OWL_SITE.links.appStore} aria-label={OWL_SITE.ctaPrimary}>
+      <img
+        src={asset(OWL_SITE.appStoreBadgeSrc)}
+        alt="Download on the App Store"
+        style={{ height: APP_STORE_BADGE_HEIGHT[size], display: 'block' }}
+      />
     </a>
   );
 }
