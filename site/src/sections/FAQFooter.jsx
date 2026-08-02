@@ -47,8 +47,8 @@ export function FAQ() {
     ['Do I have to follow a fixed program?', 'No. Tell OWL how you feel, what’s sore, and how much time you have, and it builds the session — or run one of the five periodized programs if you want a full cycle. Either way, nothing is locked: reorder, swap, or adjust anything before or during the workout.'],
     ['Do I need any hardware?', 'No. Bar Trace reads speed, path and phase timing from a phone video — no sensor, no clip-on unit, no pairing.'],
     ['How accurate is the video analysis?', 'It depends on the clip: side-on, whole bar in frame, steady phone. When tracking is weak, OWL says so and shows the evidence, rather than giving you a number it can’t back up.'],
-    ['Does my data leave my phone?', 'No. Analysis runs on-device. Nothing is uploaded, and there’s no account required to use it.'],
-    ['Kilos only?', 'Yes — kg is the only unit, matching IWF competition and the way the sport is actually coached.'],
+    ['Does my data leave my phone?', 'Video analysis runs entirely on-device — no clip or lift data is sent anywhere to score it. Training data syncs to your own private iCloud so it follows you across devices (clip sync is a separate opt-in), never to a third-party server, and there’s no OWL account required.'],
+    ['Kilos or pounds?', 'Both — pick kg or lb in Settings and every screen follows your choice, plus there’s a dedicated kg ↔ lb converter in Tools. Everything is stored in kg internally, matching IWF competition and the way the sport is actually coached, and converted for display.'],
     ['Android?', 'Not yet. OWL is iOS-only today.'],
     ['Do I have to fill any of this in?', 'No. Every field is optional, nothing is scored, and skipping it costs you nothing. OWL suggests a reflection every few weeks and that suggestion is dismissible.'],
   ];

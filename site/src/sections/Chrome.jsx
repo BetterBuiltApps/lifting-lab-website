@@ -27,7 +27,7 @@ export function SiteNav() {
             <a key={l} href={h} style={{ font: 'var(--type-subheadline)', color: 'var(--text-secondary)' }}>{l}</a>
           ))}
         </div>
-        <Button size="small" onClick={() => {
+        <Button variant="outline" size="small" className="animated-border" onClick={() => {
           const el = document.getElementById('pricing');
           if (el) window.scrollTo({ top: el.offsetTop - 88, behavior: 'smooth' });
         }}>

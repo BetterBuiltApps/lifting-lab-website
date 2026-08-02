@@ -27,7 +27,7 @@ const EXPLORE_GROUPS = [
   ] },
   { g: 'Setup', items: [
     { k: 'gym', label: 'Gym profile', body: 'Tell OWL what plates and bars your gym actually has.', src: 'assets/screens/30-gym-profile-equipment.png' },
-    { k: 'integrations', label: 'Integrations', body: 'HealthKit, Strava, CSV — your data, your call.', src: 'assets/screens/36-settings-integrations.png' },
+    { k: 'integrations', label: 'Integrations', body: 'HealthKit and CSV export — your data, your call.', src: 'assets/screens/36-settings-integrations.png' },
     { k: 'about', label: 'About the data', body: 'What’s tracked, what’s not, and why.', src: 'assets/screens/37-about-the-data.png' },
   ] },
 ];

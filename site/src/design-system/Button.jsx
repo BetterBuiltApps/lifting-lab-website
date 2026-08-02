@@ -5,7 +5,7 @@ import { DURATION, EASE, PRESS_SCALE } from '../lib/motion';
 const base = {
   display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8,
   fontFamily: 'var(--font-display)', fontWeight: 600, border: 'none',
-  borderRadius: 'var(--radius-button)', cursor: 'pointer',
+  borderRadius: 'var(--radius-button)', cursor: 'pointer', boxSizing: 'border-box',
   transition: 'opacity 150ms linear',
   WebkitTapHighlightColor: 'transparent',
 };
@@ -24,6 +24,7 @@ const variants = {
   miss: { background: 'var(--miss)', color: '#fff' },
   secondary: { background: 'var(--surface-elevated)', color: 'var(--text-primary)' },
   plain: { background: 'transparent', color: 'var(--amber)' },
+  outline: { background: 'transparent', color: 'var(--amber)', border: '1.5px solid var(--amber)' },
 };
 
 /** The app's button. One amber fill, black label — never an amber label on dark.
