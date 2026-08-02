@@ -1,0 +1,52 @@
+/* OWL type scale — from Theme.swift (BPFont) plus the iOS text styles the app
+   leans on directly (.subheadline, .caption, .title3…). Sizes are the px
+   equivalents of the pt values; every number is rounded + monospaced-digit so
+   readouts don't jitter as they count. */
+
+:root {
+  /* Sizes */
+  --text-huge-number: 76px;   /* BPFont.hugeNumber — score grade letter */
+  --text-big-number: 60px;    /* BPFont.bigNumber — target weight, score total */
+  --text-exercise-name: 34px; /* BPFont.exerciseName */
+  --text-timer: 34px;         /* rest-ring center */
+  --text-stat-value: 28px;    /* BPFont.statValue */
+  --text-title: 22px;         /* BPFont.title (.title2) */
+  --text-title3: 20px;
+  --text-headline: 17px;      /* BPFont.headline */
+  --text-body: 17px;
+  --text-callout: 16px;
+  --text-subheadline: 15px;
+  --text-footnote: 13px;
+  --text-caption: 12px;       /* BPFont.label base */
+  --text-caption2: 11px;
+
+  /* Weights */
+  --weight-heavy: 900;
+  --weight-bold: 700;
+  --weight-semibold: 600;
+  --weight-regular: 400;
+
+  /* Line heights */
+  --leading-tight: 1.05;   /* big numbers */
+  --leading-snug: 1.2;     /* titles */
+  --leading-normal: 1.35;  /* body / captions */
+
+  /* Label kerning — SectionLabel uses .kerning(0.8) on uppercase caption */
+  --tracking-label: 0.8px;
+
+  /* ---- Composed roles ---- */
+  --type-huge-number: var(--weight-heavy) var(--text-huge-number) / var(--leading-tight) var(--font-numeric);
+  --type-big-number: var(--weight-heavy) var(--text-big-number) / var(--leading-tight) var(--font-numeric);
+  --type-exercise-name: var(--weight-heavy) var(--text-exercise-name) / var(--leading-snug) var(--font-display);
+  --type-stat-value: var(--weight-semibold) var(--text-stat-value) / var(--leading-snug) var(--font-numeric);
+  --type-title: var(--weight-bold) var(--text-title) / var(--leading-snug) var(--font-display);
+  --type-headline: var(--weight-semibold) var(--text-headline) / var(--leading-normal) var(--font-display);
+  --type-body: var(--weight-regular) var(--text-body) / var(--leading-normal) var(--font-body);
+  --type-subheadline: var(--weight-regular) var(--text-subheadline) / var(--leading-normal) var(--font-body);
+  --type-caption: var(--weight-regular) var(--text-caption) / var(--leading-normal) var(--font-body);
+  --type-label: var(--weight-semibold) var(--text-caption) / var(--leading-normal) var(--font-label);
+  --type-mono: var(--weight-regular) var(--text-body) / var(--leading-normal) var(--font-mono);
+}
+
+/* Numeric readouts: tabular, rounded, no jitter while counting. */
+.owl-numeric { font-variant-numeric: tabular-nums; font-family: var(--font-numeric); }

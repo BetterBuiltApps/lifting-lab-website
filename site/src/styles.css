@@ -1,0 +1,22 @@
+@import "./tokens/fonts.css";
+@import "./tokens/colors.css";
+@import "./tokens/typography.css";
+@import "./tokens/spacing.css";
+@import "./tokens/elevation.css";
+@import "./tokens/motion.css";
+@import "./tokens/base.css";
+
+html { scroll-padding-top: 88px; }
+body { margin: 0; background: var(--bg); }
+a { color: var(--text-secondary); }
+a:hover { color: var(--amber); }
+
+@media (max-width: 980px) {
+  .split { grid-template-columns: 1fr !important; }
+  .site-nav-links { display: none !important; }
+  .compare-head, .compare-row { grid-template-columns: 1.4fr 0.8fr 0.8fr 0.8fr !important; font-size: 13px; }
+}
+
+@media (max-width: 640px) {
+  .hero-pair { grid-template-columns: 1fr !important; }
+}
