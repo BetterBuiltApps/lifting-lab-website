@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Card, SectionLabel } from '../design-system';
-import { owlSiteWrap, SiteHead } from './Chrome';
+import { siteWrap, SiteHead } from './Chrome';
 import { fadeUpItem, slideFade, staggerContainer, VIEWPORT_ONCE } from '../lib/motion';
 
 // Card is both the right-column reveal target (arrives from the right) AND the
@@ -50,7 +50,7 @@ export function LogBook() {
         whileInView="visible"
         viewport={VIEWPORT_ONCE}
         variants={staggerContainer(0.08)}
-        style={{ ...owlSiteWrap, display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)', gap: 'clamp(28px,4vw,60px)', alignItems: 'center' }} className="split"
+        style={{ ...siteWrap, display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)', gap: 'clamp(28px,4vw,60px)', alignItems: 'center' }} className="split"
       >
         <motion.div variants={slideFade('left', 24)}>
           <SiteHead eyebrow="Log book" title="A log book for what a sensor can't measure." max={560}

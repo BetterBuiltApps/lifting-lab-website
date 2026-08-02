@@ -1,4 +1,4 @@
-Wraps content in the standard OWL card: `#232323`, 16px continuous corners, 16px padding, no border, no shadow.
+Wraps content in the standard Lifting Lab card: `#232323`, 16px continuous corners, 16px padding, no border, no shadow.
 
 ```jsx
 <Card><SectionLabel>Lift phases</SectionLabel>…</Card>

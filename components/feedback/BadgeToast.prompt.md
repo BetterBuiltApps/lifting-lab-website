@@ -1,4 +1,4 @@
-Mid-session badge unlock. The only component in OWL that carries a shadow, because it's the only thing that floats.
+Mid-session badge unlock. The only component in Lifting Lab that carries a shadow, because it's the only thing that floats.
 
 ```jsx
 <BadgeToast title="First A-grade pull" icon="award" />

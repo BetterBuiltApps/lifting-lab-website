@@ -4,4 +4,4 @@
 <StatusDot status="caution" />
 ```
 
-`none` is deliberately the decorative grey (35% white) — OWL greys out a verdict it can't support rather than guessing.
+`none` is deliberately the decorative grey (35% white) — Lifting Lab greys out a verdict it can't support rather than guessing.

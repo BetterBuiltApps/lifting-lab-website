@@ -11,7 +11,7 @@ function SiteNav() {
       borderBottom: 'var(--border-hairline-1)',
     }}>
       <div style={{ ...owlSiteWrap, display: 'flex', alignItems: 'center', gap: 28, height: 68 }}>
-        <img src="../../assets/owl-logo.svg" alt="OWL" style={{ height: 34 }} />
+        <img src="../../assets/owl-logo.svg" alt="Lifting Lab" style={{ height: 34 }} />
         <span style={{ flex: 1 }} />
         <div style={{ display: 'flex', gap: 26 }} className="site-nav-links">
           {[['Pillars', '#pillars'], ['Explore', '#explore'], ['Pricing', '#pricing'], ['FAQ', '#faq']].map(([l, h]) => (
@@ -22,7 +22,7 @@ function SiteNav() {
           const el = document.getElementById('pricing');
           if (el) window.scrollTo({ top: el.offsetTop - 88, behavior: 'smooth' });
         }}>
-          Get OWL
+          Get Lifting Lab
         </Button>
       </div>
     </nav>
@@ -73,8 +73,8 @@ function Shot({ src, alt, width = 300, caption }) {
 function AppStoreButton({ size = 'large' }) {
   const { Button } = window.OWLDesignSystem_875173;
   return (
-    <a href={OWL_SITE.links.appStore} style={{ textDecoration: 'none' }}>
-      <Button size={size}>{OWL_SITE.ctaPrimary}</Button>
+    <a href={SITE.links.appStore} style={{ textDecoration: 'none' }}>
+      <Button size={size}>{SITE.ctaPrimary}</Button>
     </a>
   );
 }

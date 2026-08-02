@@ -1,4 +1,4 @@
-/* OWL elevation. The app is almost shadowless: depth comes from surface steps
+/* Lifting Lab elevation. The app is almost shadowless: depth comes from surface steps
    (bg → surface → surfaceElevated), not from shadows. The only real shadow in
    the codebase is on BadgeToast, which floats over content. */
 

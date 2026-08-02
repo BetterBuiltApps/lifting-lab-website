@@ -1,4 +1,4 @@
-/* Shared chrome for the OWL app kit: screen scaffold, iOS large-title header,
+/* Shared chrome for the Lifting Lab app kit: screen scaffold, iOS large-title header,
    and the amber back bar. Reads only design-system tokens. */
 
 const owlKitShell = {

@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Card, SectionLabel, Icon } from '../design-system';
-import { owlSiteWrap, SiteHead, AppStoreButton } from './Chrome';
-import { OWL_SITE } from '../config';
+import { siteWrap, SiteHead, AppStoreButton } from './Chrome';
+import { SITE } from '../config';
 import { fadeUpItem, staggerContainer, VIEWPORT_ONCE } from '../lib/motion';
 
 export function Pricing() {
-  const { free, pro, coach } = OWL_SITE.pricing;
+  const { free, pro, coach } = SITE.pricing;
   const tiers = [
     { t: free.name, price: free.price, note: 'Unlimited training log and history, forever.', highlight: false, items: [
       'Adaptive daily workout builder — feel, soreness, equipment, time',
@@ -25,7 +25,7 @@ export function Pricing() {
   ];
   return (
     <section id="pricing" style={{ background: 'var(--surface)', padding: 'clamp(60px,7vw,110px) 0' }}>
-      <div style={{ ...owlSiteWrap, display: 'grid', gap: 36 }}>
+      <div style={{ ...siteWrap, display: 'grid', gap: 36 }}>
         <SiteHead center eyebrow="Pricing" title="Free, unlimited, forever." max={720}
           body="The training log, programs, and calculators never expire and never lock. Pro adds full-depth video analysis. Coach adds a roster." />
         <motion.div
@@ -58,14 +58,14 @@ export function Pricing() {
             </Card>
           ))}
         </motion.div>
-        {!OWL_SITE.released && (
+        {!SITE.released && (
           <p style={{ margin: 0, textAlign: 'center', font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>
             Pricing shown reflects planned launch pricing and may change before release.
           </p>
         )}
         <div style={{ display: 'grid', gap: 14, justifyItems: 'center', marginTop: 8 }}>
           <AppStoreButton />
-          <span style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>{OWL_SITE.ctaNote}</span>
+          <span style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>{SITE.ctaNote}</span>
         </div>
       </div>
     </section>

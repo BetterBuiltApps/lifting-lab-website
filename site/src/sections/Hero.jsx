@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { owlSiteWrap, AppStoreButton, Shot } from './Chrome';
-import { OWL_SITE } from '../config';
+import { siteWrap, AppStoreButton, Shot } from './Chrome';
+import { SITE } from '../config';
 import { asset } from '../lib/asset';
 import { DURATION, EASE, fadeUpItem, staggerContainer } from '../lib/motion';
 
@@ -11,7 +11,7 @@ export function Hero() {
       background: 'radial-gradient(110% 80% at 76% 6%, rgba(245,166,35,0.16), transparent 60%), var(--bg)',
       paddingBottom: 'clamp(56px,7vw,104px)',
     }}>
-      <div style={{ ...owlSiteWrap, paddingTop: 'clamp(56px,7vw,96px)', display: 'grid', gap: 'clamp(32px,4vw,52px)' }}>
+      <div style={{ ...siteWrap, paddingTop: 'clamp(56px,7vw,96px)', display: 'grid', gap: 'clamp(32px,4vw,52px)' }}>
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -28,7 +28,7 @@ export function Hero() {
               display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 14px',
               borderRadius: 999, background: 'var(--surface)', border: 'var(--border-hairline-1)',
               font: 'var(--type-caption)', color: 'var(--text-secondary)',
-            }}>Built for Olympic weightlifting</span>
+            }}>Built for competitive weightlifting</span>
           </div>
           <h1 style={{
             margin: 0, fontFamily: 'var(--font-display)', fontWeight: 900,
@@ -41,12 +41,12 @@ export function Hero() {
             margin: 0, maxWidth: '52ch', fontSize: 19, lineHeight: 1.55,
             color: 'var(--text-secondary)',
           }}>
-            OWL programs your cycle, analyzes your lifts frame by frame, tells you why the last one
+            Lifting Lab programs your cycle, analyzes your lifts frame by frame, tells you why the last one
             missed, and gets you through meet day. Built for one sport.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginTop: 6, flexWrap: 'wrap' }}>
             <AppStoreButton />
-            <span style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>{OWL_SITE.ctaNote}</span>
+            <span style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>{SITE.ctaNote}</span>
           </div>
         </motion.div>
 

@@ -1,9 +1,9 @@
-# OWL for iPhone — UI kit
+# Lifting Lab for iPhone — UI kit
 
 High-fidelity recreations of the real app's core screens, composed entirely from
 this design system's components.
 
-**Source of truth:** the SwiftUI codebase at `OWL/OWL/Features/…`, read directly.
+**Source of truth:** the SwiftUI codebase at `LiftingLab/LiftingLab/Features/…`, read directly.
 No screenshots were used.
 
 | Screen | Recreated from |

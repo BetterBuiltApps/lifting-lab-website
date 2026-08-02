@@ -1,4 +1,4 @@
-/* OWL motion. One house spring does most of the work:
+/* Lifting Lab motion. One house spring does most of the work:
    Animation.bpSpring = .spring(duration: 0.35, bounce: 0.35)
    Press feedback on big targets = scale 0.93, spring(0.25, bounce 0.5).
    Everything else is linear/easeInOut on live readouts. */

@@ -10,7 +10,7 @@ function Hero() {
             display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 14px',
             borderRadius: 999, background: 'var(--surface)', border: 'var(--border-hairline-1)',
             font: 'var(--type-caption)', color: 'var(--text-secondary)',
-          }}>Built for Olympic weightlifting</span>
+          }}>Built for competitive weightlifting</span>
           <h1 style={{
             margin: 0, fontFamily: 'var(--font-display)', fontWeight: 900,
             fontSize: 'clamp(44px,5.4vw,64px)', lineHeight: 1.0, letterSpacing: '-2px',
@@ -22,12 +22,12 @@ function Hero() {
             margin: 0, maxWidth: '52ch', fontSize: 19, lineHeight: 1.55,
             color: 'var(--text-secondary)',
           }}>
-            OWL programs your cycle, analyzes your lifts frame by frame, tells you why the last one
+            Lifting Lab programs your cycle, analyzes your lifts frame by frame, tells you why the last one
             missed, and gets you through meet day. Built for one sport.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginTop: 6, flexWrap: 'wrap' }}>
             <AppStoreButton />
-            <span style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>{OWL_SITE.ctaNote}</span>
+            <span style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>{SITE.ctaNote}</span>
           </div>
         </div>
 

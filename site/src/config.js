@@ -1,8 +1,8 @@
-/* OWL landing page — configuration. Post-prelaunch presentation: designed to
-   read correctly once the App Store listing exists, even though today the
-   button still points nowhere. */
+/* Lifting Lab landing page — configuration. Post-prelaunch presentation:
+   designed to read correctly once the App Store listing exists, even though
+   today the button still points nowhere. */
 
-export const OWL_SITE = {
+export const SITE = {
   // Flip to true (and set links.appStore to the real URL) when the App Store
   // listing goes live — every CTA on the site reads from this one flag.
   released: false,
@@ -15,7 +15,7 @@ export const OWL_SITE = {
     appStore: '#app-store',
     privacy: '#privacy',
     terms: '#terms',
-    support: 'mailto:support@owl.example',
+    support: 'mailto:support@liftinglab.app',
   },
   // Official badge, generated per-app at toolbox.marketingtools.apple.com/app-store/
   // (requires an accepted App Store Marketing Artwork License — only valid once

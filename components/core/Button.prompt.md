@@ -1,4 +1,4 @@
-The one button in OWL: an amber fill with a **black** label, springing to 0.93 scale on press.
+The one button in Lifting Lab: an amber fill with a **black** label, springing to 0.93 scale on press.
 
 ```jsx
 <Button variant="gradient" size="large" full onClick={start}>Start Session</Button>

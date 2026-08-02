@@ -1,8 +1,8 @@
-/* OWL landing page — configuration. Post-prelaunch presentation: designed to
+/* Lifting Lab landing page — configuration. Post-prelaunch presentation: designed to
    read correctly once the App Store listing exists, even though today the
    button still points nowhere. */
 
-const OWL_SITE = {
+const SITE = {
   pricing: {
     free: { name: 'Free', price: '$0' },
     pro: { name: 'Pro', monthly: '$4.99/mo', yearly: '$29.99/yr', lifetime: '$79.99 lifetime' },
@@ -18,4 +18,4 @@ const OWL_SITE = {
   ctaNote: 'Free. No account required.',
 };
 
-Object.assign(window, { OWL_SITE });
+Object.assign(window, { SITE });

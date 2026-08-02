@@ -1,6 +1,6 @@
 function Pricing() {
   const { Card, SectionLabel, Icon } = window.OWLDesignSystem_875173;
-  const { free, pro, coach, founding } = OWL_SITE.pricing;
+  const { free, pro, coach, founding } = SITE.pricing;
   const tiers = [
     { t: free.name, price: free.price, note: 'Unlimited training log and history, forever.', highlight: false, items: [
       'Adaptive daily workout builder \u2014 feel, soreness, equipment, time',
@@ -47,7 +47,7 @@ function Pricing() {
         </div>
         <div style={{ display: 'grid', gap: 14, justifyItems: 'center', marginTop: 8 }}>
           <AppStoreButton />
-          <span style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>{OWL_SITE.ctaNote}</span>
+          <span style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>{SITE.ctaNote}</span>
         </div>
       </div>
     </section>

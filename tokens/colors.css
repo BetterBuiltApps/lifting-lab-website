@@ -1,5 +1,5 @@
-/* OWL color system — dark-first, amber accent.
-   Values lifted verbatim from OWL/OWL/Theme/Theme.swift (BPColor, PhasePalette,
+/* Lifting Lab color system — dark-first, amber accent.
+   Values lifted verbatim from LiftingLab/LiftingLab/Theme/Theme.swift (BPColor, PhasePalette,
    BPGradient) and Theme/Components/PlateVisuals.swift (PlateColors). */
 
 :root {

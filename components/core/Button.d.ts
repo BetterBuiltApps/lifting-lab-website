@@ -1,5 +1,5 @@
 /**
- * OWL's primary button. Amber fill with a black label; `gradient` for the
+ * Lifting Lab's primary button. Amber fill with a black label; `gradient` for the
  * session CTA; `make`/`miss` for set logging.
  *
  * @startingPoint section="Core" subtitle="Amber CTA, make/miss, gradient, plain" viewport="700x180"

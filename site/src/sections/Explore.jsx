@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { owlSiteWrap, SiteHead, Shot } from './Chrome';
+import { siteWrap, SiteHead, Shot } from './Chrome';
 import { asset } from '../lib/asset';
 import { DURATION, EASE } from '../lib/motion';
 import { Reveal } from '../lib/Reveal';
@@ -26,7 +26,7 @@ const EXPLORE_GROUPS = [
     { k: 'share', label: 'Share a program', body: 'Send a finished program straight to an athlete.', src: 'assets/screens/32-coach-studio-program-list-share.png' },
   ] },
   { g: 'Setup', items: [
-    { k: 'gym', label: 'Gym profile', body: 'Tell OWL what plates and bars your gym actually has.', src: 'assets/screens/30-gym-profile-equipment.png' },
+    { k: 'gym', label: 'Gym profile', body: 'Tell Lifting Lab what plates and bars your gym actually has.', src: 'assets/screens/30-gym-profile-equipment.png' },
     { k: 'integrations', label: 'Integrations', body: 'HealthKit and CSV export — your data, your call.', src: 'assets/screens/36-settings-integrations.png' },
     { k: 'about', label: 'About the data', body: 'What’s tracked, what’s not, and why.', src: 'assets/screens/37-about-the-data.png' },
   ] },
@@ -39,7 +39,7 @@ export function Explore() {
   const current = EXPLORE_FLAT.find((i) => i.k === active) || EXPLORE_FLAT[0];
   return (
     <section id="explore" style={{ padding: 'clamp(60px,7vw,110px) 0' }}>
-      <div style={owlSiteWrap}>
+      <div style={siteWrap}>
         <Reveal>
           <SiteHead eyebrow="Everything else" title="Every feature, one tap away." max={640}
             body="The pillars above are the headline. Here's the rest of what's in the app." />

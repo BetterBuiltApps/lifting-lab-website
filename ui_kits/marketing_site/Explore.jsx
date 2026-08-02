@@ -19,7 +19,7 @@ const EXPLORE_GROUPS = [
     { k: 'share', label: 'Share a program', body: 'Send a finished program straight to an athlete.', src: '../../assets/screens/32-coach-studio-program-list-share.png' },
   ] },
   { g: 'Setup', items: [
-    { k: 'gym', label: 'Gym profile', body: 'Tell OWL what plates and bars your gym actually has.', src: '../../assets/screens/30-gym-profile-equipment.png' },
+    { k: 'gym', label: 'Gym profile', body: 'Tell Lifting Lab what plates and bars your gym actually has.', src: '../../assets/screens/30-gym-profile-equipment.png' },
     { k: 'integrations', label: 'Integrations', body: 'HealthKit, Strava, CSV \u2014 your data, your call.', src: '../../assets/screens/36-settings-integrations.png' },
     { k: 'about', label: 'About the data', body: 'What\u2019s tracked, what\u2019s not, and why.', src: '../../assets/screens/37-about-the-data.png' },
   ] },

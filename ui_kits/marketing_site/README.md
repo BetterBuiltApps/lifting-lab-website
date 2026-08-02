@@ -1,4 +1,4 @@
-# OWL marketing site — UI kit
+# Lifting Lab marketing site — UI kit
 
 Pre-launch landing page: App Store CTA, dual hero (readiness check-in + bar
 trace), four pillars, Fix My Miss, Meet Day, Progress & Badges, comparison

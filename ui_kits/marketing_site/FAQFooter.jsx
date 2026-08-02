@@ -18,13 +18,13 @@ function FAQItem({ q, a }) {
 function FAQ() {
   const items = [
     ['Is it really free?', 'Yes. Training log, the adaptive daily builder, all five programs, the PR tracker, the illustrated exercise library, every calculator, and three bar-path analyses a month never expire and never lock.'],
-    ['Do I have to follow a fixed program?', 'No. Tell OWL how you feel, what\u2019s sore, and how much time you have, and it builds the session \u2014 or run one of the five periodized programs if you want a full cycle. Either way, nothing is locked: reorder, swap, or adjust anything before or during the workout.'],
+    ['Do I have to follow a fixed program?', 'No. Tell Lifting Lab how you feel, what\u2019s sore, and how much time you have, and it builds the session \u2014 or run one of the five periodized programs if you want a full cycle. Either way, nothing is locked: reorder, swap, or adjust anything before or during the workout.'],
     ['Do I need any hardware?', 'No. Bar Trace reads speed, path and phase timing from a phone video \u2014 no sensor, no clip-on unit, no pairing.'],
-    ['How accurate is the video analysis?', 'It depends on the clip: side-on, whole bar in frame, steady phone. When tracking is weak, OWL says so and shows the evidence, rather than giving you a number it can\u2019t back up.'],
+    ['How accurate is the video analysis?', 'It depends on the clip: side-on, whole bar in frame, steady phone. When tracking is weak, Lifting Lab says so and shows the evidence, rather than giving you a number it can\u2019t back up.'],
     ['Does my data leave my phone?', 'No. Analysis runs on-device. Nothing is uploaded, and there\u2019s no account required to use it.'],
     ['Kilos only?', 'Yes \u2014 kg is the only unit, matching IWF competition and the way the sport is actually coached.'],
-    ['Android?', 'Not yet. OWL is iOS-only today.'],
-    ['Do I have to fill any of this in?', 'No. Every field is optional, nothing is scored, and skipping it costs you nothing. OWL suggests a reflection every few weeks and that suggestion is dismissible.'],
+    ['Android?', 'Not yet. Lifting Lab is iOS-only today.'],
+    ['Do I have to fill any of this in?', 'No. Every field is optional, nothing is scored, and skipping it costs you nothing. Lifting Lab suggests a reflection every few weeks and that suggestion is dismissible.'],
   ];
   return (
     <section id="faq" style={{ padding: 'clamp(60px,7vw,110px) 0' }}>
@@ -42,16 +42,16 @@ function SiteFooter() {
   return (
     <footer style={{ padding: 'clamp(48px,6vw,80px) 0 56px', borderTop: 'var(--border-hairline-1)' }}>
       <div style={{ ...owlSiteWrap, display: 'grid', gap: 24, justifyItems: 'center', textAlign: 'center' }}>
-        <img src="../../assets/owl-logo.svg" alt="OWL" style={{ height: 40 }} />
+        <img src="../../assets/owl-logo.svg" alt="Lifting Lab" style={{ height: 40 }} />
         <AppStoreButton size="medium" />
         <div style={{ display: 'flex', gap: 22, flexWrap: 'wrap', justifyContent: 'center' }}>
-          <a href={OWL_SITE.links.privacy}>Privacy</a>
-          <a href={OWL_SITE.links.terms}>Terms</a>
-          <a href={OWL_SITE.links.support}>Support</a>
+          <a href={SITE.links.privacy}>Privacy</a>
+          <a href={SITE.links.terms}>Terms</a>
+          <a href={SITE.links.support}>Support</a>
         </div>
         <p style={{ margin: 0, maxWidth: '68ch', font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>
-          Built for Olympic weightlifting. Sinclair coefficients are the official 2021–2024 IWF values.
-          World-record data should be verified against iwf.sport. OWL is not affiliated with, endorsed by,
+          Built for competitive weightlifting. Sinclair coefficients are the official 2021–2024 IWF values.
+          World-record data should be verified against iwf.sport. Lifting Lab is not affiliated with, endorsed by,
           or connected to the IWF, USA Weightlifting, or any equipment manufacturer.
         </p>
       </div>

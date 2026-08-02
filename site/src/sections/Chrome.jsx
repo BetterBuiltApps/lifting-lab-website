@@ -2,11 +2,11 @@
 import React from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import { Button, SectionLabel, Icon } from '../design-system';
-import { OWL_SITE } from '../config';
+import { SITE } from '../config';
 import { asset } from '../lib/asset';
 import { DURATION, EASE } from '../lib/motion';
 
-export const owlSiteWrap = { maxWidth: 1240, margin: '0 auto', padding: '0 clamp(20px,5vw,60px)' };
+export const siteWrap = { maxWidth: 1240, margin: '0 auto', padding: '0 clamp(20px,5vw,60px)' };
 
 const NAV_LINKS = [['Pillars', '#pillars'], ['Explore', '#explore'], ['Pricing', '#pricing'], ['FAQ', '#faq']];
 
@@ -19,8 +19,8 @@ export function SiteNav() {
       background: 'rgba(26,26,26,0.82)', backdropFilter: 'blur(20px)',
       borderBottom: 'var(--border-hairline-1)',
     }}>
-      <div style={{ ...owlSiteWrap, display: 'flex', alignItems: 'center', gap: 28, height: 68 }}>
-        <img src={asset('assets/owl-logo.svg')} alt="OWL" style={{ height: 34 }} />
+      <div style={{ ...siteWrap, display: 'flex', alignItems: 'center', gap: 28, height: 68 }}>
+        <img src={asset('assets/logo.svg')} alt="Lifting Lab" style={{ height: 34 }} />
         <span style={{ flex: 1 }} />
         <div style={{ display: 'flex', gap: 26 }} className="site-nav-links">
           {NAV_LINKS.map(([l, h]) => (
@@ -31,7 +31,7 @@ export function SiteNav() {
           const el = document.getElementById('pricing');
           if (el) window.scrollTo({ top: el.offsetTop - 88, behavior: 'smooth' });
         }}>
-          Get OWL
+          Get Lifting Lab
         </Button>
         <button
           onClick={() => setMenuOpen((v) => !v)}
@@ -51,7 +51,7 @@ export function SiteNav() {
             transition={{ duration: prefersReduced ? 0 : DURATION.fade, ease: EASE.inOut }}
             style={{ overflow: 'hidden', borderTop: 'var(--border-hairline-1)' }}
           >
-            <div style={{ ...owlSiteWrap, display: 'grid', padding: '8px 0 16px' }}>
+            <div style={{ ...siteWrap, display: 'grid', padding: '8px 0 16px' }}>
               {NAV_LINKS.map(([l, h]) => (
                 <a key={l} href={h} onClick={() => setMenuOpen(false)}
                    style={{ font: 'var(--type-headline)', color: 'var(--text-secondary)', padding: '14px 0' }}>{l}</a>
@@ -121,24 +121,24 @@ export function Shot({ src, alt, width = 300, caption, priority = false, lcp = f
 // beyond plain scaling — see App Store Marketing Guidelines.
 const APP_STORE_BADGE_HEIGHT = { large: 56, medium: 48, small: 40 };
 
-/** App Store CTA — used in hero, pricing, and footer. Reads OWL_SITE.released:
+/** App Store CTA — used in hero, pricing, and footer. Reads SITE.released:
  * pre-launch it's an inert, muted label (not a link, no badge — the Marketing
  * Agreement only permits the real badge once the app is actually live). Once
  * released, renders Apple's official badge (site/public/assets/, downloaded
  * per-app from toolbox.marketingtools.apple.com/app-store/) linking straight
  * to the App Store listing, per Apple's own guidelines. */
 export function AppStoreButton({ size = 'large' }) {
-  if (!OWL_SITE.released) {
+  if (!SITE.released) {
     return (
       <Button size={size} variant="secondary" disabled style={{ opacity: 1, cursor: 'default' }}>
-        {OWL_SITE.ctaPrimaryPrelaunch}
+        {SITE.ctaPrimaryPrelaunch}
       </Button>
     );
   }
   return (
-    <a href={OWL_SITE.links.appStore} aria-label={OWL_SITE.ctaPrimary}>
+    <a href={SITE.links.appStore} aria-label={SITE.ctaPrimary}>
       <img
-        src={asset(OWL_SITE.appStoreBadgeSrc)}
+        src={asset(SITE.appStoreBadgeSrc)}
         alt="Download on the App Store"
         style={{ height: APP_STORE_BADGE_HEIGHT[size], display: 'block' }}
       />

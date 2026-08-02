@@ -3451,7 +3451,7 @@ Object.assign(window, {
 
 // ui_kits/marketing_site/Comparison.jsx
 try { (() => {
-const COMPARISON_ROWS = [['Hardware required', 'No', 'No', 'Yes $249+'], ['Built for Olympic weightlifting', 'Yes', '\u2013', '\u2013'], ['Adapts today\u2019s session to how you feel', 'Yes', '\u2013', '\u2013'], ['Periodized programs', 'Yes', '\u2013', '\u2013'], ['Lift phase breakdown', 'Yes', '\u2013', '\u2013'], ['Illustrated exercise library', 'Yes', '\u2013', '\u2013'], ['Miss diagnosis + corrective drills', 'Yes', '\u2013', '\u2013'], ['Meet day planning', 'Yes', '\u2013', '\u2013'], ['Sinclair, Robi, IWF classes', 'Yes', '\u2013', '\u2013'], ['Plate loading for your gym', 'Yes', '\u2013', '\u2013'], ['Bar path video', 'Yes', 'Yes', 'Yes'], ['Bar velocity', 'Camera', 'Camera', 'Sensor'], ['Imports hardware VBT data', 'Yes', '\u2013', '\u2013'], ['Unlimited free training history', 'Yes', '\u2013', 'Yes'], ['Training log book & reflections', 'Yes', '\u2013', '\u2013'], ['Team roster & leaderboards', '\u2013', 'Yes', 'Yes'], ['Android', '\u2013', 'Yes', 'Yes']];
+const COMPARISON_ROWS = [['Hardware required', 'No', 'No', 'Yes $249+'], ['Built for competitive weightlifting', 'Yes', '\u2013', '\u2013'], ['Adapts today\u2019s session to how you feel', 'Yes', '\u2013', '\u2013'], ['Periodized programs', 'Yes', '\u2013', '\u2013'], ['Lift phase breakdown', 'Yes', '\u2013', '\u2013'], ['Illustrated exercise library', 'Yes', '\u2013', '\u2013'], ['Miss diagnosis + corrective drills', 'Yes', '\u2013', '\u2013'], ['Meet day planning', 'Yes', '\u2013', '\u2013'], ['Sinclair, Robi, IWF classes', 'Yes', '\u2013', '\u2013'], ['Plate loading for your gym', 'Yes', '\u2013', '\u2013'], ['Bar path video', 'Yes', 'Yes', 'Yes'], ['Bar velocity', 'Camera', 'Camera', 'Sensor'], ['Imports hardware VBT data', 'Yes', '\u2013', '\u2013'], ['Unlimited free training history', 'Yes', '\u2013', 'Yes'], ['Training log book & reflections', 'Yes', '\u2013', '\u2013'], ['Team roster & leaderboards', '\u2013', 'Yes', 'Yes'], ['Android', '\u2013', 'Yes', 'Yes']];
 function Comparison() {
   return /*#__PURE__*/React.createElement("section", {
     id: "compare",
@@ -3844,7 +3844,7 @@ function SiteFooter() {
       font: 'var(--type-caption)',
       color: 'var(--text-tertiary)'
     }
-  }, "Built for Olympic weightlifting. Sinclair coefficients are the official 2021\u20132024 IWF values. World-record data should be verified against iwf.sport. OWL is not affiliated with, endorsed by, or connected to the IWF, USA Weightlifting, or any equipment manufacturer.")));
+  }, "Built for competitive weightlifting. Sinclair coefficients are the official 2021\u20132024 IWF values. World-record data should be verified against iwf.sport. Lifting Lab is not affiliated with, endorsed by, or connected to the IWF, USA Weightlifting, or any equipment manufacturer.")));
 }
 Object.assign(window, {
   FAQItem,
@@ -3887,7 +3887,7 @@ function Hero() {
       font: 'var(--type-caption)',
       color: 'var(--text-secondary)'
     }
-  }, "Built for Olympic weightlifting"), /*#__PURE__*/React.createElement("h1", {
+  }, "Built for competitive weightlifting"), /*#__PURE__*/React.createElement("h1", {
     style: {
       margin: 0,
       fontFamily: 'var(--font-display)',

@@ -1,5 +1,5 @@
 /**
- * The tracking-honesty card — the single most brand-defining component in OWL.
+ * The tracking-honesty card — the single most brand-defining component in Lifting Lab.
  * Never hide a weak result: state the verdict, show the raw evidence, and say
  * plainly what it means for the numbers and what to change next time.
  *

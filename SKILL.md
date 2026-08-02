@@ -1,6 +1,6 @@
 ---
-name: owl-design
-description: Use this skill to generate well-branded interfaces and assets for OWL (Olympic Weightlifting Lab), either for production or throwaway prototypes/mocks/etc. Contains essential design guidelines, colors, type, fonts, assets, and UI kit components for protoyping.
+name: lifting-lab-design
+description: Use this skill to generate well-branded interfaces and assets for Lifting Lab, either for production or throwaway prototypes/mocks/etc. Contains essential design guidelines, colors, type, fonts, assets, and UI kit components for protoyping.
 user-invocable: true
 ---
 

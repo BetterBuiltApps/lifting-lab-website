@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Card } from '../design-system';
-import { owlSiteWrap } from './Chrome';
+import { siteWrap } from './Chrome';
 import { fadeUpItem, staggerContainer, VIEWPORT_ONCE } from '../lib/motion';
 
 export function Problem() {
@@ -17,7 +17,7 @@ export function Problem() {
         whileInView="visible"
         viewport={VIEWPORT_ONCE}
         variants={staggerContainer(0.08)}
-        style={{ ...owlSiteWrap, display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 16 }}
+        style={{ ...siteWrap, display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 16 }}
       >
         {cards.map(([h, b]) => (
           <Card key={h} variants={fadeUpItem(16)} style={{ display: 'grid', gap: 10, alignContent: 'start' }}>

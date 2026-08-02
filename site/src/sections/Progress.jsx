@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { owlSiteWrap, SiteHead, Shot } from './Chrome';
+import { siteWrap, SiteHead, Shot } from './Chrome';
 import { asset } from '../lib/asset';
 import { Reveal } from '../lib/Reveal';
 import { fadeUpItem, staggerContainer, VIEWPORT_ONCE } from '../lib/motion';
@@ -11,7 +11,7 @@ export function Progress() {
       background: 'radial-gradient(80% 100% at 88% 10%, rgba(245,166,35,0.10), transparent 60%), var(--surface)',
       padding: 'clamp(60px,7vw,110px) 0',
     }}>
-      <div style={{ ...owlSiteWrap, display: 'grid', gap: 'clamp(40px,5vw,64px)' }}>
+      <div style={{ ...siteWrap, display: 'grid', gap: 'clamp(40px,5vw,64px)' }}>
         <Reveal>
           <SiteHead center eyebrow="Progress" title="Every session counts for something." max={680}
             body="Levels and streaks built from your actual training — sessions finished, sets made, tonnage moved, PRs set, weeks run perfectly. Badges unlock for real milestones across strength, Sinclair, programs completed, and lifts analyzed. No fake points: it's computed straight from your log, so your history counts from day one." />

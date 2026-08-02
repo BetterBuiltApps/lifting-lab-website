@@ -1,4 +1,4 @@
-/* OWL fonts.
+/* Lifting Lab fonts.
    The app uses Apple system faces only — no bundled font binaries exist in the
    codebase. SwiftUI `design: .rounded` (SF Pro Rounded) carries the entire
    brand voice: every number, title, and label is rounded.
