@@ -13,16 +13,14 @@ function Pillar({ eyebrow, title, body, shots, reverse }) {
       whileInView="visible"
       viewport={VIEWPORT_ONCE}
       variants={staggerContainer(0.08)}
-      style={{
-        display: 'grid', gridTemplateColumns: reverse ? 'minmax(0,1.1fr) minmax(0,1fr)' : 'minmax(0,1fr) minmax(0,1.1fr)',
-        gap: 'clamp(28px,4vw,60px)', alignItems: 'center',
-      }} className="split"
+      style={{ '--split-cols': reverse ? 'minmax(0,1.1fr) minmax(0,1fr)' : 'minmax(0,1fr) minmax(0,1.1fr)' }}
+      className="split"
     >
       {reverse ? <>
         <motion.div variants={leftVariant} style={{ display: 'grid', gap: 22 }}><SiteHead eyebrow={eyebrow} title={title} body={body} max={520} /></motion.div>
-        <motion.div variants={rightVariant} className="shot-row" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(160px,1fr))', gap: 18, justifyContent: 'center', justifyItems: 'center' }}>{shots}</motion.div>
+        <motion.div variants={rightVariant} className="shot-row">{shots}</motion.div>
       </> : <>
-        <motion.div variants={leftVariant} className="shot-row" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(160px,1fr))', gap: 18, justifyContent: 'center', justifyItems: 'center' }}>{shots}</motion.div>
+        <motion.div variants={leftVariant} className="shot-row">{shots}</motion.div>
         <motion.div variants={rightVariant} style={{ display: 'grid', gap: 22 }}><SiteHead eyebrow={eyebrow} title={title} body={body} max={520} /></motion.div>
       </>}
     </motion.div>

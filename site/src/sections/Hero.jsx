@@ -54,7 +54,6 @@ export function Hero() {
           initial="hidden"
           animate="visible"
           variants={staggerContainer(0.1, 0.15)}
-          style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 28, alignItems: 'end' }}
           className="hero-pair"
         >
           <motion.div variants={fadeUpItem(16)}>

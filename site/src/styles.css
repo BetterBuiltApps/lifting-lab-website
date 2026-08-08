@@ -51,16 +51,82 @@ a:hover { color: var(--amber); }
   .animated-border::before { animation: none; }
 }
 
+/* ---------------------------------------------------------------------------
+   Layout primitives.
+
+   These used to live in inline style={{…}} objects, with the responsive rules
+   below overriding them via !important — the only way a stylesheet can beat an
+   inline style. That made every class name below load-bearing and invisible: a
+   renamed or dropped className broke mobile silently, and nothing tested it.
+
+   Base layout now lives here, so the media queries are plain cascade. Where a
+   section genuinely needs a different column ratio it sets --split-cols inline;
+   a custom property is data, not a competing declaration, so the breakpoint
+   still wins without !important.
+   --------------------------------------------------------------------------- */
+
+/* Two-column text/media row. --split-cols is the per-section ratio. */
+.split {
+  display: grid;
+  grid-template-columns: var(--split-cols, minmax(0, 1fr) minmax(0, 1fr));
+  gap: clamp(28px, 4vw, 60px);
+  align-items: center;
+}
+
+/* A row of phone screenshots inside a .split column. Identical everywhere. */
+.shot-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+  justify-content: center;
+  justify-items: center;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  max-width: 1080px;
+  margin: 0 auto;
+  width: 100%;
+  min-width: 0;
+}
+
+.hero-pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+  align-items: end;
+}
+
+/* The screenshot tracks the reader down the Explore list — until the list is
+   above it rather than beside it, at which point sticky would pin dead space. */
+.explore-shot-col {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.site-nav-links { display: flex; gap: 26px; }
+
+.site-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
 @media (max-width: 980px) {
-  .split { grid-template-columns: 1fr !important; }
-  .site-nav-links { display: none !important; }
-  .site-nav-toggle { display: inline-flex !important; }
-  .compare-head, .compare-row { grid-template-columns: 1.4fr 0.8fr 0.8fr 0.8fr !important; font-size: 13px; }
-  .shot-row { grid-template-columns: 1fr !important; }
-  .pricing-grid { grid-template-columns: 1fr !important; }
-  .explore-shot-col { position: static !important; top: auto !important; }
+  .split,
+  .shot-row,
+  .pricing-grid { grid-template-columns: 1fr; }
+  .explore-shot-col { position: static; top: auto; }
+  .site-nav-links { display: none; }
+  .site-nav-toggle { display: inline-flex; }
 }
 
 @media (max-width: 640px) {
-  .hero-pair { grid-template-columns: 1fr !important; }
+  .hero-pair { grid-template-columns: 1fr; }
 }

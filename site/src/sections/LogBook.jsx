@@ -50,7 +50,7 @@ export function LogBook() {
         whileInView="visible"
         viewport={VIEWPORT_ONCE}
         variants={staggerContainer(0.08)}
-        style={{ ...siteWrap, display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)', gap: 'clamp(28px,4vw,60px)', alignItems: 'center' }} className="split"
+        style={siteWrap} className="split"
       >
         <motion.div variants={slideFade('left', 24)}>
           <SiteHead eyebrow="Log book" title="A log book for what a sensor can't measure." max={560}

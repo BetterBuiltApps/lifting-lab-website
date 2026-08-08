@@ -44,7 +44,7 @@ export function Explore() {
           <SiteHead eyebrow="Everything else" title="Every feature, one tap away." max={640}
             body="The pillars above are the headline. Here's the rest of what's in the app." />
         </Reveal>
-        <div style={{ marginTop: 44, display: 'grid', gridTemplateColumns: 'minmax(0,1.15fr) minmax(0,0.85fr)', gap: 'clamp(28px,4vw,60px)', alignItems: 'start' }} className="split">
+        <div style={{ marginTop: 44, '--split-cols': 'minmax(0,1.15fr) minmax(0,0.85fr)', alignItems: 'start' }} className="split">
           <div style={{ display: 'grid', gap: 28 }}>
             {EXPLORE_GROUPS.map((group) => (
               <div key={group.g} style={{ display: 'grid', gap: 4 }}>
@@ -73,7 +73,7 @@ export function Explore() {
               </div>
             ))}
           </div>
-          <div className="explore-shot-col" style={{ position: 'sticky', top: 100, display: 'flex', justifyContent: 'center' }}>
+          <div className="explore-shot-col">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current.k}

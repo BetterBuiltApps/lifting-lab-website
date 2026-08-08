@@ -34,7 +34,6 @@ export function Pricing() {
           viewport={VIEWPORT_ONCE}
           variants={staggerContainer(0.08)}
           className="pricing-grid"
-          style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 16, maxWidth: 1080, margin: '0 auto', width: '100%', minWidth: 0 }}
         >
           {tiers.map((tier) => (
             <Card key={tier.t} variants={fadeUpItem(16)} className={tier.highlight ? 'animated-border' : undefined} style={{

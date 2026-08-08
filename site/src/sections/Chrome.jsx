@@ -22,7 +22,7 @@ export function SiteNav() {
       <div style={{ ...siteWrap, display: 'flex', alignItems: 'center', gap: 28, height: 68 }}>
         <img src={asset('assets/logo.svg')} alt="Lifting Lab" style={{ height: 34 }} />
         <span style={{ flex: 1 }} />
-        <div style={{ display: 'flex', gap: 26 }} className="site-nav-links">
+        <div className="site-nav-links">
           {NAV_LINKS.map(([l, h]) => (
             <a key={l} href={h} style={{ font: 'var(--type-subheadline)', color: 'var(--text-secondary)' }}>{l}</a>
           ))}
@@ -37,7 +37,6 @@ export function SiteNav() {
           onClick={() => setMenuOpen((v) => !v)}
           aria-label="Menu" aria-expanded={menuOpen}
           className="site-nav-toggle"
-          style={{ display: 'none', background: 'none', border: 'none', padding: 8, cursor: 'pointer' }}
         >
           <Icon name={menuOpen ? 'x' : 'menu'} size={24} color="var(--text-primary)" />
         </button>

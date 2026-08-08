@@ -18,13 +18,13 @@ export function FixMyMiss() {
         whileInView="visible"
         viewport={VIEWPORT_ONCE}
         variants={staggerContainer(0.08)}
-        style={{ ...siteWrap, display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1.05fr)', gap: 'clamp(28px,4vw,60px)', alignItems: 'center' }} className="split"
+        style={{ ...siteWrap, '--split-cols': 'minmax(0,1fr) minmax(0,1.05fr)' }} className="split"
       >
         <motion.div variants={leftVariant} style={{ display: 'grid', gap: 22 }}>
           <SiteHead eyebrow="Fix My Miss" accent="var(--miss)" title="Missed it? Say where." max={520}
             body="One tap after a miss — in front, behind, soft elbows, crashed on the shoulders — and Lifting Lab gives you the likely causes, the drills that fix them, and a cue to take into the next set. It's the conversation you'd have with a coach standing three metres away." />
         </motion.div>
-        <motion.div variants={rightVariant} className="shot-row" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(160px,1fr))', gap: 18, justifyContent: 'center', justifyItems: 'center' }}>
+        <motion.div variants={rightVariant} className="shot-row">
           <Shot src={asset('assets/screens/33-technique-doctor-list.png')} alt="Fix My Miss: select where the lift went wrong" width={230} />
           <Shot src={asset('assets/screens/34-technique-doctor-detail.png')} alt="Fix My Miss: likely causes and corrective drills" width={230} />
         </motion.div>
@@ -41,9 +41,9 @@ export function MeetDay() {
         whileInView="visible"
         viewport={VIEWPORT_ONCE}
         variants={staggerContainer(0.08)}
-        style={{ ...siteWrap, display: 'grid', gridTemplateColumns: 'minmax(0,1.05fr) minmax(0,1fr)', gap: 'clamp(28px,4vw,60px)', alignItems: 'center' }} className="split"
+        style={{ ...siteWrap, '--split-cols': 'minmax(0,1.05fr) minmax(0,1fr)' }} className="split"
       >
-        <motion.div variants={leftVariant} className="shot-row" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(160px,1fr))', gap: 18, justifyContent: 'center', justifyItems: 'center' }}>
+        <motion.div variants={leftVariant} className="shot-row">
           <Shot src={asset('assets/screens/24-meet-day-warmup-room.png')} alt="Meet Day: warm-up room, attempts not the clock" width={230} />
           <Shot src={asset('assets/screens/25-meet-day-attempt-board.png')} alt="Meet Day: six-attempt board" width={230} />
         </motion.div>
