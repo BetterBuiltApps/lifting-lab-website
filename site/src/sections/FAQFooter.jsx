@@ -9,23 +9,39 @@ function FAQItem({ q, a }) {
   const [open, setOpen] = React.useState(false);
   const prefersReduced = useReducedMotion();
   const duration = prefersReduced ? 0 : DURATION.fade;
+  // Stable ids tie the trigger to its panel for screen readers. The question
+  // text is unique across the list, so it makes a usable slug without an
+  // external counter that would break if the list is reordered.
+  const id = React.useMemo(() => `faq-${q.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`, [q]);
   return (
     <motion.div variants={fadeUpItem(12)} style={{ borderTop: 'var(--border-hairline-1)', padding: '18px 0' }}>
-      <button onClick={() => setOpen(!open)} style={{
-        width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 16,
-        background: 'none', border: 'none', padding: 0, cursor: 'pointer', textAlign: 'left',
-        font: 'var(--type-headline)', color: 'var(--text-primary)',
-      }}>
-        {q}
-        <motion.span
-          animate={{ rotate: open ? 45 : 0 }}
-          transition={{ duration, ease: EASE.inOut }}
-          style={{ font: 'var(--type-title)', color: 'var(--text-tertiary)' }}
-        >+</motion.span>
-      </button>
+      <h3 style={{ margin: 0 }}>
+        <button
+          id={`${id}-trigger`}
+          onClick={() => setOpen(!open)}
+          aria-expanded={open}
+          aria-controls={`${id}-panel`}
+          style={{
+            width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 16,
+            background: 'none', border: 'none', padding: 0, cursor: 'pointer', textAlign: 'left',
+            font: 'var(--type-headline)', color: 'var(--text-primary)',
+          }}
+        >
+          {q}
+          <motion.span
+            aria-hidden="true"
+            animate={{ rotate: open ? 45 : 0 }}
+            transition={{ duration, ease: EASE.inOut }}
+            style={{ font: 'var(--type-title)', color: 'var(--text-tertiary)' }}
+          >+</motion.span>
+        </button>
+      </h3>
       <AnimatePresence initial={false}>
         {open && (
           <motion.div
+            id={`${id}-panel`}
+            role="region"
+            aria-labelledby={`${id}-trigger`}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -76,11 +92,14 @@ export function SiteFooter() {
       <div style={{ ...siteWrap, display: 'grid', gap: 24, justifyItems: 'center', textAlign: 'center' }}>
         <img src={asset('assets/logo.svg')} alt="Lifting Lab" style={{ height: 40 }} />
         <AppStoreButton size="medium" />
-        <div style={{ display: 'flex', gap: 22, flexWrap: 'wrap', justifyContent: 'center' }}>
-          <a href={SITE.links.privacy}>Privacy</a>
-          <a href={SITE.links.terms}>Terms</a>
-          <a href={SITE.links.support}>Support</a>
-        </div>
+        {/* Only renders links whose target exists — see SITE.links. A link that
+            goes nowhere is worse than an absent one, and privacy/terms have no
+            pages yet. */}
+        <nav aria-label="Legal and support" style={{ display: 'flex', gap: 22, flexWrap: 'wrap', justifyContent: 'center' }}>
+          {[['Privacy', SITE.links.privacy], ['Terms', SITE.links.terms], ['Support', SITE.links.support]]
+            .filter(([, href]) => href)
+            .map(([label, href]) => <a key={label} href={href}>{label}</a>)}
+        </nav>
         <p style={{ margin: 0, maxWidth: '68ch', font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>
           Built for competitive weightlifting. Sinclair coefficients are the official 2021–2024 IWF values.
           World-record data should be verified against iwf.sport. Lifting Lab is not affiliated with, endorsed by,

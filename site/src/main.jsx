@@ -17,17 +17,23 @@ import { FAQ, SiteFooter } from './sections/FAQFooter';
 function App() {
   return (
     <>
+      {/* First thing in the tab order. The nav is sticky and the page is one
+          long scroll, so without this a keyboard user tabs the whole nav on
+          every visit. Visually hidden until focused — see .skip-link. */}
+      <a className="skip-link" href="#main">Skip to content</a>
       <SiteNav />
-      <Hero />
-      <Problem />
-      <Pillars />
-      <Explore />
-      <FixMyMiss />
-      <MeetDay />
-      <Progress />
-      <LogBook />
-      <Pricing />
-      <FAQ />
+      <main id="main">
+        <Hero />
+        <Problem />
+        <Pillars />
+        <Explore />
+        <FixMyMiss />
+        <MeetDay />
+        <Progress />
+        <LogBook />
+        <Pricing />
+        <FAQ />
+      </main>
       <SiteFooter />
     </>
   );

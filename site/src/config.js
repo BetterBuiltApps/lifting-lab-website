@@ -13,8 +13,16 @@ export const SITE = {
   },
   links: {
     appStore: '#app-store',
-    privacy: '#privacy',
-    terms: '#terms',
+    // null until the pages actually exist. They used to be '#privacy' and
+    // '#terms' — in-page anchors matching no element, so both links rendered as
+    // real links and did nothing when clicked. The footer now omits a link
+    // whose target is null rather than shipping a dead one; set these to real
+    // URLs and they reappear on their own.
+    //
+    // NOTE: App Store review requires a reachable privacy policy URL, so this
+    // is a launch blocker, not a nicety.
+    privacy: null,
+    terms: null,
     support: 'mailto:support@liftinglab.app',
   },
   // Official badge, generated per-app at toolbox.marketingtools.apple.com/app-store/

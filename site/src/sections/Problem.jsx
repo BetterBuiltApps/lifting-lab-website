@@ -21,8 +21,12 @@ export function Problem() {
       >
         {cards.map(([h, b]) => (
           <Card key={h} variants={fadeUpItem(16)} style={{ display: 'grid', gap: 10, alignContent: 'start' }}>
-            <div style={{ font: 'var(--type-title)', color: 'var(--text-primary)' }}>{h}</div>
-            <div style={{ font: 'var(--type-subheadline)', color: 'var(--text-secondary)' }}>{b}</div>
+            {/* A real heading, not a styled div: this section has no SiteHead,
+                so without it these three cards contribute nothing to the
+                document outline and the section is unreachable by heading
+                navigation. h2 because they sit directly under the h1. */}
+            <h2 style={{ margin: 0, font: 'var(--type-title)', color: 'var(--text-primary)' }}>{h}</h2>
+            <p style={{ margin: 0, font: 'var(--type-subheadline)', color: 'var(--text-secondary)' }}>{b}</p>
           </Card>
         ))}
       </motion.div>
