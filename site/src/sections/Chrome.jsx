@@ -85,8 +85,19 @@ export function SiteHead({ eyebrow, title, body, center = false, max = 640, acce
 /** A real app screenshot in a minimal dark bezel. `priority` = above-the-fold
  * (eager decode, no lazy-load); `lcp` additionally hints this is the largest
  * contentful paint candidate. Fixed aspect-ratio reserves layout space before
- * the image decodes, so nothing shifts (CLS) regardless of exact PNG dims. */
+ * the image decodes, so nothing shifts (CLS) regardless of exact PNG dims.
+ *
+ * Every screenshot on the site goes through here, which is why the responsive
+ * sources live here rather than at 30 call sites. The PNGs are full iPhone
+ * captures (~1300x2870) and nothing renders wider than 300 CSS px, so
+ * scripts/build-screens.sh emits 600w and 900w WebP beside each one and the
+ * browser takes the one its DPR needs. `sizes` is the element's real CSS width,
+ * so a 2x display picks 600w and a 3x picks 900w.
+ *
+ * The PNG stays as the <img> fallback: it costs nothing unless the browser has
+ * no WebP support, and it keeps the original as the archival source. */
 export function Shot({ src, alt, width = 300, caption, priority = false, lcp = false }) {
+  const webpBase = src.replace(/\.png$/, '');
   return (
     <figure style={{ margin: 0, display: 'grid', gap: 12, justifyItems: 'center' }}>
       <motion.div
@@ -98,13 +109,21 @@ export function Shot({ src, alt, width = 300, caption, priority = false, lcp = f
           boxShadow: '0 30px 70px rgba(0,0,0,0.55)',
         }}
       >
-        <img
-          src={src} alt={alt}
-          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-          loading={priority ? 'eager' : 'lazy'}
-          decoding="async"
-          {...(lcp ? { fetchpriority: 'high' } : {})}
-        />
+        <picture>
+          <source
+            type="image/webp"
+            srcSet={`${webpBase}-600.webp 600w, ${webpBase}-900.webp 900w`}
+            sizes={`${width}px`}
+          />
+          <img
+            src={src} alt={alt}
+            width={width} height={Math.round((width * 19.5) / 9)}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            loading={priority ? 'eager' : 'lazy'}
+            decoding="async"
+            {...(lcp ? { fetchpriority: 'high' } : {})}
+          />
+        </picture>
       </motion.div>
       {caption && (
         <figcaption style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)', textAlign: 'center', maxWidth: width }}>
