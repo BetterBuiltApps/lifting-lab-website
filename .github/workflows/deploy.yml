@@ -5,6 +5,10 @@ on:
     branches: [main]
     paths:
       - "site/**"
+      # site/src/styles.css @imports these, so a token edit changes the built
+      # CSS without touching anything under site/. Without this line the deploy
+      # silently never fires for a colour or type change.
+      - "tokens/**"
       - ".github/workflows/deploy.yml"
   workflow_dispatch:
 

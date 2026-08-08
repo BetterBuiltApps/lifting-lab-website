@@ -1,10 +1,15 @@
-@import "./tokens/fonts.css";
-@import "./tokens/colors.css";
-@import "./tokens/typography.css";
-@import "./tokens/spacing.css";
-@import "./tokens/elevation.css";
-@import "./tokens/motion.css";
-@import "./tokens/base.css";
+/* Tokens live at the repo root (../../tokens/), not under site/. That copy is
+   the design system's canonical one — guidelines/ and ui_kits/ already cite it,
+   and it mirrors the iOS app's LiftingLab/Theme/Theme.swift, which is the real
+   source of truth. site/src/tokens/ used to hold a byte-identical duplicate
+   that nothing kept in sync; it was deleted rather than left to drift. */
+@import "../../tokens/fonts.css";
+@import "../../tokens/colors.css";
+@import "../../tokens/typography.css";
+@import "../../tokens/spacing.css";
+@import "../../tokens/elevation.css";
+@import "../../tokens/motion.css";
+@import "../../tokens/base.css";
 
 html { scroll-padding-top: 88px; overflow-x: hidden; }
 body { margin: 0; background: var(--bg); overflow-x: hidden; }
