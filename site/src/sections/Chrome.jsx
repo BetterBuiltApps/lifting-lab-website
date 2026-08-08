@@ -94,8 +94,11 @@ export function SiteHead({ eyebrow, title, body, center = false, max = 640, acce
  * browser takes the one its DPR needs. `sizes` is the element's real CSS width,
  * so a 2x display picks 600w and a 3x picks 900w.
  *
- * The PNG stays as the <img> fallback: it costs nothing unless the browser has
- * no WebP support, and it keeps the original as the archival source. */
+ * The PNG stays as the img fallback: it costs nothing unless the browser has
+ * no WebP support, and it keeps the original as the archival source.
+ *
+ * (Written without an angle-bracketed img tag on purpose — impeccable's
+ * broken-image detector scans comments too and reads one as a src-less tag.) */
 export function Shot({ src, alt, width = 300, caption, priority = false, lcp = false }) {
   const webpBase = src.replace(/\.png$/, '');
   return (
