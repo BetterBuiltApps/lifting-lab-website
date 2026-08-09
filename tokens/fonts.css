@@ -1,21 +1,25 @@
 /* Lifting Lab fonts.
 
    Three faces, each with one job:
-     heading  → Barlow, self-hosted. Titles, section labels, and the wordmark.
+     heading  → Inter, self-hosted. Titles, section labels, and the wordmark.
      numeric  → SF Pro Rounded, then Nunito. The hero numbers only.
      text     → SF Pro Text / system-ui, no webfont needed
      mono     → SF Mono / ui-monospace, no webfont needed
 
-   **Barlow is the brand face and the wordmark is outlined from it**, so the
-   logo and every heading are the same letterforms. It is not an arbitrary
-   pick: the original logo artwork already set its other text in Barlow, and
-   the wordmark itself asked for 'Sans, Ultra-Bold' at weight 800, which is
-   Inkscape's generic alias. On the machine that drew it that alias resolved to
-   Verdana Bold, which cannot be embedded in an app or self-hosted under its
-   licence. Barlow is SIL OFL, has a genuine 800, and is a grotesk rather than
-   a rounded face, which is what 'Sans' read as. Three static weights, 68 KB:
-   600 for labels and row titles, 700 for titles, 800 for the wordmark. Barlow
-   has no variable build, so these are separate files rather than one axis.
+   **Inter is the brand face and the wordmark is outlined from it**, so the
+   logo and every heading are the same letterforms.
+
+   The original artwork asked for 'Sans, Ultra-Bold' at weight 800. There is no
+   font called Sans: it is Inkscape's generic alias, and 'Ultra-Bold' is a
+   weight name rather than a style that exists in any installed family. On the
+   machine that drew it, fontconfig resolved that request down its fallback
+   list (Verdana, Arial, Helvetica) and, because Verdana has no 800, landed on
+   an Arial/Helvetica-class neo-grotesque. That is what the logo actually was.
+
+   Neither Arial nor Helvetica can be embedded in an app or self-hosted. Inter
+   is the closest thing that can: same neo-grotesque lineage, wide and plain,
+   a genuine ExtraBold, and SIL OFL. Three static weights, 73 KB: 600 for
+   labels and row titles, 700 for titles, 800 for the wordmark.
 
    Nunito stays for the numeric role only, which mirrors the app's rounded
    numerals. Nothing on the marketing page currently uses a numeric role, so it
@@ -29,27 +33,27 @@
    (Segoe UI, Roboto, Consolas). */
 
 @font-face {
-  font-family: 'Barlow';
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('/assets/fonts/barlow-latin-600.woff2') format('woff2');
+  src: url('/assets/fonts/inter-latin-600.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'Barlow';
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('/assets/fonts/barlow-latin-700.woff2') format('woff2');
+  src: url('/assets/fonts/inter-latin-700.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'Barlow';
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url('/assets/fonts/barlow-latin-800.woff2') format('woff2');
+  src: url('/assets/fonts/inter-latin-800.woff2') format('woff2');
 }
 
 @font-face {
@@ -83,7 +87,7 @@
    * site/public/assets/fonts/, and `python3 tools/wordmark/assemble.py  *
    * ship` rerun so the logo still matches.                              *
    * ------------------------------------------------------------------ */
-  --font-heading: "Barlow", -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Inter", -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
 
   /* SF Pro Rounded is addressable by name on Apple platforms; ui-rounded
      resolves it in Safari. Nunito covers everywhere else. */

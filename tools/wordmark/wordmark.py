@@ -4,15 +4,15 @@ The face is whatever `FACE` points at below, and it is deliberately the same
 binary the site serves for headings, so the logo and the page titles are one
 set of letterforms rather than two that merely resemble each other.
 
-Barlow is SIL OFL, which explicitly permits converting glyphs to outlines and
+Inter is SIL OFL, which explicitly permits converting glyphs to outlines and
 embedding the result in a logo. Not every candidate does: the original artwork
-asked for Inkscape's generic 'Sans' at weight 800, which resolved to Verdana
-Bold on the machine that drew it, and Verdana's licence permits neither
-embedding in an app nor self-hosting.
+asked for Inkscape's generic 'Sans' at weight 800, which is not a font at all.
+Fontconfig resolved it down its fallback list to an Arial/Helvetica-class face,
+and neither of those may be embedded in an app or self-hosted.
 
-Handles both variable and static fonts. Barlow has no variable build, so the
-weight selects a file; Nunito was one file with a wght axis to instance. Keeping
-both paths means swapping the face later does not mean rewriting this.
+Handles both variable and static fonts: the weight selects a file here, but a
+variable font given under any single weight is instanced instead. Keeping both
+paths means swapping the face again does not mean rewriting this.
 
 Shaping goes through HarfBuzz so the GPOS kerning pairs apply (LA in particular
 needs it).
@@ -33,9 +33,9 @@ FONTS = os.path.join(REPO, "site/public/assets/fonts")
 # headings it sits above. A variable font can be given as a single entry under
 # any weight and it will be instanced instead.
 FACE = {
-    600: os.path.join(FONTS, "barlow-latin-600.woff2"),
-    700: os.path.join(FONTS, "barlow-latin-700.woff2"),
-    800: os.path.join(FONTS, "barlow-latin-800.woff2"),
+    600: os.path.join(FONTS, "inter-latin-600.woff2"),
+    700: os.path.join(FONTS, "inter-latin-700.woff2"),
+    800: os.path.join(FONTS, "inter-latin-800.woff2"),
 }
 
 def build(weight, cap_target, tracking_em, lines):

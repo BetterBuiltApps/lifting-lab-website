@@ -54,19 +54,19 @@ HEADER = """<?xml version="1.0" encoding="UTF-8"?>
 <!-- Lifting Lab wordmark.
 
      The flask and barbell mark is the original drawing. The wordmark is set in
-     Barlow at weight {weight}, outlined to paths here so it is always a shape and
+     Inter at weight {weight}, outlined to paths here so it is always a shape and
      never depends on a font being loaded.
 
-     Barlow is the same face the site loads for headings (the font-heading
-     token in tokens/fonts.css) and the app loads for its heading tiers, so the
-     logo and every title across both are one set of letterforms. It is
-     licensed SIL OFL, which permits outlining glyphs into a logo.
+     Inter is the same face the site loads for headings (the font-heading token
+     in tokens/fonts.css) and the app loads for its heading tiers, so the logo
+     and every title across both are one set of letterforms. It is licensed
+     SIL OFL, which permits outlining glyphs into a logo.
 
-     The original artwork asked for Inkscape's generic 'Sans' at weight 800. On
-     the machine that drew it that alias resolved to Verdana Bold, which is why
-     the old wordmark had slab serifs on the capital I. Verdana's licence allows
-     neither embedding in an app nor self-hosting, so the face here is the
-     nearest thing that is actually shippable: a grotesk, with a real 800.
+     The original artwork asked for Inkscape's generic 'Sans' at weight 800.
+     There is no font by that name; fontconfig resolved it down its fallback
+     list and, because Verdana has no 800, landed on an Arial/Helvetica-class
+     neo-grotesque. Neither of those may be embedded in an app or self-hosted,
+     so the face here is the nearest thing that actually ships.
 
      Regenerate with the scripts recorded in this repo's CLAUDE.md. Do not hand
      edit the path data.
