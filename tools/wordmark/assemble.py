@@ -54,19 +54,18 @@ HEADER = """<?xml version="1.0" encoding="UTF-8"?>
 <!-- Lifting Lab wordmark.
 
      The flask and barbell mark is the original drawing. The wordmark is set in
-     Inter at weight {weight}, outlined to paths here so it is always a shape and
+     Arimo at weight {weight}, outlined to paths here so it is always a shape and
      never depends on a font being loaded.
 
-     Inter is the same face the site loads for headings (the font-heading token
-     in tokens/fonts.css) and the app loads for its heading tiers, so the logo
-     and every title across both are one set of letterforms. It is licensed
-     SIL OFL, which permits outlining glyphs into a logo.
-
      The original artwork asked for Inkscape's generic 'Sans' at weight 800.
-     There is no font by that name; fontconfig resolved it down its fallback
-     list and, because Verdana has no 800, landed on an Arial/Helvetica-class
-     neo-grotesque. Neither of those may be embedded in an app or self-hosted,
-     so the face here is the nearest thing that actually ships.
+     There is no font by that name: it is fontconfig's alias, and on the machine
+     that drew it, it resolved to Arial Bold. Arial has no weight 800, so Bold
+     is the heaviest the mark could ever have been.
+
+     Arial may not be redistributed or outlined into a logo. Arimo is metrically
+     compatible with it, drawn to match, and SIL OFL, so these outlines are the
+     same mark in a form that can ship. The headings this sits above are the
+     platform's own sans, which is what 'Sans' meant in the first place.
 
      Regenerate with the scripts recorded in this repo's CLAUDE.md. Do not hand
      edit the path data.
@@ -80,11 +79,12 @@ HEADER = """<?xml version="1.0" encoding="UTF-8"?>
 
 CAP = 18.4672        # cap height, matching the original lockup
 
-# The shipped wordmark. 800 because the artwork it replaces asked for
-# 'Sans, Ultra-Bold' at weight 800, and Barlow's ExtraBold is the honest
-# equivalent. Tracking is a touch open so the caps do not close up at favicon
-# and app-icon sizes.
-WEIGHT = 800
+# The shipped wordmark. The artwork asked for weight 800, but the face it
+# actually resolved to (Arial, via fontconfig's 'Sans' alias) has no 800: the
+# heaviest thing it could ever have drawn is Bold. 700 is therefore the faithful
+# reproduction, not a compromise. Tracking is a touch open so the caps do not
+# close up at favicon and app-icon sizes.
+WEIGHT = 700
 TRACKING = 0.01
 
 def _write(path, svg):

@@ -4,11 +4,15 @@ The face is whatever `FACE` points at below, and it is deliberately the same
 binary the site serves for headings, so the logo and the page titles are one
 set of letterforms rather than two that merely resemble each other.
 
-Inter is SIL OFL, which explicitly permits converting glyphs to outlines and
-embedding the result in a logo. Not every candidate does: the original artwork
-asked for Inkscape's generic 'Sans' at weight 800, which is not a font at all.
-Fontconfig resolved it down its fallback list to an Arial/Helvetica-class face,
-and neither of those may be embedded in an app or self-hosted.
+The original artwork asked for Inkscape's generic 'Sans' at weight 800, which
+is not a font: it is fontconfig's alias, and it resolved to Arial Bold. Arial
+may not be redistributed or outlined into a logo, so the glyphs here come from
+**Arimo**, which is metrically compatible with Arial, drawn to match it, and
+SIL OFL. The shipped wordmark is therefore the mark that was always there, in
+outlines that can actually ship.
+
+This font is used only to cut the logo. Nothing bundles it, and the headings it
+sits above are the platform's own sans, which is what 'Sans' means.
 
 Handles both variable and static fonts: the weight selects a file here, but a
 variable font given under any single weight is instanced instead. Keeping both
@@ -26,17 +30,13 @@ from fontTools.misc.transform import Transform
 import uharfbuzz as hb
 
 REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-FONTS = os.path.join(REPO, "site/public/assets/fonts")
+FACE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "face")
 
 # The heading face, as static weight files. Mirrors --font-heading in
 # tokens/fonts.css: change both together, or the logo stops matching the
 # headings it sits above. A variable font can be given as a single entry under
 # any weight and it will be instanced instead.
-FACE = {
-    600: os.path.join(FONTS, "inter-latin-600.woff2"),
-    700: os.path.join(FONTS, "inter-latin-700.woff2"),
-    800: os.path.join(FONTS, "inter-latin-800.woff2"),
-}
+FACE = {700: os.path.join(FACE_DIR, "Arimo-Bold.ttf")}
 
 def build(weight, cap_target, tracking_em, lines):
     path = FACE.get(weight) or FACE[min(FACE, key=lambda w: abs(w - weight))]
