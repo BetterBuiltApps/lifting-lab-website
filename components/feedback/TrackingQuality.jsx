@@ -9,7 +9,7 @@ const TONES = {
 /**
  * The tracking-honesty card. A colored dot, the verdict, the raw evidence on the
  * right, and a plain-language sentence saying what that means for the numbers
- * above it — and what to do differently next time.
+ * above it, and what to do differently next time.
  */
 export function TrackingQuality({ quality = 'good', evidence, note, style, ...rest }) {
   const t = TONES[quality] || TONES.good;
@@ -34,7 +34,7 @@ export function TrackingQuality({ quality = 'good', evidence, note, style, ...re
 }
 
 /**
- * "What the trace says" — the prose verdict card. Its heading is sentence case
+ * "What the trace says", the prose verdict card. Its heading is sentence case
  * and secondary-weight, deliberately quieter than a SectionLabel, because the
  * sentence underneath is the content.
  */

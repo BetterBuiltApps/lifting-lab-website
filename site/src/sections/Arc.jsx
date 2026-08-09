@@ -2,7 +2,7 @@
  *
  * This is the page's spine and the reason the old alternating text/screenshot
  * rows are gone. Each station sits at a real position on a week axis, and the
- * axis is calibrated rather than evocative — the markers are the actual weeks a
+ * axis is calibrated rather than evocative, the markers are the actual weeks a
  * cycle runs, so a lifter reads position, not decoration.
  *
  * Density is the structural device. A station near -12w is wide and calm
@@ -10,8 +10,8 @@
  * column; meet day is high-contrast and urgent. Four sections that alternate
  * left/right at identical weight cannot do that, which is why they didn't.
  *
- * Motion is one orchestrated moment for the whole arc — the axis marker tracks
- * the station you are reading — rather than the same fade-up fired ten times.
+ * Motion is one orchestrated moment for the whole arc, the axis marker tracks
+ * the station you are reading, rather than the same fade-up fired ten times.
  */
 import React from 'react';
 import { motion, useReducedMotion } from 'motion/react';
@@ -19,7 +19,7 @@ import { siteWrap, Shot } from './Chrome';
 import { asset } from '../lib/asset';
 import { DURATION, EASE } from '../lib/motion';
 
-/* `week` is the real position on the axis, and it is what drives spacing — the
+/* `week` is the real position on the axis, and it is what drives spacing, the
  * rail is measured, not evenly divided. 12 to 8 is four weeks and gets four
  * weeks of rail; 1 to 0 is one week and gets one. Equal gaps for unequal
  * intervals would make this an evocative timeline, which is the thing the
@@ -38,7 +38,7 @@ export const STATIONS = [
  *  instead of the weeks and the axis is decorative again: at 13px/week with a
  *  two-line label block, a three-week interval measured 1.5x a one-week one.
  *  The labels are single-line and absolutely positioned now, so they add no
- *  height, and 22px/week clears a ~20px line — which makes mark-to-mark
+ *  height, and 22px/week clears a ~20px line, which makes mark-to-mark
  *  distance exactly proportional to the weeks between them.
  *
  *  The horizontal spine in the hero needs a wider scale because labels are much
@@ -130,7 +130,7 @@ function Station({ id, week, unit, title, children, className = '', ...rest }) {
  * Product-true rather than decorative: the bar really does travel back toward
  * the lifter off the floor, loop forward through the second pull, and settle
  * back under the body, and the app really does split the trace into these five
- * phases in these colours. It draws itself once when scrolled to — the trace
+ * phases in these colours. It draws itself once when scrolled to, the trace
  * leaving visible evidence of motion, which is the whole claim of the feature
  * this station is about. */
 function BarPathTrace() {
@@ -171,11 +171,11 @@ export function Arc() {
       <Axis active={active} />
 
       <div className="arc-stations">
-        {/* -12w — wide and calm. One screenshot, large, plenty of air. */}
+        {/* -12w, wide and calm. One screenshot, large, plenty of air. */}
         <Station id="cycle" week={12} unit="weeks out" title="A cycle built off your real numbers."
                  className="arc-station--wide">
           <p className="arc-lede">
-            Technique, strength, specification, peak, and a masters cycle — periodized templates loaded
+            Technique, strength, specification, peak, and a masters cycle. Periodized templates loaded
             off your actual PRs, not a generic percentage table. Every set arrives with the target
             weight, the percentage, and the plates for your bar. Miss a session and Lifting Lab
             reschedules it instead of scolding you.
@@ -186,12 +186,12 @@ export function Arc() {
           </div>
         </Station>
 
-        {/* -8w — the transformation pair: what you tell it, what you get back. */}
+        {/* -8w, the transformation pair: what you tell it, what you get back. */}
         <Station id="daily" week={8} unit="weeks out" title="Tell it how you feel. It builds the day."
                  className="arc-station--pair">
           <p className="arc-lede">
             Energy, soreness, the equipment in your gym, the time you actually have. Lifting Lab builds
-            the session around that — the right classic lift for today's rotation, strength work that
+            the session around that, the right classic lift for today's rotation, strength work that
             avoids what's sore, accessories that balance the day. Then it's yours: reorder it, swap
             anything, dial a block up or down.
           </p>
@@ -212,7 +212,7 @@ export function Arc() {
           </div>
         </Station>
 
-        {/* -4w — the signature station. Darkest, tightest, the trace as hero. */}
+        {/* -4w, the signature station. Darkest, tightest, the trace as hero. */}
         <Station id="miss" week={4} unit="weeks out" title="It missed. Here's where it went."
                  className="arc-station--dark">
           <div className="arc-miss">
@@ -229,7 +229,7 @@ export function Arc() {
             <div className="arc-miss-body">
               <p className="arc-lede">
                 Film a set from your own phone. Lifting Lab tracks the plate through the whole lift,
-                splits it into five phases, scores the path and shows you the drift — no sensor, no
+                splits it into five phases, scores the path and shows you the drift. No sensor, no
                 clip-on unit, no pairing. Compare today's snatch against your best one at true scale.
               </p>
               <p className="arc-lede arc-lede--quiet">
@@ -248,21 +248,24 @@ export function Arc() {
           </div>
         </Station>
 
-        {/* -1w — deliberately dense and numeric after the dark, open station above. */}
+        {/* -1w, deliberately dense and numeric after the dark, open station above. */}
         <Station id="peak" week={1} unit="week out" title="The week the numbers matter."
                  className="arc-station--dense">
           <div className="arc-dense">
+            {/* No weight-class records here. Measuring a lifter against the world
+                best is not what motivates anyone in a taper week; the numbers
+                that matter are their own, moving. */}
             <p className="arc-lede">
-              Taper week is arithmetic. Lifting Lab carries the coefficients the sport actually uses,
-              against your own lifts and your own weight class.
+              Taper week is arithmetic. Lifting Lab carries the maths the sport actually runs on,
+              worked against your lifts rather than a table.
             </p>
             <dl className="arc-facts">
-              <div><dt>Sinclair</dt><dd>Official 2021&ndash;2024 IWF coefficients</dd></div>
-              <div><dt>Robi</dt><dd>Points against the current world standard</dd></div>
-              <div><dt>IWF classes</dt><dd>Records by class, for reference against your own</dd></div>
+              <div><dt>Sinclair</dt><dd>Your total, scored across bodyweights</dd></div>
+              <div><dt>Openers</dt><dd>A first attempt you will make, not one you hope for</dd></div>
               <div><dt>Prilepin</dt><dd>Rep and intensity ranges per block</dd></div>
-              <div><dt>Plate math</dt><dd>Loaded for your gym's actual inventory</dd></div>
+              <div><dt>Plate math</dt><dd>Loaded for your gym&rsquo;s actual inventory</dd></div>
               <div><dt>Warm-up ramps</dt><dd>Jumps shaped the way a coach would set them</dd></div>
+              <div><dt>Your own history</dt><dd>Every number above, against what you lifted last cycle</dd></div>
             </dl>
             <div className="arc-dense-shots">
               <Shot src={asset('assets/screens/21-sinclair.png')} alt="Sinclair score calculator" width={190} />
@@ -271,13 +274,13 @@ export function Arc() {
           </div>
         </Station>
 
-        {/* 0 — the close. Highest contrast on the page; the arc ends here. */}
+        {/* 0, the close. Highest contrast on the page; the arc ends here. */}
         <Station id="platform" week={0} unit="meet day" title="The warm-up room runs on attempts, not the clock."
                  className="arc-station--close">
           <p className="arc-lede">
             Lifting Lab counts them for you, tells you when to take your next warm-up, holds you in a
             pattern when the count stretches, and tracks your six attempts on the board. Openers
-            you'll make. Totals you'll keep. Nobody explains the warm-up room to you — this does.
+            you'll make. Totals you'll keep. Nobody explains the warm-up room to you. This does.
           </p>
           <div className="arc-close-shots">
             <Shot src={asset('assets/screens/24-meet-day-warmup-room.png')}

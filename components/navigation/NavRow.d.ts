@@ -10,7 +10,7 @@ export interface NavRowProps {
   caption?: string;
   /** Lucide icon name */
   icon?: string;
-  /** Badges, metric readouts, status glyphs — rendered before the chevron */
+  /** Badges, metric readouts, status glyphs, rendered before the chevron */
   accessory?: React.ReactNode;
   chevron?: boolean;
   onClick?: () => void;

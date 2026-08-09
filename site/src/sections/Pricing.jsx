@@ -7,10 +7,10 @@ export function Pricing() {
   const { free, pro, coach } = SITE.pricing;
   const tiers = [
     { t: free.name, price: free.price, note: 'Unlimited training log and history, forever.', highlight: false, items: [
-      'Adaptive daily workout builder — feel, soreness, equipment, time',
+      'Adaptive daily workout builder: feel, soreness, equipment, time',
       'All 5 periodized programs', 'PR tracker', 'Illustrated exercise library (71 movements)',
-      'Log book — per-session notes, periodic reflections, and trends',
-      'Every calculator — plate loader, 1RM, % table, Prilepin, Sinclair, Robi, ratios, world records',
+      'Log book, per-session notes, periodic reflections, and trends',
+      'Every calculator: plate loader, 1RM, % table, Prilepin, Sinclair, Robi, strength ratios',
       'Warm-up generator', 'Learn the Lifts', '3 bar-path analyses per month', 'HealthKit sync', 'CSV export',
     ] },
     { t: pro.name, price: pro.monthly, sub: `${pro.yearly} · ${pro.lifetime}`, note: 'The unlock for Bar Trace at full depth.', highlight: true, items: [

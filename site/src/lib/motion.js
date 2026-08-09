@@ -2,7 +2,7 @@
    rather than spring physics: this scope has no drag or velocity-aware gestures
    that would need real springs.
 
-   These must stay numerically identical to the CSS custom properties — Motion
+   These must stay numerically identical to the CSS custom properties, Motion
    can't read a CSS variable into a JS transition, so the values are duplicated
    by hand and the comment on each line names its counterpart. */
 
@@ -19,11 +19,10 @@ export const DURATION = {
 };
 
 // Mirrors --press-scale. Motion can't resolve a CSS custom property into a
-// transform value, so this has no automatic bridge — keep in sync by hand.
+// transform value, so this has no automatic bridge, keep in sync by hand.
 export const PRESS_SCALE = 0.93;
 
-/** Scroll-reveal idiom: a "state crossfade" (fade/in-out), not spring/pop —
- * those stay reserved for value-settling and press feedback so reveals stay
+/** Scroll-reveal idiom: a "state crossfade" (fade/in-out), not spring/pop, * those stay reserved for value-settling and press feedback so reveals stay
  * quiet on repeat scrolling. */
 export const fadeUpItem = (distance = 16) => ({
   hidden: { opacity: 0, y: distance },

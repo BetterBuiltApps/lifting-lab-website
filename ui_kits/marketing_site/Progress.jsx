@@ -6,7 +6,7 @@ function Progress() {
     }}>
       <div style={{ ...owlSiteWrap, display: 'grid', gap: 'clamp(40px,5vw,64px)' }}>
         <SiteHead center eyebrow="Progress" title="Every session counts for something." max={680}
-          body="Levels and streaks built from your actual training — sessions finished, sets made, tonnage moved, PRs set, weeks run perfectly. Badges unlock for real milestones across strength, Sinclair, programs completed, and lifts analyzed. No fake points: it's computed straight from your log, so your history counts from day one." />
+          body="Levels and streaks built from your actual training, sessions finished, sets made, tonnage moved, PRs set, weeks run perfectly. Badges unlock for real milestones across strength, Sinclair, programs completed, and lifts analyzed. No fake points: it's computed straight from your log, so your history counts from day one." />
         <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1.1fr)', gap: 'clamp(28px,4vw,60px)', alignItems: 'center' }} className="split">
           <div style={{ display: 'flex', gap: 18, justifyContent: 'center' }}>
             <Shot src="../../assets/screens/27-progress-levels-xp-badges.png" alt="Level ring and streak, computed from real training" width={240} />

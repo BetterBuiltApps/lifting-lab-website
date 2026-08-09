@@ -1,5 +1,5 @@
 /**
- * The tracking-honesty card — the single most brand-defining component in Lifting Lab.
+ * The tracking-honesty card, the single most brand-defining component in Lifting Lab.
  * Never hide a weak result: state the verdict, show the raw evidence, and say
  * plainly what it means for the numbers and what to change next time.
  *
@@ -17,7 +17,7 @@ export declare function TrackingQuality(props: TrackingQualityProps): JSX.Elemen
 
 /**
  * The prose verdict card above the tracking note. Its heading is sentence case
- * and secondary — quieter than a SectionLabel on purpose.
+ * and secondary, quieter than a SectionLabel on purpose.
  */
 export interface TraceVerdictProps {
   heading?: string;

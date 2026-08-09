@@ -75,7 +75,7 @@
         "role": "secondary",
         "displayName": "Comparison Cool",
         "canonical": "#5ac8fa",
-        "source": "BPColor.cool — CVD-safe against amber",
+        "source": "BPColor.cool, CVD-safe against amber",
         "tonalRamp": ["#03242f", "#053b4d", "#08536c", "#0c6d8d", "#1c8fb4", "#37b0dc", "#5ac8fa", "#c0eaff"]
       },
       "phase-transition": {
@@ -130,20 +130,20 @@
       "numeric": { "displayName": "Numeric", "purpose": "Week marks on the axis and in each station marker. Rounded face, tabular lining figures." },
       "body": { "displayName": "Body", "purpose": "Default copy in the platform text face. Arc lede 17px/1.55 at 68ch; hero lede 19px/1.55 at 52ch." },
       "subheadline": { "displayName": "Subheadline", "purpose": "Nav links, feature list items, tier notes." },
-      "label": { "displayName": "Label", "purpose": "The only small uppercase form. States a fact the heading cannot — week unit, pair caption, tier name. Never restates the heading." }
+      "label": { "displayName": "Label", "purpose": "The only small uppercase form. States a fact the heading cannot, week unit, pair caption, tier name. Never restates the heading." }
     },
     "shadows": [
-      { "name": "device-bezel", "value": "0 30px 70px rgba(0, 0, 0, 0.55)", "purpose": "Under every screenshot, applied once by the shared screenshot component. Wide, soft, centered — never offset." },
+      { "name": "device-bezel", "value": "0 30px 70px rgba(0, 0, 0, 0.55)", "purpose": "Under every screenshot, applied once by the shared screenshot component. Wide, soft, centered, never offset." },
       { "name": "axis-marker-halo", "value": "0 0 0 4px rgba(245, 166, 35, 0.14)", "purpose": "The soft amber ring around the lit station dot on the week axis. A glow, not a drop shadow." },
       { "name": "shadow-toast", "value": "0 4px 10px rgba(0, 0, 0, 0.4)", "purpose": "Inherited from the app (BadgeToast) for content floating over the page." },
       { "name": "shadow-sheet", "value": "0 -2px 24px rgba(0, 0, 0, 0.5)", "purpose": "Inherited from the app for presented sheets." },
       { "name": "shadow-none", "value": "none", "purpose": "The default. Cards ship with no shadow and no border at rest; depth is a surface step." }
     ],
     "motion": [
-      { "name": "ease-spring", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "House curve for layout, reveal, hover settle, and the axis marker. Exponential ease-out — no overshoot." },
+      { "name": "ease-spring", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "House curve for layout, reveal, hover settle, and the axis marker. Exponential ease-out, no overshoot." },
       { "name": "ease-pop", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Press release. Sharper still, so a tap feels answered immediately." },
       { "name": "ease-out", "value": "cubic-bezier(0.2, 0, 0, 1)", "purpose": "Axis link color transitions." },
-      { "name": "ease-in-out", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Scroll reveals and the mobile nav panel — a quiet state crossfade, deliberately not the spring or pop feel." },
+      { "name": "ease-in-out", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Scroll reveals and the mobile nav panel, a quiet state crossfade, deliberately not the spring or pop feel." },
       { "name": "duration-press", "value": "250ms", "purpose": "Tap scale to 0.93." },
       { "name": "duration-spring", "value": "350ms", "purpose": "Hover settle, screenshot hover, axis marker travel." },
       { "name": "duration-fade", "value": "400ms", "purpose": "Scroll reveals, nav panel, skip-link slide." },
@@ -203,7 +203,7 @@
       "name": "Card",
       "kind": "card",
       "refersTo": "card",
-      "description": "The standard surface. Fill only — no border, no shadow. On a section whose ground is already the card surface, it inverts to the page ground rather than gaining a border.",
+      "description": "The standard surface. Fill only, no border, no shadow. On a section whose ground is already the card surface, it inverts to the page ground rather than gaining a border.",
       "html": "<div class=\"ds-card\"><div class=\"ds-card-label\">Pro</div><div class=\"ds-card-price\">$9.99</div><div class=\"ds-card-note\">The unlock for Bar Trace at full depth.</div></div>",
       "css": ".ds-card { display: grid; gap: 14px; align-content: start; max-width: 300px; background: var(--surface, #232323); border-radius: var(--radius-card, 16px); padding: 16px; } .ds-card-label { font-family: var(--font-label, ui-rounded, 'Nunito', system-ui, sans-serif); font-size: 12px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; color: var(--text-secondary, rgba(255,255,255,0.6)); } .ds-card-price { font-family: var(--font-numeric, ui-rounded, 'Nunito', system-ui, sans-serif); font-size: 34px; font-weight: 900; font-variant-numeric: tabular-nums lining-nums; color: var(--text-primary, #fff); } .ds-card-note { font-size: 15px; font-weight: 600; line-height: 1.35; color: var(--text-secondary, rgba(255,255,255,0.6)); }"
     },
@@ -244,14 +244,14 @@
       "kind": "custom",
       "refersTo": null,
       "description": "The single choke point for every screenshot on the site. Minimal dark bezel at 34px, 1px white hairline at 14%, fixed 9:19.5 ratio reserving layout space, ambient pool shadow beneath. Sources ship as WebP 600w/900w with a PNG archival fallback.",
-      "html": "<figure class=\"ds-shot\"><div class=\"ds-shot-frame\"></div><figcaption>Film a set — it reads the pull, phase by phase</figcaption></figure>",
+      "html": "<figure class=\"ds-shot\"><div class=\"ds-shot-frame\"></div><figcaption>Film a set, and it reads the pull phase by phase</figcaption></figure>",
       "css": ".ds-shot { margin: 0; display: grid; gap: 12px; justify-items: center; } .ds-shot-frame { width: 300px; max-width: 100%; aspect-ratio: 9 / 19.5; border-radius: 34px; overflow: hidden; background: #000; border: 1px solid rgba(255,255,255,0.14); box-shadow: 0 30px 70px rgba(0,0,0,0.55); transition: transform 350ms cubic-bezier(0.22,1,0.36,1), border-color 350ms cubic-bezier(0.22,1,0.36,1); } .ds-shot:hover .ds-shot-frame { transform: scale(1.015); border-color: rgba(255,255,255,0.22); } .ds-shot figcaption { font-size: 12px; line-height: 1.35; color: rgba(255,255,255,0.5); text-align: center; max-width: 300px; }"
     },
     {
       "name": "Section Label",
       "kind": "custom",
       "refersTo": "section-label",
-      "description": "The only small uppercase form in the system. Permitted only where it states a fact the heading cannot — a week unit, a before/after caption, a tier name. Never as an eyebrow above a heading.",
+      "description": "The only small uppercase form in the system. Permitted only where it states a fact the heading cannot, a week unit, a before/after caption, a tier name. Never as an eyebrow above a heading.",
       "html": "<p class=\"ds-station-mark\"><span class=\"ds-station-mark-num\">4</span><span class=\"ds-station-mark-unit\">weeks out</span></p>",
       "css": ".ds-station-mark { display: flex; align-items: baseline; gap: 8px; margin: 0 0 14px; } .ds-station-mark-num { font-family: var(--font-numeric, ui-rounded, 'Nunito', system-ui, sans-serif); font-size: 20px; font-weight: 900; line-height: 1; font-variant-numeric: tabular-nums lining-nums; color: var(--amber, #f5a623); } .ds-station-mark-unit { font-family: var(--font-label, ui-rounded, 'Nunito', system-ui, sans-serif); font-size: 12px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; color: rgba(255,255,255,0.5); }"
     },
@@ -266,10 +266,10 @@
   ],
   "narrative": {
     "northStar": "The Calibrated Instrument",
-    "overview": "This is not a marketing skin invented for a website. It is the app's own instrument face, lifted onto the web with its measurements intact. The ground is near-black, the surfaces are one step up from it, and a single amber marks where you are — never where the designer wanted your eye to wander. Everything reads like a readout: numbers are tabular so a changing value never nudges its neighbour, the rounded face carries every title and every figure, and the body copy steps back into the system's own text face so the numbers stay the loudest thing on screen.\n\nDepth is tonal, not theatrical. Three greys do the work that shadows do elsewhere: --bg for the page, --surface for a card, --surface-elevated for a track or a capsule. Cards have no border and no shadow — they are simply a lighter fill on a darker one. The one place a real shadow appears is under a device bezel, and it is ambient, not offset: a screenshot floats above the page because a phone in a studio shot casts a diffuse pool, not because the layout wanted a lift.\n\nThe page's own structure is density, not repetition. The spine is a calibrated week axis running twelve weeks out to meet day, and each station on it is deliberately shaped differently: wide and calm early, a paired before/after next, a darker tighter room at four weeks out, a dense numeric block at one, and the highest-contrast close at zero. The refusal is explicit and it is the whole point: a hero followed by alternating text/screenshot rows of equal weight is what this world is not.",
+    "overview": "This is not a marketing skin invented for a website. It is the app's own instrument face, lifted onto the web with its measurements intact. The ground is near-black, the surfaces are one step up from it, and a single amber marks where you are, never where the designer wanted your eye to wander. Everything reads like a readout: numbers are tabular so a changing value never nudges its neighbour, the rounded face carries every title and every figure, and the body copy steps back into the system's own text face so the numbers stay the loudest thing on screen.\n\nDepth is tonal, not theatrical. Three greys do the work that shadows do elsewhere: --bg for the page, --surface for a card, --surface-elevated for a track or a capsule. Cards have no border and no shadow, they are simply a lighter fill on a darker one. The one place a real shadow appears is under a device bezel, and it is ambient, not offset: a screenshot floats above the page because a phone in a studio shot casts a diffuse pool, not because the layout wanted a lift.\n\nThe page's own structure is density, not repetition. The spine is a calibrated week axis running twelve weeks out to meet day, and each station on it is deliberately shaped differently: wide and calm early, a paired before/after next, a darker tighter room at four weeks out, a dense numeric block at one, and the highest-contrast close at zero. The refusal is explicit and it is the whole point: a hero followed by alternating text/screenshot rows of equal weight is what this world is not.",
     "keyCharacteristics": [
       "Dark-locked. One theme, deliberately, because the use scene is a dim gym mid-session.",
-      "One accent. Amber marks position, state, and interactivity — nothing decorative.",
+      "One accent. Amber marks position, state, and interactivity, nothing decorative.",
       "Tonal depth. Three surface steps replace an elevation ramp.",
       "Rounded numerals. Every figure is tabular, lining, and set in the rounded face.",
       "Density as structure. Sections vary in shape on purpose; convergence is the failure mode.",
@@ -280,13 +280,13 @@
       { "name": "The Black-On-Amber Rule", "body": "Text on an amber fill is always black. Amber text on a dark ground is permitted; amber text on an amber fill is not.", "section": "colors" },
       { "name": "The One Position Rule", "body": "Amber marks position and state. If a use of amber cannot be described as \"this is where you are\" or \"this is what you press\", it is decoration and does not ship.", "section": "colors" },
       { "name": "The Dark-Lock Rule", "body": "There is no light theme. The use scene is a dim gym, mid-session, chalked hands. Adding one is a product decision, not a styling task.", "section": "colors" },
-      { "name": "The No-Eyebrow Rule", "body": "The section-head component has no eyebrow prop, and it was removed on purpose. A small amber uppercase label above a heading that says what the heading already says is the most reliable tell that a layout was assembled from a template. Do not reintroduce it. The uppercase label survives only where it carries information the heading does not — the calibrated week markers, a before/after caption, a tier name.", "section": "typography" },
-      { "name": "The Tabular Numeral Rule", "body": "Any number a reader might compare vertically — prices, weeks, scores — is tabular-nums lining-nums. Columns line up and a changing value never shifts its neighbours.", "section": "typography" },
+      { "name": "The No-Eyebrow Rule", "body": "The section-head component has no eyebrow prop, and it was removed on purpose. A small amber uppercase label above a heading that says what the heading already says is the most reliable tell that a layout was assembled from a template. Do not reintroduce it. The uppercase label survives only where it carries information the heading does not, the calibrated week markers, a before/after caption, a tier name.", "section": "typography" },
+      { "name": "The Tabular Numeral Rule", "body": "Any number a reader might compare vertically, prices, weeks, scores, is tabular-nums lining-nums. Columns line up and a changing value never shifts its neighbours.", "section": "typography" },
       { "name": "The Rounded-Numbers Rule", "body": "Numbers and titles take the rounded display face. Sentences take the system text face. A number set in the body face has lost the brand voice.", "section": "typography" },
       { "name": "The Cascade-Not-Override Rule", "body": "Layout belongs in a class. A section that needs a different ratio sets --split-cols; it does not restate grid-template-columns inline. No !important appears anywhere in this system.", "section": "layout" },
       { "name": "The Two-Breakpoint Rule", "body": "980px and 640px. A third breakpoint means the layout is wrong, not that the system is short one.", "section": "layout" },
       { "name": "The Tonal-Depth Rule", "body": "Depth comes from a surface step, not a shadow. If a block needs to feel raised, move it to the next surface token; if it needs to feel separate, give it a hairline.", "section": "elevation" },
-      { "name": "The Physical-Shadow-Only Rule", "body": "A shadow ships only when it describes something physical — a device casting a pool, an element genuinely floating. There are no offset shadows, no hard-edged shadows, and no shadow used to create hierarchy.", "section": "elevation" }
+      { "name": "The Physical-Shadow-Only Rule", "body": "A shadow ships only when it describes something physical, a device casting a pool, an element genuinely floating. There are no offset shadows, no hard-edged shadows, and no shadow used to create hierarchy.", "section": "elevation" }
     ],
     "dos": [
       "Do change Theme.swift first and mirror into tokens/*.css second. The iOS app is the source of truth; the CSS is the mirror. Verify with check-design-tokens.sh --report.",

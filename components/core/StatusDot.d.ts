@@ -1,6 +1,6 @@
 /**
  * The 10px green / amber / red dot on strength-ratio and readiness rows.
- * `none` renders the decorative grey — used when a ratio can't be computed.
+ * `none` renders the decorative grey, used when a ratio can't be computed.
  */
 export interface StatusDotProps {
   status?: 'good' | 'caution' | 'imbalanced' | 'none';

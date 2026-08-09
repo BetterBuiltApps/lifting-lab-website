@@ -5,4 +5,4 @@ Compact labeled statistic. Three `medium` across = the dashboard week-stats stri
 <StatCard value="1.24 m/s" label="Peak speed" accent="var(--amber)" size="large" />
 ```
 
-In the metrics grid only the headline metric is amber — peak speed. Mean pull speed, bar height and drift stay white. Units live inside the value string, never in the label.
+In the metrics grid only the headline metric is amber, peak speed. Mean pull speed, bar height and drift stay white. Units live inside the value string, never in the label.

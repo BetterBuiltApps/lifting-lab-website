@@ -1,5 +1,5 @@
 /* Tokens live at the repo root (../../tokens/), not under site/. That copy is
-   the design system's canonical one — guidelines/ and ui_kits/ already cite it,
+   the design system's canonical one, guidelines/ and ui_kits/ already cite it,
    and it mirrors the iOS app's LiftingLab/Theme/Theme.swift, which is the real
    source of truth. site/src/tokens/ used to hold a byte-identical duplicate
    that nothing kept in sync; it was deleted rather than left to drift. */
@@ -17,7 +17,7 @@ a { color: var(--text-secondary); }
 a:hover { color: var(--amber); }
 
 /* Every interactive element on this page is a <button> or <a> with
-   `border: none`, and no focus styling shipped at all — so a keyboard user had
+   `border: none`, and no focus styling shipped at all, so a keyboard user had
    no way to tell where they were. :focus-visible keeps it to keyboard
    navigation, leaving mouse clicks unringed.
 
@@ -37,8 +37,7 @@ a:hover { color: var(--amber); }
 ::selection { background: var(--amber-40); color: var(--text-primary); }
 :root { accent-color: var(--amber); caret-color: var(--amber); scrollbar-color: #3a3a3a var(--bg); }
 
-/* Every number the reader might compare vertically — prices, weeks, scores —
-   uses lining tabular figures so columns line up and a changing value doesn't
+/* Every number the reader might compare vertically, prices, weeks, scores, uses lining tabular figures so columns line up and a changing value doesn't
    shift its neighbours. */
 .owl-numeric, .arc-axis-mark, .arc-station-mark-num {
   font-variant-numeric: tabular-nums lining-nums;
@@ -63,7 +62,7 @@ a:hover { color: var(--amber); }
   color: var(--accent-fg);
 }
 
-/* Rotating amber highlight sweeping around an element's own border — used on
+/* Rotating amber highlight sweeping around an element's own border, used on
    the Pro pricing card and the nav's "Get Lifting Lab" button. Pure CSS: a
    masked conic-gradient ring, animated via an animatable custom property. */
 @property --border-angle {
@@ -102,7 +101,7 @@ a:hover { color: var(--amber); }
    Layout primitives.
 
    These used to live in inline style={{…}} objects, with the responsive rules
-   below overriding them via !important — the only way a stylesheet can beat an
+   below overriding them via !important, the only way a stylesheet can beat an
    inline style. That made every class name below load-bearing and invisible: a
    renamed or dropped className broke mobile silently, and nothing tested it.
 
@@ -176,7 +175,7 @@ a:hover { color: var(--amber); }
   scrollbar-color: #3a3a3a transparent;
 }
 
-/* Width IS the interval — weeks x 40px, not label width plus padding. The
+/* Width IS the interval, weeks x 40px, not label width plus padding. The
    horizontal scale is wider than the rail's 22px because labels are far wider
    than they are tall; 40px/week clears the longest one, so the distance between
    two marks stays proportional to the weeks between them. */
@@ -215,7 +214,7 @@ a:hover { color: var(--amber); }
   color: var(--text-tertiary);
 }
 
-/* The screenshot tracks the reader down the Explore list — until the list is
+/* The screenshot tracks the reader down the Explore list, until the list is
    above it rather than beside it, at which point sticky would pin dead space. */
 .explore-shot-col {
   position: sticky;
@@ -244,6 +243,12 @@ a:hover { color: var(--amber); }
   .explore-shot-col { position: static; top: auto; }
   .site-nav-links { display: none; }
   .site-nav-toggle { display: inline-flex; }
+}
+
+/* Below this the bar cannot hold the wordmark, the CTA and the toggle at once:
+   the CTA label wrapped onto three lines and shoved the toggle past the edge. */
+@media (max-width: 560px) {
+  .site-nav-cta { display: none; }
 }
 
 @media (max-width: 640px) {
@@ -287,7 +292,7 @@ a:hover { color: var(--amber); }
 .problem-case-body { margin: 0; font: var(--type-subheadline); color: var(--text-secondary); }
 
 /* ---------------------------------------------------------------------------
-   The arc — twelve weeks out to the platform.
+   The arc, twelve weeks out to the platform.
 
    Density is the structural device here, so these stations deliberately do NOT
    share one layout. Read them as a sequence: wide and calm at -12w, a paired
@@ -311,7 +316,7 @@ a:hover { color: var(--amber); }
 
 /* Item height IS the interval, and nothing else contributes to it.
    `--gap-after` is weeks x 22px from Arc.jsx, and the label is taken out of flow
-   so its own height cannot dilute the scale — the earlier version added a ~37px
+   so its own height cannot dilute the scale, the earlier version added a ~37px
    label block to every gap, which made a three-week interval measure only 1.5x
    a one-week one. Mark-to-mark distance is now exactly proportional to weeks. */
 .arc-axis-list { list-style: none; margin: 0; padding: 10px 0 0; }
@@ -325,7 +330,10 @@ a:hover { color: var(--amber); }
 .arc-axis-item::before {
   content: '';
   position: absolute;
-  left: 5px;
+  /* 5.5px, half of the 11px tick, so the rule and the dots share a centre line.
+     At 5px they sat half a pixel apart on the one element whose whole subject
+     is register. */
+  left: 5.5px;
   top: 0;
   width: 5px;
   height: 100%;

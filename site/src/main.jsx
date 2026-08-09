@@ -18,7 +18,7 @@ function App() {
     <>
       {/* First thing in the tab order. The nav is sticky and the page is one
           long scroll, so without this a keyboard user tabs the whole nav on
-          every visit. Visually hidden until focused — see .skip-link. */}
+          every visit. Visually hidden until focused, see .skip-link. */}
       <a className="skip-link" href="#main">Skip to content</a>
       <SiteNav />
       {/* Order is the argument: recognize yourself (Problem), then follow one

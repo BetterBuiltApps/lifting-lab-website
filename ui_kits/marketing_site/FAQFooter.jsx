@@ -50,7 +50,7 @@ function SiteFooter() {
           <a href={SITE.links.support}>Support</a>
         </div>
         <p style={{ margin: 0, maxWidth: '68ch', font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>
-          Built for competitive weightlifting. Sinclair coefficients are the official 2021–2024 IWF values.
+          Built for competitive weightlifting. Sinclair coefficients are the official 2021-2024 IWF values.
           World-record data should be verified against iwf.sport. Lifting Lab is not affiliated with, endorsed by,
           or connected to the IWF, USA Weightlifting, or any equipment manufacturer.
         </p>

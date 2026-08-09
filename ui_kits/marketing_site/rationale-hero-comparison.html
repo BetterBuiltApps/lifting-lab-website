@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>Lifting Lab — Hero &amp; Comparison rationale</title>
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Lifting Lab, Hero &amp; Comparison rationale</title>
 <link rel="stylesheet" href="../../tokens/fonts.css"><link rel="stylesheet" href="../../tokens/colors.css"><link rel="stylesheet" href="../../tokens/typography.css"><link rel="stylesheet" href="../../tokens/spacing.css">
 <style>
 *{box-sizing:border-box}body{margin:0;background:#0d0d0d;font-family:var(--font-body)}
@@ -32,13 +32,13 @@
 </section>
 
 <div class="note">
-<span class="tag">Rationale — Hero</span>
+<span class="tag">Rationale, Hero</span>
 <h3>One shot, made larger, not two shots side by side.</h3>
 <ul>
-<li>The brief calls the trace-over-turnover frame "the most distinctive asset" — so the hero gets one large device shot instead of the current two-shot pairing that splits attention.</li>
+<li>The brief calls the trace-over-turnover frame "the most distinctive asset", so the hero gets one large device shot instead of the current two-shot pairing that splits attention.</li>
 <li>A thin vertical bar in the phase colors (cool → purple → amber → green) sits beside the phone, echoing the phase-split idea without adding a second screenshot or any drawn illustration.</li>
-<li>CTA switches from email capture to "Download on the App Store" + "Free. No account required." — matches the new brief's App Store deliverable, not the pre-launch TestFlight framing.</li>
-<li>Copy is verbatim from the brief. No stat strip under the CTA this time — the brief's hero is headline + one line + one visual, and the three-stat row started to compete with the screenshot.</li>
+<li>CTA switches from email capture to "Download on the App Store" + "Free. No account required.", matches the new brief's App Store deliverable, not the pre-launch TestFlight framing.</li>
+<li>Copy is verbatim from the brief. No stat strip under the CTA this time, the brief's hero is headline + one line + one visual, and the three-stat row started to compete with the screenshot.</li>
 </ul>
 </div>
 
@@ -61,12 +61,12 @@
 </section>
 
 <div class="note">
-<span class="tag">Rationale — Comparison table</span>
-<h3>Confident, not apologetic — including the two rows Lifting Lab loses.</h3>
+<span class="tag">Rationale, Comparison table</span>
+<h3>Confident, not apologetic, including the two rows Lifting Lab loses.</h3>
 <ul>
-<li>The Lifting Lab column gets a persistent elevated-surface background (--surface-elevated) so the eye lands there first — no color-coding rows green/red, no checkmark-vs-X coloring. Every mark uses the same neutral glyph weight.</li>
-<li>"Team roster &amp; leaderboards" and "Android" show a plain "–" in the Lifting Lab column with the exact same visual treatment as every winning row — no strikethrough, no muted grey, no footnote apologizing. Confidence here means not drawing extra attention to the loss, not hiding it.</li>
-<li>No adjectives about competitors anywhere in the row copy — feature names only, sourced verbatim from the brief.</li>
+<li>The Lifting Lab column gets a persistent elevated-surface background (--surface-elevated) so the eye lands there first, no color-coding rows green/red, no checkmark-vs-X coloring. Every mark uses the same neutral glyph weight.</li>
+<li>"Team roster &amp; leaderboards" and "Android" show a plain "-" in the Lifting Lab column with the exact same visual treatment as every winning row, no strikethrough, no muted grey, no footnote apologizing. Confidence here means not drawing extra attention to the loss, not hiding it.</li>
+<li>No adjectives about competitors anywhere in the row copy, feature names only, sourced verbatim from the brief.</li>
 <li>Monospace-influenced numeric column for the one spec that's a real number ("Yes $249+") keeps it reading as data, not marketing copy.</li>
 </ul>
 </div>
@@ -74,19 +74,19 @@
 <script>
 const rows = [
 ['Hardware required','No','No','Yes $249+'],
-['Built for competitive weightlifting','Yes','–','–'],
-['Periodized programs','Yes','–','–'],
-['Lift phase breakdown','Yes','–','–'],
-['Miss diagnosis + corrective drills','Yes','–','–'],
-['Meet day planning','Yes','–','–'],
-['Sinclair, Robi, IWF classes','Yes','–','–'],
-['Plate loading for your gym','Yes','–','–'],
+['Built for competitive weightlifting','Yes','-','-'],
+['Periodized programs','Yes','-','-'],
+['Lift phase breakdown','Yes','-','-'],
+['Miss diagnosis + corrective drills','Yes','-','-'],
+['Meet day planning','Yes','-','-'],
+['Sinclair, Robi, IWF classes','Yes','-','-'],
+['Plate loading for your gym','Yes','-','-'],
 ['Bar path video','Yes','Yes','Yes'],
 ['Bar velocity','Camera','Camera','Sensor'],
-['Imports hardware VBT data','Yes','–','–'],
-['Unlimited free training history','Yes','–','Yes'],
-['Team roster & leaderboards','–','Yes','Yes'],
-['Android','–','Yes','Yes'],
+['Imports hardware VBT data','Yes','-','-'],
+['Unlimited free training history','Yes','-','Yes'],
+['Team roster & leaderboards','-','Yes','Yes'],
+['Android','-','Yes','Yes'],
 ];
 document.getElementById('rows').innerHTML = rows.map((r,i)=>`
 <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;background:${i%2?'#1e1e1e':'#1a1a1a'};border-top:1px solid rgba(255,255,255,0.08)">

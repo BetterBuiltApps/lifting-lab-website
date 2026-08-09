@@ -1,4 +1,4 @@
-/* OWLPlayerView.swift — the flagship read-out. Video stage with the progressive
+/* OWLPlayerView.swift, the flagship read-out. Video stage with the progressive
    trace, pro playback controls, score ring, metrics grid, velocity graph, phase
    breakdown, technique findings, tracking honesty. */
 
@@ -119,7 +119,7 @@ function BarTracePlayer({ onBack }) {
       <VelocityChart samples={OWL_SAMPLES} phases={OWL_PHASES} currentTime={t} onSeek={setT} />
 
       <PhaseTimeline phases={OWL_PHASES}
-        insight="Bar speed drops 15% through the transition — a smoother scoop keeps the pull building." />
+        insight="Bar speed drops 15% through the transition, a smoother scoop keeps the pull building." />
 
       <Card padding={14} radius="row" style={{ display: 'grid', gap: 10 }}>
         <SectionLabel>Positions</SectionLabel>
@@ -138,7 +138,7 @@ function BarTracePlayer({ onBack }) {
       <Card padding={14} radius="row" style={{ display: 'grid', gap: 10 }}>
         <SectionLabel>Technique findings</SectionLabel>
         {[['Bar swings out at the knee', 'Push the floor away and keep the shoulders over the bar longer.'],
-          ['Early arm bend', 'Stay long — let the legs finish before the elbows do anything.']].map(([n, cue]) => (
+          ['Early arm bend', 'Stay long, let the legs finish before the elbows do anything.']].map(([n, cue]) => (
           <div key={n} style={{ display: 'grid', gap: 3 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
               <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--caution)' }} />
@@ -154,7 +154,7 @@ function BarTracePlayer({ onBack }) {
       <Card padding={14} radius="row" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
         <Icon name="circle-check" size={18} color="var(--make)" />
         <span style={{ font: 'var(--type-caption)', color: 'var(--text-secondary)', flex: 1 }}>
-          Tracking quality: Good — plate visible in 98% of frames.
+          Tracking quality: Good, plate visible in 98% of frames.
         </span>
       </Card>
 

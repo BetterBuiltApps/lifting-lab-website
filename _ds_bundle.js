@@ -116,7 +116,7 @@ const variants = {
   }
 };
 
-/** The app's button. One amber fill, black label — never an amber label on dark. */
+/** The app's button. One amber fill, black label, never an amber label on dark. */
 function Button({
   variant = 'primary',
   size = 'large',
@@ -151,7 +151,7 @@ Object.assign(__ds_scope, { Button });
 // components/core/Card.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-/** The standard elevated card surface — bpCard(). Fill only, no border, no shadow. */
+/** The standard elevated card surface, bpCard(). Fill only, no border, no shadow. */
 function Card({
   padding = 16,
   radius = 'card',
@@ -176,8 +176,8 @@ try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /**
  * SF Symbols substitute. The app uses SF Symbols exclusively (Apple's font is
- * not redistributable), so on the web we inline Lucide SVGs — matching stroke
- * weight and rounded caps — and let them inherit currentColor.
+ * not redistributable), so on the web we inline Lucide SVGs, matching stroke
+ * weight and rounded caps, and let them inherit currentColor.
  * See ICONOGRAPHY in readme.md for the SF Symbol → Lucide name map.
  *
  * The SVG markup is fetched once per name and cached, then inlined rather than
@@ -653,7 +653,7 @@ function ScoreRing({
       fontSize: 52,
       color: has ? 'var(--amber)' : 'var(--text-tertiary)'
     }
-  }, has ? grade : '—')), /*#__PURE__*/React.createElement("div", {
+  }, has ? grade : '-')), /*#__PURE__*/React.createElement("div", {
     style: {
       flex: 1,
       display: 'grid',
@@ -715,7 +715,7 @@ Object.assign(__ds_scope, { ScoreRing });
 // components/data/Sparkline.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-/** PR progress line. No chart library — a single stroked path. */
+/** PR progress line. No chart library, a single stroked path. */
 function Sparkline({
   values = [],
   color = 'var(--amber)',
@@ -762,7 +762,7 @@ const sizes = {
   large: 40
 };
 
-/** A compact labeled statistic — the unit of every stat strip and grid. */
+/** A compact labeled statistic, the unit of every stat strip and grid. */
 function StatCard({
   value,
   label,
@@ -797,7 +797,7 @@ Object.assign(__ds_scope, { StatCard });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /**
- * VelocityChartCard — bar speed over the lift, phase-colored, doubling as a
+ * VelocityChartCard, bar speed over the lift, phase-colored, doubling as a
  * second scrubber. Click or drag anywhere to seek.
  */
 function VelocityChart({
@@ -975,7 +975,7 @@ const TONES = {
 /**
  * The tracking-honesty card. A colored dot, the verdict, the raw evidence on the
  * right, and a plain-language sentence saying what that means for the numbers
- * above it — and what to do differently next time.
+ * above it, and what to do differently next time.
  */
 function TrackingQuality({
   quality = 'good',
@@ -1032,7 +1032,7 @@ function TrackingQuality({
 }
 
 /**
- * "What the trace says" — the prose verdict card. Its heading is sentence case
+ * "What the trace says", the prose verdict card. Its heading is sentence case
  * and secondary-weight, deliberately quieter than a SectionLabel, because the
  * sentence underneath is the content.
  */
@@ -1071,7 +1071,7 @@ Object.assign(__ds_scope, { TrackingQuality, TraceVerdict });
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /**
- * WeightField — a titled weight row that stores kg and edits in the athlete's
+ * WeightField, a titled weight row that stores kg and edits in the athlete's
  * preferred unit. Right-aligned value, unit suffix, decimal keypad.
  */
 function WeightField({
@@ -1477,7 +1477,7 @@ Object.assign(__ds_scope, { SetTarget });
 // components/session/TimerRing.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-/** TimerRingView — the rest timer. Green when the rest is up; pulses in endgame. */
+/** TimerRingView, the rest timer. Green when the rest is up; pulses in endgame. */
 function TimerRing({
   progress = 0,
   centerText = '0:00',
@@ -1543,7 +1543,7 @@ Object.assign(__ds_scope, { TimerRing });
 
 // ui_kits/ios_app/ActiveSession.jsx
 try { (() => {
-/* ActiveSessionView.swift — one set at a time: big target, plate loading,
+/* ActiveSessionView.swift, one set at a time: big target, plate loading,
    rest ring, make/miss, last-time panel. */
 
 function ActiveSession({
@@ -1721,7 +1721,7 @@ Object.assign(window, {
 
 // ui_kits/ios_app/BarTraceHome.jsx
 try { (() => {
-/* OWLHomeView.swift — Bar Trace home. Import-first, then saved analyses. */
+/* OWLHomeView.swift, Bar Trace home. Import-first, then saved analyses. */
 
 function BarTraceHome({
   onOpen
@@ -1828,7 +1828,7 @@ Object.assign(window, {
 
 // ui_kits/ios_app/BarTracePlayer.jsx
 try { (() => {
-/* OWLPlayerView.swift — the flagship read-out. Video stage with the progressive
+/* OWLPlayerView.swift, the flagship read-out. Video stage with the progressive
    trace, pro playback controls, score ring, metrics grid, velocity graph, phase
    breakdown, technique findings, tracking honesty. */
 
@@ -2135,7 +2135,7 @@ function BarTracePlayer({
       display: 'grid',
       gap: 10
     }
-  }, /*#__PURE__*/React.createElement(SectionLabel, null, "Technique findings"), [['Bar swings out at the knee', 'Push the floor away and keep the shoulders over the bar longer.'], ['Early arm bend', 'Stay long — let the legs finish before the elbows do anything.']].map(([n, cue]) => /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(SectionLabel, null, "Technique findings"), [['Bar swings out at the knee', 'Push the floor away and keep the shoulders over the bar longer.'], ['Early arm bend', 'Stay long, let the legs finish before the elbows do anything.']].map(([n, cue]) => /*#__PURE__*/React.createElement("div", {
     key: n,
     style: {
       display: 'grid',
@@ -2234,7 +2234,7 @@ Object.assign(window, {
 
 // ui_kits/ios_app/Dashboard.jsx
 try { (() => {
-/* Train tab home — DashboardView.swift. Builder hero, week stats, today's
+/* Train tab home, DashboardView.swift. Builder hero, week stats, today's
    session, recent PRs, next session, quick-link grid. */
 
 function Dashboard({
@@ -2552,7 +2552,7 @@ Object.assign(window, {
 
 // ui_kits/ios_app/ToolsHub.jsx
 try { (() => {
-/* ToolsHubView.swift — Video / Prepare / Daily / Competition, all offline. */
+/* ToolsHubView.swift, Video / Prepare / Daily / Competition, all offline. */
 
 function ToolsHub({
   onOpenBarTrace
@@ -2606,11 +2606,11 @@ try { (() => {
 // Copied omelette starter. Re-running copy_starter_component with this kind overwrites this file with the latest version (page content is unaffected).
 
 /* BEGIN USAGE */
-// iOS.jsx — Simplified iOS 26 (Liquid Glass) device frame
+// iOS.jsx, Simplified iOS 26 (Liquid Glass) device frame
 // Based on the iOS 26 UI Kit + Figma status bar spec. No assets, no deps.
 // Exports (to window): IOSDevice, IOSStatusBar, IOSNavBar, IOSGlassPill, IOSList, IOSListRow, IOSKeyboard
 //
-// Usage — wrap your screen content in <IOSDevice> to get the bezel, status bar
+// Usage, wrap your screen content in <IOSDevice> to get the bezel, status bar
 // and home indicator (props: title, dark, keyboard):
 //
 //   <IOSDevice title="Settings">
@@ -2742,7 +2742,7 @@ function IOSStatusBar({
 }
 
 // ─────────────────────────────────────────────────────────────
-// Liquid glass pill — blur + tint + shine
+// Liquid glass pill, blur + tint + shine
 // ─────────────────────────────────────────────────────────────
 function IOSGlassPill({
   children,
@@ -2791,7 +2791,7 @@ function IOSGlassPill({
 }
 
 // ─────────────────────────────────────────────────────────────
-// Navigation bar — glass pills + large title
+// Navigation bar, glass pills + large title
 // ─────────────────────────────────────────────────────────────
 function IOSNavBar({
   title = 'Title',
@@ -2983,7 +2983,7 @@ function IOSDevice({
 }) {
   return (
     /*#__PURE__*/
-    // data-om-starter: inert presence marker — Claude Design's starter-usage
+    // data-om-starter: inert presence marker, Claude Design's starter-usage
     // probe reads it; it renders nothing. Keep it on this root element.
     React.createElement("div", {
       "data-om-starter": "ios-frame",
@@ -3062,7 +3062,7 @@ function IOSDevice({
 }
 
 // ─────────────────────────────────────────────────────────────
-// Keyboard — iOS 26 liquid glass
+// Keyboard, iOS 26 liquid glass
 // ─────────────────────────────────────────────────────────────
 function IOSKeyboard({
   dark = false
@@ -3424,7 +3424,7 @@ function Shot({
   }, caption));
 }
 
-/** App Store CTA button — used in hero, pricing, and footer. */
+/** App Store CTA button, used in hero, pricing, and footer. */
 function AppStoreButton({
   size = 'large'
 }) {
@@ -4013,7 +4013,7 @@ function LogBookTimeline() {
   const entries = [{
     kind: 'reflection',
     label: 'Reflection',
-    title: 'Weeks 9–11',
+    title: 'Weeks 9-11',
     sub: 'Sleep: Solid · Fatigue: Heavy'
   }, {
     kind: 'session',
@@ -4028,7 +4028,7 @@ function LogBookTimeline() {
   }, {
     kind: 'reflection',
     label: 'Reflection',
-    title: 'Weeks 6–8',
+    title: 'Weeks 6-8',
     sub: 'Fatigue: Wrecked · Consistency: Patchy'
   }];
   return /*#__PURE__*/React.createElement(Card, {
@@ -4581,7 +4581,7 @@ Object.assign(window, {
 
 // ui_kits/marketing_site/config.jsx
 try { (() => {
-/* OWL landing page — configuration. Post-prelaunch presentation: designed to
+/* OWL landing page, configuration. Post-prelaunch presentation: designed to
    read correctly once the App Store listing exists, even though today the
    button still points nowhere. */
 

@@ -9,7 +9,7 @@ const EXPLORE_GROUPS = [
   { g: 'Train', items: [
     { k: 'pr', label: 'PR tracker', body: 'Every 1-rep max, logged the moment you hit it.', src: 'assets/screens/03-pr-tracker.png' },
     { k: 'chart', label: 'Progress charts', body: 'Snatch, clean & jerk, and every accessory, charted over time.', src: 'assets/screens/04-exercise-progress-chart-snatch.png' },
-    { k: 'warmup', label: 'Warm-up ramps', body: 'Raise, potentiate, ramp — sets built the way a coach would jump you.', src: 'assets/screens/09-warmup-raise-phase.png' },
+    { k: 'warmup', label: 'Warm-up ramps', body: 'Raise, potentiate, ramp. Sets built the way a coach would jump you.', src: 'assets/screens/09-warmup-raise-phase.png' },
   ] },
   { g: 'Learn', items: [
     { k: 'library', label: 'Exercise library', body: 'Illustrated library for every lift and accessory.', src: 'assets/screens/05-exercise-library.png' },
@@ -19,7 +19,6 @@ const EXPLORE_GROUPS = [
   { g: 'Calculate', items: [
     { k: '1rm', label: '1RM estimator', body: 'Estimate a true max without testing it.', src: 'assets/screens/19-1rm-estimator.png' },
     { k: 'ratios', label: 'Strength ratios', body: 'Where your lifts sit relative to each other.', src: 'assets/screens/20-strength-ratios.png' },
-    { k: 'records', label: 'World records', body: 'IWF records by class, for reference against your own.', src: 'assets/screens/22-world-records.png' },
   ] },
   { g: 'Coach Studio', items: [
     { k: 'editor', label: 'Program editor', body: 'Author a multi-week cycle from scratch.', src: 'assets/screens/31-coach-studio-program-editor.png' },
@@ -27,7 +26,7 @@ const EXPLORE_GROUPS = [
   ] },
   { g: 'Setup', items: [
     { k: 'gym', label: 'Gym profile', body: 'Tell Lifting Lab what plates and bars your gym actually has.', src: 'assets/screens/30-gym-profile-equipment.png' },
-    { k: 'integrations', label: 'Integrations', body: 'HealthKit and CSV export — your data, your call.', src: 'assets/screens/36-settings-integrations.png' },
+    { k: 'integrations', label: 'Integrations', body: 'HealthKit and CSV export. Your data, your call.', src: 'assets/screens/36-settings-integrations.png' },
     { k: 'about', label: 'About the data', body: 'What’s tracked, what’s not, and why.', src: 'assets/screens/37-about-the-data.png' },
   ] },
 ];
@@ -70,7 +69,7 @@ export function Explore() {
         <div style={{ marginTop: 44, '--split-cols': 'minmax(0,1.15fr) minmax(0,0.85fr)', alignItems: 'start' }} className="split">
           {/* The group wrappers are presentational so the tabs stay effective
               children of the tablist, which ARIA requires. The headings are
-              visual grouping only — each tab label already stands alone. */}
+              visual grouping only, each tab label already stands alone. */}
           <div
             role="tablist"
             aria-orientation="vertical"

@@ -1,5 +1,5 @@
 /**
- * ScoreRingCard — the bar-path quality readout. Amber ring fills to the score,
+ * ScoreRingCard, the bar-path quality readout. Amber ring fills to the score,
  * the grade letter sits inside it, and straightness/smoothness show as sub-bars.
  * Pass `total: undefined` for the honest "not enough tracking data" state.
  *

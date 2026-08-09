@@ -5,7 +5,7 @@
 # Regenerates the responsive WebP variants of the app screenshots in
 # public/assets/screens/ from the full-resolution PNGs beside them.
 #
-# The PNGs are straight iPhone captures — 1179x2556 and 1320x2868 — and the site
+# The PNGs are straight iPhone captures, 1179x2556 and 1320x2868, and the site
 # never renders one wider than 300 CSS px. Serving the originals shipped ~20x
 # more pixels than any display could use, 12 MB across 29 files.
 #
@@ -26,7 +26,7 @@ set -euo pipefail
 
 cd "$(dirname "$0")/../public/assets/screens"
 
-command -v cwebp >/dev/null || { echo "cwebp not found — brew install webp" >&2; exit 1; }
+command -v cwebp >/dev/null || { echo "cwebp not found, brew install webp" >&2; exit 1; }
 
 FORCE=""
 [ "${1:-}" = "--force" ] && FORCE=1

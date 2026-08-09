@@ -1,6 +1,6 @@
 import React from 'react';
 
-/** The standard elevated card surface — bpCard(). Fill only, no border, no shadow. */
+/** The standard elevated card surface, bpCard(). Fill only, no border, no shadow. */
 export function Card({ padding = 16, radius = 'card', children, style, ...rest }) {
   return (
     <div

@@ -5,7 +5,7 @@ import { siteWrap, SiteHead } from './Chrome';
 import { fadeUpItem, slideFade, staggerContainer, VIEWPORT_ONCE } from '../lib/motion';
 
 // Card is both the right-column reveal target (arrives from the right) AND the
-// stagger trigger for its own timeline rows — merge the two into one variant
+// stagger trigger for its own timeline rows, merge the two into one variant
 // set so a single "visible" state drives both.
 const cardVariant = (() => {
   const base = slideFade('right', 24);
@@ -17,10 +17,10 @@ const cardVariant = (() => {
 
 function LogBookTimeline() {
   const entries = [
-    { kind: 'reflection', label: 'Reflection', title: 'Weeks 9–11', sub: 'Sleep: Solid · Fatigue: Heavy' },
+    { kind: 'reflection', label: 'Reflection', title: 'Weeks 9-11', sub: 'Sleep: Solid · Fatigue: Heavy' },
     { kind: 'session', label: 'Session', title: 'Snatch + Back Squat', sub: '“Third rep felt heavy, backed off 5kg.”' },
     { kind: 'session', label: 'Session', title: 'Clean & Jerk technique', sub: 'No notes' },
-    { kind: 'reflection', label: 'Reflection', title: 'Weeks 6–8', sub: 'Fatigue: Wrecked · Consistency: Patchy' },
+    { kind: 'reflection', label: 'Reflection', title: 'Weeks 6-8', sub: 'Fatigue: Wrecked · Consistency: Patchy' },
   ];
   return (
     <Card variants={cardVariant} style={{ background: 'var(--bg)', padding: 22, display: 'grid', gap: 4 }}>

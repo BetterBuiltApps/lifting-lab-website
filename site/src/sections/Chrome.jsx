@@ -30,12 +30,23 @@ export function SiteNav() {
             <a key={l} href={h} style={{ font: 'var(--type-subheadline)', color: 'var(--text-secondary)' }}>{l}</a>
           ))}
         </div>
-        <Button variant="outline" size="small" className="animated-border" onClick={() => {
-          const el = document.getElementById('pricing');
-          if (el) window.scrollTo({ top: el.offsetTop - 88, behavior: 'smooth' });
-        }}>
-          Get Lifting Lab
-        </Button>
+        {/* Hidden on narrow screens, where logo + CTA + toggle do not fit: the
+            label wrapped to three lines and pushed the toggle off the edge. The
+            drawer carries it there instead. No animated border either; it was
+            the same rotating-conic device as the Pro pricing card, and one page
+            only needs one of those. */}
+        {/* The class goes on a wrapper, not on Button: Button sets `display`
+            in an inline style object, which beats any stylesheet rule, so
+            `.site-nav-cta { display: none }` on the button itself did nothing.
+            The wrapper has no inline style, so the breakpoint just works. */}
+        <span className="site-nav-cta">
+          <Button variant="outline" size="small" onClick={() => {
+            const el = document.getElementById('pricing');
+            if (el) window.scrollTo({ top: el.offsetTop - 88, behavior: 'smooth' });
+          }}>
+            Get Lifting Lab
+          </Button>
+        </span>
         <button
           onClick={() => setMenuOpen((v) => !v)}
           aria-label="Menu" aria-expanded={menuOpen}
@@ -53,11 +64,16 @@ export function SiteNav() {
             transition={{ duration: prefersReduced ? 0 : DURATION.fade, ease: EASE.inOut }}
             style={{ overflow: 'hidden', borderTop: 'var(--border-hairline-1)' }}
           >
-            <div style={{ ...siteWrap, display: 'grid', padding: '8px 0 16px' }}>
+            <div style={{ ...siteWrap, display: 'grid', padding: '8px 0 20px' }}>
               {NAV_LINKS.map(([l, h]) => (
                 <a key={l} href={h} onClick={() => setMenuOpen(false)}
                    style={{ font: 'var(--type-headline)', color: 'var(--text-secondary)', padding: '14px 0' }}>{l}</a>
               ))}
+              {/* The CTA the bar cannot fit at this width. */}
+              <a href="#pricing" onClick={() => setMenuOpen(false)}
+                 style={{ font: 'var(--type-headline)', fontWeight: 700, color: 'var(--amber)', padding: '14px 0' }}>
+                Get Lifting Lab
+              </a>
             </div>
           </motion.div>
         )}
@@ -69,14 +85,14 @@ export function SiteNav() {
 /** Section heading.
  *
  * There is deliberately no `eyebrow` prop. Every section used to carry an amber
- * uppercase label above its heading — "Pricing" above "Free, unlimited,
+ * uppercase label above its heading, "Pricing" above "Free, unlimited,
  * forever.", "Progress" above "Every session counts for something." The label
  * never said anything the heading didn't, and a stack of them down the page is
  * one of the most reliable tells that a layout was assembled from a template
  * rather than composed. The heading carries its own weight.
  *
  * The one place a small label still earns its place is where it states a fact
- * the heading cannot — the week markers on the arc — and those are part of a
+ * the heading cannot, the week markers on the arc, and those are part of a
  * calibrated axis, not decoration. */
 export function SiteHead({ title, body, center = false, max = 640 }) {
   return (
@@ -110,7 +126,7 @@ export function SiteHead({ title, body, center = false, max = 640 }) {
  * The PNG stays as the img fallback: it costs nothing unless the browser has
  * no WebP support, and it keeps the original as the archival source.
  *
- * (Written without an angle-bracketed img tag on purpose — impeccable's
+ * (Written without an angle-bracketed img tag on purpose, impeccable's
  * broken-image detector scans comments too and reads one as a src-less tag.) */
 export function Shot({ src, alt, width = 300, caption, priority = false, lcp = false }) {
   const webpBase = src.replace(/\.png$/, '');
@@ -152,11 +168,11 @@ export function Shot({ src, alt, width = 300, caption, priority = false, lcp = f
 
 // Apple's on-screen minimum badge height is 40px; these map our size scale to
 // values at or above that floor. Never resize/recolor/modify the badge itself
-// beyond plain scaling — see App Store Marketing Guidelines.
+// beyond plain scaling, see App Store Marketing Guidelines.
 const APP_STORE_BADGE_HEIGHT = { large: 56, medium: 48, small: 40 };
 
-/** App Store CTA — used in hero, pricing, and footer. Reads SITE.released:
- * pre-launch it's an inert, muted label (not a link, no badge — the Marketing
+/** App Store CTA, used in hero, pricing, and footer. Reads SITE.released:
+ * pre-launch it's an inert, muted label (not a link, no badge, the Marketing
  * Agreement only permits the real badge once the app is actually live). Once
  * released, renders Apple's official badge (site/public/assets/, downloaded
  * per-app from toolbox.marketingtools.apple.com/app-store/) linking straight

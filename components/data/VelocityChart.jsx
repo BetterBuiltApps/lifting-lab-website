@@ -2,7 +2,7 @@ import React from 'react';
 import { PHASE_COLORS } from './PhaseTimeline.jsx';
 
 /**
- * VelocityChartCard — bar speed over the lift, phase-colored, doubling as a
+ * VelocityChartCard, bar speed over the lift, phase-colored, doubling as a
  * second scrubber. Click or drag anywhere to seek.
  */
 export function VelocityChart({

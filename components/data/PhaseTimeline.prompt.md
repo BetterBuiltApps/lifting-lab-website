@@ -3,7 +3,7 @@ The lift-phase breakdown from Bar Trace. Phase colors are fixed and shared with 
 ```jsx
 <PhaseTimeline
   phases={[{kind:'firstPull',label:'First pull',duration:0.62,peakVelocity:0.95}, …]}
-  insight="Bar speed drops 31% through the transition — a smoother scoop keeps the pull building."
+  insight="Bar speed drops 31% through the transition, a smoother scoop keeps the pull building."
   insightTone="caution"
 />
 ```

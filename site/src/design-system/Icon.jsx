@@ -2,8 +2,8 @@ import React from 'react';
 
 /**
  * SF Symbols substitute. The app uses SF Symbols exclusively (Apple's font is
- * not redistributable), so on the web we inline Lucide SVGs — matching stroke
- * weight and rounded caps — and let them inherit currentColor.
+ * not redistributable), so on the web we inline Lucide SVGs, matching stroke
+ * weight and rounded caps, and let them inherit currentColor.
  *
  * The paths are inlined rather than used as a CSS mask: inline markup survives
  * DOM-serializing renderers (html-to-image, print, PDF export) that drop
@@ -13,7 +13,7 @@ import React from 'react';
  * third-party CDN on the render path: icons popped in after paint, and any CSP,
  * offline preview, or unpkg outage silently rendered nothing (the catch cached
  * an empty string). The site uses exactly three icons, so they are vendored
- * here instead — no network, no dependency, no flash.
+ * here instead, no network, no dependency, no flash.
  *
  * Copied verbatim from lucide-static v0.544.0 (ISC). To add one, take the
  * <path> children from node_modules or unpkg.com/lucide-static@0.544.0/icons/

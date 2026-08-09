@@ -1,4 +1,4 @@
-/* Train tab home — DashboardView.swift. Builder hero, week stats, today's
+/* Train tab home, DashboardView.swift. Builder hero, week stats, today's
    session, recent PRs, next session, quick-link grid. */
 
 function Dashboard({ onStart, onNav }) {
@@ -59,7 +59,7 @@ function Dashboard({ onStart, onNav }) {
         </div>
       </div>
 
-      <NavRow title="Specification — Day 2" caption="NEXT · THU" icon="calendar" />
+      <NavRow title="Specification, Day 2" caption="NEXT · THU" icon="calendar" />
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 12 }}>
         {links.map(([label, icon]) => (

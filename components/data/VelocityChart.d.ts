@@ -1,5 +1,5 @@
 /**
- * VelocityChartCard — bar speed across the lift, colored by phase, with a
+ * VelocityChartCard, bar speed across the lift, colored by phase, with a
  * playhead. It is also a scrubber: pointer down or drag anywhere seeks the
  * player to that moment.
  *

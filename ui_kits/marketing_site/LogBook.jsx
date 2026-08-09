@@ -1,10 +1,10 @@
 function LogBookTimeline() {
   const { Card, SectionLabel } = window.OWLDesignSystem_875173;
   const entries = [
-    { kind: 'reflection', label: 'Reflection', title: 'Weeks 9–11', sub: 'Sleep: Solid · Fatigue: Heavy' },
+    { kind: 'reflection', label: 'Reflection', title: 'Weeks 9-11', sub: 'Sleep: Solid · Fatigue: Heavy' },
     { kind: 'session', label: 'Session', title: 'Snatch + Back Squat', sub: '“Third rep felt heavy, backed off 5kg.”' },
     { kind: 'session', label: 'Session', title: 'Clean & Jerk technique', sub: 'No notes' },
-    { kind: 'reflection', label: 'Reflection', title: 'Weeks 6–8', sub: 'Fatigue: Wrecked · Consistency: Patchy' },
+    { kind: 'reflection', label: 'Reflection', title: 'Weeks 6-8', sub: 'Fatigue: Wrecked · Consistency: Patchy' },
   ];
   return (
     <Card style={{ background: 'var(--bg)', padding: 22, display: 'grid', gap: 4 }}>

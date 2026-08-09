@@ -27,9 +27,9 @@ const variants = {
   outline: { background: 'transparent', color: 'var(--amber)', border: '1.5px solid var(--amber)' },
 };
 
-/** The app's button. One amber fill, black label — never an amber label on dark.
+/** The app's button. One amber fill, black label, never an amber label on dark.
  * Hover settles on the spring idiom (scale + brightness); tap pops on the press
- * idiom (scale to --press-scale) — two distinct, already-idiomatic feels. */
+ * idiom (scale to --press-scale), two distinct, already-idiomatic feels. */
 export function Button({
   variant = 'primary', size = 'large', full = false, disabled = false,
   icon = null, children, style, ...rest

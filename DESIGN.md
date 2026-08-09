@@ -152,15 +152,14 @@ components:
 
 This is not a marketing skin invented for a website. It is the app's own instrument
 face, lifted onto the web with its measurements intact. The ground is near-black,
-the surfaces are one step up from it, and a single amber marks where you are —
-never where the designer wanted your eye to wander. Everything reads like a
+the surfaces are one step up from it, and a single amber marks where you are, never where the designer wanted your eye to wander. Everything reads like a
 readout: numbers are tabular so a changing value never nudges its neighbour, the
 rounded face carries every title and every figure, and the body copy steps back
 into the system's own text face so the numbers stay the loudest thing on screen.
 
 Depth is tonal, not theatrical. Three greys do the work that shadows do elsewhere:
 `--bg` for the page, `--surface` for a card, `--surface-elevated` for a track or a
-capsule. Cards have no border and no shadow — they are simply a lighter fill on a
+capsule. Cards have no border and no shadow, they are simply a lighter fill on a
 darker one. The one place a real shadow appears is under a device bezel, and it is
 ambient, not offset: a screenshot floats above the page because a phone in a
 studio shot casts a diffuse pool, not because the layout wanted a lift.
@@ -175,7 +174,7 @@ world is not.
 
 **Key Characteristics:**
 - Dark-locked. One theme, deliberately, because the use scene is a dim gym mid-session.
-- One accent. Amber marks position, state, and interactivity — nothing decorative.
+- One accent. Amber marks position, state, and interactivity, nothing decorative.
 - Tonal depth. Three surface steps replace an elevation ramp.
 - Rounded numerals. Every figure is tabular, lining, and set in the rounded face.
 - Density as structure. Sections vary in shape on purpose; convergence is the failure mode.
@@ -191,7 +190,7 @@ visuals.
 mirrors `../LiftingLab/LiftingLab/Theme/Theme.swift`; each declaration in
 `tokens/colors.css` carries a `/* BPColor.x */` comment naming its Swift origin.
 Names deliberately differ between the two (`BPColor.background` is `--bg`;
-`phasePurple` is `--phase-transition`) — that is intentional, not drift. The
+`phasePurple` is `--phase-transition`), that is intentional, not drift. The
 change order is fixed: Theme.swift first, then `tokens/*.css`, never the reverse.
 `../LiftingLab/Scripts/check-design-tokens.sh --report` verifies the mirror.
 
@@ -204,7 +203,7 @@ change order is fixed: Theme.swift first, then `tokens/*.css`, never the reverse
 - **Amber Rise** (`{colors.amber-light}`): The top stop of the amber gradient and
   the link-hover state. Only ever seen as the lighter end of amber, never alone.
 - **Amber Wash** (`{colors.amber-16}`) and **Amber Hairline** (`{colors.amber-40}`):
-  The two transparent amber tints — a chip fill and a 1px border respectively.
+  The two transparent amber tints, a chip fill and a 1px border respectively.
 
 ### Secondary
 - **Make Green** (`{colors.make}`) and **Miss Red** (`{colors.miss}`): Literal
@@ -231,7 +230,7 @@ change order is fixed: Theme.swift first, then `tokens/*.css`, never the reverse
 - **Track Grey** (`{colors.surface-elevated}`): Ring tracks, capsules, and the
   secondary button fill. The third and last surface step.
 - **Text tiers** (`{colors.text-primary}`, `{colors.text-secondary}`,
-  `{colors.text-tertiary}`): White at fixed alphas — primary for headings and
+  `{colors.text-tertiary}`): White at fixed alphas, primary for headings and
   values, secondary for body and nav, tertiary for captions and axis labels.
 - **Decorative Glyph** (`{colors.glyph-decorative}`): Non-text marks only, such as
   an unlit axis tick.
@@ -266,7 +265,7 @@ Consolas).
 
 **Character:** Rounded and heavy for anything you read as a number or a claim;
 neutral and quiet for anything you read as a sentence. The rounded face is the
-brand voice — it is what makes a weight, a week, or a score feel like an
+brand voice, it is what makes a weight, a week, or a score feel like an
 instrument readout rather than a paragraph. Nunito is the only webfont that ships
 (two variable subsets, 73 KB, self-hosted at `site/public/assets/fonts/`), and it
 earns its bytes only on platforms with no rounded system face; Inter and JetBrains
@@ -287,8 +286,8 @@ already the right answer.
   capped at 68ch; the hero's at 19px/1.55 capped at 52ch; a section head's at
   18px/1.5.
 - **Label** (600, 12px, 0.8px tracking, uppercase): The one small uppercase form
-  in the system. It states a fact the heading cannot — a week unit, a pair caption,
-  a pricing tier name — and never restates the heading beneath it.
+  in the system. It states a fact the heading cannot, a week unit, a pair caption,
+  a pricing tier name, and never restates the heading beneath it.
 
 ### Named Rules
 
@@ -296,11 +295,10 @@ already the right answer.
 was removed on purpose. A small amber uppercase label above a heading that says
 what the heading already says is the most reliable tell that a layout was
 assembled from a template. Do not reintroduce it. The uppercase label survives
-only where it carries information the heading does not — the calibrated week
+only where it carries information the heading does not, the calibrated week
 markers, a before/after caption, a tier name.
 
-**The Tabular Numeral Rule.** Any number a reader might compare vertically —
-prices, weeks, scores — is `tabular-nums lining-nums`. Columns line up and a
+**The Tabular Numeral Rule.** Any number a reader might compare vertically, prices, weeks, scores, is `tabular-nums lining-nums`. Columns line up and a
 changing value never shifts its neighbours.
 
 **The Rounded-Numbers Rule.** Numbers and titles take the rounded display face.
@@ -335,7 +333,7 @@ list beside it scrolls.
 
 The spacing scale is not a strict 4px grid, and that is inherited from the app
 rather than an oversight: card padding is 16, compact padding and row padding are
-14, the default stack gap is 12. Sticky offsets are their own small set — 68px nav
+14, the default stack gap is 12. Sticky offsets are their own small set, 68px nav
 height, 88px scroll padding, 100px for the sticky shot, 132px for the axis.
 
 ### Named Rules
@@ -362,7 +360,7 @@ content genuinely passes behind it.
 ### Shadow Vocabulary
 - **Device Bezel** (`box-shadow: 0 30px 70px rgba(0,0,0,0.55)`): Under every
   screenshot, applied once by the shared screenshot component. Wide, soft, and
-  centered — never offset toward a light source the page doesn't have.
+  centered, never offset toward a light source the page doesn't have.
 - **Axis Marker Halo** (`box-shadow: 0 0 0 4px rgba(245,166,35,0.14)`): The soft
   amber ring around the lit station dot. A glow, not a drop shadow.
 - **Toast** (`0 4px 10px rgba(0,0,0,0.4)`) and **Sheet** (`0 -2px 24px rgba(0,0,0,0.5)`):
@@ -378,7 +376,7 @@ block needs to feel raised, move it to the next surface token; if it needs to fe
 separate, give it a hairline.
 
 **The Physical-Shadow-Only Rule.** A shadow ships only when it describes something
-physical — a device casting a pool, an element genuinely floating. There are no
+physical, a device casting a pool, an element genuinely floating. There are no
 offset shadows, no hard-edged shadows, and no shadow used to create hierarchy.
 
 ## Shapes
@@ -387,8 +385,8 @@ Corners are generous and consistent: 16px for a card, 14px for a button, 12px fo
 a list row, 34px for a device bezel (the phone's own radius), and a full pill for
 chips and marks. Focus rings round to 4px so they hug tightly whatever they wrap.
 
-Borders are almost absent. Where one exists it is a 1px hairline at 8% white — the
-station rules, the nav's bottom edge, the fact-grid cells — or a 1px amber
+Borders are almost absent. Where one exists it is a 1px hairline at 8% white, the
+station rules, the nav's bottom edge, the fact-grid cells, or a 1px amber
 hairline at 40% marking the one highlighted card on the page. Cards are fill-only
 by default.
 
@@ -415,7 +413,7 @@ something.
 - **Primary:** Amber fill, black label, 0 20px padding. The only filled amber
   element on a given view.
 - **Gradient:** The amber gradient (light-to-base, top-to-bottom) with a black
-  label — the same button with more presence.
+  label, the same button with more presence.
 - **Secondary:** The elevated surface grey with primary white text. Also the
   pre-launch inert CTA state, rendered disabled at full opacity.
 - **Outline:** Transparent with a 1.5px amber border and an amber label. Used at
@@ -425,7 +423,7 @@ something.
   outcome actions only.
 - **Hover:** Scale to 1.02 with brightness 1.08 over 350ms on the house curve.
 - **Active:** Scale to 0.93 over 250ms on the sharper press curve. Two distinct,
-  already-idiomatic feels — settle for hover, pop for press.
+  already-idiomatic feels, settle for hover, pop for press.
 - **Focus:** A 2px amber ring at 3px offset, keyboard-only.
 - **Disabled:** 35% opacity, default cursor.
 
@@ -438,7 +436,7 @@ something.
 ### Cards / Containers
 - **Corner Style:** 16px, or 12px for the row variant.
 - **Background:** Card surface by default. On a section whose ground is already
-  the card surface, cards invert to the page ground — the contrast step is
+  the card surface, cards invert to the page ground, the contrast step is
   preserved by flipping, not by adding a border.
 - **Shadow Strategy:** None. See Elevation & Depth.
 - **Border:** None by default. The one highlighted card carries a 1px amber
@@ -463,7 +461,7 @@ tabular week number in the rounded face with a tertiary caption label, joined by
 hairline rail the ticks draw themselves. The active station is tracked by
 IntersectionObserver, marked with `aria-current="step"`, and lit by a single amber
 disc that animates between positions as one shared element rather than fading in
-and out per tick — one orchestrated marker, not five independent ones.
+and out per tick, one orchestrated marker, not five independent ones.
 
 ### Screenshots (signature component)
 Every screenshot on the site goes through one component; that is the choke point
@@ -475,7 +473,7 @@ regenerates them. Hover lifts the scale to 1.015 and brightens the hairline to
 22%. Captions sit beneath in tertiary caption type.
 
 ### Icons
-Three icons exist — menu, close, and check — vendored inline from lucide-static
+Three icons exist, menu, close, and check, vendored inline from lucide-static
 v0.544.0. They render at 24×24 viewBox with 2px stroke, round caps and joins, and
 inherit `currentColor`. Adding a fourth means pasting its path data into the icon
 component; there is no icon package on the render path and no runtime fetch.

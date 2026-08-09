@@ -1,4 +1,4 @@
-/* Lifting Lab spacing + radii — from BPSpacing in Theme.swift and the literal paddings
+/* Lifting Lab spacing + radii, from BPSpacing in Theme.swift and the literal paddings
    used across the feature views. The app is not on a strict 4pt grid: card
    padding is 16, compact card padding is 14, rows are 14, stat cards 14. */
 
@@ -8,14 +8,14 @@
   --space-3: 6px;
   --space-tight: 8px;    /* BPSpacing.tight */
   --space-4: 10px;
-  --space-normal: 12px;  /* BPSpacing.normal — the default stack gap */
+  --space-normal: 12px;  /* BPSpacing.normal, the default stack gap */
   --space-5: 14px;       /* compact card / row padding */
   --space-6: 16px;       /* screen padding + default card padding + section gap */
   --space-loose: 20px;   /* BPSpacing.loose */
   --space-7: 24px;       /* generous vertical padding in hero cards */
 
   /* Radii */
-  --radius-card: 16px;    /* BPSpacing.cardRadius — continuous corners */
+  --radius-card: 16px;    /* BPSpacing.cardRadius, continuous corners */
   --radius-button: 14px;  /* primary buttons, make/miss */
   --radius-row: 12px;     /* list rows, phase cards */
   --radius-plate: 3px;
@@ -25,6 +25,6 @@
   --screen-padding: 16px;
   --tap-target-min: 44px;   /* Apple minimum */
   --tap-target-big: 52px;   /* primary session CTA */
-  --tap-target-chalky: 56px; /* Made / Miss — sized for chalked hands */
+  --tap-target-chalky: 56px; /* Made / Miss, sized for chalked hands */
   --ring-stroke: 10px;
 }

@@ -58,13 +58,13 @@ function FAQItem({ q, a }) {
 
 export function FAQ() {
   const items = [
-    ['Is Lifting Lab out yet?', 'Not yet — Lifting Lab is in active development. This site previews what’s coming, and the App Store link goes live at launch.'],
+    ['Is Lifting Lab out yet?', 'Not yet. Lifting Lab is in active development. This site previews what’s coming, and the App Store link goes live at launch.'],
     ['Is it really free?', 'Yes. Training log, the adaptive daily builder, all five programs, the PR tracker, the illustrated exercise library, every calculator, and three bar-path analyses a month never expire and never lock.'],
-    ['Do I have to follow a fixed program?', 'No. Tell Lifting Lab how you feel, what’s sore, and how much time you have, and it builds the session — or run one of the five periodized programs if you want a full cycle. Either way, nothing is locked: reorder, swap, or adjust anything before or during the workout.'],
-    ['Do I need any hardware?', 'No. Bar Trace reads speed, path and phase timing from a phone video — no sensor, no clip-on unit, no pairing.'],
+    ['Do I have to follow a fixed program?', 'No. Tell Lifting Lab how you feel, what’s sore, and how much time you have, and it builds the session, or run one of the five periodized programs if you want a full cycle. Either way, nothing is locked: reorder, swap, or adjust anything before or during the workout.'],
+    ['Do I need any hardware?', 'No. Bar Trace reads speed, path and phase timing from a phone video. No sensor, no clip-on unit, no pairing.'],
     ['How accurate is the video analysis?', 'It depends on the clip: side-on, whole bar in frame, steady phone. When tracking is weak, Lifting Lab says so and shows the evidence, rather than giving you a number it can’t back up.'],
-    ['Does my data leave my phone?', 'Video analysis runs entirely on-device — no clip or lift data is sent anywhere to score it. Training data syncs to your own private iCloud so it follows you across devices (clip sync is a separate opt-in), never to a third-party server, and there’s no Lifting Lab account required.'],
-    ['Kilos or pounds?', 'Both — pick kg or lb in Settings and every screen follows your choice, plus there’s a dedicated kg ↔ lb converter in Tools. Everything is stored in kg internally, matching IWF competition and the way the sport is actually coached, and converted for display.'],
+    ['Does my data leave my phone?', 'Video analysis runs entirely on-device. No clip or lift data is sent anywhere to score it. Training data syncs to your own private iCloud so it follows you across devices (clip sync is a separate opt-in), never to a third-party server, and there’s no Lifting Lab account required.'],
+    ['Kilos or pounds?', 'Both. Pick kg or lb in Settings and every screen follows your choice, plus there’s a dedicated kg to lb converter in Tools. Everything is stored in kg internally, matching IWF competition and the way the sport is actually coached, and converted for display.'],
     ['Android?', 'Not yet. Lifting Lab is iOS-only today.'],
     ['Do I have to fill any of this in?', 'No. Every field is optional, nothing is scored, and skipping it costs you nothing. Lifting Lab suggests a reflection every few weeks and that suggestion is dismissible.'],
   ];
@@ -86,7 +86,7 @@ export function SiteFooter() {
       <div style={{ ...siteWrap, display: 'grid', gap: 24, justifyItems: 'center', textAlign: 'center' }}>
         <img src={asset('assets/logo.svg')} alt="Lifting Lab" style={{ height: 40 }} />
         <AppStoreButton size="medium" />
-        {/* Only renders links whose target exists — see SITE.links. A link that
+        {/* Only renders links whose target exists, see SITE.links. A link that
             goes nowhere is worse than an absent one, and privacy/terms have no
             pages yet. */}
         <nav aria-label="Legal and support" style={{ display: 'flex', gap: 22, flexWrap: 'wrap', justifyContent: 'center' }}>
@@ -95,9 +95,9 @@ export function SiteFooter() {
             .map(([label, href]) => <a key={label} href={href}>{label}</a>)}
         </nav>
         <p style={{ margin: 0, maxWidth: '68ch', font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>
-          Built for competitive weightlifting. Sinclair coefficients are the official 2021–2024 IWF values.
-          World-record data should be verified against iwf.sport. Lifting Lab is not affiliated with, endorsed by,
-          or connected to the IWF, USA Weightlifting, or any equipment manufacturer.
+          Built for competitive weightlifting. Sinclair coefficients are the official 2021 to 2024 IWF values.
+          Lifting Lab is not affiliated with, endorsed by, or connected to the IWF, USA Weightlifting, or any
+          equipment manufacturer.
         </p>
       </div>
     </footer>

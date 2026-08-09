@@ -1,4 +1,4 @@
-/* ActiveSessionView.swift — one set at a time: big target, plate loading,
+/* ActiveSessionView.swift, one set at a time: big target, plate loading,
    rest ring, make/miss, last-time panel. */
 
 function ActiveSession({ onExit }) {
@@ -27,7 +27,7 @@ function ActiveSession({ onExit }) {
   return (
     <div style={owlKitShell.pad}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-        <SectionLabel>Specification — Day 2</SectionLabel>
+        <SectionLabel>Specification, Day 2</SectionLabel>
         <span style={{ flex: 1 }} />
         <Badge tone="neutral">Exercise 1 of 4</Badge>
       </div>
@@ -78,7 +78,7 @@ function ActiveSession({ onExit }) {
       <Card padding={14} radius="row" style={{ display: 'grid', gap: 6 }}>
         <SectionLabel>Last time · Mar 11</SectionLabel>
         <div style={{ font: 'var(--type-subheadline)', color: 'var(--text-secondary)' }}>
-          5×2 @ 100 kg — all made, RPE 7.5
+          5×2 @ 100 kg, all made, RPE 7.5
         </div>
       </Card>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-/** TimerRingView — the rest timer. Green when the rest is up; pulses in endgame. */
+/** TimerRingView, the rest timer. Green when the rest is up; pulses in endgame. */
 export function TimerRing({ progress = 0, centerText = '0:00', emphasized = false, pulsing = false, size = 160, style, ...rest }) {
   const r = size / 2 - 5, c = 2 * Math.PI * r;
   return (

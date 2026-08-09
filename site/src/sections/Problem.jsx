@@ -3,7 +3,7 @@ import { siteWrap } from './Chrome';
 
 /* The three situations the page is written for.
  *
- * These were three same-size cards of heading-plus-text — the lazy container,
+ * These were three same-size cards of heading-plus-text, the lazy container,
  * and the page's second screen. They are typographic entries on a ruled list
  * now: the same information, no boxes, and the rules echo the axis that runs
  * the rest of the page rather than introducing a second visual device. */

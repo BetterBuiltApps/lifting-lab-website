@@ -12,7 +12,7 @@ export function Hero() {
     }}>
       <div className="hero-grid" style={{ ...siteWrap, paddingTop: 'clamp(36px,4vw,60px)' }}>
         {/* No pill row above the h1. It used to read "Coming soon" and "Built for
-            competitive weightlifting" — a kicker stack saying nothing the
+            competitive weightlifting", a kicker stack saying nothing the
             heading and subhead don't, and the same device removed from every
             other section. The pre-launch fact still ships, honestly, next to
             the inert CTA where it is load-bearing rather than decorative. */}
@@ -48,7 +48,7 @@ export function Hero() {
               width={240}
               priority
               lcp
-              caption="Tell it how you feel — it builds the session"
+              caption="Tell it how you feel, and it builds the session"
             />
           </div>
           <div style={{ position: 'relative' }}>
@@ -62,7 +62,7 @@ export function Hero() {
                 alt="Bar Trace: skeleton overlay, bar path and phase split on a snatch turnover"
                 width={240}
                 priority
-                caption="Film a set — it reads the pull, phase by phase"
+                caption="Film a set, and it reads the pull phase by phase"
               />
             </div>
           </div>
@@ -71,7 +71,7 @@ export function Hero() {
 
       {/* The spine, in the first screen. The arc is the page's structure, so the
           reader should see it before scrolling rather than discovering it two
-          viewports down — which is why the hero above is deliberately compact.
+          viewports down, which is why the hero above is deliberately compact.
           Item width is weeks x HERO_WEEK_PX and the rule is ruled one tick per
           week, so distance here means the same thing it means on the rail. */}
       <nav className="hero-spine" aria-label="What this page covers">

@@ -69,7 +69,7 @@ function Shot({ src, alt, width = 300, caption }) {
   );
 }
 
-/** App Store CTA button — used in hero, pricing, and footer. */
+/** App Store CTA button, used in hero, pricing, and footer. */
 function AppStoreButton({ size = 'large' }) {
   const { Button } = window.OWLDesignSystem_875173;
   return (

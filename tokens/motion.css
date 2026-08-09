@@ -3,13 +3,13 @@
 
    No overshoot. These curves used to approximate the app's
    Animation.bpSpring(duration: 0.35, bounce: 0.35) with cubic-beziers whose
-   second control point exceeded 1 — the interface visibly sprang past its
+   second control point exceeded 1, the interface visibly sprang past its
    destination and settled back.
 
    Dropped for two reasons that agree. The product's own design brief says
    "Motion: functional, not decorative… No slow fades or bounce physics"; the
    shipped implementation had drifted from its brief. And bounce/elastic easing
-   is a recognisable period tell — real mass decelerates, it doesn't rebound off
+   is a recognisable period tell, real mass decelerates, it doesn't rebound off
    a layout. Exponential ease-out reads faster at the same duration because most
    of the distance is covered early, which is what you want on a screen someone
    glances at between sets.
@@ -28,7 +28,7 @@
      distance in the first half of the duration, then a long quiet settle. */
   --ease-spring: cubic-bezier(0.22, 1, 0.36, 1); /* @kind other */
   /* Press release. Sharper still (ease-out-expo) so a tap feels answered
-     immediately — the one place latency is felt rather than seen. */
+     immediately, the one place latency is felt rather than seen. */
   --ease-pop: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
   --ease-out: cubic-bezier(0.2, 0, 0, 1); /* @kind other */
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
