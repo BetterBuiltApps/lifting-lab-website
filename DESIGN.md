@@ -256,21 +256,36 @@ mid-session, chalked hands. Adding one is a product decision, not a styling task
 
 ## Typography
 
-**Display Font:** SF Pro Rounded, resolved via `ui-rounded` on Apple platforms,
-with self-hosted Nunito behind it everywhere else.
+**Heading Font:** Inter, self-hosted at 600 / 700 / 800, via the `--font-heading`
+token. Headings, section labels, and the wordmark, which is outlined from it.
+**Numeric Font:** SF Pro Rounded, resolved via `ui-rounded` on Apple platforms,
+with self-hosted Nunito behind it everywhere else. The hero readouts only.
 **Body Font:** The platform's own UI face (`-apple-system` / `system-ui` /
 Segoe UI / Roboto).
 **Mono Font:** The platform's own mono face (`ui-monospace` / SF Mono / Menlo /
 Consolas).
 
-**Character:** Rounded and heavy for anything you read as a number or a claim;
-neutral and quiet for anything you read as a sentence. The rounded face is the
-brand voice, it is what makes a weight, a week, or a score feel like an
-instrument readout rather than a paragraph. Nunito is the only webfont that ships
-(two variable subsets, 73 KB, self-hosted at `site/public/assets/fonts/`), and it
-earns its bytes only on platforms with no rounded system face; Inter and JetBrains
-Mono were deliberately removed because both sat behind system faces that were
-already the right answer.
+**Character:** Plain and heavy for anything structural; rounded for anything you
+read as a number; neutral and quiet for anything you read as a sentence.
+
+The heading face and the wordmark are the same binary, so the logo and every
+title are one set of letterforms rather than two that resemble each other. That
+is why the face is Inter and not something with more personality: the original
+logo asked for Inkscape's generic `Sans` at weight 800, which is not a font, and
+fontconfig resolved it to an Arial/Helvetica-class neo-grotesque. Inter is the
+nearest face that can legally be both bundled in the iOS app and outlined into a
+logo, which Arial, Helvetica and SF Pro Rounded cannot.
+
+**This is a knowingly common face.** The detector flags Inter as overused and it
+is right in general. It is kept because the brief here was to reproduce a
+specific existing mark, not to pick a distinctive one, and the mark was a plain
+default grotesque. Revisit it as a brand decision, not a styling one.
+
+Nunito still ships (two variable subsets, 73 KB, self-hosted at
+`site/public/assets/fonts/`) and now backs the numeric role only; nothing on the
+marketing page currently uses that role, so it is never fetched. JetBrains Mono
+was removed because it sat behind a system face that was already the right
+answer.
 
 ### Hierarchy
 - **Display** (900, `clamp(44px, 5.4vw, 64px)`, 1.0, -2px): The page's single H1.
