@@ -11,8 +11,15 @@
 @import "../../tokens/motion.css";
 @import "../../tokens/base.css";
 
-html { scroll-padding-top: 88px; overflow-x: hidden; }
-body { margin: 0; background: var(--bg); overflow-x: hidden; }
+/* `clip`, not `hidden`. overflow-x: hidden forces the used value of overflow-y
+   to auto, which turns html and body into scroll containers, and a sticky
+   descendant then positions against that container instead of the viewport and
+   simply scrolls away. Both sticky elements on this page, the arc's week axis
+   and the Explore screenshot column, were silently not sticking because of it.
+   overflow-x: clip contains the same horizontal overflow without creating a
+   scroll container. */
+html { scroll-padding-top: 88px; overflow-x: clip; }
+body { margin: 0; background: var(--bg); overflow-x: clip; }
 a { color: var(--text-secondary); }
 a:hover { color: var(--amber); }
 
@@ -503,14 +510,20 @@ a:hover { color: var(--amber); }
 .arc-miss-shots { display: flex; flex-wrap: wrap; gap: 16px; }
 
 /* -1w: dense and numeric, immediately after the open dark station. */
+/* Explicit column counts, not auto-fit. There are exactly six facts, and
+   auto-fit chose four columns at desktop width, leaving two empty cells that
+   rendered as grey blocks because the hairline grid background shows through
+   wherever there is no item. Three, two and one all divide six evenly. */
 .arc-facts {
   margin: 0 0 26px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
   background: var(--hairline);
   border: var(--border-hairline-1);
 }
+@media (max-width: 860px) { .arc-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .arc-facts { grid-template-columns: 1fr; } }
 .arc-facts > div { background: var(--bg); padding: 14px 16px; display: grid; gap: 3px; }
 .arc-facts dt {
   font-family: var(--font-label);
