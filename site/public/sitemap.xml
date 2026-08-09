@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- One page. The site is a single-route SPA, and the section anchors are not
+     separate URLs, so listing them here would claim pages that do not exist.
+     Privacy and Terms get their own entries when those routes are written. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://liftinglab.app/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

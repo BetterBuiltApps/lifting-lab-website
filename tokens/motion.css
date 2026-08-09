@@ -14,8 +14,10 @@
    of the distance is covered early, which is what you want on a screen someone
    glances at between sets.
 
-   The app's bpSpring is the other half of this and still overshoots. The two
-   should be reconciled in the Swift. */
+   The Swift side is now reconciled. Animation.bpSpring is bounce 0, and
+   overshoot survives only in bpCelebrate, for a PR landing or a bar filling.
+   The site has no celebratory moment to spend that on, so these curves are the
+   whole story here. See Docs/DESIGN.md section 5 in the app repo. */
 
 :root {
   --duration-press: 250ms; /* @kind other */

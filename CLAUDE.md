@@ -137,6 +137,28 @@ npm run dev --prefix site      # localhost:5173
 npm run build --prefix site    # -> site/dist
 ```
 
-`_adherence.oxlintrc.json` encodes the design-system rules (no raw hex, no raw
-px, imports through `design-system/index.js`). It is not yet wired to a script;
-`site/src` currently violates it in ~160 places.
+## What gates a deploy
+
+`.github/workflows/deploy.yml` runs `impeccable detect site/src` as a `quality`
+job that `build` depends on, so a design regression stops the deploy rather than
+shipping. It is scoped to `site/src` deliberately: `components/`, `guidelines/`,
+`ui_kits/` and `_ds_bundle.js` are not in the Vite build. The version is pinned,
+because an unpinned detector means a new rule in a future release can fail a
+deploy of a commit that changed nothing.
+
+**`_adherence.oxlintrc.json` does not run, and cannot.** It was never wired to
+anything, and three things stop it now:
+
+1. It does not parse. oxlint rejects its `x-omelette` key.
+2. Its substance is one `no-restricted-syntax` rule, which oxlint does not
+   implement at all.
+3. Most of its rules validate props of `<Badge>`, `<StatCard>`, `<ToolTile>`
+   and friends, components that live in `components/` and `ui_kits/` and are
+   not in the shipped build. They could never fire against `site/src`.
+
+What it was really guarding, raw hex and raw px in `site/src`, is now down to
+seven hex literals, and every one is deliberate: two scrollbar thumbs, two
+`#000` inside `-webkit-mask` gradients where the colour is meaningless, a
+literal black phone bezel, and white text on the make and miss buttons. No
+brand colour is drifting from `tokens/`. Do not treat the file as a gate, and
+do not "fix" `site/src` to satisfy it.

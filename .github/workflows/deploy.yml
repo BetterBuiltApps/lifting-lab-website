@@ -22,13 +22,33 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  # Scoped to site/src on purpose. components/, guidelines/, ui_kits/ and
+  # _ds_bundle.js are not in the Vite build, and including them reports on code
+  # that never ships. The detector exits 2 on a finding and 0 when clean, and
+  # site/src is clean today, so this blocks rather than merely reporting.
+  quality:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
+      # Pinned: an unpinned detector means a new rule in a future release can
+      # fail a deploy of a commit that did not change anything.
+      - name: Design detector
+        run: npx --yes impeccable@3.5.0 detect site/src
+
+  build:
+    needs: quality
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          # Impeccable needs 22.12+. The site itself builds on 20, but keeping
+          # one version across both jobs avoids a split that only shows up when
+          # someone adds a tool to the wrong job.
+          node-version: 22
           cache: npm
           cache-dependency-path: site/package-lock.json
       - name: Install dependencies
