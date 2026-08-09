@@ -13,7 +13,7 @@ export function Progress() {
     }}>
       <div style={{ ...siteWrap, display: 'grid', gap: 'clamp(40px,5vw,64px)' }}>
         <Reveal>
-          <SiteHead center eyebrow="Progress" title="Every session counts for something." max={680}
+          <SiteHead center title="Every session counts for something." max={680}
             body="Levels and streaks built from your actual training — sessions finished, sets made, tonnage moved, PRs set, weeks run perfectly. Badges unlock for real milestones across strength, Sinclair, programs completed, and lifts analyzed. No fake points: it's computed straight from your log, so your history counts from day one." />
         </Reveal>
         <motion.div

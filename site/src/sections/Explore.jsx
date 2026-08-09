@@ -64,8 +64,8 @@ export function Explore() {
     <section id="explore" style={{ padding: 'clamp(60px,7vw,110px) 0' }}>
       <div style={siteWrap}>
         <Reveal>
-          <SiteHead eyebrow="Everything else" title="Every feature, one tap away." max={640}
-            body="The pillars above are the headline. Here's the rest of what's in the app." />
+          <SiteHead title="The rest of it." max={640}
+            body="A cycle is the spine, but most of the app is the things you reach for between sets. All of this is in the free tier." />
         </Reveal>
         <div style={{ marginTop: 44, '--split-cols': 'minmax(0,1.15fr) minmax(0,0.85fr)', alignItems: 'start' }} className="split">
           {/* The group wrappers are presentational so the tabs stay effective

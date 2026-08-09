@@ -63,15 +63,25 @@ export function SiteNav() {
   );
 }
 
-/** Section heading. `eyebrow` is the amber uppercase label the app uses. */
-export function SiteHead({ eyebrow, title, body, center = false, max = 640, accent = 'var(--amber)' }) {
+/** Section heading.
+ *
+ * There is deliberately no `eyebrow` prop. Every section used to carry an amber
+ * uppercase label above its heading — "Pricing" above "Free, unlimited,
+ * forever.", "Progress" above "Every session counts for something." The label
+ * never said anything the heading didn't, and a stack of them down the page is
+ * one of the most reliable tells that a layout was assembled from a template
+ * rather than composed. The heading carries its own weight.
+ *
+ * The one place a small label still earns its place is where it states a fact
+ * the heading cannot — the week markers on the arc — and those are part of a
+ * calibrated axis, not decoration. */
+export function SiteHead({ title, body, center = false, max = 640 }) {
   return (
     <div style={{
       display: 'grid', gap: 14, maxWidth: max,
       margin: center ? '0 auto' : undefined, textAlign: center ? 'center' : 'left',
       justifyItems: center ? 'center' : 'start',
     }}>
-      {eyebrow && <SectionLabel tone="amber" style={{ color: accent }}>{eyebrow}</SectionLabel>}
       <h2 style={{
         margin: 0, fontFamily: 'var(--font-display)', fontWeight: 900,
         fontSize: 'clamp(30px,3.4vw,48px)', lineHeight: 1.06, letterSpacing: '-1px',

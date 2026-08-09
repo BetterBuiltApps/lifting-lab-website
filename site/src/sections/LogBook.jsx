@@ -53,7 +53,7 @@ export function LogBook() {
         style={siteWrap} className="split"
       >
         <motion.div variants={slideFade('left', 24)}>
-          <SiteHead eyebrow="Log book" title="A log book for what a sensor can't measure." max={560}
+          <SiteHead title="A log book for what a sensor can't measure." max={560}
             body="Sessions and reflections land on one timeline. Nothing is required, nothing is scored, and the chart knows five-out-of-five sleep is good news while five-out-of-five fatigue is not." />
         </motion.div>
         <LogBookTimeline />

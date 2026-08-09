@@ -6,9 +6,8 @@ import './styles.css';
 import { SiteNav } from './sections/Chrome';
 import { Hero } from './sections/Hero';
 import { Problem } from './sections/Problem';
-import { Pillars } from './sections/Pillars';
+import { Arc } from './sections/Arc';
 import { Explore } from './sections/Explore';
-import { FixMyMiss, MeetDay } from './sections/Spotlight';
 import { Progress } from './sections/Progress';
 import { LogBook } from './sections/LogBook';
 import { Pricing } from './sections/Pricing';
@@ -22,15 +21,18 @@ function App() {
           every visit. Visually hidden until focused — see .skip-link. */}
       <a className="skip-link" href="#main">Skip to content</a>
       <SiteNav />
+      {/* Order is the argument: recognize yourself (Problem), then follow one
+          cycle from twelve weeks out to the platform (Arc), then everything
+          that outlasts a single meet (LogBook, Progress), then the index of the
+          rest (Explore). Pricing and FAQ close because they answer questions
+          the page has by then earned the right to be asked. */}
       <main id="main">
         <Hero />
         <Problem />
-        <Pillars />
-        <Explore />
-        <FixMyMiss />
-        <MeetDay />
-        <Progress />
+        <Arc />
         <LogBook />
+        <Progress />
+        <Explore />
         <Pricing />
         <FAQ />
       </main>

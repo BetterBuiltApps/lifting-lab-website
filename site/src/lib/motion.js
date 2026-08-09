@@ -1,11 +1,14 @@
-/* Motion primitives derived from the app's existing motion tokens
-   (tokens/motion.css). Kept duration/cubic-bezier based rather than spring
-   physics — there's no reliable conversion from the bounce-tuned curves, and
-   this scope has no drag/velocity-aware gestures that would need real springs. */
+/* Motion primitives mirroring tokens/motion.css. Duration/cubic-bezier based
+   rather than spring physics: this scope has no drag or velocity-aware gestures
+   that would need real springs.
+
+   These must stay numerically identical to the CSS custom properties — Motion
+   can't read a CSS variable into a JS transition, so the values are duplicated
+   by hand and the comment on each line names its counterpart. */
 
 export const EASE = {
-  pop: [0.28, 1.66, 0.6, 1], // --ease-pop
-  spring: [0.34, 1.42, 0.64, 1], // --ease-spring
+  pop: [0.16, 1, 0.3, 1], // --ease-pop
+  spring: [0.22, 1, 0.36, 1], // --ease-spring
   inOut: [0.4, 0, 0.2, 1], // --ease-in-out
 };
 
@@ -20,8 +23,8 @@ export const DURATION = {
 export const PRESS_SCALE = 0.93;
 
 /** Scroll-reveal idiom: a "state crossfade" (fade/in-out), not spring/pop —
- * those stay reserved for value-settling and press feedback so reveals don't
- * read as a bounce/gimmick on repeat scrolling. */
+ * those stay reserved for value-settling and press feedback so reveals stay
+ * quiet on repeat scrolling. */
 export const fadeUpItem = (distance = 16) => ({
   hidden: { opacity: 0, y: distance },
   visible: { opacity: 1, y: 0, transition: { duration: DURATION.fade, ease: EASE.inOut } },

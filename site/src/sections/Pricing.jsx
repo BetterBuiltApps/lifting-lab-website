@@ -26,7 +26,7 @@ export function Pricing() {
   return (
     <section id="pricing" style={{ background: 'var(--surface)', padding: 'clamp(60px,7vw,110px) 0' }}>
       <div style={{ ...siteWrap, display: 'grid', gap: 36 }}>
-        <SiteHead center eyebrow="Pricing" title="Free, unlimited, forever." max={720}
+        <SiteHead center title="Free, unlimited, forever." max={720}
           body="The training log, programs, and calculators never expire and never lock. Pro adds full-depth video analysis. Coach adds a roster." />
         <motion.div
           initial="hidden"
