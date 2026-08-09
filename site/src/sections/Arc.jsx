@@ -19,13 +19,24 @@ import { siteWrap, Shot } from './Chrome';
 import { asset } from '../lib/asset';
 import { DURATION, EASE } from '../lib/motion';
 
-const STATIONS = [
-  { id: 'cycle', mark: '12', unit: 'weeks out', label: 'The cycle' },
-  { id: 'daily', mark: '8', unit: 'weeks out', label: 'Any given day' },
-  { id: 'miss', mark: '4', unit: 'weeks out', label: 'The miss' },
-  { id: 'peak', mark: '1', unit: 'week out', label: 'Peak' },
-  { id: 'platform', mark: '0', unit: 'meet day', label: 'The platform' },
+/* `week` is the real position on the axis, and it is what drives spacing — the
+ * rail is measured, not evenly divided. 12 to 8 is four weeks and gets four
+ * weeks of rail; 1 to 0 is one week and gets one. Equal gaps for unequal
+ * intervals would make this an evocative timeline, which is the thing the
+ * calibration discipline exists to refuse. */
+export const STATIONS = [
+  { id: 'cycle', week: 12, unit: 'weeks out', label: 'The cycle' },
+  { id: 'daily', week: 8, unit: 'weeks out', label: 'Any given day' },
+  { id: 'miss', week: 4, unit: 'weeks out', label: 'The miss' },
+  { id: 'peak', week: 1, unit: 'week out', label: 'Peak' },
+  { id: 'platform', week: 0, unit: 'meet day', label: 'The platform' },
 ];
+
+/** Rail length for the interval below each station, at 13px per week. The last
+ *  station closes the axis and has no interval after it. */
+const WEEK_PX = 13;
+export const gapAfter = (i) =>
+  i < STATIONS.length - 1 ? (STATIONS[i].week - STATIONS[i + 1].week) * WEEK_PX : 0;
 
 /* Tracks which station is being read and reports it upward. IntersectionObserver
  * rather than a scroll handler: no per-frame work, and it degrades to "first
@@ -64,10 +75,10 @@ function Axis({ active }) {
   return (
     <nav className="arc-axis" aria-label="Training cycle">
       <ol className="arc-axis-list">
-        {STATIONS.map((s) => {
+        {STATIONS.map((s, i) => {
           const on = s.id === active;
           return (
-            <li key={s.id} className="arc-axis-item">
+            <li key={s.id} className="arc-axis-item" style={{ '--gap-after': `${gapAfter(i)}px` }}>
               <a href={`#${s.id}`} aria-current={on ? 'step' : undefined} className="arc-axis-link">
                 <span className="arc-axis-tick" data-on={on || undefined}>
                   {on && (
@@ -78,7 +89,7 @@ function Axis({ active }) {
                     />
                   )}
                 </span>
-                <span className="arc-axis-mark owl-numeric">{s.mark}</span>
+                <span className="arc-axis-mark owl-numeric">{s.week}</span>
                 <span className="arc-axis-label">{s.label}</span>
               </a>
             </li>
@@ -91,11 +102,11 @@ function Axis({ active }) {
 
 /** Every station's shared shell: the id the axis observes, and the marker that
  *  carries the week on small screens where the rail is hidden. */
-function Station({ id, mark, unit, title, children, className = '', ...rest }) {
+function Station({ id, week, unit, title, children, className = '', ...rest }) {
   return (
     <section id={id} className={`arc-station ${className}`} aria-labelledby={`${id}-title`} {...rest}>
       <p className="arc-station-mark">
-        <span className="arc-station-mark-num owl-numeric">{mark}</span>
+        <span className="arc-station-mark-num owl-numeric">{week}</span>
         <span className="arc-station-mark-unit">{unit}</span>
       </p>
       <h2 id={`${id}-title`} className="arc-station-title">{title}</h2>
@@ -151,7 +162,7 @@ export function Arc() {
 
       <div className="arc-stations">
         {/* -12w — wide and calm. One screenshot, large, plenty of air. */}
-        <Station id="cycle" mark="12" unit="weeks out" title="A cycle built off your real numbers."
+        <Station id="cycle" week={12} unit="weeks out" title="A cycle built off your real numbers."
                  className="arc-station--wide">
           <p className="arc-lede">
             Technique, strength, specification, peak, and a masters cycle — periodized templates loaded
@@ -166,7 +177,7 @@ export function Arc() {
         </Station>
 
         {/* -8w — the transformation pair: what you tell it, what you get back. */}
-        <Station id="daily" mark="8" unit="weeks out" title="Tell it how you feel. It builds the day."
+        <Station id="daily" week={8} unit="weeks out" title="Tell it how you feel. It builds the day."
                  className="arc-station--pair">
           <p className="arc-lede">
             Energy, soreness, the equipment in your gym, the time you actually have. Lifting Lab builds
@@ -192,7 +203,7 @@ export function Arc() {
         </Station>
 
         {/* -4w — the signature station. Darkest, tightest, the trace as hero. */}
-        <Station id="miss" mark="4" unit="weeks out" title="It missed. Here's where it went."
+        <Station id="miss" week={4} unit="weeks out" title="It missed. Here's where it went."
                  className="arc-station--dark">
           <div className="arc-miss">
             <div className="arc-miss-trace">
@@ -228,7 +239,7 @@ export function Arc() {
         </Station>
 
         {/* -1w — deliberately dense and numeric after the dark, open station above. */}
-        <Station id="peak" mark="1" unit="week out" title="The week the numbers matter."
+        <Station id="peak" week={1} unit="week out" title="The week the numbers matter."
                  className="arc-station--dense">
           <div className="arc-dense">
             <p className="arc-lede">
@@ -251,7 +262,7 @@ export function Arc() {
         </Station>
 
         {/* 0 — the close. Highest contrast on the page; the arc ends here. */}
-        <Station id="platform" mark="0" unit="meet day" title="The warm-up room runs on attempts, not the clock."
+        <Station id="platform" week={0} unit="meet day" title="The warm-up room runs on attempts, not the clock."
                  className="arc-station--close">
           <p className="arc-lede">
             Lifting Lab counts them for you, tells you when to take your next warm-up, holds you in a

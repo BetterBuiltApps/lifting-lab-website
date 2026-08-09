@@ -8,7 +8,10 @@ import { DURATION, EASE } from '../lib/motion';
 
 export const siteWrap = { maxWidth: 1240, margin: '0 auto', padding: '0 clamp(20px,5vw,60px)' };
 
-const NAV_LINKS = [['Pillars', '#pillars'], ['Explore', '#explore'], ['Pricing', '#pricing'], ['FAQ', '#faq']];
+/* Every href here must resolve to an id that exists. "Pillars" pointed at
+   #pillars, which stopped existing when that section was absorbed into the arc,
+   so the first nav item silently went nowhere. */
+const NAV_LINKS = [['The cycle', '#cycle'], ['Everything else', '#explore'], ['Pricing', '#pricing'], ['FAQ', '#faq']];
 
 export function SiteNav() {
   const [menuOpen, setMenuOpen] = React.useState(false);

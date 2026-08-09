@@ -16,22 +16,16 @@ export function Progress() {
           <SiteHead center title="Every session counts for something." max={680}
             body="Levels and streaks built from your actual training — sessions finished, sets made, tonnage moved, PRs set, weeks run perfectly. Badges unlock for real milestones across strength, Sinclair, programs completed, and lifts analyzed. No fake points: it's computed straight from your log, so your history counts from day one." />
         </Reveal>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={VIEWPORT_ONCE}
-          variants={staggerContainer(0.08)}
-          style={{ '--split-cols': 'minmax(0,1fr) minmax(0,1.1fr)' }} className="split"
-        >
-          <motion.div variants={fadeUpItem(16)} className="shot-row">
+        <div className="progress-row">
+          <div className="shot-row">
             <Shot src={asset('assets/screens/27-progress-levels-xp-badges.png')} alt="Level ring and streak, computed from real training" width={240} />
             <Shot src={asset('assets/screens/28-badges-grid-full.png')} alt="Badge grid: unlocked in full color, locked desaturated" width={240} />
-          </motion.div>
-          <motion.div variants={fadeUpItem(16)} style={{ display: 'grid', gap: 18, justifyItems: 'center' }}>
+          </div>
+          <div style={{ display: 'grid', gap: 18, justifyItems: 'center' }}>
             <Shot src={asset('assets/screens/29-badge-detail-first-blood.png')} alt="Badge unlocked share card" width={260} />
             <span style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>Shareable, one tap</span>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

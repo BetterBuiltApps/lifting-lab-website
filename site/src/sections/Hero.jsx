@@ -1,9 +1,8 @@
 import React from 'react';
-import { motion } from 'motion/react';
 import { siteWrap, AppStoreButton, Shot } from './Chrome';
 import { SITE } from '../config';
 import { asset } from '../lib/asset';
-import { DURATION, EASE, fadeUpItem, staggerContainer } from '../lib/motion';
+import { STATIONS, gapAfter } from './Arc';
 
 export function Hero() {
   return (
@@ -11,28 +10,19 @@ export function Hero() {
       background: 'radial-gradient(110% 80% at 76% 6%, rgba(245,166,35,0.16), transparent 60%), var(--bg)',
       paddingBottom: 'clamp(56px,7vw,104px)',
     }}>
-      <div style={{ ...siteWrap, paddingTop: 'clamp(56px,7vw,96px)', display: 'grid', gap: 'clamp(32px,4vw,52px)' }}>
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: DURATION.fade, ease: EASE.inOut }}
-          style={{ display: 'grid', gap: 22, justifyItems: 'start', maxWidth: 680 }}
-        >
-          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-            <span style={{
-              display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 14px',
-              borderRadius: 999, background: 'var(--amber-16)', border: '1px solid var(--amber-40)',
-              font: 'var(--type-caption)', fontWeight: 700, color: 'var(--amber)',
-            }}>Coming soon</span>
-            <span style={{
-              display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 14px',
-              borderRadius: 999, background: 'var(--surface)', border: 'var(--border-hairline-1)',
-              font: 'var(--type-caption)', color: 'var(--text-secondary)',
-            }}>Built for competitive weightlifting</span>
-          </div>
+      <div className="hero-grid" style={{ ...siteWrap, paddingTop: 'clamp(56px,7vw,96px)' }}>
+        {/* No pill row above the h1. It used to read "Coming soon" and "Built for
+            competitive weightlifting" — a kicker stack saying nothing the
+            heading and subhead don't, and the same device removed from every
+            other section. The pre-launch fact still ships, honestly, next to
+            the inert CTA where it is load-bearing rather than decorative. */}
+        <div style={{ display: 'grid', gap: 22, justifyItems: 'start', maxWidth: 680 }}>
           <h1 style={{
             margin: 0, fontFamily: 'var(--font-display)', fontWeight: 900,
-            fontSize: 'clamp(44px,5.4vw,64px)', lineHeight: 1.0, letterSpacing: '-2px',
+            fontSize: 'clamp(44px,5.4vw,64px)', lineHeight: 1.0,
+            /* em, not px: at the 44px clamp floor a flat -2px is -0.045em, past
+               the -0.04em tracking floor. */
+            letterSpacing: '-0.03em',
             color: 'var(--text-primary)',
           }}>
             The coach you don't have.
@@ -48,15 +38,10 @@ export function Hero() {
             <AppStoreButton />
             <span style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>{SITE.ctaNote}</span>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={staggerContainer(0.1, 0.15)}
-          className="hero-pair"
-        >
-          <motion.div variants={fadeUpItem(16)}>
+        <div className="hero-pair">
+          <div>
             <Shot
               src={asset('assets/screens/08-readiness-checkin.png')}
               alt="Readiness check-in: energy, soreness and time build today's session"
@@ -65,8 +50,8 @@ export function Hero() {
               lcp
               caption="Tell it how you feel — it builds the session"
             />
-          </motion.div>
-          <motion.div variants={fadeUpItem(16)} style={{ position: 'relative' }}>
+          </div>
+          <div style={{ position: 'relative' }}>
             <div style={{
               position: 'absolute', inset: '-8% -8% 20%',
               background: 'radial-gradient(circle, rgba(245,166,35,0.14), transparent 65%)', filter: 'blur(8px)',
@@ -80,9 +65,29 @@ export function Hero() {
                 caption="Film a set — it reads the pull, phase by phase"
               />
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
+
+      {/* The spine, in the first screen. The arc is the page's structure, so the
+          reader should see it before scrolling rather than discovering it two
+          viewports down. Ticks are one per week at the same 13px the rail uses,
+          so the intervals are readable here too. */}
+      <nav className="hero-spine" aria-label="What this page covers">
+        <div style={siteWrap}>
+          <ol className="hero-spine-list">
+            {STATIONS.map((s, i) => (
+              <li key={s.id} className="hero-spine-item" style={{ '--span': gapAfter(i) + 'px' }}>
+                <a href={`#${s.id}`} className="hero-spine-link" aria-current={i === 0 ? 'step' : undefined}>
+                  <span className="hero-spine-week owl-numeric">{s.week}</span>
+                  <span className="hero-spine-label">{s.label}</span>
+                </a>
+              </li>
+            ))}
+          </ol>
+          <p className="hero-spine-caption">Weeks out from the platform</p>
+        </div>
+      </nav>
     </header>
   );
 }

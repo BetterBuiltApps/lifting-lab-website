@@ -45,19 +45,16 @@ function LogBookTimeline() {
 export function LogBook() {
   return (
     <section id="logbook" style={{ padding: 'clamp(60px,7vw,110px) 0' }}>
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={VIEWPORT_ONCE}
-        variants={staggerContainer(0.08)}
-        style={siteWrap} className="split"
-      >
-        <motion.div variants={slideFade('left', 24)}>
-          <SiteHead title="A log book for what a sensor can't measure." max={560}
-            body="Sessions and reflections land on one timeline. Nothing is required, nothing is scored, and the chart knows five-out-of-five sleep is good news while five-out-of-five fatigue is not." />
-        </motion.div>
-        <LogBookTimeline />
-      </motion.div>
+      {/* Centred column, not a text-beside-image split: the timeline is the
+          point, and the arc above has already spent the page's budget for
+          two-column rows. */}
+      <div style={{ ...siteWrap, display: 'grid', gap: 32, justifyItems: 'center', textAlign: 'center' }}>
+        <SiteHead center title="A log book for what a sensor can't measure." max={620}
+          body="Sessions and reflections land on one timeline. Nothing is required, nothing is scored, and the chart knows five-out-of-five sleep is good news while five-out-of-five fatigue is not." />
+        <div style={{ width: '100%', maxWidth: 520, textAlign: 'left' }}>
+          <LogBookTimeline />
+        </div>
+      </div>
     </section>
   );
 }

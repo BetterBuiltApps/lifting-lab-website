@@ -139,11 +139,73 @@ a:hover { color: var(--amber); }
   min-width: 0;
 }
 
+/* Thesis and offer left, the two screenshots carrying the hardest claim right.
+   This used to stack, which pushed the proof below the fold and left the first
+   screen carrying only words. */
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(32px, 4vw, 60px);
+  align-items: center;
+}
+
 .hero-pair {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 28px;
   align-items: end;
+}
+
+/* The arc, previewed in the first screen. Horizontal here rather than vertical:
+   it reads as a scale the page is about to walk, and the item widths are the
+   same one-tick-per-week measure the vertical rail uses. */
+.hero-spine {
+  border-top: var(--border-hairline-1);
+  padding: 22px 0 4px;
+}
+.hero-spine-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.hero-spine-list::-webkit-scrollbar { display: none; }
+.hero-spine-item { flex: 0 0 auto; min-width: max-content; padding-right: var(--span, 0px); }
+.hero-spine-item:last-child { padding-right: 0; }
+
+.hero-spine-link {
+  display: grid;
+  gap: 4px;
+  padding: 8px 14px 8px 0;
+  text-decoration: none;
+  color: var(--text-tertiary);
+  border-top: 1px solid var(--hairline);
+  /* One tick per week along the interval this item spans. */
+  background:
+    repeating-linear-gradient(to right, var(--hairline) 0 1px, transparent 1px 13px) 0 0 / 100% 4px no-repeat;
+  transition: color var(--duration-fade) var(--ease-out);
+}
+.hero-spine-link:hover { color: var(--text-secondary); }
+.hero-spine-link[aria-current='step'] { color: var(--text-primary); border-top-color: var(--amber); }
+
+.hero-spine-week {
+  font-family: var(--font-numeric);
+  font-size: var(--text-title3);
+  font-weight: var(--weight-heavy);
+  line-height: 1;
+  color: inherit;
+}
+.hero-spine-link[aria-current='step'] .hero-spine-week { color: var(--amber); }
+.hero-spine-label { font: var(--type-caption); white-space: nowrap; }
+.hero-spine-caption {
+  margin: 10px 0 0;
+  font: var(--type-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
 }
 
 /* The screenshot tracks the reader down the Explore list — until the list is
@@ -168,7 +230,10 @@ a:hover { color: var(--amber); }
 @media (max-width: 980px) {
   .split,
   .shot-row,
-  .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-grid,
+  /* The hero splits only while both halves have room. Below this the display
+     type would be setting in a ~270px measure. */
+  .hero-grid { grid-template-columns: 1fr; }
   .explore-shot-col { position: static; top: auto; }
   .site-nav-links { display: none; }
   .site-nav-toggle { display: inline-flex; }
@@ -177,6 +242,40 @@ a:hover { color: var(--amber); }
 @media (max-width: 640px) {
   .hero-pair { grid-template-columns: 1fr; }
 }
+
+/* Progress: a centred row of shots under a centred head, not another
+   text-beside-image split. */
+.progress-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 980px) {
+  .progress-row { grid-template-columns: 1fr; justify-items: center; }
+}
+
+/* The three situations, as a ruled list rather than a card grid. */
+.problem-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0 clamp(28px, 4vw, 56px);
+}
+.problem-case { padding: 20px 0; border-top: 1px solid var(--amber-40); }
+.problem-case-title {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-title3);
+  line-height: 1.2;
+  text-wrap: balance;
+  color: var(--text-primary);
+}
+.problem-case-body { margin: 0; font: var(--type-subheadline); color: var(--text-secondary); }
 
 /* ---------------------------------------------------------------------------
    The arc — twelve weeks out to the platform.
@@ -200,7 +299,13 @@ a:hover { color: var(--amber); }
 /* --- the calibrated axis ------------------------------------------------- */
 
 .arc-axis { position: sticky; top: 132px; align-self: start; }
-.arc-axis-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 26px; }
+
+/* No `gap`. Each item reserves the rail its own interval is worth (--gap-after,
+   13px per week from Arc.jsx), so twelve-to-eight occupies four times the rail
+   of one-to-zero. A uniform gap here would draw equal distance for unequal
+   time, which is the difference between a measured axis and a decorative one. */
+.arc-axis-list { list-style: none; margin: 0; padding: 0; }
+.arc-axis-item { padding-bottom: var(--gap-after, 0px); }
 
 .arc-axis-link {
   display: grid;
@@ -226,18 +331,27 @@ a:hover { color: var(--amber); }
   place-items: center;
   grid-row: span 2;
 }
+/* The rail below each station, ruled at one tick per week. The gradient's period
+   is 13px — the same WEEK_PX the item spacing derives from — so the ticks and
+   the station marks stay in register: every tick is a real week, and counting
+   them between two marks gives the interval. */
 .arc-axis-tick::before {
   content: '';
   position: absolute;
   left: 50%;
-  top: -32px;
-  bottom: -32px;
-  width: 1px;
-  background: var(--hairline);
+  top: 10px;
+  height: var(--gap-after, 0px);
+  width: 5px;
   transform: translateX(-50%);
+  background:
+    linear-gradient(var(--hairline), var(--hairline)) 50% 0 / 1px 100% no-repeat,
+    repeating-linear-gradient(
+      to bottom,
+      var(--hairline) 0 1px,
+      transparent 1px 13px
+    );
 }
-.arc-axis-item:first-child .arc-axis-tick::before { top: 6px; }
-.arc-axis-item:last-child .arc-axis-tick::before { bottom: 6px; }
+.arc-axis-item:last-child .arc-axis-tick::before { display: none; }
 .arc-axis-tick::after {
   content: '';
   width: 5px;
@@ -302,7 +416,7 @@ a:hover { color: var(--amber); }
 .arc-station-title {
   margin: 0 0 18px;
   font-family: var(--font-display);
-  font-weight: var(--weight-black);
+  font-weight: var(--weight-heavy);
   font-size: clamp(28px, 3.2vw, 44px);
   line-height: 1.08;
   letter-spacing: -1px;
@@ -358,7 +472,9 @@ a:hover { color: var(--amber); }
 .arc-trace-plumb { stroke: var(--hairline); stroke-width: 1; stroke-dasharray: 3 5; }
 .arc-trace-key { display: grid; gap: 5px; margin: 0; font: var(--type-caption); }
 .arc-trace-key span { display: flex; align-items: center; gap: 8px; color: var(--text-tertiary); }
-.arc-trace-key span::before { content: ''; width: 10px; height: 2px; border-radius: 2px; background: currentColor; }
+/* A pill radius on a 2px-tall bar is just a rounded line cap, and it keeps the
+   swatch on the documented radius scale instead of inventing a 2px step. */
+.arc-trace-key span::before { content: ''; width: 10px; height: 2px; border-radius: var(--radius-pill); background: currentColor; }
 .arc-trace-key [data-phase='first-pull']::before { background: var(--phase-first-pull); }
 .arc-trace-key [data-phase='transition']::before { background: var(--phase-transition); }
 .arc-trace-key [data-phase='second-pull']::before { background: var(--phase-second-pull); }

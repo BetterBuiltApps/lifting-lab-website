@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-08T00:00:00Z",
+  "title": "Design System: Lifting Lab",
+  "extensions": {
+    "colorMeta": {
+      "bg": {
+        "role": "neutral",
+        "displayName": "Instrument Ground",
+        "canonical": "#1a1a1a",
+        "source": "BPColor.background (LiftingLab/Theme/Theme.swift)",
+        "tonalRamp": ["#0d0d0d", "#1a1a1a", "#262626", "#3d3d3d", "#5c5c5c", "#8a8a8a", "#b8b8b8", "#e8e8e8"]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Card Surface",
+        "canonical": "#232323",
+        "source": "BPColor.surface",
+        "tonalRamp": ["#111111", "#1d1d1d", "#232323", "#333333", "#5c5c5c", "#8a8a8a", "#bcbcbc", "#ececec"]
+      },
+      "surface-elevated": {
+        "role": "neutral",
+        "displayName": "Track Grey",
+        "canonical": "#2c2c2e",
+        "source": "BPColor.surfaceElevated",
+        "tonalRamp": ["#141416", "#212123", "#2c2c2e", "#3f3f43", "#666669", "#93939a", "#c2c2c8", "#ededf0"]
+      },
+      "amber": {
+        "role": "primary",
+        "displayName": "Signal Amber",
+        "canonical": "#f5a623",
+        "source": "BPColor.amber",
+        "tonalRamp": ["#3a2400", "#5c3a00", "#7f5200", "#a76c00", "#cf8809", "#f5a623", "#ffc74d", "#ffe4ab"]
+      },
+      "amber-light": {
+        "role": "primary",
+        "displayName": "Amber Rise",
+        "canonical": "#ffc74d",
+        "source": "BPGradient.amber (top stop)",
+        "tonalRamp": ["#3f2c00", "#634600", "#886100", "#b07d00", "#d89a1c", "#ffc74d", "#ffdb8b", "#ffefd1"]
+      },
+      "amber-16": {
+        "role": "primary",
+        "displayName": "Amber Wash",
+        "canonical": "rgba(245, 166, 35, 0.16)",
+        "tonalRamp": ["rgba(245,166,35,0.04)", "rgba(245,166,35,0.08)", "rgba(245,166,35,0.12)", "rgba(245,166,35,0.16)", "rgba(245,166,35,0.24)", "rgba(245,166,35,0.4)", "rgba(245,166,35,0.6)", "rgba(245,166,35,0.85)"]
+      },
+      "amber-40": {
+        "role": "primary",
+        "displayName": "Amber Hairline",
+        "canonical": "rgba(245, 166, 35, 0.4)",
+        "tonalRamp": ["rgba(245,166,35,0.08)", "rgba(245,166,35,0.16)", "rgba(245,166,35,0.24)", "rgba(245,166,35,0.32)", "rgba(245,166,35,0.4)", "rgba(245,166,35,0.6)", "rgba(245,166,35,0.8)", "rgba(245,166,35,1)"]
+      },
+      "accent-fg": {
+        "role": "neutral",
+        "displayName": "On-Amber Black",
+        "canonical": "#000000",
+        "tonalRamp": ["#000000", "#111111", "#242424", "#3d3d3d", "#5c5c5c", "#8a8a8a", "#bdbdbd", "#f0f0f0"]
+      },
+      "make": {
+        "role": "secondary",
+        "displayName": "Make Green",
+        "canonical": "#34c759",
+        "source": "BPColor.make",
+        "tonalRamp": ["#062a11", "#0b451d", "#12602b", "#1a7c3a", "#25a24e", "#34c759", "#74dd91", "#c4f2d1"]
+      },
+      "miss": {
+        "role": "secondary",
+        "displayName": "Miss Red",
+        "canonical": "#ff3b30",
+        "source": "BPColor.miss",
+        "tonalRamp": ["#3a0603", "#5c0d07", "#80170e", "#a72418", "#d13023", "#ff3b30", "#ff8078", "#ffcdc9"]
+      },
+      "cool": {
+        "role": "secondary",
+        "displayName": "Comparison Cool",
+        "canonical": "#5ac8fa",
+        "source": "BPColor.cool — CVD-safe against amber",
+        "tonalRamp": ["#03242f", "#053b4d", "#08536c", "#0c6d8d", "#1c8fb4", "#37b0dc", "#5ac8fa", "#c0eaff"]
+      },
+      "phase-transition": {
+        "role": "tertiary",
+        "displayName": "Transition Violet",
+        "canonical": "#af52de",
+        "source": "BPColor.phasePurple",
+        "tonalRamp": ["#22062e", "#380c4c", "#4f126b", "#68198c", "#8a2fb4", "#af52de", "#cd8feb", "#eed4f8"]
+      },
+      "phase-catch": {
+        "role": "tertiary",
+        "displayName": "Catch Neutral",
+        "canonical": "#e5e5ea",
+        "source": "BPColor.phaseNeutral",
+        "tonalRamp": ["#212124", "#35353a", "#4b4b52", "#66666e", "#87878f", "#aaaab2", "#c9c9d0", "#e5e5ea"]
+      },
+      "text-primary": {
+        "role": "neutral",
+        "displayName": "Readout White",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#1a1a1a", "#333333", "#4d4d4d", "#6b6b6b", "#8f8f8f", "#b8b8b8", "#dedede", "#ffffff"]
+      },
+      "text-secondary": {
+        "role": "neutral",
+        "displayName": "Body White 60",
+        "canonical": "rgba(255, 255, 255, 0.6)",
+        "tonalRamp": ["rgba(255,255,255,0.08)", "rgba(255,255,255,0.16)", "rgba(255,255,255,0.24)", "rgba(255,255,255,0.35)", "rgba(255,255,255,0.5)", "rgba(255,255,255,0.6)", "rgba(255,255,255,0.8)", "rgba(255,255,255,1)"]
+      },
+      "text-tertiary": {
+        "role": "neutral",
+        "displayName": "Caption White 50",
+        "canonical": "rgba(255, 255, 255, 0.5)",
+        "tonalRamp": ["rgba(255,255,255,0.06)", "rgba(255,255,255,0.12)", "rgba(255,255,255,0.2)", "rgba(255,255,255,0.3)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.5)", "rgba(255,255,255,0.7)", "rgba(255,255,255,0.95)"]
+      },
+      "glyph-decorative": {
+        "role": "neutral",
+        "displayName": "Decorative Glyph White 35",
+        "canonical": "rgba(255, 255, 255, 0.35)",
+        "tonalRamp": ["rgba(255,255,255,0.04)", "rgba(255,255,255,0.08)", "rgba(255,255,255,0.16)", "rgba(255,255,255,0.24)", "rgba(255,255,255,0.35)", "rgba(255,255,255,0.5)", "rgba(255,255,255,0.7)", "rgba(255,255,255,0.9)"]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline White 8",
+        "canonical": "rgba(255, 255, 255, 0.08)",
+        "tonalRamp": ["rgba(255,255,255,0.02)", "rgba(255,255,255,0.04)", "rgba(255,255,255,0.08)", "rgba(255,255,255,0.12)", "rgba(255,255,255,0.2)", "rgba(255,255,255,0.35)", "rgba(255,255,255,0.6)", "rgba(255,255,255,0.9)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The page's single H1, first viewport, left column. One per page." },
+      "headline": { "displayName": "Headline", "purpose": "Every section heading, via the shared section-head component. No eyebrow above it, ever." },
+      "title": { "displayName": "Station Title", "purpose": "Arc station titles. Capped at 20ch so a title never runs the width of its lede." },
+      "numeric": { "displayName": "Numeric", "purpose": "Week marks on the axis and in each station marker. Rounded face, tabular lining figures." },
+      "body": { "displayName": "Body", "purpose": "Default copy in the platform text face. Arc lede 17px/1.55 at 68ch; hero lede 19px/1.55 at 52ch." },
+      "subheadline": { "displayName": "Subheadline", "purpose": "Nav links, feature list items, tier notes." },
+      "label": { "displayName": "Label", "purpose": "The only small uppercase form. States a fact the heading cannot — week unit, pair caption, tier name. Never restates the heading." }
+    },
+    "shadows": [
+      { "name": "device-bezel", "value": "0 30px 70px rgba(0, 0, 0, 0.55)", "purpose": "Under every screenshot, applied once by the shared screenshot component. Wide, soft, centered — never offset." },
+      { "name": "axis-marker-halo", "value": "0 0 0 4px rgba(245, 166, 35, 0.14)", "purpose": "The soft amber ring around the lit station dot on the week axis. A glow, not a drop shadow." },
+      { "name": "shadow-toast", "value": "0 4px 10px rgba(0, 0, 0, 0.4)", "purpose": "Inherited from the app (BadgeToast) for content floating over the page." },
+      { "name": "shadow-sheet", "value": "0 -2px 24px rgba(0, 0, 0, 0.5)", "purpose": "Inherited from the app for presented sheets." },
+      { "name": "shadow-none", "value": "none", "purpose": "The default. Cards ship with no shadow and no border at rest; depth is a surface step." }
+    ],
+    "motion": [
+      { "name": "ease-spring", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "House curve for layout, reveal, hover settle, and the axis marker. Exponential ease-out — no overshoot." },
+      { "name": "ease-pop", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Press release. Sharper still, so a tap feels answered immediately." },
+      { "name": "ease-out", "value": "cubic-bezier(0.2, 0, 0, 1)", "purpose": "Axis link color transitions." },
+      { "name": "ease-in-out", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Scroll reveals and the mobile nav panel — a quiet state crossfade, deliberately not the spring or pop feel." },
+      { "name": "duration-press", "value": "250ms", "purpose": "Tap scale to 0.93." },
+      { "name": "duration-spring", "value": "350ms", "purpose": "Hover settle, screenshot hover, axis marker travel." },
+      { "name": "duration-fade", "value": "400ms", "purpose": "Scroll reveals, nav panel, skip-link slide." },
+      { "name": "duration-scrub", "value": "200ms", "purpose": "Linear progress that follows a playhead." },
+      { "name": "duration-pulse", "value": "500ms", "purpose": "Timer endgame pulse, autoreversing." },
+      { "name": "press-scale", "value": "0.93", "purpose": "The single press feedback value. Mirrored by hand in site/src/lib/motion.js." },
+      { "name": "stagger-children", "value": "0.08s", "purpose": "Default stagger between revealed siblings; the hero pair uses 0.1s with a 0.15s lead-in." },
+      { "name": "border-rotate", "value": "3.5s linear infinite", "purpose": "The rotating amber conic ring on the highlighted pricing card and the nav CTA. Disabled under prefers-reduced-motion." },
+      { "name": "reduced-motion", "value": "durations collapse to 1ms; press-scale and pulse-scale to 1", "purpose": "prefers-reduced-motion override declared at :root in tokens/motion.css." }
+    ],
+    "breakpoints": [
+      { "name": "lg", "value": "980px" },
+      { "name": "sm", "value": "640px" }
+    ],
+    "sourceOfTruth": {
+      "tokens": "../LiftingLab/LiftingLab/Theme/Theme.swift",
+      "mirror": "tokens/{colors,fonts,typography,spacing,elevation,motion,base}.css",
+      "changeOrder": "Theme.swift first, then tokens/*.css. Never the reverse.",
+      "verify": "../LiftingLab/Scripts/check-design-tokens.sh --report",
+      "note": "Token names deliberately differ between Swift and CSS (BPColor.background is --bg; phasePurple is --phase-transition). That is intentional, not drift."
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one filled amber element on a view. Amber fill, black label, always.",
+      "html": "<button class=\"ds-btn-primary\">Get Lifting Lab</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; padding: 0 20px; font-family: var(--font-display, ui-rounded, 'SF Pro Rounded', 'Nunito', system-ui, sans-serif); font-size: 17px; font-weight: 600; background: var(--amber, #f5a623); color: var(--accent-fg, #000); border: none; border-radius: var(--radius-button, 14px); cursor: pointer; transition: transform 350ms cubic-bezier(0.22,1,0.36,1), filter 350ms cubic-bezier(0.22,1,0.36,1); -webkit-tap-highlight-color: transparent; } .ds-btn-primary:hover { transform: scale(1.02); filter: brightness(1.08); } .ds-btn-primary:active { transform: scale(0.93); transition: transform 250ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary:focus-visible { outline: 2px solid var(--amber, #f5a623); outline-offset: 3px; border-radius: 4px; } .ds-btn-primary:disabled { opacity: 0.35; cursor: default; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Small transparent CTA with a 1.5px amber border. Used in the sticky nav.",
+      "html": "<button class=\"ds-btn-outline\">Get Lifting Lab</button>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 36px; padding: 0 14px; font-family: var(--font-display, ui-rounded, 'SF Pro Rounded', 'Nunito', system-ui, sans-serif); font-size: 15px; font-weight: 600; background: transparent; color: var(--amber, #f5a623); border: 1.5px solid var(--amber, #f5a623); border-radius: var(--radius-button, 14px); cursor: pointer; transition: transform 350ms cubic-bezier(0.22,1,0.36,1), filter 350ms cubic-bezier(0.22,1,0.36,1); } .ds-btn-outline:hover { transform: scale(1.02); filter: brightness(1.08); } .ds-btn-outline:active { transform: scale(0.93); transition: transform 250ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-outline:focus-visible { outline: 2px solid var(--amber, #f5a623); outline-offset: 3px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Elevated-surface fill with white text. Also the pre-launch inert CTA, rendered disabled at full opacity.",
+      "html": "<button class=\"ds-btn-secondary\">Coming to the App Store</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; padding: 0 20px; font-family: var(--font-display, ui-rounded, 'SF Pro Rounded', 'Nunito', system-ui, sans-serif); font-size: 17px; font-weight: 600; background: var(--surface-elevated, #2c2c2e); color: var(--text-primary, #fff); border: none; border-radius: var(--radius-button, 14px); cursor: pointer; transition: transform 350ms cubic-bezier(0.22,1,0.36,1), filter 350ms cubic-bezier(0.22,1,0.36,1); } .ds-btn-secondary:hover { transform: scale(1.02); filter: brightness(1.08); } .ds-btn-secondary:active { transform: scale(0.93); transition: transform 250ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--amber, #f5a623); outline-offset: 3px; }"
+    },
+    {
+      "name": "Make / Miss Buttons",
+      "kind": "button",
+      "refersTo": "button-make",
+      "description": "The sport's outcome pair. Literal make/miss colors with white labels; reserved for outcome actions only.",
+      "html": "<div class=\"ds-makemiss\"><button class=\"ds-btn-make\">Made</button><button class=\"ds-btn-miss\">Miss</button></div>",
+      "css": ".ds-makemiss { display: flex; gap: 12px; } .ds-btn-make, .ds-btn-miss { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 20px; font-family: var(--font-display, ui-rounded, 'SF Pro Rounded', 'Nunito', system-ui, sans-serif); font-size: 17px; font-weight: 600; color: #fff; border: none; border-radius: var(--radius-button, 14px); cursor: pointer; transition: transform 250ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-make { background: var(--make, #34c759); } .ds-btn-miss { background: var(--miss, #ff3b30); } .ds-btn-make:hover, .ds-btn-miss:hover { filter: brightness(1.08); } .ds-btn-make:active, .ds-btn-miss:active { transform: scale(0.93); } .ds-btn-make:focus-visible, .ds-btn-miss:focus-visible { outline: 2px solid var(--amber, #f5a623); outline-offset: 3px; }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "The standard surface. Fill only — no border, no shadow. On a section whose ground is already the card surface, it inverts to the page ground rather than gaining a border.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card-label\">Pro</div><div class=\"ds-card-price\">$9.99</div><div class=\"ds-card-note\">The unlock for Bar Trace at full depth.</div></div>",
+      "css": ".ds-card { display: grid; gap: 14px; align-content: start; max-width: 300px; background: var(--surface, #232323); border-radius: var(--radius-card, 16px); padding: 16px; } .ds-card-label { font-family: var(--font-label, ui-rounded, 'Nunito', system-ui, sans-serif); font-size: 12px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; color: var(--text-secondary, rgba(255,255,255,0.6)); } .ds-card-price { font-family: var(--font-numeric, ui-rounded, 'Nunito', system-ui, sans-serif); font-size: 34px; font-weight: 900; font-variant-numeric: tabular-nums lining-nums; color: var(--text-primary, #fff); } .ds-card-note { font-size: 15px; font-weight: 600; line-height: 1.35; color: var(--text-secondary, rgba(255,255,255,0.6)); }"
+    },
+    {
+      "name": "Highlighted Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "The one emphasized card on the page: amber hairline border, amber value, and the rotating conic-gradient border ornament. Used exactly once.",
+      "html": "<div class=\"ds-card-hl\"><div class=\"ds-card-hl-label\">Pro</div><div class=\"ds-card-hl-price\">$9.99</div><div class=\"ds-card-hl-note\">The unlock for Bar Trace at full depth.</div></div>",
+      "css": "@property --ds-border-angle { syntax: '<angle>'; inherits: false; initial-value: 0deg; } @keyframes ds-border-rotate { to { --ds-border-angle: 360deg; } } .ds-card-hl { position: relative; isolation: isolate; display: grid; gap: 14px; align-content: start; max-width: 300px; background: var(--bg, #1a1a1a); border: 1px solid rgba(245,166,35,0.4); border-radius: var(--radius-card, 16px); padding: 16px; } .ds-card-hl::before { content: ''; position: absolute; inset: -2px; z-index: -1; border-radius: inherit; padding: 2px; background: conic-gradient(from var(--ds-border-angle), transparent 0 65%, var(--amber, #f5a623) 85%, transparent 100%); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation: ds-border-rotate 3.5s linear infinite; } @media (prefers-reduced-motion: reduce) { .ds-card-hl::before { animation: none; } } .ds-card-hl-label { font-family: var(--font-label, ui-rounded, 'Nunito', system-ui, sans-serif); font-size: 12px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; color: var(--amber, #f5a623); } .ds-card-hl-price { font-family: var(--font-numeric, ui-rounded, 'Nunito', system-ui, sans-serif); font-size: 34px; font-weight: 900; font-variant-numeric: tabular-nums lining-nums; color: var(--amber, #f5a623); } .ds-card-hl-note { font-size: 15px; font-weight: 600; line-height: 1.35; color: var(--text-secondary, rgba(255,255,255,0.6)); }"
+    },
+    {
+      "name": "Chips",
+      "kind": "chip",
+      "refersTo": "chip-accent",
+      "description": "Full-pill status markers. Accent variant for status, neutral variant for a plain fact.",
+      "html": "<div class=\"ds-chip-row\"><span class=\"ds-chip-accent\">Coming soon</span><span class=\"ds-chip-neutral\">Built for competitive weightlifting</span></div>",
+      "css": ".ds-chip-row { display: flex; gap: 8px; flex-wrap: wrap; } .ds-chip-accent, .ds-chip-neutral { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-size: 12px; line-height: 1.35; } .ds-chip-accent { background: rgba(245,166,35,0.16); border: 1px solid rgba(245,166,35,0.4); font-weight: 700; color: var(--amber, #f5a623); } .ds-chip-neutral { background: var(--surface, #232323); border: 1px solid rgba(255,255,255,0.08); color: var(--text-secondary, rgba(255,255,255,0.6)); }"
+    },
+    {
+      "name": "Sticky Nav",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Translucent ground with a 20px backdrop blur and a hairline bottom edge, 68px tall. Links go amber on hover. Below 980px the link row is replaced by a toggle.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-mark\">Lifting Lab</span><span class=\"ds-nav-spacer\"></span><div class=\"ds-nav-links\"><a href=\"#pillars\">Pillars</a><a href=\"#explore\">Explore</a><a href=\"#pricing\">Pricing</a><a href=\"#faq\">FAQ</a></div><button class=\"ds-nav-toggle\" aria-label=\"Menu\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 5h16\"/><path d=\"M4 12h16\"/><path d=\"M4 19h16\"/></svg></button></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 28px; height: 68px; padding: 0 24px; background: rgba(26,26,26,0.82); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.08); } .ds-nav-mark { font-family: var(--font-display, ui-rounded, 'Nunito', system-ui, sans-serif); font-weight: 900; font-size: 17px; color: var(--text-primary, #fff); } .ds-nav-spacer { flex: 1; } .ds-nav-links { display: flex; gap: 26px; } .ds-nav-links a { font-size: 15px; line-height: 1.35; color: var(--text-secondary, rgba(255,255,255,0.6)); text-decoration: none; transition: color 400ms cubic-bezier(0.2,0,0,1); } .ds-nav-links a:hover { color: var(--amber, #f5a623); } .ds-nav-links a:focus-visible { outline: 2px solid var(--amber, #f5a623); outline-offset: 3px; border-radius: 4px; } .ds-nav-toggle { display: none; background: none; border: none; padding: 8px; color: var(--text-primary, #fff); cursor: pointer; } @media (max-width: 980px) { .ds-nav-links { display: none; } .ds-nav-toggle { display: inline-flex; } }"
+    },
+    {
+      "name": "Week Axis",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "The page's spine and only persistent chrome. A calibrated sticky rail of five stations; the lit one carries an amber disc with a soft halo. Hidden below 980px, where each station's own marker carries the week.",
+      "html": "<nav class=\"ds-axis\" aria-label=\"Training cycle\"><ol><li><a href=\"#cycle\" aria-current=\"step\"><span class=\"ds-axis-tick\" data-on><span class=\"ds-axis-dot\"></span></span><span class=\"ds-axis-mark\">12</span><span class=\"ds-axis-label\">The cycle</span></a></li><li><a href=\"#daily\"><span class=\"ds-axis-tick\"></span><span class=\"ds-axis-mark\">8</span><span class=\"ds-axis-label\">Any given day</span></a></li><li><a href=\"#miss\"><span class=\"ds-axis-tick\"></span><span class=\"ds-axis-mark\">4</span><span class=\"ds-axis-label\">The miss</span></a></li><li><a href=\"#peak\"><span class=\"ds-axis-tick\"></span><span class=\"ds-axis-mark\">1</span><span class=\"ds-axis-label\">Peak</span></a></li><li><a href=\"#platform\"><span class=\"ds-axis-tick\"></span><span class=\"ds-axis-mark\">0</span><span class=\"ds-axis-label\">The platform</span></a></li></ol></nav>",
+      "css": ".ds-axis ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 26px; width: 150px; } .ds-axis a { display: grid; grid-template-columns: 12px auto; align-items: center; column-gap: 12px; row-gap: 1px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 400ms cubic-bezier(0.2,0,0,1); } .ds-axis a:hover { color: rgba(255,255,255,0.6); } .ds-axis a[aria-current='step'] { color: #fff; } .ds-axis a:focus-visible { outline: 2px solid var(--amber, #f5a623); outline-offset: 3px; border-radius: 4px; } .ds-axis-tick { position: relative; width: 12px; height: 12px; display: grid; place-items: center; grid-row: span 2; } .ds-axis-tick::before { content: ''; position: absolute; left: 50%; top: -32px; bottom: -32px; width: 1px; background: rgba(255,255,255,0.08); transform: translateX(-50%); } .ds-axis li:first-child .ds-axis-tick::before { top: 6px; } .ds-axis li:last-child .ds-axis-tick::before { bottom: 6px; } .ds-axis-tick::after { content: ''; width: 5px; height: 5px; border-radius: 999px; background: rgba(255,255,255,0.35); position: relative; z-index: 1; } .ds-axis-tick[data-on]::after { background: transparent; } .ds-axis-dot { position: absolute; inset: 0; border-radius: 999px; background: var(--amber, #f5a623); box-shadow: 0 0 0 4px rgba(245,166,35,0.14); z-index: 2; } .ds-axis-mark { font-family: var(--font-numeric, ui-rounded, 'Nunito', system-ui, sans-serif); font-size: 20px; font-weight: 900; line-height: 1; font-variant-numeric: tabular-nums lining-nums; color: inherit; } .ds-axis-label { grid-column: 2; font-size: 12px; line-height: 1.35; color: rgba(255,255,255,0.5); } .ds-axis a[aria-current='step'] .ds-axis-label { color: rgba(255,255,255,0.6); }"
+    },
+    {
+      "name": "Screenshot Bezel",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "The single choke point for every screenshot on the site. Minimal dark bezel at 34px, 1px white hairline at 14%, fixed 9:19.5 ratio reserving layout space, ambient pool shadow beneath. Sources ship as WebP 600w/900w with a PNG archival fallback.",
+      "html": "<figure class=\"ds-shot\"><div class=\"ds-shot-frame\"></div><figcaption>Film a set — it reads the pull, phase by phase</figcaption></figure>",
+      "css": ".ds-shot { margin: 0; display: grid; gap: 12px; justify-items: center; } .ds-shot-frame { width: 300px; max-width: 100%; aspect-ratio: 9 / 19.5; border-radius: 34px; overflow: hidden; background: #000; border: 1px solid rgba(255,255,255,0.14); box-shadow: 0 30px 70px rgba(0,0,0,0.55); transition: transform 350ms cubic-bezier(0.22,1,0.36,1), border-color 350ms cubic-bezier(0.22,1,0.36,1); } .ds-shot:hover .ds-shot-frame { transform: scale(1.015); border-color: rgba(255,255,255,0.22); } .ds-shot figcaption { font-size: 12px; line-height: 1.35; color: rgba(255,255,255,0.5); text-align: center; max-width: 300px; }"
+    },
+    {
+      "name": "Section Label",
+      "kind": "custom",
+      "refersTo": "section-label",
+      "description": "The only small uppercase form in the system. Permitted only where it states a fact the heading cannot — a week unit, a before/after caption, a tier name. Never as an eyebrow above a heading.",
+      "html": "<p class=\"ds-station-mark\"><span class=\"ds-station-mark-num\">4</span><span class=\"ds-station-mark-unit\">weeks out</span></p>",
+      "css": ".ds-station-mark { display: flex; align-items: baseline; gap: 8px; margin: 0 0 14px; } .ds-station-mark-num { font-family: var(--font-numeric, ui-rounded, 'Nunito', system-ui, sans-serif); font-size: 20px; font-weight: 900; line-height: 1; font-variant-numeric: tabular-nums lining-nums; color: var(--amber, #f5a623); } .ds-station-mark-unit { font-family: var(--font-label, ui-rounded, 'Nunito', system-ui, sans-serif); font-size: 12px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; color: rgba(255,255,255,0.5); }"
+    },
+    {
+      "name": "Skip Link",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Hidden off-canvas until focused, then slides down as an amber pill with a black label. The nav is sticky and the page is one long scroll, so a keyboard user would otherwise tab the whole nav on every visit.",
+      "html": "<a class=\"ds-skip-link\" href=\"#main\">Skip to content</a>",
+      "css": ".ds-skip-link { position: absolute; left: 12px; top: -100px; z-index: 100; padding: 12px 18px; border-radius: 14px; background: var(--amber, #f5a623); color: #000; font-family: var(--font-display, ui-rounded, 'Nunito', system-ui, sans-serif); font-size: 17px; font-weight: 600; text-decoration: none; transition: top 400ms ease; } .ds-skip-link:focus { top: 12px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Calibrated Instrument",
+    "overview": "This is not a marketing skin invented for a website. It is the app's own instrument face, lifted onto the web with its measurements intact. The ground is near-black, the surfaces are one step up from it, and a single amber marks where you are — never where the designer wanted your eye to wander. Everything reads like a readout: numbers are tabular so a changing value never nudges its neighbour, the rounded face carries every title and every figure, and the body copy steps back into the system's own text face so the numbers stay the loudest thing on screen.\n\nDepth is tonal, not theatrical. Three greys do the work that shadows do elsewhere: --bg for the page, --surface for a card, --surface-elevated for a track or a capsule. Cards have no border and no shadow — they are simply a lighter fill on a darker one. The one place a real shadow appears is under a device bezel, and it is ambient, not offset: a screenshot floats above the page because a phone in a studio shot casts a diffuse pool, not because the layout wanted a lift.\n\nThe page's own structure is density, not repetition. The spine is a calibrated week axis running twelve weeks out to meet day, and each station on it is deliberately shaped differently: wide and calm early, a paired before/after next, a darker tighter room at four weeks out, a dense numeric block at one, and the highest-contrast close at zero. The refusal is explicit and it is the whole point: a hero followed by alternating text/screenshot rows of equal weight is what this world is not.",
+    "keyCharacteristics": [
+      "Dark-locked. One theme, deliberately, because the use scene is a dim gym mid-session.",
+      "One accent. Amber marks position, state, and interactivity — nothing decorative.",
+      "Tonal depth. Three surface steps replace an elevation ramp.",
+      "Rounded numerals. Every figure is tabular, lining, and set in the rounded face.",
+      "Density as structure. Sections vary in shape on purpose; convergence is the failure mode.",
+      "Fill-only cards. No borders, no shadows, no outlines at rest."
+    ],
+    "rules": [
+      { "name": "The Grey-Free Text Rule", "body": "Secondary and tertiary text is white at a fixed alpha, never a grey hex. A grey hex bakes in the surface it was sampled against and breaks the moment the text moves from --bg to --surface.", "section": "colors" },
+      { "name": "The Black-On-Amber Rule", "body": "Text on an amber fill is always black. Amber text on a dark ground is permitted; amber text on an amber fill is not.", "section": "colors" },
+      { "name": "The One Position Rule", "body": "Amber marks position and state. If a use of amber cannot be described as \"this is where you are\" or \"this is what you press\", it is decoration and does not ship.", "section": "colors" },
+      { "name": "The Dark-Lock Rule", "body": "There is no light theme. The use scene is a dim gym, mid-session, chalked hands. Adding one is a product decision, not a styling task.", "section": "colors" },
+      { "name": "The No-Eyebrow Rule", "body": "The section-head component has no eyebrow prop, and it was removed on purpose. A small amber uppercase label above a heading that says what the heading already says is the most reliable tell that a layout was assembled from a template. Do not reintroduce it. The uppercase label survives only where it carries information the heading does not — the calibrated week markers, a before/after caption, a tier name.", "section": "typography" },
+      { "name": "The Tabular Numeral Rule", "body": "Any number a reader might compare vertically — prices, weeks, scores — is tabular-nums lining-nums. Columns line up and a changing value never shifts its neighbours.", "section": "typography" },
+      { "name": "The Rounded-Numbers Rule", "body": "Numbers and titles take the rounded display face. Sentences take the system text face. A number set in the body face has lost the brand voice.", "section": "typography" },
+      { "name": "The Cascade-Not-Override Rule", "body": "Layout belongs in a class. A section that needs a different ratio sets --split-cols; it does not restate grid-template-columns inline. No !important appears anywhere in this system.", "section": "layout" },
+      { "name": "The Two-Breakpoint Rule", "body": "980px and 640px. A third breakpoint means the layout is wrong, not that the system is short one.", "section": "layout" },
+      { "name": "The Tonal-Depth Rule", "body": "Depth comes from a surface step, not a shadow. If a block needs to feel raised, move it to the next surface token; if it needs to feel separate, give it a hairline.", "section": "elevation" },
+      { "name": "The Physical-Shadow-Only Rule", "body": "A shadow ships only when it describes something physical — a device casting a pool, an element genuinely floating. There are no offset shadows, no hard-edged shadows, and no shadow used to create hierarchy.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do change Theme.swift first and mirror into tokens/*.css second. The iOS app is the source of truth; the CSS is the mirror. Verify with check-design-tokens.sh --report.",
+      "Do express depth as a surface step (--bg → --surface → --surface-elevated), not as a shadow.",
+      "Do keep white text at fixed alphas. Never introduce a grey hex for text.",
+      "Do put base layout in a class and per-section variance in --split-cols.",
+      "Do set every comparable number in tabular-nums lining-nums.",
+      "Do route every screenshot through the shared screenshot component so the bezel, aspect ratio, and responsive sources stay in one place.",
+      "Do keep lib/motion.js numerically identical to tokens/motion.css. Motion cannot read a CSS custom property, so the values are duplicated by hand.",
+      "Do vary section density on purpose. The arc's stations are wide, paired, dark, dense, and high-contrast in that order, and the variation is the structure.",
+      "Do give keyboard users a visible 2px amber focus ring at 3px offset on every interactive element.",
+      "Do stop the rotating border ornament and collapse motion durations under prefers-reduced-motion."
+    ],
+    "donts": [
+      "Don't add an eyebrow or kicker above a heading. The section-head component has no such prop and the omission is deliberate.",
+      "Don't use amber for anything that isn't position, state, or interactivity.",
+      "Don't set an amber label on an amber fill; text on amber is always black.",
+      "Don't introduce a light theme. Dark-lock is a product decision tied to the use scene.",
+      "Don't use bounce, overshoot, or elastic easing. Both house curves (cubic-bezier(0.22, 1, 0.36, 1) and cubic-bezier(0.16, 1, 0.3, 1)) are exponential ease-outs, chosen because real mass decelerates and does not rebound off a layout.",
+      "Don't add a third breakpoint. 980px and 640px are the whole responsive story.",
+      "Don't rename or drop the load-bearing layout classes (.split, .shot-row, .pricing-grid, .hero-pair, .explore-shot-col, .site-nav-links, .site-nav-toggle). Losing one breaks mobile silently.",
+      "Don't use !important. If a media query is losing, the base rule is in the wrong place.",
+      "Don't fetch icons from a CDN or add an icon font. Three icons are vendored inline; a fourth is pasted in beside them.",
+      "Don't add a webfont. Nunito is the one substitution that earns its bytes; every other face in the stacks is the platform's own and is already correct.",
+      "Don't put a border or a shadow on a card at rest.",
+      "Don't let the arc's stations converge on one shape. If every station looks the same, the section has lost the thing it exists to do."
+    ]
+  }
+}
