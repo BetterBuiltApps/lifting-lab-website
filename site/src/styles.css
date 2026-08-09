@@ -443,7 +443,10 @@ a:hover { color: var(--amber); }
 .arc-station-title {
   margin: 0 0 18px;
   font-family: var(--font-display);
-  font-weight: var(--weight-heavy);
+  /* Extrabold, not heavy: the heading face ships 600/700/800, and asking for
+     900 makes the browser synthesise a fake bold from 800. 800 is also the
+     wordmark's weight, so the biggest heading and the logo match exactly. */
+  font-weight: var(--weight-extrabold);
   font-size: clamp(28px, 3.2vw, 44px);
   line-height: 1.08;
   letter-spacing: -1px;

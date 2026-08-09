@@ -102,7 +102,7 @@ export function SiteHead({ title, body, center = false, max = 640 }) {
       justifyItems: center ? 'center' : 'start',
     }}>
       <h2 style={{
-        margin: 0, fontFamily: 'var(--font-display)', fontWeight: 900,
+        margin: 0, fontFamily: 'var(--font-display)', fontWeight: 'var(--weight-extrabold)',
         fontSize: 'clamp(30px,3.4vw,48px)', lineHeight: 1.06, letterSpacing: '-1px',
         color: 'var(--text-primary)',
       }}>{title}</h2>

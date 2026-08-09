@@ -9,18 +9,36 @@ need a different weight, tracking, or cap height, change it here and re-ship.
 ## Why this exists
 
 The wordmark used to be set in whatever Inkscape's generic `Sans` family
-resolved to: a grotesque with slab serifs on the capital I. It was a default,
-not a choice, and it shared no letterforms with anything else on the page.
+resolved to. On the machine that drew it that alias resolved to **Verdana
+Bold**, which is where the slab serifs on the capital I came from. That was a
+default rather than a choice, and Verdana's licence permits neither embedding
+in an app nor self-hosting, so it could never have shipped as-is.
 
-It is now set in **Nunito**, the same face `tokens/fonts.css` already loads for
-display type, so the logo and the headings are one type system. Nunito is
-licensed SIL OFL, which permits converting glyphs to outlines and embedding
-them in a logo. Apple's SF Pro Rounded, which the CSS stack prefers ahead of
-Nunito on Apple devices, does **not** permit that, which is why the outlines
-come from Nunito even though most visitors see headings in SF Pro Rounded.
+It is now set in **Barlow ExtraBold (800)**, the weight the original artwork
+asked for. Barlow is the same face `tokens/fonts.css` loads for headings and the
+app bundles in `Theme/Fonts`, so the logo, every heading on this site, and every
+title in the app are one set of letterforms. It is licensed SIL OFL, which
+permits outlining glyphs into a logo. Apple's SF Pro Rounded does not, which is
+why the outlines cannot simply come from whatever the CSS stack prefers.
+
+Barlow is also not an outside pick: the original logo file already set its other
+text in it.
 
 Text is outlined rather than left live so the logo never depends on a font
 being present, including when it loads through an `img` tag or as the favicon.
+
+## Two traps, both of which have already bitten
+
+**A double hyphen cannot appear inside an XML comment.** Writing a CSS custom
+property name into the header comment makes the whole SVG fail to parse, and it
+fails *silently*: an `img` tag renders nothing and logs nothing. `assemble.py`
+now parses its own output before writing and refuses to ship an invalid file.
+
+**Do not find the mark by scanning the source as text.** `mark_d()` used to do
+`src.index('id="path1-4"')`, which matched the *comment at the top of
+mark-source.svg* that mentions the id by name, and then returned the first path
+in the document: the old outlined wordmark. The favicon became the word LIFTING
+LAB with no flask, which is invisible at 16px. It parses the XML now.
 
 ## Running it
 
