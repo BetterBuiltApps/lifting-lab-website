@@ -95,6 +95,21 @@ as an import rather than a style choice.
 Note for anyone editing an SVG: a doubled hyphen is illegal inside an XML
 comment, so avoid writing flag names like `--export-type` there.
 
+## The logo is generated, not drawn
+
+`site/public/assets/logo.svg` (the lockup) and `site/public/assets/mark.svg`
+(the flask alone, used as the favicon) are **build outputs**. Do not hand edit
+the path data. Regenerate with `tools/wordmark/` and read its README first.
+
+The wordmark is Nunito, outlined to paths. That is deliberate: Nunito is the
+same face `tokens/fonts.css` loads for display type, so the logo and the
+headings are one type system. It is also the only face in the stack whose
+licence (SIL OFL) permits outlining glyphs into a logo; SF Pro Rounded, which
+the CSS stack prefers ahead of it on Apple devices, does not.
+
+The favicon points at `mark.svg`, not `logo.svg`. The lockup is 3.5:1, so a
+browser fitting it into a 16px box drew the flask about 4px wide.
+
 ## Regenerating the app screenshots
 
 The screenshots are the site's only proof, and they go stale every time the app
