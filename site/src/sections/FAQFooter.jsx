@@ -3,7 +3,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import { siteWrap, SiteHead, AppStoreButton } from './Chrome';
 import { SITE } from '../config';
 import { asset } from '../lib/asset';
-import { DURATION, EASE, fadeUpItem, staggerContainer, VIEWPORT_ONCE } from '../lib/motion';
+import { DURATION, EASE } from '../lib/motion';
 
 function FAQItem({ q, a }) {
   const [open, setOpen] = React.useState(false);
@@ -14,7 +14,7 @@ function FAQItem({ q, a }) {
   // external counter that would break if the list is reordered.
   const id = React.useMemo(() => `faq-${q.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`, [q]);
   return (
-    <motion.div variants={fadeUpItem(12)} style={{ borderTop: 'var(--border-hairline-1)', padding: '18px 0' }}>
+    <div style={{ borderTop: 'var(--border-hairline-1)', padding: '18px 0' }}>
       <h3 style={{ margin: 0 }}>
         <button
           id={`${id}-trigger`}
@@ -52,7 +52,7 @@ function FAQItem({ q, a }) {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.div>
+    </div>
   );
 }
 
@@ -72,15 +72,9 @@ export function FAQ() {
     <section id="faq" style={{ padding: 'clamp(60px,7vw,110px) 0' }}>
       <div style={{ ...siteWrap, maxWidth: 760 }}>
         <SiteHead title="Questions." max={640} />
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={VIEWPORT_ONCE}
-          variants={staggerContainer(0.05)}
-          style={{ marginTop: 20 }}
-        >
+        <div style={{ marginTop: 20 }}>
           {items.map(([q, a]) => <FAQItem key={q} q={q} a={a} />)}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

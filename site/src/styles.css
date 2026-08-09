@@ -170,11 +170,18 @@ a:hover { color: var(--amber); }
   display: flex;
   align-items: flex-start;
   overflow-x: auto;
-  scrollbar-width: none;
+  /* Themed rather than hidden. A hidden-scrollbar overflow region has no
+     affordance that it scrolls, and at 200% zoom that is a reflow trap. */
+  scrollbar-width: thin;
+  scrollbar-color: #3a3a3a transparent;
 }
-.hero-spine-list::-webkit-scrollbar { display: none; }
-.hero-spine-item { flex: 0 0 auto; min-width: max-content; padding-right: var(--span, 0px); }
-.hero-spine-item:last-child { padding-right: 0; }
+
+/* Width IS the interval — weeks x 40px, not label width plus padding. The
+   horizontal scale is wider than the rail's 22px because labels are far wider
+   than they are tall; 40px/week clears the longest one, so the distance between
+   two marks stays proportional to the weeks between them. */
+.hero-spine-item { flex: 0 0 auto; width: var(--span, auto); }
+.hero-spine-item:last-child { width: auto; padding-right: 4px; }
 
 .hero-spine-link {
   display: grid;
@@ -185,7 +192,7 @@ a:hover { color: var(--amber); }
   border-top: 1px solid var(--hairline);
   /* One tick per week along the interval this item spans. */
   background:
-    repeating-linear-gradient(to right, var(--hairline) 0 1px, transparent 1px 13px) 0 0 / 100% 4px no-repeat;
+    repeating-linear-gradient(to right, var(--hairline) 0 1px, transparent 1px 40px) 0 0 / 100% 4px no-repeat;
   transition: color var(--duration-fade) var(--ease-out);
 }
 .hero-spine-link:hover { color: var(--text-secondary); }
@@ -263,7 +270,9 @@ a:hover { color: var(--amber); }
   padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 0 clamp(28px, 4vw, 56px);
+  /* A real row gap: at any width that wraps to two columns, a zero row gap put
+     the wrapped case's amber rule hard against the item above it. */
+  gap: 8px clamp(28px, 4vw, 56px);
 }
 .problem-case { padding: 20px 0; border-top: 1px solid var(--amber-40); }
 .problem-case-title {
@@ -300,19 +309,45 @@ a:hover { color: var(--amber); }
 
 .arc-axis { position: sticky; top: 132px; align-self: start; }
 
-/* No `gap`. Each item reserves the rail its own interval is worth (--gap-after,
-   13px per week from Arc.jsx), so twelve-to-eight occupies four times the rail
-   of one-to-zero. A uniform gap here would draw equal distance for unequal
-   time, which is the difference between a measured axis and a decorative one. */
-.arc-axis-list { list-style: none; margin: 0; padding: 0; }
-.arc-axis-item { padding-bottom: var(--gap-after, 0px); }
+/* Item height IS the interval, and nothing else contributes to it.
+   `--gap-after` is weeks x 22px from Arc.jsx, and the label is taken out of flow
+   so its own height cannot dilute the scale — the earlier version added a ~37px
+   label block to every gap, which made a three-week interval measure only 1.5x
+   a one-week one. Mark-to-mark distance is now exactly proportional to weeks. */
+.arc-axis-list { list-style: none; margin: 0; padding: 10px 0 0; }
+.arc-axis-item { position: relative; height: var(--gap-after, 0px); }
+/* The last mark closes the axis; it needs room for its own label only. */
+.arc-axis-item:last-child { height: 22px; }
 
+/* The rail for this interval, ruled one tick per week at the same 22px period.
+   It spans the item's full height, so consecutive segments meet at each mark
+   instead of stopping short and leaving the axis drawn as disconnected stubs. */
+.arc-axis-item::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  transform: translateX(-50%);
+  background:
+    linear-gradient(var(--hairline), var(--hairline)) 50% 0 / 1px 100% no-repeat,
+    repeating-linear-gradient(to bottom, var(--hairline) 0 1px, transparent 1px 22px);
+}
+.arc-axis-item:last-child::before { display: none; }
+
+/* Out of flow and centred on its mark, so the label costs the scale nothing.
+   Single line for the same reason: a stacked numeral-over-label block was what
+   made the intervals label-driven. */
 .arc-axis-link {
-  display: grid;
-  grid-template-columns: 12px auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
   align-items: center;
-  column-gap: 12px;
-  row-gap: 1px;
+  gap: 10px;
+  white-space: nowrap;
   color: var(--text-tertiary);
   text-decoration: none;
   transition: color var(--duration-fade) var(--ease-out);
@@ -320,38 +355,14 @@ a:hover { color: var(--amber); }
 .arc-axis-link:hover { color: var(--text-secondary); }
 .arc-axis-link[aria-current='step'] { color: var(--text-primary); }
 
-/* The tick is the axis itself: a hairline rule with a mark on it. The connecting
-   line is drawn by the tick's own ::before so the rail cannot fall out of step
-   with the list it labels. */
 .arc-axis-tick {
   position: relative;
-  width: 12px;
-  height: 12px;
+  width: 11px;
+  height: 11px;
+  flex: 0 0 auto;
   display: grid;
   place-items: center;
-  grid-row: span 2;
 }
-/* The rail below each station, ruled at one tick per week. The gradient's period
-   is 13px — the same WEEK_PX the item spacing derives from — so the ticks and
-   the station marks stay in register: every tick is a real week, and counting
-   them between two marks gives the interval. */
-.arc-axis-tick::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 10px;
-  height: var(--gap-after, 0px);
-  width: 5px;
-  transform: translateX(-50%);
-  background:
-    linear-gradient(var(--hairline), var(--hairline)) 50% 0 / 1px 100% no-repeat,
-    repeating-linear-gradient(
-      to bottom,
-      var(--hairline) 0 1px,
-      transparent 1px 13px
-    );
-}
-.arc-axis-item:last-child .arc-axis-tick::before { display: none; }
 .arc-axis-tick::after {
   content: '';
   width: 5px;
@@ -374,13 +385,14 @@ a:hover { color: var(--amber); }
 
 .arc-axis-mark {
   font-family: var(--font-numeric);
-  font-size: var(--text-title3);
+  /* Sized to the 22px/week scale: the whole single-line block must stay under
+     one week's rail, or the labels start setting the spacing again. */
+  font-size: var(--text-callout);
   font-weight: var(--weight-heavy);
   line-height: 1;
   color: inherit;
 }
 .arc-axis-label {
-  grid-column: 2;
   font: var(--type-caption);
   color: var(--text-tertiary);
 }

@@ -32,11 +32,21 @@ export const STATIONS = [
   { id: 'platform', week: 0, unit: 'meet day', label: 'The platform' },
 ];
 
-/** Rail length for the interval below each station, at 13px per week. The last
- *  station closes the axis and has no interval after it. */
-const WEEK_PX = 13;
-export const gapAfter = (i) =>
-  i < STATIONS.length - 1 ? (STATIONS[i].week - STATIONS[i + 1].week) * WEEK_PX : 0;
+/** Rail length for the interval below each station, in px per week.
+ *
+ *  The scale has to clear the label's own height, or the labels set the spacing
+ *  instead of the weeks and the axis is decorative again: at 13px/week with a
+ *  two-line label block, a three-week interval measured 1.5x a one-week one.
+ *  The labels are single-line and absolutely positioned now, so they add no
+ *  height, and 22px/week clears a ~20px line — which makes mark-to-mark
+ *  distance exactly proportional to the weeks between them.
+ *
+ *  The horizontal spine in the hero needs a wider scale because labels are much
+ *  wider than they are tall; 40px/week clears the longest one. */
+export const WEEK_PX = 22;
+export const HERO_WEEK_PX = 40;
+export const gapAfter = (i, perWeek = WEEK_PX) =>
+  i < STATIONS.length - 1 ? (STATIONS[i].week - STATIONS[i + 1].week) * perWeek : 0;
 
 /* Tracks which station is being read and reports it upward. IntersectionObserver
  * rather than a scroll handler: no per-frame work, and it degrades to "first

@@ -1,9 +1,7 @@
 import React from 'react';
-import { motion } from 'motion/react';
 import { Card, SectionLabel, Icon } from '../design-system';
 import { siteWrap, SiteHead, AppStoreButton } from './Chrome';
 import { SITE } from '../config';
-import { fadeUpItem, staggerContainer, VIEWPORT_ONCE } from '../lib/motion';
 
 export function Pricing() {
   const { free, pro, coach } = SITE.pricing;
@@ -28,15 +26,9 @@ export function Pricing() {
       <div style={{ ...siteWrap, display: 'grid', gap: 36 }}>
         <SiteHead center title="Free, unlimited, forever." max={720}
           body="The training log, programs, and calculators never expire and never lock. Pro adds full-depth video analysis. Coach adds a roster." />
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={VIEWPORT_ONCE}
-          variants={staggerContainer(0.08)}
-          className="pricing-grid"
-        >
+        <div className="pricing-grid">
           {tiers.map((tier) => (
-            <Card key={tier.t} variants={fadeUpItem(16)} className={tier.highlight ? 'animated-border' : undefined} style={{
+            <Card key={tier.t} className={tier.highlight ? 'animated-border' : undefined} style={{
               background: 'var(--bg)', display: 'grid', gap: 14, alignContent: 'start',
               border: tier.highlight ? 'var(--border-accent-1)' : 'none',
             }}>
@@ -56,7 +48,7 @@ export function Pricing() {
               </div>
             </Card>
           ))}
-        </motion.div>
+        </div>
         {!SITE.released && (
           <p style={{ margin: 0, textAlign: 'center', font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>
             Pricing shown reflects planned launch pricing and may change before release.
