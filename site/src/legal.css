@@ -1,0 +1,113 @@
+/* Privacy and Terms. Same tokens as the marketing page, different job: this is
+   a Read surface, so the only thing being optimized is whether someone can
+   find the clause they came for and get through it.
+
+   Deliberately no React. These pages are static text with no interaction, and
+   shipping a 308KB bundle to render a document is the kind of thing nobody
+   notices until a lawyer opens the page on airport wifi. */
+
+@import "../../tokens/fonts.css";
+@import "../../tokens/colors.css";
+@import "../../tokens/typography.css";
+@import "../../tokens/spacing.css";
+@import "../../tokens/base.css";
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-secondary);
+  font: var(--type-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Keyboard users land here first. The marketing page has a visible nav to
+   orient by; a wall of legal text does not. */
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 12px 18px;
+  background: var(--amber);
+  color: #000;
+  border-radius: 0 0 12px 0;
+  font-weight: 700;
+  z-index: 10;
+}
+.skip:focus { left: 0; }
+
+:where(a):focus-visible,
+.skip:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.legal-head {
+  padding: 28px clamp(20px, 5vw, 40px);
+  border-bottom: 1px solid var(--hairline);
+}
+.legal-head img { height: 34px; width: auto; display: block; }
+
+/* 68ch is the measure the marketing footer already uses. Past roughly 75 the
+   eye loses the line return, and these documents are long enough that it
+   matters more here than anywhere else on the site. */
+.legal {
+  max-width: 68ch;
+  margin: 0 auto;
+  padding: clamp(32px, 6vw, 64px) clamp(20px, 5vw, 40px) 80px;
+}
+
+.legal h1 {
+  font: var(--type-title);
+  color: var(--text-primary);
+  margin: 0 0 8px;
+  line-height: 1.15;
+}
+
+.legal-updated {
+  margin: 0 0 40px;
+  font: var(--type-caption);
+  color: var(--text-tertiary);
+}
+
+/* The source documents mark every section with bold text and no heading level,
+   which leaves no outline to navigate. These are real h2s so a screen reader
+   can jump between them. See tools/legal/build.py. */
+.legal h2 {
+  font: var(--type-headline);
+  color: var(--text-primary);
+  margin: 40px 0 12px;
+  line-height: 1.3;
+  scroll-margin-top: 24px;
+}
+
+.legal p { margin: 0 0 16px; }
+.legal ul { margin: 0 0 16px; padding-left: 22px; }
+.legal li { margin-bottom: 8px; }
+.legal strong { color: var(--text-primary); font-weight: 700; }
+
+.legal a { color: var(--amber); text-underline-offset: 3px; }
+/* These documents put a link immediately after a colon with no space, so the
+   generated markup can read "at:https://...". Give links room to breathe
+   rather than editing the legal text to insert a space. */
+.legal p > a { margin-left: 4px; }
+
+.legal hr {
+  border: 0;
+  border-top: 1px solid var(--hairline);
+  margin: 40px 0 24px;
+}
+
+.legal-foot {
+  border-top: 1px solid var(--hairline);
+  padding: 32px clamp(20px, 5vw, 40px) 56px;
+}
+.legal-foot nav {
+  max-width: 68ch;
+  margin: 0 auto;
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+.legal-foot a { color: var(--text-tertiary); font: var(--type-caption); }
+.legal-foot a:hover { color: var(--text-secondary); }
