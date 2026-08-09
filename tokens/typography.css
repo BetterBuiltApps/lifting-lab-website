@@ -20,8 +20,11 @@
   --text-caption: 12px;       /* BPFont.label base */
   --text-caption2: 11px;
 
-  /* Weights */
+  /* Weights. 900 is reserved for the numeric roles, which resolve to a rounded
+     face that has it. Barlow ships here as 600/700/800 only, so a heading role
+     must not ask for 900 or the browser synthesises a fake bold. */
   --weight-heavy: 900;
+  --weight-extrabold: 800;
   --weight-bold: 700;
   --weight-semibold: 600;
   --weight-regular: 400;
@@ -37,7 +40,7 @@
   /* ---- Composed roles ---- */
   --type-huge-number: var(--weight-heavy) var(--text-huge-number) / var(--leading-tight) var(--font-numeric);
   --type-big-number: var(--weight-heavy) var(--text-big-number) / var(--leading-tight) var(--font-numeric);
-  --type-exercise-name: var(--weight-heavy) var(--text-exercise-name) / var(--leading-snug) var(--font-display);
+  --type-exercise-name: var(--weight-extrabold) var(--text-exercise-name) / var(--leading-snug) var(--font-display);
   --type-stat-value: var(--weight-semibold) var(--text-stat-value) / var(--leading-snug) var(--font-numeric);
   --type-title: var(--weight-bold) var(--text-title) / var(--leading-snug) var(--font-display);
   --type-headline: var(--weight-semibold) var(--text-headline) / var(--leading-normal) var(--font-display);

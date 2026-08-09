@@ -25,27 +25,48 @@ BASE_1 = 21.849      # baseline of LIFTING
 BASE_2 = 41.988      # baseline of LAB
 HEIGHT = 45.0
 
+MARK_ID = "path1-4"
+
 def mark_d():
-    src = open(SRC).read()
-    block = src[src.index('id="path1-4"'):]
-    return re.search(r'\sd="([^"]+)"', block).group(1)
+    """The flask outline, found by parsing rather than by scanning text.
+
+    This used to do `src.index('id="path1-4"')` and take the next d= after it.
+    That reads the file as a string, so it matched the *comment* at the top of
+    mark-source.svg, which mentions the id by name, and then returned the first
+    path in the document: the old outlined wordmark. The result was a mark.svg
+    containing the words LIFTING LAB and no flask, which renders as nothing at
+    favicon size and shows up nowhere until someone looks at the favicon.
+
+    It survived because mark.svg was generated before that comment was written
+    and was not regenerated afterwards. A find that can match its own
+    documentation is not a find.
+    """
+    from xml.etree import ElementTree
+    root = ElementTree.parse(SRC).getroot()
+    for el in root.iter():
+        if el.get("id") == MARK_ID:
+            d = el.get("d")
+            if d:
+                return d
+    raise SystemExit(f"no element with id={MARK_ID!r} carrying a d= in {SRC}")
 
 HEADER = """<?xml version="1.0" encoding="UTF-8"?>
 <!-- Lifting Lab wordmark.
 
      The flask and barbell mark is the original drawing. The wordmark is set in
-     Nunito at weight {weight}, outlined to paths here so it is always a shape and
+     Barlow at weight {weight}, outlined to paths here so it is always a shape and
      never depends on a font being loaded.
 
-     Nunito is the same face the site loads for display type (tokens/fonts.css),
-     so the logo and the headings are one type system rather than two. It is
-     licensed SIL OFL, which permits outlining glyphs into a logo. Apple's SF
-     Pro Rounded, which the CSS stack prefers ahead of it on Apple devices, does
-     not permit that, which is why the outlines come from Nunito.
+     Barlow is the same face the site loads for headings (the font-heading
+     token in tokens/fonts.css) and the app loads for its heading tiers, so the
+     logo and every title across both are one set of letterforms. It is
+     licensed SIL OFL, which permits outlining glyphs into a logo.
 
-     The previous version was set in whatever Inkscape's generic 'Sans' resolved
-     to, a grotesque with slab serifs on the capital I. That was a default, not
-     a choice, and it shared no letterforms with anything else on the page.
+     The original artwork asked for Inkscape's generic 'Sans' at weight 800. On
+     the machine that drew it that alias resolved to Verdana Bold, which is why
+     the old wordmark had slab serifs on the capital I. Verdana's licence allows
+     neither embedding in an app nor self-hosting, so the face here is the
+     nearest thing that is actually shippable: a grotesk, with a real 800.
 
      Regenerate with the scripts recorded in this repo's CLAUDE.md. Do not hand
      edit the path data.
@@ -58,6 +79,31 @@ HEADER = """<?xml version="1.0" encoding="UTF-8"?>
 """
 
 CAP = 18.4672        # cap height, matching the original lockup
+
+# The shipped wordmark. 800 because the artwork it replaces asked for
+# 'Sans, Ultra-Bold' at weight 800, and Barlow's ExtraBold is the honest
+# equivalent. Tracking is a touch open so the caps do not close up at favicon
+# and app-icon sizes.
+WEIGHT = 800
+TRACKING = 0.01
+
+def _write(path, svg):
+    """Write only if it parses.
+
+    These files are consumed by an img tag and as a favicon, both of which fail
+    silently: an invalid SVG renders as nothing at all, with no console error
+    on the page that embeds it. The specific trap is a double hyphen inside an
+    XML comment, which is illegal and is exactly what writing a CSS custom
+    property name into the header above produces.
+    """
+    from xml.etree import ElementTree
+    try:
+        ElementTree.fromstring(svg)
+    except ElementTree.ParseError as e:
+        raise SystemExit(f"refusing to write {os.path.basename(path)}: "
+                         f"generated SVG is not valid XML ({e}). "
+                         f"A '--' inside the header comment is the usual cause.")
+    open(path, "w").write(svg)
 
 def build(weight, track, out_path):
     drawn, _ = wordmark.build(weight, CAP, track, ["LIFTING", "LAB"])
@@ -73,7 +119,7 @@ def build(weight, track, out_path):
         f'    <path transform="translate({TEXT_X},{BASE_2})" d="{lines["LAB"]["d"]}"/>\n'
         f'  </g>\n</svg>\n'
     )
-    open(out_path, "w").write(svg)
+    _write(out_path, svg)
     return width
 
 MARK_HEADER = """<?xml version="1.0" encoding="UTF-8"?>
@@ -96,14 +142,14 @@ def build_mark(out_path):
         f'  <path fill="{AMBER}" transform="{MARK_TF}" d="{mark_d()}"/>\n'
         f'</svg>\n'
     )
-    open(out_path, "w").write(svg)
+    _write(out_path, svg)
 
 if __name__ == "__main__":
     if sys.argv[1:2] == ["ship"]:
-        w = build(900, 0.01, os.path.join(ASSETS, "logo.svg"))
+        w = build(WEIGHT, TRACKING, os.path.join(ASSETS, "logo.svg"))
         build_mark(os.path.join(ASSETS, "mark.svg"))
         print(f"logo.svg width={w}mm aspect={w/HEIGHT:.3f}; mark.svg 45x45mm")
     else:
-        for weight, track in ((800, 0), (900, 0), (900, 0.01)):
+        for weight, track in ((700, 0), (800, 0), (800, 0.01)):
             w = build(weight, track, os.path.join(HERE, f"logo-{weight}-{track}.svg"))
             print(f"logo-{weight}-{track}.svg  width={w}mm  aspect={w/HEIGHT:.3f}")

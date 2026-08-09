@@ -34,7 +34,7 @@ export function Pricing() {
             }}>
               <SectionLabel tone={tier.highlight ? 'amber' : 'secondary'}>{tier.t}</SectionLabel>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, flexWrap: 'wrap' }}>
-                <span style={{ font: 'var(--type-title)', fontSize: 34, fontWeight: 900, color: tier.highlight ? 'var(--amber)' : 'var(--text-primary)' }}>{tier.price}</span>
+                <span style={{ font: 'var(--type-title)', fontSize: 34, fontWeight: 'var(--weight-extrabold)', color: tier.highlight ? 'var(--amber)' : 'var(--text-primary)' }}>{tier.price}</span>
               </div>
               {tier.sub && <div style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>{tier.sub}</div>}
               <div style={{ font: 'var(--type-subheadline)', color: 'var(--text-secondary)', fontWeight: 600 }}>{tier.note}</div>

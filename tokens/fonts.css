@@ -1,28 +1,56 @@
 /* Lifting Lab fonts.
-   The app uses Apple system faces only, no bundled font binaries exist in the
-   codebase. SwiftUI `design: .rounded` (SF Pro Rounded) carries the entire
-   brand voice: every number, title, and label is rounded.
 
-   On the web we prefer the real system face and substitute only where there
-   isn't one:
-     rounded  → SF Pro Rounded, then Nunito (closest free rounded geometric sans)
+   Three faces, each with one job:
+     heading  → Barlow, self-hosted. Titles, section labels, and the wordmark.
+     numeric  → SF Pro Rounded, then Nunito. The hero numbers only.
      text     → SF Pro Text / system-ui, no webfont needed
      mono     → SF Mono / ui-monospace, no webfont needed
 
-   Nunito is the one substitution that earns its bytes: it carries the rounded
-   brand voice on non-Apple platforms, where nothing system-provided is close.
-   It is self-hosted (SIL OFL, redistributable) rather than pulled from Google
-   Fonts, because an @import here was render-blocking, had no preconnect, and
-   fired on Apple devices where ui-rounded wins and none of it is ever used.
+   **Barlow is the brand face and the wordmark is outlined from it**, so the
+   logo and every heading are the same letterforms. It is not an arbitrary
+   pick: the original logo artwork already set its other text in Barlow, and
+   the wordmark itself asked for 'Sans, Ultra-Bold' at weight 800, which is
+   Inkscape's generic alias. On the machine that drew it that alias resolved to
+   Verdana Bold, which cannot be embedded in an app or self-hosted under its
+   licence. Barlow is SIL OFL, has a genuine 800, and is a grotesk rather than
+   a rounded face, which is what 'Sans' read as. Three static weights, 68 KB:
+   600 for labels and row titles, 700 for titles, 800 for the wordmark. Barlow
+   has no variable build, so these are separate files rather than one axis.
+
+   Nunito stays for the numeric role only, which mirrors the app's rounded
+   numerals. Nothing on the marketing page currently uses a numeric role, so it
+   costs nothing at runtime: an unused @font-face is never fetched. It is
+   self-hosted rather than pulled from Google Fonts because an @import here was
+   render-blocking and had no preconnect.
 
    Inter and JetBrains Mono used to load alongside it and are gone: both sat
    *after* -apple-system / system-ui / ui-monospace in their stacks, so they only
    applied on platforms whose own UI and mono faces are already the right answer
-   (Segoe UI, Roboto, Consolas). Inter in particular is on so many sites it reads
-   as a default rather than a choice.
+   (Segoe UI, Roboto, Consolas). */
 
-   Two subsets, 73 KB total, both variable across the 400-900 range the type
-   scale uses. Sourced from Google Fonts' own Nunito v32 build. */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/assets/fonts/barlow-latin-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/fonts/barlow-latin-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/assets/fonts/barlow-latin-800.woff2') format('woff2');
+}
 
 @font-face {
   font-family: 'Nunito';
@@ -47,6 +75,16 @@
 }
 
 :root {
+  /* ------------------------------------------------------------------ *
+   * THE HEADING FACE. Change this one line to change every heading on   *
+   * the site and the generated wordmark. The app's mirror of it is      *
+   * `BPFont.headingFamily` in Theme.swift; change both, in that order.  *
+   * A new face also needs its @font-face above, its weights in          *
+   * site/public/assets/fonts/, and `python3 tools/wordmark/assemble.py  *
+   * ship` rerun so the logo still matches.                              *
+   * ------------------------------------------------------------------ */
+  --font-heading: "Barlow", -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+
   /* SF Pro Rounded is addressable by name on Apple platforms; ui-rounded
      resolves it in Safari. Nunito covers everywhere else. */
   --font-rounded: ui-rounded, "SF Pro Rounded", "Nunito", -apple-system, system-ui, sans-serif;
@@ -60,9 +98,15 @@
   --font-text: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
-  /* Semantic aliases */
-  --font-display: var(--font-rounded);
+  /* Semantic aliases.
+
+     Headings and section labels are the heading face; the numbers stay
+     rounded. That split is deliberate rather than a compromise: the wordmark
+     and every title now share one grotesk, and the rounded voice is kept for
+     the thing the product exists to show, which is a number a lifter reads at
+     arm's length. See Docs/DESIGN.md section 3 in the app repo. */
+  --font-display: var(--font-heading);
+  --font-label: var(--font-heading);
   --font-numeric: var(--font-rounded);
   --font-body: var(--font-text);
-  --font-label: var(--font-rounded);
 }

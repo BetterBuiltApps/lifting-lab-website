@@ -18,7 +18,7 @@ export function Hero() {
             the inert CTA where it is load-bearing rather than decorative. */}
         <div style={{ display: 'grid', gap: 22, justifyItems: 'start', maxWidth: 680 }}>
           <h1 style={{
-            margin: 0, fontFamily: 'var(--font-display)', fontWeight: 900,
+            margin: 0, fontFamily: 'var(--font-display)', fontWeight: 'var(--weight-extrabold)',
             fontSize: 'clamp(44px,5.4vw,64px)', lineHeight: 1.0,
             /* em, not px: at the 44px clamp floor a flat -2px is -0.045em, past
                the -0.04em tracking floor. */
