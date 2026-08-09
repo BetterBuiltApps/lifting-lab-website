@@ -1,60 +1,30 @@
 /* Lifting Lab fonts.
 
-   Three faces, each with one job:
-     heading  → Inter, self-hosted. Titles, section labels, and the wordmark.
-     numeric  → SF Pro Rounded, then Nunito. The hero numbers only.
-     text     → SF Pro Text / system-ui, no webfont needed
-     mono     → SF Mono / ui-monospace, no webfont needed
+   Four roles, and only one of them costs a byte:
+     heading  -> the platform's own sans, at weight 800. No webfont.
+     numeric  -> SF Pro Rounded, then Nunito. The hero readouts only.
+     body     -> the platform's own UI face
+     mono     -> the platform's own mono face
 
-   **Inter is the brand face and the wordmark is outlined from it**, so the
-   logo and every heading are the same letterforms.
+   **The heading face is deliberately the system sans.** The logo asked for
+   'Sans, Ultra-Bold' at weight 800, and that is not a typeface: Sans is
+   fontconfig's generic alias and Ultra-Bold is a weight name. Asking the
+   browser for the system sans at 800 is the same request written the way the
+   web writes it, which is why nothing is downloaded to satisfy it.
 
-   The original artwork asked for 'Sans, Ultra-Bold' at weight 800. There is no
-   font called Sans: it is Inkscape's generic alias, and 'Ultra-Bold' is a
-   weight name rather than a style that exists in any installed family. On the
-   machine that drew it, fontconfig resolved that request down its fallback
-   list (Verdana, Arial, Helvetica) and, because Verdana has no 800, landed on
-   an Arial/Helvetica-class neo-grotesque. That is what the logo actually was.
+   The wordmark is cut from Arimo (tools/wordmark/face), which is metrically
+   compatible with Arial and drawn to match it, because Arial is what that alias
+   actually resolved to and Arial itself may not be outlined into a logo. So the
+   mark and the headings are one request resolved two ways: outlines where a
+   shape is needed, the live system face where text is needed.
 
-   Neither Arial nor Helvetica can be embedded in an app or self-hosted. Inter
-   is the closest thing that can: same neo-grotesque lineage, wide and plain,
-   a genuine ExtraBold, and SIL OFL. Three static weights, 73 KB: 600 for
-   labels and row titles, 700 for titles, 800 for the wordmark.
+   Nunito backs the numeric role only, mirroring the app's rounded numerals.
+   Nothing on the marketing page uses a numeric role today, so it is never
+   fetched: an unused @font-face is not downloaded.
 
-   Nunito stays for the numeric role only, which mirrors the app's rounded
-   numerals. Nothing on the marketing page currently uses a numeric role, so it
-   costs nothing at runtime: an unused @font-face is never fetched. It is
-   self-hosted rather than pulled from Google Fonts because an @import here was
-   render-blocking and had no preconnect.
-
-   Inter and JetBrains Mono used to load alongside it and are gone: both sat
-   *after* -apple-system / system-ui / ui-monospace in their stacks, so they only
-   applied on platforms whose own UI and mono faces are already the right answer
-   (Segoe UI, Roboto, Consolas). */
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('/assets/fonts/inter-latin-600.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/assets/fonts/inter-latin-700.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url('/assets/fonts/inter-latin-800.woff2') format('woff2');
-}
+   Inter, Barlow and JetBrains Mono were all tried here and removed. The first
+   two because the brief was a plain system sans and neither is one; the third
+   because it sat behind a system face that was already the right answer. */
 
 @font-face {
   font-family: 'Nunito';
@@ -81,13 +51,14 @@
 :root {
   /* ------------------------------------------------------------------ *
    * THE HEADING FACE. Change this one line to change every heading on   *
-   * the site and the generated wordmark. The app's mirror of it is      *
-   * `BPFont.headingFamily` in Theme.swift; change both, in that order.  *
-   * A new face also needs its @font-face above, its weights in          *
-   * site/public/assets/fonts/, and `python3 tools/wordmark/assemble.py  *
-   * ship` rerun so the logo still matches.                              *
+   * the site. The app's mirror is BPFont's heading tiers in Theme.swift *
+   * change both, app first. This resolves to the platform's own sans,   *
+   * which is what 'Sans' meant: nothing is downloaded for it. A bundled *
+   * face would also need an @font-face above, its files in              *
+   * site/public/assets/fonts/, and tools/wordmark/assemble.py ship      *
+   * rerun so the logo still matches.                                    *
    * ------------------------------------------------------------------ */
-  --font-heading: "Inter", -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-heading: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
   /* SF Pro Rounded is addressable by name on Apple platforms; ui-rounded
      resolves it in Safari. Nunito covers everywhere else. */
