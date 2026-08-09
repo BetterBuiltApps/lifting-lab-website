@@ -1,5 +1,5 @@
 /**
- * The app's root navigation: three tabs — Train, Tools, Me — on a blurred
+ * The app's root navigation: three tabs, Train, Tools, Me, on a blurred
  * translucent bar with a hairline top edge. The selected tab is amber; the rest
  * are the decorative grey.
  *

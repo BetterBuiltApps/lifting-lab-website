@@ -39,7 +39,7 @@ function Hero() {
             }}>
               <img src="../../assets/screens/08-readiness-checkin.png" alt="Readiness check-in: energy, soreness and time build today's session" style={{ width: '100%', display: 'block' }} />
             </div>
-            <span style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)', textAlign: 'center', maxWidth: 300 }}>Tell it how you feel — it builds the session</span>
+            <span style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)', textAlign: 'center', maxWidth: 300 }}>Tell it how you feel, and it builds the session</span>
           </div>
           <div style={{ position: 'relative', display: 'grid', gap: 14, justifyItems: 'center' }}>
             <div style={{
@@ -52,7 +52,7 @@ function Hero() {
             }}>
               <img src="../../assets/screens/15-bar-trace-analysis-detail.png" alt="Bar Trace: skeleton overlay, bar path and phase split on a snatch turnover" style={{ width: '100%', display: 'block' }} />
             </div>
-            <span style={{ position: 'relative', font: 'var(--type-caption)', color: 'var(--text-tertiary)', textAlign: 'center', maxWidth: 300 }}>Film a set — it reads the pull, phase by phase</span>
+            <span style={{ position: 'relative', font: 'var(--type-caption)', color: 'var(--text-tertiary)', textAlign: 'center', maxWidth: 300 }}>Film a set, and it reads the pull phase by phase</span>
           </div>
         </div>
       </div>

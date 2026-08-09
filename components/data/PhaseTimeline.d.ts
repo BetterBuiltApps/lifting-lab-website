@@ -1,5 +1,5 @@
 /**
- * PhaseBreakdownCard — the five lift phases as a duration-proportional bar plus
+ * PhaseBreakdownCard, the five lift phases as a duration-proportional bar plus
  * one row each with peak velocity and duration, closing with the
  * transition-loss insight sentence.
  *
@@ -15,7 +15,7 @@ export interface PhaseTimelinePhase {
 }
 export interface PhaseTimelineProps {
   phases?: PhaseTimelinePhase[];
-  /** The one-sentence takeaway, e.g. "Smooth transition — only 8% velocity loss." */
+  /** The one-sentence takeaway, e.g. "Smooth transition, only 8% velocity loss." */
   insight?: string;
   /** caution turns the insight amber (>25% velocity loss) */
   insightTone?: 'secondary' | 'caution';

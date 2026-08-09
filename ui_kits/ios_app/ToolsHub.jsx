@@ -1,4 +1,4 @@
-/* ToolsHubView.swift — Video / Prepare / Daily / Competition, all offline. */
+/* ToolsHubView.swift, Video / Prepare / Daily / Competition, all offline. */
 
 function ToolsHub({ onOpenBarTrace }) {
   const { SectionLabel, ToolTile } = window.OWLDesignSystem_875173;

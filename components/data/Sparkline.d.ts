@@ -1,5 +1,5 @@
 /**
- * SparklineView — a 2px amber line for PR progress, oldest value first. With
+ * SparklineView, a 2px amber line for PR progress, oldest value first. With
  * fewer than two values it draws a dashed decorative-grey flat line rather than
  * a misleading trend.
  */

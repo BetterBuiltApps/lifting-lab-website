@@ -5,4 +5,4 @@ Capsule chip, 12px heavy, color on a 16%-alpha tint of itself. Used for score gr
 <Badge tone="make">Good tracking</Badge>
 ```
 
-Tints are always 16% alpha over the card, never a solid fill — solid fills are reserved for buttons.
+Tints are always 16% alpha over the card, never a solid fill, solid fills are reserved for buttons.

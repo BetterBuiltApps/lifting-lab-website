@@ -1,15 +1,50 @@
 /* Lifting Lab fonts.
-   The app uses Apple system faces only — no bundled font binaries exist in the
+   The app uses Apple system faces only, no bundled font binaries exist in the
    codebase. SwiftUI `design: .rounded` (SF Pro Rounded) carries the entire
    brand voice: every number, title, and label is rounded.
 
-   On the web we prefer the real system face and fall back to Google Fonts:
+   On the web we prefer the real system face and substitute only where there
+   isn't one:
      rounded  → SF Pro Rounded, then Nunito (closest free rounded geometric sans)
-     text     → SF Pro Text / system-ui
-     mono     → SF Mono, then JetBrains Mono
-   Flagged as a substitution in readme.md — supply real binaries to remove it. */
+     text     → SF Pro Text / system-ui, no webfont needed
+     mono     → SF Mono / ui-monospace, no webfont needed
 
-@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400..1000;1,400..1000&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap");
+   Nunito is the one substitution that earns its bytes: it carries the rounded
+   brand voice on non-Apple platforms, where nothing system-provided is close.
+   It is self-hosted (SIL OFL, redistributable) rather than pulled from Google
+   Fonts, because an @import here was render-blocking, had no preconnect, and
+   fired on Apple devices where ui-rounded wins and none of it is ever used.
+
+   Inter and JetBrains Mono used to load alongside it and are gone: both sat
+   *after* -apple-system / system-ui / ui-monospace in their stacks, so they only
+   applied on platforms whose own UI and mono faces are already the right answer
+   (Segoe UI, Roboto, Consolas). Inter in particular is on so many sites it reads
+   as a default rather than a choice.
+
+   Two subsets, 73 KB total, both variable across the 400-900 range the type
+   scale uses. Sourced from Google Fonts' own Nunito v32 build. */
+
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url('/assets/fonts/nunito-latin-var.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url('/assets/fonts/nunito-latin-ext-var.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
 
 :root {
   /* SF Pro Rounded is addressable by name on Apple platforms; ui-rounded
@@ -20,10 +55,10 @@
        "Inter", "Helvetica Neue", Arial, sans-serif
      The quoted "SF Pro Text" is dropped below because -apple-system and
      BlinkMacSystemFont already resolve to genuine SF Pro Text on every Apple
-     browser — the literal is redundant, and naming it makes tooling look for a
+     browser, the literal is redundant, and naming it makes tooling look for a
      webfont binary that will never exist. Rendering is identical. */
-  --font-text: -apple-system, BlinkMacSystemFont, system-ui, "Inter", "Helvetica Neue", Arial, sans-serif;
-  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
+  --font-text: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
   /* Semantic aliases */
   --font-display: var(--font-rounded);

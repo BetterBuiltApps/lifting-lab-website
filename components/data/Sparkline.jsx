@@ -1,6 +1,6 @@
 import React from 'react';
 
-/** PR progress line. No chart library — a single stroked path. */
+/** PR progress line. No chart library, a single stroked path. */
 export function Sparkline({ values = [], color = 'var(--amber)', width = 110, height = 32, style, ...rest }) {
   const enough = values.length >= 2;
   const min = Math.min(...values), max = Math.max(...values), range = max - min;

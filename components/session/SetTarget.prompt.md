@@ -9,5 +9,5 @@ The active-set card: what to lift, how much, why that number, and how to load th
 Notes from the shipping screen:
 
 - Load per side is **plain arithmetic text**, not a plate diagram. The diagram lives in the Barbell Loader tool; mid-set the athlete wants the sum.
-- The cue is italic and in curly quotes — it's the coach's voice, not the app's.
+- The cue is italic and in curly quotes, it's the coach's voice, not the app's.
 - The weight is tappable; the athlete can always override the prescribed load.

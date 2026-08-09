@@ -24,7 +24,7 @@ const variants = {
   plain: { background: 'transparent', color: 'var(--amber)' },
 };
 
-/** The app's button. One amber fill, black label — never an amber label on dark. */
+/** The app's button. One amber fill, black label, never an amber label on dark. */
 export function Button({
   variant = 'primary', size = 'large', full = false, disabled = false,
   icon = null, children, style, ...rest

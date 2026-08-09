@@ -1,15 +1,15 @@
-/* Lifting Lab color system — dark-first, amber accent.
+/* Lifting Lab color system, dark-first, amber accent.
    Values lifted verbatim from LiftingLab/LiftingLab/Theme/Theme.swift (BPColor, PhasePalette,
    BPGradient) and Theme/Components/PlateVisuals.swift (PlateColors). */
 
 :root {
   /* ---- Base surfaces (dark is the only theme; the app is dark-locked) ---- */
   --bg: #1a1a1a;              /* BPColor.background */
-  --surface: #232323;         /* BPColor.surface — every card */
-  --surface-elevated: #2c2c2e; /* BPColor.surfaceElevated — ring tracks, capsules, toasts */
+  --surface: #232323;         /* BPColor.surface, every card */
+  --surface-elevated: #2c2c2e; /* BPColor.surfaceElevated, ring tracks, capsules, toasts */
 
   /* ---- Brand accent ---- */
-  --amber: #f5a623;           /* BPColor.amber — the single accent */
+  --amber: #f5a623;           /* BPColor.amber, the single accent */
   --amber-light: #ffc74d;      /* top stop of BPGradient.amber */
   --amber-16: rgba(245, 166, 35, 0.16); /* grade pill / chip fill */
   --amber-40: rgba(245, 166, 35, 0.4);  /* toast hairline */
@@ -21,7 +21,7 @@
   --caution: var(--amber);
   --bad: var(--miss);
 
-  /* ---- Text tiers (white at fixed alphas — never grey hexes) ---- */
+  /* ---- Text tiers (white at fixed alphas, never grey hexes) ---- */
   --text-primary: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.6);
   --text-tertiary: rgba(255, 255, 255, 0.5);  /* dimmest readable tier, ~5:1 on --bg */
@@ -29,7 +29,7 @@
   --hairline: rgba(255, 255, 255, 0.08);
 
   /* ---- Second series color (comparison player, overlay B) ---- */
-  --cool: #5ac8fa;            /* BPColor.cool — CVD-safe against amber */
+  --cool: #5ac8fa;            /* BPColor.cool, CVD-safe against amber */
 
   /* ---- Lift-phase palette (trace, velocity graph, phase timeline) ---- */
   --phase-first-pull: var(--cool);

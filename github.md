@@ -4,11 +4,11 @@ branch: main
 ## Last sync
 
 date: 2026-07-25T00:00:00Z
-status: NOT ACCESSIBLE — github_get_tree 404'd on both `main` and `master`. The
+status: NOT ACCESSIBLE, github_get_tree 404'd on both `main` and `master`. The
 repo is private and the import App is not installed, or the name differs.
 Everything in this design system was read from the locally mounted
 `LiftingLab/` folder instead, which is the same project (renamed from `OWL/`
-during the Olympic-trademark rebrand — the app itself still has an internal
+during the Olympic-trademark rebrand, the app itself still has an internal
 `Features/OWL/` bar-tracking feature folder, unrelated to the old brand name
 and intentionally left as-is).
 
@@ -33,5 +33,5 @@ and intentionally left as-is).
 | `ui_kits/ios_app/ToolsHub.jsx` | `Features/Tools/ToolsHubView.swift` |
 | `ui_kits/ios_app/BarTraceHome.jsx` | `Features/OWL/OWLHomeView.swift` |
 | `ui_kits/ios_app/BarTracePlayer.jsx` | `Features/OWL/OWLPlayerView.swift` + its cards |
-| `ui_kits/marketing_site/*` | none — no web source in the repo |
+| `ui_kits/marketing_site/*` | none, no web source in the repo |
 | `assets/*` | `LiftingLab/LiftingLab/Assets.xcassets/`, `uploads/` |

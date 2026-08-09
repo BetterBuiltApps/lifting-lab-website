@@ -25,7 +25,7 @@ export function ScoreRing({ total, grade, straightness, smoothness, style, ...re
           position: 'absolute', inset: 0, display: 'grid', placeItems: 'center',
           font: 'var(--type-huge-number)', fontSize: 52,
           color: has ? 'var(--amber)' : 'var(--text-tertiary)',
-        }}>{has ? grade : '—'}</div>
+        }}>{has ? grade : '-'}</div>
       </div>
       <div style={{ flex: 1, display: 'grid', gap: 10 }}>
         {has ? (

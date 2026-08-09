@@ -5,4 +5,4 @@ The lift-score card from Bar Trace: amber ring, grade letter, `NN/100`, straight
 <ScoreRing /> {/* honest ungraded state */}
 ```
 
-Omitting `total` is a real state, not an error — render it rather than hiding the card when tracking quality is poor.
+Omitting `total` is a real state, not an error, render it rather than hiding the card when tracking quality is poor.

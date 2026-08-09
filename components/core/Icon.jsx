@@ -2,8 +2,8 @@ import React from 'react';
 
 /**
  * SF Symbols substitute. The app uses SF Symbols exclusively (Apple's font is
- * not redistributable), so on the web we inline Lucide SVGs — matching stroke
- * weight and rounded caps — and let them inherit currentColor.
+ * not redistributable), so on the web we inline Lucide SVGs, matching stroke
+ * weight and rounded caps, and let them inherit currentColor.
  * See ICONOGRAPHY in readme.md for the SF Symbol → Lucide name map.
  *
  * The SVG markup is fetched once per name and cached, then inlined rather than

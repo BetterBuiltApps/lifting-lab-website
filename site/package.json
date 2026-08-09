@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "//screens": "Regenerates the WebP variants after adding or replacing a PNG in public/assets/screens/. Deliberately NOT part of `build`: the variants are committed, and the GitHub Actions runner has no cwebp.",
+    "screens": "./scripts/build-screens.sh"
   },
   "dependencies": {
     "motion": "^12.43.0",

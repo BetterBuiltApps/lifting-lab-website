@@ -1,5 +1,5 @@
 /**
- * JuicyProgressBar — a capsule track on the elevated surface with an
+ * JuicyProgressBar, a capsule track on the elevated surface with an
  * amber→green gradient fill that springs (never jumps) to its new value.
  */
 export interface ProgressBarProps {

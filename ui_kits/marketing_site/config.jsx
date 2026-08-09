@@ -1,4 +1,4 @@
-/* Lifting Lab landing page — configuration. Post-prelaunch presentation: designed to
+/* Lifting Lab landing page, configuration. Post-prelaunch presentation: designed to
    read correctly once the App Store listing exists, even though today the
    button still points nowhere. */
 

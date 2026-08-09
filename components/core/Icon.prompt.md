@@ -1,4 +1,4 @@
-Renders a Lucide glyph as a masked shape tinted with `currentColor` — the web stand-in for the app's SF Symbols.
+Renders a Lucide glyph as a masked shape tinted with `currentColor`, the web stand-in for the app's SF Symbols.
 
 ```jsx
 <Icon name="flame" size={22} color="var(--amber)" />

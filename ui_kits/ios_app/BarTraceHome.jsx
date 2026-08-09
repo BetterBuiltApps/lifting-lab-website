@@ -1,4 +1,4 @@
-/* OWLHomeView.swift — Bar Trace home. Import-first, then saved analyses. */
+/* OWLHomeView.swift, Bar Trace home. Import-first, then saved analyses. */
 
 function BarTraceHome({ onOpen }) {
   const { Card, SectionLabel, Button, Icon, NavRow, Badge } = window.OWLDesignSystem_875173;
@@ -14,7 +14,7 @@ function BarTraceHome({ onOpen }) {
         <Icon name="activity" size={38} color="var(--amber)" />
         <div style={{ font: 'var(--type-title)', color: 'var(--text-primary)' }}>Analyze a lift</div>
         <div style={{ font: 'var(--type-subheadline)', color: 'var(--text-secondary)', textAlign: 'center' }}>
-          Record or import a side-on clip. We trace the bar and measure speed — all on device.
+          Record or import a side-on clip. We trace the bar and measure speed, all on device.
         </div>
         <div style={{ display: 'flex', gap: 12, width: '100%' }}>
           <Button size="medium" full icon={<Icon name="video" size={18} />}>Record</Button>

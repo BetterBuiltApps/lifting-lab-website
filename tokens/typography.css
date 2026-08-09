@@ -1,12 +1,12 @@
-/* Lifting Lab type scale — from Theme.swift (BPFont) plus the iOS text styles the app
+/* Lifting Lab type scale, from Theme.swift (BPFont) plus the iOS text styles the app
    leans on directly (.subheadline, .caption, .title3…). Sizes are the px
    equivalents of the pt values; every number is rounded + monospaced-digit so
    readouts don't jitter as they count. */
 
 :root {
   /* Sizes */
-  --text-huge-number: 76px;   /* BPFont.hugeNumber — score grade letter */
-  --text-big-number: 60px;    /* BPFont.bigNumber — target weight, score total */
+  --text-huge-number: 76px;   /* BPFont.hugeNumber, score grade letter */
+  --text-big-number: 60px;    /* BPFont.bigNumber, target weight, score total */
   --text-exercise-name: 34px; /* BPFont.exerciseName */
   --text-timer: 34px;         /* rest-ring center */
   --text-stat-value: 28px;    /* BPFont.statValue */
@@ -31,7 +31,7 @@
   --leading-snug: 1.2;     /* titles */
   --leading-normal: 1.35;  /* body / captions */
 
-  /* Label kerning — SectionLabel uses .kerning(0.8) on uppercase caption */
+  /* Label kerning, SectionLabel uses .kerning(0.8) on uppercase caption */
   --tracking-label: 0.8px;
 
   /* ---- Composed roles ---- */

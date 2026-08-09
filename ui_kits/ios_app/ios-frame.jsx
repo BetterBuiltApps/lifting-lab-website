@@ -2,11 +2,11 @@
 // Copied omelette starter. Re-running copy_starter_component with this kind overwrites this file with the latest version (page content is unaffected).
 
 /* BEGIN USAGE */
-// iOS.jsx — Simplified iOS 26 (Liquid Glass) device frame
+// iOS.jsx, Simplified iOS 26 (Liquid Glass) device frame
 // Based on the iOS 26 UI Kit + Figma status bar spec. No assets, no deps.
 // Exports (to window): IOSDevice, IOSStatusBar, IOSNavBar, IOSGlassPill, IOSList, IOSListRow, IOSKeyboard
 //
-// Usage — wrap your screen content in <IOSDevice> to get the bezel, status bar
+// Usage, wrap your screen content in <IOSDevice> to get the bezel, status bar
 // and home indicator (props: title, dark, keyboard):
 //
 //   <IOSDevice title="Settings">
@@ -55,7 +55,7 @@ function IOSStatusBar({ dark = false, time = '9:41' }) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// Liquid glass pill — blur + tint + shine
+// Liquid glass pill, blur + tint + shine
 // ─────────────────────────────────────────────────────────────
 function IOSGlassPill({ children, dark = false, style = {} }) {
   return (
@@ -91,7 +91,7 @@ function IOSGlassPill({ children, dark = false, style = {} }) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// Navigation bar — glass pills + large title
+// Navigation bar, glass pills + large title
 // ─────────────────────────────────────────────────────────────
 function IOSNavBar({ title = 'Title', dark = false, trailingIcon = true }) {
   const muted = dark ? 'rgba(255,255,255,0.6)' : '#404040';
@@ -204,7 +204,7 @@ function IOSDevice({
   title, keyboard = false,
 }) {
   return (
-    // data-om-starter: inert presence marker — Claude Design's starter-usage
+    // data-om-starter: inert presence marker, Claude Design's starter-usage
     // probe reads it; it renders nothing. Keep it on this root element.
     <div data-om-starter="ios-frame" style={{
       width, height, borderRadius: 48, overflow: 'hidden',
@@ -228,7 +228,7 @@ function IOSDevice({
         <div style={{ flex: 1, overflow: 'auto' }}>{children}</div>
         {keyboard && <IOSKeyboard dark={dark} />}
       </div>
-      {/* home indicator — always on top */}
+      {/* home indicator, always on top */}
       <div style={{
         position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 60,
         height: 34, display: 'flex', justifyContent: 'center', alignItems: 'flex-end',
@@ -244,7 +244,7 @@ function IOSDevice({
 }
 
 // ─────────────────────────────────────────────────────────────
-// Keyboard — iOS 26 liquid glass
+// Keyboard, iOS 26 liquid glass
 // ─────────────────────────────────────────────────────────────
 function IOSKeyboard({ dark = false }) {
   const glyph = dark ? 'rgba(255,255,255,0.7)' : '#595959';
@@ -285,7 +285,7 @@ function IOSKeyboard({ dark = false }) {
         ? '0 -2px 20px rgba(0,0,0,0.09)'
         : '0 -1px 6px rgba(0,0,0,0.018), 0 -3px 20px rgba(0,0,0,0.012)',
     }}>
-      {/* liquid glass bg — same recipe as nav pills */}
+      {/* liquid glass bg, same recipe as nav pills */}
       <div style={{
         position: 'absolute', inset: 0, borderRadius: 27,
         backdropFilter: 'blur(12px) saturate(180%)',

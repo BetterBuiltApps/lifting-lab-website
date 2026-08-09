@@ -1,17 +1,75 @@
-@import "./tokens/fonts.css";
-@import "./tokens/colors.css";
-@import "./tokens/typography.css";
-@import "./tokens/spacing.css";
-@import "./tokens/elevation.css";
-@import "./tokens/motion.css";
-@import "./tokens/base.css";
+/* Tokens live at the repo root (../../tokens/), not under site/. That copy is
+   the design system's canonical one, guidelines/ and ui_kits/ already cite it,
+   and it mirrors the iOS app's LiftingLab/Theme/Theme.swift, which is the real
+   source of truth. site/src/tokens/ used to hold a byte-identical duplicate
+   that nothing kept in sync; it was deleted rather than left to drift. */
+@import "../../tokens/fonts.css";
+@import "../../tokens/colors.css";
+@import "../../tokens/typography.css";
+@import "../../tokens/spacing.css";
+@import "../../tokens/elevation.css";
+@import "../../tokens/motion.css";
+@import "../../tokens/base.css";
 
-html { scroll-padding-top: 88px; overflow-x: hidden; }
-body { margin: 0; background: var(--bg); overflow-x: hidden; }
+/* `clip`, not `hidden`. overflow-x: hidden forces the used value of overflow-y
+   to auto, which turns html and body into scroll containers, and a sticky
+   descendant then positions against that container instead of the viewport and
+   simply scrolls away. Both sticky elements on this page, the arc's week axis
+   and the Explore screenshot column, were silently not sticking because of it.
+   overflow-x: clip contains the same horizontal overflow without creating a
+   scroll container. */
+html { scroll-padding-top: 88px; overflow-x: clip; }
+body { margin: 0; background: var(--bg); overflow-x: clip; }
 a { color: var(--text-secondary); }
 a:hover { color: var(--amber); }
 
-/* Rotating amber highlight sweeping around an element's own border — used on
+/* Every interactive element on this page is a <button> or <a> with
+   `border: none`, and no focus styling shipped at all, so a keyboard user had
+   no way to tell where they were. :focus-visible keeps it to keyboard
+   navigation, leaving mouse clicks unringed.
+
+   The offset ring reads on both --bg and --surface without needing a per-
+   surface variant, and amber is already the interactive colour everywhere else
+   in the product. */
+:where(a, button, [role='tab'], summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* The surfaces the browser draws, which otherwise ship as defaults belonging to
+   no design system: selection, caret, scrollbar, and the numerals in anything
+   tabular. On a dark page a default selection is a bright blue rectangle from
+   another product. */
+::selection { background: var(--amber-40); color: var(--text-primary); }
+:root { accent-color: var(--amber); caret-color: var(--amber); scrollbar-color: #3a3a3a var(--bg); }
+
+/* Every number the reader might compare vertically, prices, weeks, scores, uses lining tabular figures so columns line up and a changing value doesn't
+   shift its neighbours. */
+.owl-numeric, .arc-axis-mark, .arc-station-mark-num {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* Skip link: the nav is sticky and the page is a single long scroll, so a
+   keyboard user would otherwise tab the whole nav on every visit. */
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -100px;
+  z-index: 100;
+  padding: 12px 18px;
+  border-radius: var(--radius-button);
+  background: var(--amber);
+  color: var(--accent-fg);
+  font: var(--type-headline);
+  transition: top var(--duration-fade) ease;
+}
+.skip-link:focus {
+  top: 12px;
+  color: var(--accent-fg);
+}
+
+/* Rotating amber highlight sweeping around an element's own border, used on
    the Pro pricing card and the nav's "Get Lifting Lab" button. Pure CSS: a
    masked conic-gradient ring, animated via an animatable custom property. */
 @property --border-angle {
@@ -46,16 +104,451 @@ a:hover { color: var(--amber); }
   .animated-border::before { animation: none; }
 }
 
+/* ---------------------------------------------------------------------------
+   Layout primitives.
+
+   These used to live in inline style={{…}} objects, with the responsive rules
+   below overriding them via !important, the only way a stylesheet can beat an
+   inline style. That made every class name below load-bearing and invisible: a
+   renamed or dropped className broke mobile silently, and nothing tested it.
+
+   Base layout now lives here, so the media queries are plain cascade. Where a
+   section genuinely needs a different column ratio it sets --split-cols inline;
+   a custom property is data, not a competing declaration, so the breakpoint
+   still wins without !important.
+   --------------------------------------------------------------------------- */
+
+/* Two-column text/media row. --split-cols is the per-section ratio. */
+.split {
+  display: grid;
+  grid-template-columns: var(--split-cols, minmax(0, 1fr) minmax(0, 1fr));
+  gap: clamp(28px, 4vw, 60px);
+  align-items: center;
+}
+
+/* A row of phone screenshots inside a .split column. Identical everywhere. */
+.shot-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+  justify-content: center;
+  justify-items: center;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  max-width: 1080px;
+  margin: 0 auto;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Thesis and offer left, the two screenshots carrying the hardest claim right.
+   This used to stack, which pushed the proof below the fold and left the first
+   screen carrying only words. */
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(32px, 4vw, 60px);
+  align-items: center;
+}
+
+.hero-pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+  align-items: end;
+}
+
+/* The arc, previewed in the first screen. Horizontal here rather than vertical:
+   it reads as a scale the page is about to walk, and the item widths are the
+   same one-tick-per-week measure the vertical rail uses. */
+.hero-spine {
+  border-top: var(--border-hairline-1);
+  padding: 22px 0 4px;
+}
+.hero-spine-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+  overflow-x: auto;
+  /* Themed rather than hidden. A hidden-scrollbar overflow region has no
+     affordance that it scrolls, and at 200% zoom that is a reflow trap. */
+  scrollbar-width: thin;
+  scrollbar-color: #3a3a3a transparent;
+}
+
+/* Width IS the interval, weeks x 40px, not label width plus padding. The
+   horizontal scale is wider than the rail's 22px because labels are far wider
+   than they are tall; 40px/week clears the longest one, so the distance between
+   two marks stays proportional to the weeks between them. */
+.hero-spine-item { flex: 0 0 auto; width: var(--span, auto); }
+.hero-spine-item:last-child { width: auto; padding-right: 4px; }
+
+.hero-spine-link {
+  display: grid;
+  gap: 4px;
+  padding: 8px 14px 8px 0;
+  text-decoration: none;
+  color: var(--text-tertiary);
+  border-top: 1px solid var(--hairline);
+  /* One tick per week along the interval this item spans. */
+  background:
+    repeating-linear-gradient(to right, var(--hairline) 0 1px, transparent 1px 40px) 0 0 / 100% 4px no-repeat;
+  transition: color var(--duration-fade) var(--ease-out);
+}
+.hero-spine-link:hover { color: var(--text-secondary); }
+.hero-spine-link[aria-current='step'] { color: var(--text-primary); border-top-color: var(--amber); }
+
+.hero-spine-week {
+  font-family: var(--font-numeric);
+  font-size: var(--text-title3);
+  font-weight: var(--weight-heavy);
+  line-height: 1;
+  color: inherit;
+}
+.hero-spine-link[aria-current='step'] .hero-spine-week { color: var(--amber); }
+.hero-spine-label { font: var(--type-caption); white-space: nowrap; }
+.hero-spine-caption {
+  margin: 10px 0 0;
+  font: var(--type-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+/* The screenshot tracks the reader down the Explore list, until the list is
+   above it rather than beside it, at which point sticky would pin dead space. */
+.explore-shot-col {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.site-nav-links { display: flex; gap: 26px; }
+
+.site-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
 @media (max-width: 980px) {
-  .split { grid-template-columns: 1fr !important; }
-  .site-nav-links { display: none !important; }
-  .site-nav-toggle { display: inline-flex !important; }
-  .compare-head, .compare-row { grid-template-columns: 1.4fr 0.8fr 0.8fr 0.8fr !important; font-size: 13px; }
-  .shot-row { grid-template-columns: 1fr !important; }
-  .pricing-grid { grid-template-columns: 1fr !important; }
-  .explore-shot-col { position: static !important; top: auto !important; }
+  .split,
+  .shot-row,
+  .pricing-grid,
+  /* The hero splits only while both halves have room. Below this the display
+     type would be setting in a ~270px measure. */
+  .hero-grid { grid-template-columns: 1fr; }
+  .explore-shot-col { position: static; top: auto; }
+  .site-nav-links { display: none; }
+  .site-nav-toggle { display: inline-flex; }
+}
+
+/* Below this the bar cannot hold the wordmark, the CTA and the toggle at once:
+   the CTA label wrapped onto three lines and shoved the toggle past the edge. */
+@media (max-width: 560px) {
+  .site-nav-cta { display: none; }
 }
 
 @media (max-width: 640px) {
-  .hero-pair { grid-template-columns: 1fr !important; }
+  .hero-pair { grid-template-columns: 1fr; }
+}
+
+/* Progress: a centred row of shots under a centred head, not another
+   text-beside-image split. */
+.progress-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 980px) {
+  .progress-row { grid-template-columns: 1fr; justify-items: center; }
+}
+
+/* The three situations, as a ruled list rather than a card grid. */
+.problem-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  /* A real row gap: at any width that wraps to two columns, a zero row gap put
+     the wrapped case's amber rule hard against the item above it. */
+  gap: 8px clamp(28px, 4vw, 56px);
+}
+.problem-case { padding: 20px 0; border-top: 1px solid var(--amber-40); }
+.problem-case-title {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-title3);
+  line-height: 1.2;
+  text-wrap: balance;
+  color: var(--text-primary);
+}
+.problem-case-body { margin: 0; font: var(--type-subheadline); color: var(--text-secondary); }
+
+/* ---------------------------------------------------------------------------
+   The arc, twelve weeks out to the platform.
+
+   Density is the structural device here, so these stations deliberately do NOT
+   share one layout. Read them as a sequence: wide and calm at -12w, a paired
+   before/after at -8w, dark and tight at -4w, a dense numeric block at -1w, and
+   the highest-contrast close at meet day. If they ever converge on one shape,
+   the section has lost the thing it exists to do.
+   --------------------------------------------------------------------------- */
+
+.arc {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 64px);
+  padding: clamp(56px, 7vw, 96px) 0;
+}
+
+.arc-stations { display: grid; }
+
+/* --- the calibrated axis ------------------------------------------------- */
+
+.arc-axis { position: sticky; top: 132px; align-self: start; }
+
+/* Item height IS the interval, and nothing else contributes to it.
+   `--gap-after` is weeks x 22px from Arc.jsx, and the label is taken out of flow
+   so its own height cannot dilute the scale, the earlier version added a ~37px
+   label block to every gap, which made a three-week interval measure only 1.5x
+   a one-week one. Mark-to-mark distance is now exactly proportional to weeks. */
+.arc-axis-list { list-style: none; margin: 0; padding: 10px 0 0; }
+.arc-axis-item { position: relative; height: var(--gap-after, 0px); }
+/* The last mark closes the axis; it needs room for its own label only. */
+.arc-axis-item:last-child { height: 22px; }
+
+/* The rail for this interval, ruled one tick per week at the same 22px period.
+   It spans the item's full height, so consecutive segments meet at each mark
+   instead of stopping short and leaving the axis drawn as disconnected stubs. */
+.arc-axis-item::before {
+  content: '';
+  position: absolute;
+  /* 5.5px, half of the 11px tick, so the rule and the dots share a centre line.
+     At 5px they sat half a pixel apart on the one element whose whole subject
+     is register. */
+  left: 5.5px;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  transform: translateX(-50%);
+  background:
+    linear-gradient(var(--hairline), var(--hairline)) 50% 0 / 1px 100% no-repeat,
+    repeating-linear-gradient(to bottom, var(--hairline) 0 1px, transparent 1px 22px);
+}
+.arc-axis-item:last-child::before { display: none; }
+
+/* Out of flow and centred on its mark, so the label costs the scale nothing.
+   Single line for the same reason: a stacked numeral-over-label block was what
+   made the intervals label-driven. */
+.arc-axis-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  color: var(--text-tertiary);
+  text-decoration: none;
+  transition: color var(--duration-fade) var(--ease-out);
+}
+.arc-axis-link:hover { color: var(--text-secondary); }
+.arc-axis-link[aria-current='step'] { color: var(--text-primary); }
+
+.arc-axis-tick {
+  position: relative;
+  width: 11px;
+  height: 11px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+}
+.arc-axis-tick::after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--glyph-decorative);
+  position: relative;
+  z-index: 1;
+}
+.arc-axis-tick[data-on]::after { background: transparent; }
+
+.arc-axis-dot {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: var(--amber);
+  box-shadow: 0 0 0 4px rgba(245, 166, 35, 0.14);
+  z-index: 2;
+}
+
+.arc-axis-mark {
+  font-family: var(--font-numeric);
+  /* Sized to the 22px/week scale: the whole single-line block must stay under
+     one week's rail, or the labels start setting the spacing again. */
+  font-size: var(--text-callout);
+  font-weight: var(--weight-heavy);
+  line-height: 1;
+  color: inherit;
+}
+.arc-axis-label {
+  font: var(--type-caption);
+  color: var(--text-tertiary);
+}
+.arc-axis-link[aria-current='step'] .arc-axis-label { color: var(--text-secondary); }
+
+/* --- stations ------------------------------------------------------------ */
+
+.arc-station { padding: clamp(48px, 6vw, 88px) 0; border-top: var(--border-hairline-1); }
+.arc-station:first-child { border-top: none; padding-top: 0; }
+
+/* The per-station week marker. Carries the axis on narrow screens where the
+   rail is hidden; on desktop it is redundant with the rail, so it recedes. */
+.arc-station-mark {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0 0 14px;
+}
+.arc-station-mark-num {
+  font-family: var(--font-numeric);
+  font-size: var(--text-title3);
+  font-weight: var(--weight-heavy);
+  color: var(--amber);
+  line-height: 1;
+}
+.arc-station-mark-unit {
+  font: var(--type-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.arc-station-title {
+  margin: 0 0 18px;
+  font-family: var(--font-display);
+  font-weight: var(--weight-heavy);
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 1.08;
+  letter-spacing: -1px;
+  text-wrap: balance;
+  color: var(--text-primary);
+  max-width: 20ch;
+}
+
+.arc-lede {
+  margin: 0 0 22px;
+  font: var(--type-body);
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  max-width: 68ch;
+}
+.arc-lede--quiet { color: var(--text-tertiary); }
+
+/* -12w: wide and calm. */
+.arc-station--wide .arc-figure { display: flex; justify-content: center; padding-top: 10px; }
+
+/* -8w: the before/after pair, with the arrow that makes it a transformation
+   rather than two unrelated screenshots. */
+.arc-pair {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: clamp(12px, 2vw, 28px);
+}
+.arc-pair-half { margin: 0; display: grid; justify-items: center; gap: 10px; }
+.arc-pair-cap {
+  font: var(--type-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+.arc-pair-arrow { color: var(--amber); width: 40px; }
+.arc-pair-arrow svg { width: 100%; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+/* -4w: the darkest, tightest station. Full-bleed ground so it reads as a
+   different room, not another row. */
+.arc-station--dark {
+  position: relative;
+  padding-inline: clamp(20px, 4vw, 44px);
+  border-radius: var(--radius-card);
+  background:
+    radial-gradient(120% 90% at 18% 30%, rgba(255, 59, 48, 0.09), transparent 62%),
+    var(--surface);
+}
+.arc-miss { display: grid; grid-template-columns: minmax(0, 200px) minmax(0, 1fr); gap: clamp(24px, 3.5vw, 52px); }
+.arc-miss-trace { display: grid; gap: 14px; align-content: start; }
+.arc-trace { width: 100%; height: auto; max-width: 180px; }
+.arc-trace-plumb { stroke: var(--hairline); stroke-width: 1; stroke-dasharray: 3 5; }
+.arc-trace-key { display: grid; gap: 5px; margin: 0; font: var(--type-caption); }
+.arc-trace-key span { display: flex; align-items: center; gap: 8px; color: var(--text-tertiary); }
+/* A pill radius on a 2px-tall bar is just a rounded line cap, and it keeps the
+   swatch on the documented radius scale instead of inventing a 2px step. */
+.arc-trace-key span::before { content: ''; width: 10px; height: 2px; border-radius: var(--radius-pill); background: currentColor; }
+.arc-trace-key [data-phase='first-pull']::before { background: var(--phase-first-pull); }
+.arc-trace-key [data-phase='transition']::before { background: var(--phase-transition); }
+.arc-trace-key [data-phase='second-pull']::before { background: var(--phase-second-pull); }
+.arc-trace-key [data-phase='turnover']::before { background: var(--phase-turnover); }
+.arc-trace-key [data-phase='catch']::before { background: var(--phase-catch); }
+.arc-miss-shots { display: flex; flex-wrap: wrap; gap: 16px; }
+
+/* -1w: dense and numeric, immediately after the open dark station. */
+/* Explicit column counts, not auto-fit. There are exactly six facts, and
+   auto-fit chose four columns at desktop width, leaving two empty cells that
+   rendered as grey blocks because the hairline grid background shows through
+   wherever there is no item. Three, two and one all divide six evenly. */
+.arc-facts {
+  margin: 0 0 26px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--hairline);
+  border: var(--border-hairline-1);
+}
+@media (max-width: 860px) { .arc-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .arc-facts { grid-template-columns: 1fr; } }
+.arc-facts > div { background: var(--bg); padding: 14px 16px; display: grid; gap: 3px; }
+.arc-facts dt {
+  font-family: var(--font-label);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-subheadline);
+  color: var(--text-primary);
+}
+.arc-facts dd { margin: 0; font: var(--type-caption); color: var(--text-tertiary); }
+.arc-dense-shots { display: flex; flex-wrap: wrap; gap: 18px; }
+
+/* 0: the close. Highest contrast on the page. */
+.arc-station--close .arc-station-title { color: var(--amber); max-width: 24ch; }
+.arc-close-shots { display: flex; flex-wrap: wrap; gap: 20px; justify-content: flex-start; }
+
+@media (max-width: 980px) {
+  /* The rail needs room beside the content; without it, each station's own
+     marker carries the axis instead. */
+  .arc { grid-template-columns: 1fr; gap: 0; }
+  .arc-axis { display: none; }
+  .arc-miss { grid-template-columns: 1fr; }
+  .arc-trace { max-width: 140px; }
+}
+
+@media (max-width: 640px) {
+  .arc-pair { grid-template-columns: 1fr; justify-items: center; }
+  /* The arrow points down once the pair stacks, or it points at nothing. */
+  .arc-pair-arrow { transform: rotate(90deg); }
 }

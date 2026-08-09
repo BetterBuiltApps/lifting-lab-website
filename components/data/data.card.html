@@ -13,7 +13,7 @@ const samples=Array.from({length:80},(_,i)=>{const t=i/80*1.55;const v=t<0.62?0.
 function Demo(){const [t,setT]=React.useState(0.92);return <div className="g">
 <div className="c3"><StatCard value="12.4t" label="Wk Tonnage"/><StatCard value="3/4" label="Sessions"/><StatCard value="Peak" label="Phase" accent="var(--amber)"/></div>
 <ScoreRing total={86} grade="A" straightness={0.92} smoothness={0.78}/>
-<div className="c2"><PhaseTimeline phases={phases} insight="Smooth transition — only 8% velocity loss."/><div className="g"><VelocityChart samples={samples} phases={phases} currentTime={t} onSeek={setT} height={110}/><BigNumberCard number="1.78" unit="m/s" caption="Peak bar speed"/></div></div>
+<div className="c2"><PhaseTimeline phases={phases} insight="Smooth transition, only 8% velocity loss."/><div className="g"><VelocityChart samples={samples} phases={phases} currentTime={t} onSeek={setT} height={110}/><BigNumberCard number="1.78" unit="m/s" caption="Peak bar speed"/></div></div>
 <div className="c2"><Card padding={14}><SectionLabel>Snatch</SectionLabel><div style={{marginTop:8}}><Sparkline values={[88,92,92,96,99,102]} width={280} height={40}/></div></Card><Card padding={14}><SectionLabel>Per side · 122.5 kg</SectionLabel><PlateDiagram perSide={[{kg:25,count:2},{kg:5,count:1},{kg:1.5,count:1}]} height={90}/></Card></div>
 <ScoreRing/>
 </div>}

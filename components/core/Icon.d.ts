@@ -1,5 +1,5 @@
 /**
- * Icon wrapper. INTENTIONAL ADDITION — the app has no Icon component because
+ * Icon wrapper. INTENTIONAL ADDITION, the app has no Icon component because
  * SwiftUI renders SF Symbols inline; the web needs a stand-in, so this inlines
  * a Lucide SVG that inherits `color` and renders in any serializing renderer.
  */
@@ -9,7 +9,7 @@ export interface IconProps {
   size?: number;
   /** Any CSS color; defaults to currentColor */
   color?: string;
-  /** Lucide's default is 2 — raise to 2.5 to sit closer to SF Symbols' filled weight */
+  /** Lucide's default is 2, raise to 2.5 to sit closer to SF Symbols' filled weight */
   strokeWidth?: number;
   style?: React.CSSProperties;
 }

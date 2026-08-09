@@ -1,7 +1,7 @@
 import React from 'react';
 
 /**
- * WeightField — a titled weight row that stores kg and edits in the athlete's
+ * WeightField, a titled weight row that stores kg and edits in the athlete's
  * preferred unit. Right-aligned value, unit suffix, decimal keypad.
  */
 export function WeightField({ title, value, unit = 'kg', onChange, style, ...rest }) {

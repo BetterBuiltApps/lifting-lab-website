@@ -1,4 +1,4 @@
-Uppercase 12px rounded label, 0.8px kerning, secondary white. The only sub-title style in the app — it heads groups (`YOUR ANALYSES`) and captions stats (`WK TONNAGE`).
+Uppercase 12px rounded label, 0.8px kerning, secondary white. The only sub-title style in the app, it heads groups (`YOUR ANALYSES`) and captions stats (`WK TONNAGE`).
 
 ```jsx
 <SectionLabel>Recent PRs</SectionLabel>

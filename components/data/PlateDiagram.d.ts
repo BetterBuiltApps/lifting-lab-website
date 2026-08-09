@@ -1,5 +1,5 @@
 /**
- * PlateDiagramView — one side of a loaded barbell, drawn to scale-ish in IWF
+ * PlateDiagramView, one side of a loaded barbell, drawn to scale-ish in IWF
  * competition colors: shaft, inner collar, then plates largest-to-smallest
  * outward. Renders "EMPTY BAR" when nothing is loaded.
  *
