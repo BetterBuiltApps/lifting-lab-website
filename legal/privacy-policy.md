@@ -1,164 +1,94 @@
 **Privacy Policy**
 
-This privacy policy is applicable to the Lifting Lab app for mobile devices, together with any related services operated by Better Built Apps LLC (collectively, the "Application"). Better Built Apps LLC is hereinafter referred to as the "Service Provider".
+This privacy policy explains how Better Built Apps LLC ("Better Built Apps," "we," "us") handles data in connection with the Lifting Lab app for iOS (the "Application"). It is written to describe what Lifting Lab actually does, not a generic template, because the honest answer to most of these questions is: your training data never leaves your device and your own iCloud account.
 
-**Data Controller Information**
-
-Better Built Apps LLC acts as the Data Controller responsible for the processing of your personal data.
+**Company Information**
 
 *   Name: Better Built Apps LLC
 *   Address: 7901 4th St N STE 300, St. Petersburg, FL 33702
-*   Email: contact@liftinglab.app
+*   Contact: the form at the bottom of [liftinglab.app](https://liftinglab.app/#contact)
 
-For data protection inquiries and to exercise your GDPR rights, please contact the Data Controller using the contact information above.
+For any question about this policy or your data, use that form.
 
-**What information does the Application obtain and how is it used?**
+**There is no account, and no server holding your training data**
 
-The Application and related services acquire the information you supply when you download, access, or register for the service. Registration with the Service Provider is not mandatory. However, you might not be able to use some of the features offered by the service unless you register.
+Lifting Lab does not require or offer account registration. There is no username, no password, and no Better Built Apps server that receives, stores, or has visibility into your workouts, personal records, video, or profile information.
 
-The Service Provider may also use the information you provide to send important information, required notices, and, where permitted by law, marketing communications.
+Your data is stored in two places, both under your own control:
 
-**Legal basis for processing your personal data**
+*   On your device, in the app's local database.
+*   In your own private iCloud account, if iCloud sync is available and you're signed in. This uses Apple's CloudKit private database (container iCloud.com.betterbuiltapps.LiftingLab), which is a private container tied to your own Apple ID. Better Built Apps LLC cannot access, read, or export data from your private iCloud container. Apple's own privacy practices govern how iCloud itself works; see Apple's privacy policy for that layer.
 
-Where the GDPR applies, the Service Provider relies on one or more lawful bases to process your personal data, including:
+Sessions, programs, personal records, your profile, and your gym setup sync automatically between your own devices this way when iCloud is available. If iCloud can't be reached, the app keeps working fully offline using the local copy on your device.
 
-*   Contract performance: processing necessary to provide the Application or fulfil a contract with you.
-*   Consent: where you have given explicit consent to processing, including for marketing, analytics, or optional features. You may withdraw consent at any time without affecting processing that occurred before withdrawal.
-*   Legitimate interests: where processing is necessary for the Service Provider's specific legitimate interests, such as maintaining network and information security, preventing fraud and abuse, or improving the Application's core functionality through analytics, provided those interests are not overridden by your data protection rights or fundamental freedoms.
-*   Legal obligation: to comply with laws or government requests.
+**Health data**
 
-**Cookies and similar technologies**
+With your permission, Lifting Lab reads the following from Apple Health:
 
-The Application or its third-party SDKs may use cookies, SDKs, pixels, and similar technologies to support functionality, analytics, and service delivery. Where required by law, the Service Provider will obtain your consent before using non-essential tracking technologies.
+*   Heart rate, to power the adaptive rest timer during a workout.
+*   Heart rate variability, resting heart rate, and sleep, to suggest a readiness level before a session.
+*   Your latest bodyweight, to keep your profile current.
 
-**Automated decision-making and profiling**
+With your permission, Lifting Lab also writes your finished workouts to Apple Health, so they appear in the Fitness app and count toward your Activity rings.
 
-If the Application uses automated decision-making, including profiling, that produces legal effects concerning you or similarly significantly affects you, you have the right to request human review, express your point of view, and contest the decision. Information about the logic involved and the likely consequences of that processing will be provided where required by law.
+Every one of these is optional and can be turned off individually in Settings. None of it is requested up front: iOS asks for each permission only when you first use the specific feature that needs it, with an explanation of why beforehand. Health data is read and written through Apple's HealthKit store on your device. We do not receive a copy of it, we do not use it for advertising, and we do not share it with any third party.
 
-**What information does the Application collect automatically?**
+**Camera, video, and on-device body tracking**
 
-In addition, the Application may collect certain information automatically, including, but not limited to, the type of mobile device you use, your mobile device's unique device ID, the IP address of your mobile device, your mobile operating system, the type of mobile Internet browsers you use, and information about the way you use the Application.
+Lifting Lab's bar-path analysis feature uses your device's camera to record video of a lift, with your permission, so it can be analyzed. That analysis, including tracking the barbell and estimating your body's position through the lift, runs entirely on your device using Apple's built in Vision framework. No video, image, or position data generated by this analysis is transmitted to Better Built Apps LLC or to any third party, at any point, unless you deliberately choose to export or share a specific clip yourself.
 
-**Does the Application collect precise real time location information of the device?**
+We're describing this processing explicitly and separately from the rest of this policy, even though it never leaves your device, because it involves estimating a body's position and movement, which some jurisdictions treat as sensitive or biometric information regardless of where the processing happens. Nothing about this analysis is used to identify you as a person; it exists only to measure a barbell's path and give you feedback on your technique.
 
-This Application does not gather precise information about the location of your mobile device.
+Recordings you make in the app are also saved to your device's Photos library as a backup, so switching phones never loses your analysis history. Whether the video files themselves also sync through iCloud is a separate, opt-in setting, kept apart from the rest of sync so filming does not silently consume a large amount of your iCloud storage.
 
-**Does the Application use Artificial Intelligence (AI) technologies?**
+**Sharing a program or session with a coach**
 
-The Application uses Artificial Intelligence (AI) technologies to enhance user experience and provide certain features. The AI components may process user data in the following ways:
+If you use Lifting Lab's coaching features, you can export a training program or a completed session as a file (a .liftinglab or .liftinglabsession file) and send it to someone directly, using your device's own share sheet: AirDrop, Mail, Messages, or Files. This is a transfer you initiate, directly between devices. It does not pass through, and is never visible to, Better Built Apps LLC. If you are a coach entering information about an athlete you train, that information is stored on your own device and, like everything else described in this policy, is never sent to us.
 
-*   Personalized Content: AI may analyze your usage patterns to deliver content tailored to your preferences and behavior.
-*   Recommendations: AI may suggest features, services, or content based on your interactions within the Application.
-*   Automated Functionalities: Certain app features may be powered by AI to automate tasks or improve efficiency.
-*   Data Protection: All AI processing is performed in accordance with this privacy policy and applicable laws, ensuring your data is handled securely and responsibly.
+**What we do not do**
 
-**Do third parties see and/or have access to information obtained by the Application?**
+*   We do not operate a server that stores your training data.
+*   We do not use third-party analytics, advertising, or tracking SDKs of any kind.
+*   We do not use cookies (Lifting Lab is a native app, not a website).
+*   We do not track your precise location.
+*   We do not sell your personal information, and we do not share it with third parties for their own purposes.
 
-Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider in improving the Application and their service. The Service Provider may share your information with third parties in the ways that are described in this privacy statement.
+**If you contact us**
 
-**International Data Transfers**
+If you reach us through the [contact form](https://liftinglab.app/#contact) on our website, we keep your message and the contact details you provide so we can respond to you. We do not use them for marketing unless you separately agree to that, and we do not share them with anyone else.
 
-The Service Provider or its third-party service providers may transfer personal data outside the European Economic Area (EEA). Where such transfers occur, the Service Provider will use an appropriate transfer mechanism required by GDPR Chapter V.
+**Children's privacy**
 
-*   Adequacy decisions by the European Commission
-*   Standard Contractual Clauses (SCCs) approved by the European Commission
-*   Other safeguards or derogations recognized under GDPR Chapter V, including consent where legally permitted
+Lifting Lab is not intended for children under 16 years of age, or a higher age of digital consent where one applies under local law. We do not knowingly collect personal information from children through the app, and because there is no account system, we have no practical way to collect it even if a child used the app directly.
 
-Countries outside the EEA may not provide the same level of data protection as the EEA. Where required by law, the Service Provider will apply appropriate safeguards and obtain any consent required for the transfer.
+Lifting Lab's coaching features let an adult coach enter and manage training information about the athletes they work with, and youth athletes are common in competitive weightlifting. If you are a coach using these features for an athlete who is a minor, you are responsible for that athlete's information: it is stored on your own device, under your control, and, as explained above, Better Built Apps LLC never receives a copy of it regardless of the athlete's age.
 
-The Service Provider may disclose User Provided and Automatically Collected Information:
+**Your data, your control**
 
-*   as required by law, such as to comply with a subpoena, or similar legal process;
-*   when they believe in good faith that disclosure is necessary to protect their rights, protect your safety or the safety of others, investigate fraud, or respond to a government request;
-*   with their trusted services providers who work on their behalf, do not have an independent use of the information the Service Provider discloses to them, and have agreed to adhere to the rules set forth in this privacy statement.
+Because your training data lives on your device and, optionally, in your own iCloud account rather than on our systems, you are the one who controls its retention:
 
-Where the GDPR applies, the Service Provider enters into Data Processing Agreements (DPAs) with third-party service providers that process personal data on its behalf, as required by Article 28 of the GDPR. These DPAs impose the same data protection obligations on those service providers as described in this Privacy Policy.
+*   Deleting data within the app removes it from your device (and from iCloud, once sync catches up).
+*   Deleting the app removes its local data from your device.
+*   Managing or deleting your iCloud data is done through your Apple ID / iCloud settings.
 
-**What are my opt-out rights?**
+Because we hold no copy of your training data, there is nothing on our end to delete when you take any of these steps, we simply never had it. The one thing we do hold is any correspondence you've sent us directly (for example, through our contact form), which we retain only as long as needed to handle it, and which you can ask us to delete at any time through that same [contact form](https://liftinglab.app/#contact).
 
-You can stop further collection of information from your mobile device by uninstalling the Application. Uninstalling will stop the Application from collecting data from your device, but it does not automatically delete information that has already been transmitted to the Service Provider or to third parties.
+**Your privacy rights**
 
-To request deletion of your personal data, withdraw consent, or exercise any of your rights, contact the Service Provider at contact@liftinglab.app.
+Depending on where you live, you may have rights under laws like the EU/UK GDPR or the California Consumer Privacy Act (CCPA/CPRA), including the right to know what personal data is held about you, to correct it, to delete it, to receive a copy of it, and to object to or restrict certain processing.
 
-**What is the data retention policy and how can you manage your information?**
+For the vast majority of your data, the practical way to exercise these rights is directly, in the app or in your device's iCloud settings, since that's where your data actually lives and we have no access to it. For anything we do hold (your correspondence with us, described above), reach us through the [contact form](https://liftinglab.app/#contact) and we will respond within the time required by applicable law. If you believe your rights have been violated, you may also contact your local data protection authority.
 
-The Service Provider retains personal data based on its necessity for the stated purposes:
+**Security**
 
-*   User Provided Data: Retained for the duration of your use of the Application plus 12 months thereafter, unless longer retention is required by law
-*   Automatically Collected Data: Retained for up to 24 months from collection, unless longer retention is required for legal compliance or security purposes
-*   Aggregated and Anonymized Data: Retained indefinitely as it no longer identifies you
-*   Data required for legal compliance: Retained as long as required by applicable law
+Your training data benefits from the security of your device and your own Apple ID and iCloud account, both of which are protected by Apple's platform security. Because we never receive a copy of your data, there is no central Better Built Apps database of user training data to be breached.
 
-You have the right to request deletion of your personal data at any time, except where retention is required by law. If you'd like the Service Provider to delete User Provided Data that you have provided via the Application, please contact them at contact@liftinglab.app and they will respond within the time required by applicable law. Please note that some User Provided Data may be required in order for the Application to function properly.
+**Changes to this policy**
 
-**Data Deletion**
+We may update this policy as the app changes. We'll post the updated version here with a new effective date. If a change is significant, we'll make a reasonable effort to let you know inside the app.
 
-You can request deletion of your personal data or account by contacting the Service Provider at contact@liftinglab.app. The Service Provider will process your request within the timeframes required by applicable law.
+This privacy policy is effective as of 2026-08-16.
 
-Upon verification of your identity, the Service Provider will delete your personal data from its systems, except where retention is required for legal compliance or legitimate business purposes.
+**Contact**
 
-**How does the Application address children's privacy?**
-
-The Application is not intended for children under 16 years of age, or where a higher age of digital consent is established under applicable law. The Service Provider does not knowingly solicit data from children or market the Application to them.
-
-The Service Provider does not knowingly collect personally identifiable information from children. The Service Provider encourages all children to never submit any personally identifiable information through the Application and/or Services. The Service Provider encourages parents and legal guardians to monitor their children's Internet usage and to help enforce this Policy by instructing their children never to provide personally identifiable information through the Application and/or Services without their permission. If you have reason to believe that a child has provided personally identifiable information to the Service Provider through the Application and/or Services, please contact the Service Provider so that they will be able to take the necessary actions. If you are under 16 years of age, or where a higher age of digital consent is established by applicable law, your parent or guardian must provide consent on your behalf where permitted by law.
-
-**How is your information kept secure?**
-
-The Service Provider is committed to safeguarding the confidentiality of your information. The Service Provider implements physical, electronic, and procedural safeguards to protect information it processes and maintains. For example, access is limited to authorized employees and contractors who need to know that information to operate, develop, or improve the Application. However, no security system can prevent all potential security breaches.
-
-**Data Breach Notification**
-
-In the event of a personal data breach that poses a risk to your rights and freedoms, the Service Provider will notify the relevant supervisory authority within 72 hours of becoming aware of the breach, as required by applicable law. Where the breach is likely to result in a high risk to your rights and freedoms, the Service Provider will also notify you without undue delay, providing information about the nature of the breach, the categories of data affected, and the measures taken or proposed to address the breach.
-
-**How will you be informed of changes to this Privacy Policy?**
-
-The Service Provider may update this Privacy Policy from time to time. The Service Provider will notify you of material changes by posting the updated Privacy Policy with an effective date. Where required by law, the Service Provider will seek your consent to material changes before they take effect.
-
-Previous versions of this Privacy Policy will be maintained and made available upon request by contacting the Service Provider at contact@liftinglab.app.
-
-This privacy policy is effective as of 2026-08-09
-
-**What are your GDPR data protection rights?**
-
-Under the GDPR, you have the following rights:
-
-*   Right of Access: You can request access to your personal data.
-*   Right to Rectification: You can request correction of inaccurate data.
-*   Right to Erasure: You can request deletion of your personal data (the "right to be forgotten").
-*   Right to Restrict Processing: You can request that the Data Controller limits how they use your data.
-*   Right to Data Portability: You can request a copy of your data in a structured, commonly used, machine-readable format.
-*   Right to Object: You can object to processing based on legitimate interests. You have an absolute right to object to processing for direct marketing purposes at any time.
-*   Right to Withdraw Consent: Where processing is based on your consent, you can withdraw it at any time. Withdrawal is as simple as toggling preferences in the Application's settings or contacting the Data Controller.
-*   Rights Regarding Automated Decision-Making: You have rights related to automated decisions that affect you.
-
-If you believe your data protection rights have been violated, you have the right to lodge a complaint with your local Data Protection Authority. Contact details for each country's Data Protection Authority can be found at:[https://edpb.ec.europa.eu/about-edpb/members_en](https://edpb.ec.europa.eu/about-edpb/members_en)
-
-If you are located in the United Kingdom, you may contact the Information Commissioner's Office at[https://ico.org.uk](https://ico.org.uk)
-
-**What are your California privacy rights (CCPA/CPRA)?**
-
-If you are a resident of California, the California Consumer Privacy Act (CCPA) and the California Privacy Rights Act (CPRA) provide you with additional rights regarding your personal information:
-
-*   Right to Know: You can request disclosure of the categories and specific pieces of personal information the Service Provider has collected about you.
-*   Right to Delete: You can request deletion of personal information the Service Provider has collected from you, subject to certain exceptions.
-*   Right to Correct: You can request correction of inaccurate personal information.
-*   Right to Opt-Out: You can opt out of the sale or sharing of your personal information for cross-context behavioral advertising.
-*   Right to Limit Use of Sensitive Personal Information: You can limit the use of your sensitive personal information to essential purposes.
-*   Right to Non-Discrimination: The Service Provider will not discriminate against you for exercising any of your CCPA/CPRA rights.
-
-To exercise any of these rights, please contact the Service Provider at contact@liftinglab.app. The Service Provider will verify your request using the information you provide and respond within the timeframes required by law. You may designate an authorized agent to make a request on your behalf.
-
-**How do you give your consent?**
-
-Where processing is based on consent, you provide that consent by affirmatively opting in to the relevant feature or action. You may withdraw consent at any time without affecting processing carried out before withdrawal. Processing based on other lawful bases, including contract performance, legitimate interests, or legal obligations, is carried out as described above.
-
-**How can you contact the Data Controller?**
-
-If you have any questions regarding privacy while using the Application, or have questions about the practices, please contact the Service Provider via email at contact@liftinglab.app.
-
-To request deletion of your personal data or to exercise any of your rights, contact the Service Provider using the details provided above. The Service Provider will respond within one month of receiving your request, extendable by up to two months where necessary due to the complexity or volume of requests, as permitted by applicable law.
-
-* * *
-
-<span>This privacy policy page was generated by</span> [App Privacy Policy Generator](https://app-privacy-policy-generator.nisrulz.com/)
+Questions about this policy or your data: use the [contact form](https://liftinglab.app/#contact) at the bottom of our website.

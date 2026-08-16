@@ -1,140 +1,94 @@
-**Terms & Conditions**  
+**Terms & Conditions**
 
-These terms and conditions apply to the Lifting Lab app for mobile devices, together with any related services operated by Better Built Apps LLC (collectively, the "Application"). Better Built Apps LLC is hereby referred to as the "Service Provider".
+These terms and conditions apply to the Lifting Lab app for iOS, operated by Better Built Apps LLC (collectively, the "Application"). Better Built Apps LLC is referred to below as "we," "us," or the "Service Provider."
 
-By downloading or using the Application, you agree to these Terms and Conditions. You should read them carefully before using the Application.
+By downloading or using the Application, you agree to these Terms and Conditions. Please read them carefully.
 
 **License to use the Application**
 
-Subject to your compliance with these Terms, the Service Provider grants you a limited, non-exclusive, non-transferable, revocable license to install and use the Application on a mobile device for personal or internal business purposes. You may not reproduce, distribute, modify, create derivative works from, reverse engineer, decompile, or disassemble the Application, except as and only to the extent that such activity is expressly permitted by applicable law.
+Subject to your compliance with these Terms, the Service Provider grants you a limited, non-exclusive, non-transferable, revocable license to install and use the Application on a device you own or control, for your own personal use. You may not reproduce, distribute, modify, create derivative works from, reverse engineer, decompile, or disassemble the Application, except to the extent applicable law expressly permits it despite this restriction.
 
-**Intellectual Property**
+**Intellectual property**
 
-The Service Provider retains all intellectual property rights in the Application, including its code, design, trademarks, service marks, trade names, logos, and branding (the "IP"). Nothing in these Terms grants you any license or right to use the Service Provider's trademarks, logos, or branding for any purpose. You agree not to remove, alter, or obscure any copyright, trademark, or other proprietary notices displayed in or on the Application.
+The Service Provider retains all intellectual property rights in the Application, including its code, design, trademarks, and branding. Nothing in these Terms grants you any right to use the Service Provider's trademarks or branding for any purpose. Do not remove, alter, or obscure any copyright or trademark notice shown in or on the Application.
 
-**Termination**
+**Eligibility**
 
-The Service Provider may suspend your access to the Application or services if you materially breach these Terms. The Service Provider will provide you with written notice of the breach and, where the breach is capable of cure, you will have 14 days from receipt of notice to remedy the breach. If you fail to cure the breach within that period, the Service Provider may terminate your access.
+You must be at least 16 years of age, or the age of digital consent in your jurisdiction if higher, to use the Application yourself. If you are below that age, a parent or legal guardian must review and accept these Terms on your behalf.
 
-The Service Provider may suspend or terminate your access immediately without notice if you violate applicable law, infringe intellectual property rights, or engage in activity that could cause harm to other users or the Service Provider.
+Lifting Lab's coaching features let an adult coach enter and manage training information about the athletes they work with, which can include minors, since youth athletes are common in competitive weightlifting. A coach using these features represents that they have whatever authority or consent is needed to enter and store that athlete's information on their own device, and remains responsible for it.
 
-Upon termination, your right to use the Application will end and you must delete all copies from your devices.
+**Not medical advice: read this before you lift**
 
-By accessing and using this Application, you represent that you are legally permitted to use it in your jurisdiction. You must be at least 16 years of age (the age of digital consent in your jurisdiction) to use the Application. If you are below 16, a parent or legal guardian must review and accept these Terms on your behalf.
+Lifting Lab is a training log and coaching tool. It is not a medical device, and nothing in the app, including readiness suggestions, warm-up guidance, percentage and RPE-based weight prescriptions, and technique feedback, is medical advice or a substitute for it.
 
-Unauthorized copying, modification of the Application, any part of the Application, or the Service Provider's trademarks is strictly prohibited. Any attempts to extract the source code of the Application, translate the Application into other languages, or create derivative versions are not permitted. All trademarks, copyrights, database rights, and other intellectual property rights related to the Application remain the property of the Service Provider.
+Talk to a physician before beginning any exercise program, particularly if you have any pre-existing health condition, injury, or concern. Weightlifting carries an inherent risk of injury. By using the Application, you acknowledge that risk and assume full responsibility for your own safety, technique, and the loads you choose to lift, regardless of any suggestion, prescription, or feedback the Application provides.
 
-**User-Generated Content and Acceptable Use**
+The Application's technique feedback, including anything derived from camera-based video analysis, is generated automatically and is provided for informational purposes only. It is not a substitute for in-person coaching, may be wrong, incomplete, or unavailable for a given clip, and must not be relied on to prevent injury.
 
-If this Application allows users to post, share, or upload content, you agree not to post content that:
+**Subscriptions**
 
-*   Is illegal or violates third-party intellectual property rights (copyright, trademark, patents)
-*   Is abusive, threatening, harassing, defamatory, or hate speech
-*   Contains discrimination or incitement to violence or illegal activity
-*   Is spam, phishing, or contains malware
-*   Violates the privacy or personal data rights of others
-*   Is misleading, false, or deceptive
-*   Contains explicit violence or sexual content (unless age-gated appropriately)
+Lifting Lab is free to use for its core features: the daily dashboard, guided and manually built workouts, the Beginner Foundation program, the personal record tracker, the exercise library, the calculators, sharing, and a limited number of bar-path video analyses, all without an account.
 
-The Service Provider reserves the right to:
+Two optional, auto-renewing subscriptions extend it:
 
-*   Remove or disable access to content that violates these guidelines
-*   Suspend or terminate accounts of users who repeatedly violate these guidelines
-*   Cooperate with law enforcement if illegal content is reported
-*   Moderate, filter, or hide content that violates these Terms, applicable law, or the guidelines set out above
+*   **Pro**, for unlimited bar-path video analysis and the rest of the training programs.
+*   **Coach**, for coaches managing a roster of athletes.
 
-Content submitted through the Application may be visible to other users or to the public, depending on how the Application functions.
+Where offered, subscriptions are billed through your Apple App Store account at the price shown in the app or on our website at the time of purchase. A subscription automatically renews for the same length of term unless you cancel at least 24 hours before the end of the current period. You can view, manage, or cancel a subscription at any time in your device's Settings, under your Apple ID, then Subscriptions. Payment is charged to your Apple ID account at confirmation of purchase. Refunds are handled by Apple under the App Store's own refund policies, not by us directly.
 
-If you believe content violates these Terms, infringes your rights, or is unlawful, you may report it to the Service Provider at contact@liftinglab.app. The report should include enough information for the Service Provider to identify the content, evaluate the complaint, and contact you if follow-up is required.
+**Acceptable use**
 
-Where the Application provides such features, you may also report content, block other users, or mute notifications directly through the Application's interface. The Service Provider will review in-app reports with the same standards described in these Terms.
+You agree not to use the Application unlawfully, to reverse engineer or attempt to extract its source code beyond what applicable law permits, or to interfere with its normal operation.
 
-The Service Provider may review reported content, request additional information where necessary, remove or restrict access to content, and take action against the responsible account where appropriate. Users affected by moderation decisions may contact the Service Provider at contact@liftinglab.app to request further review. The Service Provider will respond to appeals within a reasonable period and provide the reasons for any upheld moderation decision, subject to applicable law.
+Lifting Lab does not host content on behalf of users or make it available to other users or the public: there is no feed, no profile visible to anyone else, and no comments. When you export a program or session file to share with a coach or athlete, that transfer happens directly between your device and theirs, through a share sheet you choose (AirDrop, Mail, Messages, or Files); it is not hosted, transmitted, or moderated by us.
 
-By submitting User-Generated Content you grant the Service Provider a non-exclusive, worldwide, royalty-free license to use, reproduce, distribute, prepare derivative works of, display and perform the content in connection with the Application and the Service Provider's business. This license does not grant the Service Provider the right to sell or sublicense your content to third parties independently of the Application. You represent and warrant that you own or control all rights in the content you post and that use of the content does not violate these Terms or applicable law.
+**Connectivity**
 
-Your content may include personal data. Processing of personal data related to User-Generated Content is governed by the Privacy Policy. Do not post personal data of others without their consent.
+Lifting Lab's core training features, logging a workout, building a session, browsing your history, and the calculators, work fully offline. An internet connection is needed for iCloud sync between your own devices and, if you use them, features that verify a subscription. You're responsible for your own device's connectivity and any data charges from your carrier.
 
-The Service Provider is dedicated to ensuring that the Application is as beneficial and efficient as possible. As such, they reserve the right to modify the Application or charge for their services at any time and for any reason. The Service Provider assures you that any charges for the Application or its services will be clearly communicated to you.
+**Limitation of liability**
 
-The Application stores and processes personal data that you have provided to the Service Provider in order to provide the Service. It is your responsibility to maintain the security of your mobile device and access to the Application.
+To the fullest extent permitted by law, the Service Provider is not liable for any indirect, incidental, special, consequential, or punitive damages, including lost profits, data loss, or business interruption, even if advised such damages were possible.
 
-The Service Provider strongly advises against jailbreaking or rooting your mobile device, which involves removing software restrictions and limitations imposed by the official operating system of your mobile device. Such actions could expose your mobile device to malware, viruses, malicious programs, compromise your mobile device's security features, and may result in the Application not functioning correctly or at all.
+This limitation does not apply to death or personal injury caused by our negligence, fraud or fraudulent misrepresentation, or any other liability that cannot be excluded under applicable law.
 
-Please be aware that the Service Provider does not assume responsibility for certain aspects. Some functions of the Application require an active internet connection, which can be Wi-Fi or provided by your mobile network provider. The Service Provider cannot be held responsible if the Application does not function at full capacity due to lack of access to Wi-Fi or if you have exhausted your data allowance.
-
-If you are using the application outside of a Wi-Fi area, please be aware that your mobile network provider's agreement terms still apply. Consequently, you may incur charges from your mobile provider for data usage during the connection to the application, or other third-party charges. By using the application, you accept responsibility for any such charges, including roaming data charges if you use the application outside of your home territory (i.e., region or country) without disabling data roaming. If you are not the bill payer for the device on which you are using the application, they assume that you have obtained permission from the bill payer.
-
-Similarly, the Service Provider cannot always assume responsibility for your usage of the application. For instance, it is your responsibility to ensure that your device remains charged. If your device runs out of battery and you are unable to access the Service, the Service Provider cannot be held responsible.
-
-Nothing in these Terms shall limit any rights you have under applicable consumer protection laws that cannot be lawfully excluded.
-
-**Limitation of Liability**
-
-To the fullest extent permitted by law, the Service Provider shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to lost profits, data loss, or business interruption, even if advised of the possibility of such damages.
-
-However, the Service Provider retains full liability for:
-
-*   Death or personal injury caused by negligence
-*   Fraud or fraudulent misrepresentation
-*   Any other liability that cannot be excluded or limited under applicable law
-
-To the fullest extent permitted by law, the total liability of the Service Provider for any claim shall not exceed the amount paid by you to the Service Provider for the Application in the 12 months preceding the claim, or the minimum amount that must be paid under applicable law, whichever is greater. If the Application is provided free of charge, this means the Service Provider's liability is limited to the minimum amount permitted by applicable law.
-
-The Service Provider accepts no liability for any loss, direct or indirect, that you experience as a result of relying entirely on third-party information provided through this Application, or for inaccuracies in content provided by third parties.
+To the fullest extent permitted by law, our total liability for any claim will not exceed the amount you paid us for the Application in the 12 months before the claim, or the minimum amount required by applicable law, whichever is greater. Since most use of the Application is free, this generally means our liability is limited to the minimum amount the law requires.
 
 **Indemnification**
 
-To the fullest extent permitted by law, you agree to indemnify and hold harmless the Service Provider, its affiliates, officers, directors, employees and agents from and against any claims, liabilities, damages, losses and expenses, including reasonable legal fees, arising out of or directly related to your breach of these Terms or your intentional misuse of the Application, including User-Generated Content you submit in violation of these Terms.
+To the fullest extent permitted by law, you agree to indemnify and hold harmless the Service Provider, its affiliates, officers, and employees from claims, liabilities, damages, and reasonable legal fees arising from your breach of these Terms or your intentional misuse of the Application. This does not apply to claims arising from our own negligence or breach of these Terms, and is limited to the extent consumer protection law restricts indemnification clauses like this one.
 
-This indemnification does not apply to claims arising from the Service Provider's own negligence, breach of these Terms, or violation of applicable law. In jurisdictions where consumer indemnification is restricted by law, this clause shall be limited to the maximum extent permitted.
+The Application uses on-device computer vision (Apple's Vision framework) to analyze video you record for bar-path feedback. This runs entirely on your device; see the Privacy Policy for details. It is not a hosted or cloud-based AI service, and no video or analysis data is transmitted to us in the course of that processing.
 
-The Application incorporates Artificial Intelligence (AI) technologies to provide certain features or services. By using the Application, you acknowledge and agree that AI may be used to process data and deliver functionalities. The Service Provider ensures that all AI usage complies with applicable laws and is designed to benefit the user experience.
+**Updates and availability**
 
-The Service Provider may wish to update the application at some point. The application is currently available as per the requirements for the operating system (and for any additional systems they decide to extend the availability of the application to) may change, and you will need to download the updates if you want to continue using the application. The Service Provider does not guarantee that it will always update the application so that it is relevant to you and/or compatible with the particular operating system version installed on your device. You should accept updates when offered; if you choose not to, the Service Provider may cease to support earlier versions and the Application may not function properly. The Service Provider may also wish to cease providing the application and may terminate its use at any time without providing termination notice to you. Unless they inform you otherwise, upon any termination, (a) the rights and licenses granted to you in these terms will end; (b) you must cease using the application, and (if necessary) delete it from your device.
+We may update the Application periodically; you should install updates when offered, since we may stop supporting older versions. We may also, at our discretion, cease providing the Application in the future. Nothing in this section limits any right you have under mandatory consumer protection law.
 
-**Governing Law and Jurisdiction**  
+**Termination**
 
-These Terms and Conditions are governed by the laws of the jurisdiction in which the Service Provider is established, excluding conflict of law rules, except to the extent mandatory consumer protection laws provide otherwise.
+We may suspend or terminate your access to the Application if you materially breach these Terms. Where the breach can be cured, we'll give you notice and 14 days to fix it before termination. We may suspend or terminate access immediately, without notice, if you violate applicable law, infringe intellectual property rights, or act in a way that could harm other users or the Service Provider.
 
-Any dispute arising out of or relating to these Terms will be brought before the courts that have jurisdiction under applicable law. Nothing in this clause limits any rights you may have to bring a claim in a court that is competent under mandatory law.
+Upon termination, your license to use the Application ends and you must delete it from your devices.
 
-**DSA Compliance (Digital Services Act)**  
+**Governing law**
 
-If the Application is an intermediary service as defined under the Digital Services Act (Regulation (EU) 2022/2065, "DSA"), the following provisions apply in addition to the terms above.
-
-Point of Contact: The Service Provider maintains a single point of contact for direct communication with EU authorities and recipients of the service, reachable at contact@liftinglab.app. Where the Service Provider is established outside the European Union, a legal representative in the EU has been designated in accordance with Article 13 of the DSA.
-
-Content Moderation and Statement of Reasons: When the Service Provider restricts access to content, suspends or terminates an account, or otherwise limits the availability of the Application's features, a clear and specific statement of reasons will be provided to the affected user. The statement will include the nature of the restriction, the legal or contractual basis for the decision, and information on available redress mechanisms, in accordance with Article 17 of the DSA.
-
-Notice and Action: Users and third parties may submit notices of allegedly illegal content through the contact details provided in these Terms. The Service Provider will process notices promptly, diligently, and without automated decision-making where the circumstances require human review. Notices will be acknowledged electronically and a decision communicated without undue delay, in accordance with Article 16 of the DSA.
-
-Out-of-Court Dispute Settlement: Disputes regarding content moderation decisions, including decisions to restrict content or suspend accounts, may be submitted to an out-of-court dispute settlement body certified in accordance with Article 21 of the DSA. The Service Provider will engage with such bodies in good faith. Use of out-of-court dispute settlement does not affect your right to seek judicial remedy under applicable law.
-
-Transparency Reporting: The Service Provider publishes periodic transparency reports covering content moderation activities, including the volume of notices received, actions taken, and automated means used, in accordance with Article 24 of the DSA. Reports are made available upon request at contact@liftinglab.app.
-
-These DSA provisions apply to the extent that the Application qualifies as an intermediary service under the DSA and does not replace or limit any rights or obligations under applicable consumer protection or data protection law.
+These Terms are governed by the laws of the jurisdiction in which the Service Provider is established, excluding conflict of law rules, except where mandatory consumer protection law provides otherwise. Any dispute will be brought before the courts with jurisdiction under applicable law; nothing here limits any right you have to bring a claim in a court competent under mandatory law.
 
 **Severability**
 
-If any provision of these Terms and Conditions is held to be invalid, illegal, or unenforceable by a court of competent jurisdiction, such provision shall be modified to the minimum extent necessary to make it valid and enforceable, and the remaining provisions of these Terms shall remain in full force and effect.
+If any provision of these Terms is held invalid or unenforceable, it will be modified to the minimum extent necessary to make it valid, and the remaining provisions stay in full force.
 
-**Entire Agreement**
+**Entire agreement**
 
-These Terms and Conditions, together with the Privacy Policy, constitute the entire agreement between you and the Service Provider concerning your use of the Application, superseding any prior agreements or understandings.
+These Terms, together with the Privacy Policy, are the entire agreement between you and the Service Provider about your use of the Application, superseding any earlier understanding.
 
-**Changes to These Terms and Conditions**
+**Changes to these Terms**
 
-The Service Provider may periodically update their Terms and Conditions. Therefore, you are advised to review this page regularly for any changes. The Service Provider will notify you of any changes by posting the new Terms and Conditions on this page.
+We may update these Terms from time to time; the current version is always posted here. Material changes will be reflected by a new effective date below.
 
-Previous versions of these Terms and Conditions will be maintained and made available upon request by contacting the Service Provider at contact@liftinglab.app.
+These terms and conditions are effective as of 2026-08-16.
 
-These terms and conditions are effective as of 2026-08-09
+**Contact**
 
-**Contact Us**
-
-If you have any questions or suggestions about the Terms and Conditions, please do not hesitate to contact the Service Provider at contact@liftinglab.app.
-
-* * *
-
-<span>This Terms & Conditions page was generated by</span> [App Privacy Policy Generator](https://app-privacy-policy-generator.nisrulz.com/)
+Questions about these Terms: use the [contact form](https://liftinglab.app/#contact) at the bottom of our website.

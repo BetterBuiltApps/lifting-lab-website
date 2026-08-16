@@ -151,7 +151,7 @@ def page(body: str, meta: dict, updated: str) -> str:
     <a href="/">Home</a>
     <a href="/privacy/">Privacy</a>
     <a href="/terms/">Terms</a>
-    <a href="mailto:contact@liftinglab.app">Contact</a>
+    <a href="/#contact">Contact</a>
   </nav>
 </footer>
 </body>
