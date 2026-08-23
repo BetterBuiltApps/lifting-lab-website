@@ -174,15 +174,16 @@ export function Arc() {
         {/* -12w, wide and calm. One screenshot, large, plenty of air. */}
         <Station id="cycle" week={12} unit="weeks out" title="A cycle built off your real numbers."
                  className="arc-station--wide">
-          <p className="arc-lede">
-            Technique, strength, specification, peak, and a masters cycle. Periodized templates loaded
-            off your actual PRs, not a generic percentage table. Every set arrives with the target
-            weight, the percentage, and the plates for your bar. Miss a session and Lifting Lab
-            reschedules it instead of scolding you.
-          </p>
-          <div className="arc-figure">
-            <Shot src={asset('assets/screens/02-programs-list.png')}
-                  alt="Programs list: five periodized cycles" width={300} />
+          <div className="arc-row">
+            <p className="arc-lede">
+              Technique, strength, specification, peak, and masters cycles, periodized off your actual
+              PRs, not a generic percentage table. Every set arrives with target weight, percentage, and
+              plates already loaded. Miss a session and Lifting Lab reschedules it, no guilt trip.
+            </p>
+            <div className="arc-figure">
+              <Shot src={asset('assets/screens/02-programs-list.png')}
+                    alt="Programs list: five periodized cycles" width={260} />
+            </div>
           </div>
         </Station>
 
@@ -190,15 +191,18 @@ export function Arc() {
         <Station id="daily" week={8} unit="weeks out" title="Tell it how you feel. It builds the day."
                  className="arc-station--pair">
           <p className="arc-lede">
-            Energy, soreness, the equipment in your gym, the time you actually have. Lifting Lab builds
-            the session around that, the right classic lift for today's rotation, strength work that
-            avoids what's sore, accessories that balance the day. Then it's yours: reorder it, swap
-            anything, dial a block up or down.
+            Energy, soreness, your equipment, the time you have. Lifting Lab builds the session around
+            it: the right lift for today's rotation, strength work that avoids what's sore, accessories
+            that balance the day. Then it's yours to reorder, swap, or dial up or down.
+          </p>
+          <p className="arc-lede arc-lede--quiet">
+            Open the app on any day and it already knows: an unfinished session waiting to resume, the
+            week at a glance, and a flag the moment the same technique fault shows up twice.
           </p>
           <div className="arc-pair">
             <figure className="arc-pair-half">
               <Shot src={asset('assets/screens/08-readiness-checkin.png')}
-                    alt="Readiness check-in: energy, soreness, equipment and time" width={250} />
+                    alt="Check-in: energy, sore muscles to avoid, and what you're training today" width={260} />
               <figcaption className="arc-pair-cap">What you tell it</figcaption>
             </figure>
             <div className="arc-pair-arrow" aria-hidden="true">
@@ -206,7 +210,7 @@ export function Arc() {
             </div>
             <figure className="arc-pair-half">
               <Shot src={asset('assets/screens/11-session-hub.png')}
-                    alt="The resulting session, ready to reorder or swap" width={250} />
+                    alt="A custom workout put together: four blocks, set counts, and volume and intensity dialed in" width={260} />
               <figcaption className="arc-pair-cap">What you get back</figcaption>
             </figure>
           </div>
@@ -228,9 +232,9 @@ export function Arc() {
             </div>
             <div className="arc-miss-body">
               <p className="arc-lede">
-                Film a set from your own phone. Lifting Lab tracks the plate through the whole lift,
-                splits it into five phases, scores the path and shows you the drift. No sensor, no
-                clip-on unit, no pairing. Compare today's snatch against your best one at true scale.
+                Film a set on your phone. Lifting Lab plots the bar path, splits it into five phases,
+                and shows you where it drifts, no sensor, no pairing. Compare today's snatch against
+                your best one, at true scale.
               </p>
               <p className="arc-lede arc-lede--quiet">
                 And when the tracking isn't clean, it says so and shows the evidence, rather than
@@ -238,11 +242,11 @@ export function Arc() {
               </p>
               <div className="arc-miss-shots">
                 <Shot src={asset('assets/screens/15b-bar-trace-live-metrics.png')}
-                      alt="Bar Trace metrics: peak speed, mean pull speed, bar height" width={200} />
+                      alt="Bar Trace metrics: peak speed, mean pull speed, bar height" width={260} />
                 <Shot src={asset('assets/screens/33-technique-doctor-list.png')}
-                      alt="Fix My Miss: say where the lift went wrong" width={200} />
+                      alt="Technique Doctor: say where the lift went wrong" width={260} />
                 <Shot src={asset('assets/screens/34-technique-doctor-detail.png')}
-                      alt="Fix My Miss: likely causes and corrective drills" width={200} />
+                      alt="Technique Doctor: likely causes and corrective drills" width={260} />
               </div>
             </div>
           </div>
@@ -252,24 +256,28 @@ export function Arc() {
         <Station id="peak" week={1} unit="week out" title="The week the numbers matter."
                  className="arc-station--dense">
           <div className="arc-dense">
-            {/* No weight-class records here. Measuring a lifter against the world
-                best is not what motivates anyone in a taper week; the numbers
-                that matter are their own, moving. */}
-            <p className="arc-lede">
-              Taper week is arithmetic. Lifting Lab carries the maths the sport actually runs on,
-              worked against your lifts rather than a table.
-            </p>
-            <dl className="arc-facts">
-              <div><dt>Sinclair</dt><dd>Your total, scored across bodyweights</dd></div>
-              <div><dt>Openers</dt><dd>A first attempt you will make, not one you hope for</dd></div>
-              <div><dt>Prilepin</dt><dd>Rep and intensity ranges per block</dd></div>
-              <div><dt>Plate math</dt><dd>Loaded for your gym&rsquo;s actual inventory</dd></div>
-              <div><dt>Warm-up ramps</dt><dd>Jumps shaped the way a coach would set them</dd></div>
-              <div><dt>Your own history</dt><dd>Every number above, against what you lifted last cycle</dd></div>
-            </dl>
-            <div className="arc-dense-shots">
-              <Shot src={asset('assets/screens/21-sinclair.png')} alt="Sinclair score calculator" width={190} />
-              <Shot src={asset('assets/screens/17-barbell-loader.png')} alt="Barbell loader: plate math for your gym" width={190} />
+            <div className="arc-row">
+              <div>
+                {/* No weight-class records here. Measuring a lifter against the
+                    world best is not what motivates anyone in a taper week; the
+                    numbers that matter are their own, moving. */}
+                <p className="arc-lede">
+                  Taper week is arithmetic. Lifting Lab carries the maths the sport actually runs on,
+                  worked against your lifts rather than a table.
+                </p>
+                <dl className="arc-facts">
+                  <div><dt>Sinclair</dt><dd>Your total, scored across bodyweights</dd></div>
+                  <div><dt>Openers</dt><dd>A first attempt you will make, not one you hope for</dd></div>
+                  <div><dt>Prilepin</dt><dd>Rep and intensity ranges per block</dd></div>
+                  <div><dt>Plate math</dt><dd>Loaded for your gym's actual inventory</dd></div>
+                  <div><dt>Warm-up ramps</dt><dd>Jumps shaped the way a coach would set them</dd></div>
+                  <div><dt>Your own history</dt><dd>Every number above, against what you lifted last cycle</dd></div>
+                </dl>
+              </div>
+              <div className="arc-dense-shots">
+                <Shot src={asset('assets/screens/21-sinclair.png')} alt="Sinclair score calculator" width={260} />
+                <Shot src={asset('assets/screens/17-barbell-loader.png')} alt="Barbell loader: plate math for your gym" width={260} />
+              </div>
             </div>
           </div>
         </Station>
@@ -277,16 +285,18 @@ export function Arc() {
         {/* 0, the close. Highest contrast on the page; the arc ends here. */}
         <Station id="platform" week={0} unit="meet day" title="The warm-up room runs on attempts, not the clock."
                  className="arc-station--close">
-          <p className="arc-lede">
-            Lifting Lab counts them for you, tells you when to take your next warm-up, holds you in a
-            pattern when the count stretches, and tracks your six attempts on the board. Openers
-            you'll make. Totals you'll keep. Nobody explains the warm-up room to you. This does.
-          </p>
-          <div className="arc-close-shots">
-            <Shot src={asset('assets/screens/24-meet-day-warmup-room.png')}
-                  alt="Meet Day: the warm-up room, counted in attempts" width={260} />
-            <Shot src={asset('assets/screens/25-meet-day-attempt-board.png')}
-                  alt="Meet Day: the six-attempt board" width={260} />
+          <div className="arc-row">
+            <p className="arc-lede">
+              Lifting Lab counts your warm-ups, tells you when to take the next one, and tracks your six
+              attempts on the board. Openers you'll make. Totals you'll keep. Nobody explains the
+              warm-up room. This does.
+            </p>
+            <div className="arc-close-shots">
+              <Shot src={asset('assets/screens/24-meet-day-warmup-room.png')}
+                    alt="Meet Day: the warm-up room, counted in attempts" width={260} />
+              <Shot src={asset('assets/screens/25-meet-day-attempt-board.png')}
+                    alt="Meet Day: the six-attempt board" width={260} />
+            </div>
           </div>
         </Station>
       </div>

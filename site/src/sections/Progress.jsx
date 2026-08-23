@@ -14,16 +14,15 @@ export function Progress() {
       <div style={{ ...siteWrap, display: 'grid', gap: 'clamp(40px,5vw,64px)' }}>
         <Reveal>
           <SiteHead center title="Every session counts for something." max={680}
-            body="Levels and streaks built from your actual training, sessions finished, sets made, tonnage moved, PRs set, weeks run perfectly. Badges unlock for real milestones across strength, Sinclair, programs completed, and lifts analyzed. No fake points: it's computed straight from your log, so your history counts from day one." />
+            body="Levels and streaks built from real training: sessions finished, sets made, tonnage moved, and PRs set. Badges unlock for real milestones, strength, Sinclair, programs completed, and lifts analyzed. No fake points, it's computed from your log, so your history counts from day one." />
         </Reveal>
         <div className="progress-row">
           <div className="shot-row">
-            <Shot src={asset('assets/screens/27-progress-levels-xp-badges.png')} alt="Level ring and streak, computed from real training" width={240} />
-            <Shot src={asset('assets/screens/28-badges-grid-full.png')} alt="Badge grid: unlocked in full color, locked desaturated" width={240} />
+            <Shot src={asset('assets/screens/27-progress-levels-xp-badges.png')} alt="Level ring and streak, computed from real training" width={260} />
+            <Shot src={asset('assets/screens/28-badges-grid-full.png')} alt="Badge grid: unlocked in full color, locked desaturated" width={260} />
           </div>
-          <div style={{ display: 'grid', gap: 18, justifyItems: 'center' }}>
+          <div style={{ display: 'grid', justifyItems: 'center' }}>
             <Shot src={asset('assets/screens/29-badge-detail-first-blood.png')} alt="Badge unlocked share card" width={260} />
-            <span style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>Shareable, one tap</span>
           </div>
         </div>
       </div>

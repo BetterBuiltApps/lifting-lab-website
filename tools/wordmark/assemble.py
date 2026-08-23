@@ -1,14 +1,11 @@
-"""Assemble logo.svg and mark.svg from the flask drawing plus outlined Nunito.
+"""Assemble logo.svg and mark.svg from the flask drawing plus live wordmark text.
 
-    python3 assemble.py          write candidates beside this script, to compare
+    python3 assemble.py          write a candidate beside this script, to check
     python3 assemble.py ship     overwrite site/public/assets/{logo,mark}.svg
 
-Needs fonttools, brotli and uharfbuzz. See tools/wordmark/README.md.
+No font-shaping dependencies. See tools/wordmark/README.md.
 """
-import os, re, sys
-
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import wordmark
+import os, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(os.path.dirname(HERE))
@@ -53,22 +50,28 @@ def mark_d():
 HEADER = """<?xml version="1.0" encoding="UTF-8"?>
 <!-- Lifting Lab wordmark.
 
-     The flask and barbell mark is the original drawing. The wordmark is set in
-     Arimo at weight {weight}, outlined to paths here so it is always a shape and
-     never depends on a font being loaded.
+     The flask and barbell mark is the original drawing, outlined to a path so
+     it is always a shape. The wordmark is live text, font-family
+     'Verdana, sans-serif' at font-weight {weight}.
 
      The original artwork asked for Inkscape's generic 'Sans' at weight 800.
-     There is no font by that name: it is fontconfig's alias, and on the machine
-     that drew it, it resolved to Arial Bold. Arial has no weight 800, so Bold
-     is the heaviest the mark could ever have been.
+     'Sans' is fontconfig's alias, not a font, and it resolves to Verdana Bold,
+     confirmed with `fc-match "Sans:weight=800"` on the machine that drew the
+     original artwork and every machine this has been checked on since. Two
+     earlier versions of this file tried to outline a substitute for that alias
+     instead of using it directly (first Arimo, standing in for a mistaken
+     guess of Arial; then Noto Sans Black, chosen only because Arial/Arimo
+     cannot reach weight 800 at all), because outlining Verdana's letterforms
+     into shipped artwork is what its licence restricts.
 
-     Arial may not be redistributed or outlined into a logo. Arimo is metrically
-     compatible with it, drawn to match, and SIL OFL, so these outlines are the
-     same mark in a form that can ship. The headings this sits above are the
-     platform's own sans, which is what 'Sans' meant in the first place.
+     This version does not outline anything: it is live text asking for
+     Verdana by name, the same way any webpage's body text asks for a font,
+     which is not embedding or redistributing the font file and carries none of
+     that restriction. 'sans-serif' is the fallback for the rare viewer without
+     Verdana installed.
 
      Regenerate with the scripts recorded in this repo's CLAUDE.md. Do not hand
-     edit the path data.
+     edit the path data or the text content.
 
      Fill is {amber}, the app's BPColor.amber, not the source drawing's #fdb402,
      which is a different amber and would put two of them on one page. It is a
@@ -77,15 +80,15 @@ HEADER = """<?xml version="1.0" encoding="UTF-8"?>
      tokens. If the amber token changes, change it here too. -->
 """
 
-CAP = 18.4672        # cap height, matching the original lockup
-
-# The shipped wordmark. The artwork asked for weight 800, but the face it
-# actually resolved to (Arial, via fontconfig's 'Sans' alias) has no 800: the
-# heaviest thing it could ever have drawn is Bold. 700 is therefore the faithful
-# reproduction, not a compromise. Tracking is a touch open so the caps do not
-# close up at favicon and app-icon sizes.
-WEIGHT = 700
-TRACKING = 0.01
+FONT_STACK = "Verdana, sans-serif"
+WEIGHT = 800          # the artwork's own request, honoured exactly now
+FONT_SIZE = 25.65     # tuned so the caps sit close to CAP against the mark
+LETTER_SPACING = 0.25 # a touch open so the caps do not close up at small sizes
+WIDTH = 176           # measured right edge of "LIFTING" (173.4) plus headroom,
+                       # Verdana is deliberately wide (it was drawn for on-screen
+                       # legibility) and the sans-serif fallback for viewers
+                       # without it installed is not guaranteed to match its
+                       # metrics exactly
 
 def _write(path, svg):
     """Write only if it parses.
@@ -105,22 +108,20 @@ def _write(path, svg):
                          f"A '--' inside the header comment is the usual cause.")
     open(path, "w").write(svg)
 
-def build(weight, track, out_path):
-    drawn, _ = wordmark.build(weight, CAP, track, ["LIFTING", "LAB"])
-    lines = {l["text"]: l for l in drawn}
-    width = round(TEXT_X + lines["LIFTING"]["advance"], 3)
-    svg = HEADER.format(weight=weight, amber=AMBER)
+def build(out_path):
+    svg = HEADER.format(weight=WEIGHT, amber=AMBER)
+    text_style = (f'font-family="{FONT_STACK}" font-weight="{WEIGHT}" '
+                  f'font-size="{FONT_SIZE}" letter-spacing="{LETTER_SPACING}"')
     svg += (
         f'<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lifting Lab"\n'
-        f'     width="{width}mm" height="{HEIGHT}mm" viewBox="0 0 {width} {HEIGHT}">\n'
+        f'     width="{WIDTH}mm" height="{HEIGHT}mm" viewBox="0 0 {WIDTH} {HEIGHT}">\n'
         f'  <g fill="{AMBER}">\n'
         f'    <path transform="{MARK_TF}" d="{mark_d()}"/>\n'
-        f'    <path transform="translate({TEXT_X},{BASE_1})" d="{lines["LIFTING"]["d"]}"/>\n'
-        f'    <path transform="translate({TEXT_X},{BASE_2})" d="{lines["LAB"]["d"]}"/>\n'
+        f'    <text x="{TEXT_X}" y="{BASE_1}" {text_style}>LIFTING</text>\n'
+        f'    <text x="{TEXT_X}" y="{BASE_2}" {text_style}>LAB</text>\n'
         f'  </g>\n</svg>\n'
     )
     _write(out_path, svg)
-    return width
 
 MARK_HEADER = """<?xml version="1.0" encoding="UTF-8"?>
 <!-- Lifting Lab mark, the flask and barbell without the wordmark.
@@ -146,10 +147,10 @@ def build_mark(out_path):
 
 if __name__ == "__main__":
     if sys.argv[1:2] == ["ship"]:
-        w = build(WEIGHT, TRACKING, os.path.join(ASSETS, "logo.svg"))
+        build(os.path.join(ASSETS, "logo.svg"))
         build_mark(os.path.join(ASSETS, "mark.svg"))
-        print(f"logo.svg width={w}mm aspect={w/HEIGHT:.3f}; mark.svg 45x45mm")
+        print(f"logo.svg width={WIDTH}mm aspect={WIDTH/HEIGHT:.3f}; mark.svg 45x45mm")
     else:
-        for weight, track in ((700, 0), (800, 0), (800, 0.01)):
-            w = build(weight, track, os.path.join(HERE, f"logo-{weight}-{track}.svg"))
-            print(f"logo-{weight}-{track}.svg  width={w}mm  aspect={w/HEIGHT:.3f}")
+        out = os.path.join(HERE, f"logo-candidate.svg")
+        build(out)
+        print(f"wrote {out}")

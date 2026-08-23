@@ -1,30 +1,39 @@
 /* Lifting Lab fonts.
 
    Four roles, and only one of them costs a byte:
-     heading  -> the platform's own sans, at weight 800. No webfont.
+     heading  -> Verdana, at weight 800. Live request, no webfont.
      numeric  -> SF Pro Rounded, then Nunito. The hero readouts only.
      body     -> the platform's own UI face
      mono     -> the platform's own mono face
 
-   **The heading face is deliberately the system sans.** The logo asked for
-   'Sans, Ultra-Bold' at weight 800, and that is not a typeface: Sans is
-   fontconfig's generic alias and Ultra-Bold is a weight name. Asking the
-   browser for the system sans at 800 is the same request written the way the
-   web writes it, which is why nothing is downloaded to satisfy it.
+   **The heading face is Verdana, deliberately and literally.** The logo asked
+   for 'Sans, Ultra-Bold' at weight 800. Sans is not a typeface, it is
+   fontconfig's generic alias, and `fc-match "Sans:weight=800"` resolves it to
+   Verdana Bold, on the machine that drew the original artwork and every
+   machine checked since. Earlier versions of this file asked for "the
+   platform's own sans" instead, guessing at what the alias meant rather than
+   resolving it; that guess is gone now that the actual answer is known.
 
-   The wordmark is cut from Arimo (tools/wordmark/face), which is metrically
-   compatible with Arial and drawn to match it, because Arial is what that alias
-   actually resolved to and Arial itself may not be outlined into a logo. So the
-   mark and the headings are one request resolved two ways: outlines where a
-   shape is needed, the live system face where text is needed.
+   The wordmark asks for the same 'Verdana, sans-serif' stack as live text
+   (tools/wordmark/assemble.py). Requesting an installed font by name is not
+   embedding or redistributing it, so this costs nothing to download, Verdana
+   ships with essentially every OS, and carries none of the licence
+   restriction that would apply to shipping its letterforms as outlined
+   artwork. Mark and headings are one request now, not a request and a
+   substitute for it: the wordmark's flask-and-barbell mark is still outlined
+   to a path, since it is original artwork rather than type, but its text and
+   every heading on the page ask for the same font the same way.
 
    Nunito backs the numeric role only, mirroring the app's rounded numerals.
    Nothing on the marketing page uses a numeric role today, so it is never
    fetched: an unused @font-face is not downloaded.
 
-   Inter, Barlow and JetBrains Mono were all tried here and removed. The first
-   two because the brief was a plain system sans and neither is one; the third
-   because it sat behind a system face that was already the right answer. */
+   Arimo, Noto Sans, Inter, Barlow and JetBrains Mono were all tried here and
+   removed. The first two were outlined substitutes for the wordmark, guesses
+   at what "Sans" meant or the heaviest weight available rather than the
+   actual answer; Inter and Barlow were guesses at the heading face for the
+   same reason; JetBrains Mono sat behind a system face that was already the
+   right answer. */
 
 @font-face {
   font-family: 'Nunito';
@@ -52,13 +61,13 @@
   /* ------------------------------------------------------------------ *
    * THE HEADING FACE. Change this one line to change every heading on   *
    * the site. The app's mirror is BPFont's heading tiers in Theme.swift *
-   * change both, app first. This resolves to the platform's own sans,   *
-   * which is what 'Sans' meant: nothing is downloaded for it. A bundled *
-   * face would also need an @font-face above, its files in              *
-   * site/public/assets/fonts/, and tools/wordmark/assemble.py ship      *
-   * rerun so the logo still matches.                                    *
+   * change both, app first. Verdana is a live font request, not a       *
+   * bundled one, so it costs nothing to download; 'sans-serif' is the   *
+   * fallback for the rare viewer without it installed. If this changes  *
+   * again, also change FONT_STACK in tools/wordmark/assemble.py and     *
+   * ship, or the logo stops matching the headings it sits above.        *
    * ------------------------------------------------------------------ */
-  --font-heading: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-heading: Verdana, sans-serif;
 
   /* SF Pro Rounded is addressable by name on Apple platforms; ui-rounded
      resolves it in Safari. Nunito covers everywhere else. */

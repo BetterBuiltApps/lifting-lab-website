@@ -5,13 +5,14 @@ import { Button, SectionLabel, Icon } from '../design-system';
 import { SITE } from '../config';
 import { asset } from '../lib/asset';
 import { DURATION, EASE } from '../lib/motion';
+import { useLightbox } from '../lib/Lightbox';
 
 export const siteWrap = { maxWidth: 1240, margin: '0 auto', padding: '0 clamp(20px,5vw,60px)' };
 
 /* Every href here must resolve to an id that exists. "Pillars" pointed at
    #pillars, which stopped existing when that section was absorbed into the arc,
    so the first nav item silently went nowhere. */
-const NAV_LINKS = [['The cycle', '#cycle'], ['Everything else', '#explore'], ['Pricing', '#pricing'], ['FAQ', '#faq']];
+const NAV_LINKS = [['The cycle', '#cycle'], ['How it adapts', '#engine'], ['Everything else', '#explore'], ['Pricing', '#pricing'], ['FAQ', '#faq'], ['Contact', '#contact']];
 
 export function SiteNav() {
   const [menuOpen, setMenuOpen] = React.useState(false);
@@ -97,16 +98,21 @@ export function SiteNav() {
 export function SiteHead({ title, body, center = false, max = 640 }) {
   return (
     <div style={{
-      display: 'grid', gap: 14, maxWidth: max,
-      margin: center ? '0 auto' : undefined, textAlign: center ? 'center' : 'left',
+      display: 'grid', gap: 14,
+      textAlign: center ? 'center' : 'left',
       justifyItems: center ? 'center' : 'start',
     }}>
+      {/* The heading is not capped to `max`: that width is tuned for the
+          body paragraph's reading measure, and a heading held to the same
+          narrow box wraps to two lines far more readily than its own
+          available column would require. The heading is free to use the
+          rest of the section's real width instead. */}
       <h2 style={{
         margin: 0, fontFamily: 'var(--font-display)', fontWeight: 'var(--weight-extrabold)',
         fontSize: 'clamp(30px,3.4vw,48px)', lineHeight: 1.06, letterSpacing: '-1px',
-        color: 'var(--text-primary)',
+        color: 'var(--text-primary)', textWrap: 'balance',
       }}>{title}</h2>
-      {body && <p style={{ margin: 0, font: 'var(--type-body)', fontSize: 18, lineHeight: 1.5, color: 'var(--text-secondary)' }}>{body}</p>}
+      {body && <p style={{ margin: 0, maxWidth: max, font: 'var(--type-body)', fontSize: 18, lineHeight: 1.5, color: 'var(--text-secondary)' }}>{body}</p>}
     </div>
   );
 }
@@ -130,33 +136,44 @@ export function SiteHead({ title, body, center = false, max = 640 }) {
  * broken-image detector scans comments too and reads one as a src-less tag.) */
 export function Shot({ src, alt, width = 300, caption, priority = false, lcp = false }) {
   const webpBase = src.replace(/\.png$/, '');
+  const openLightbox = useLightbox();
   return (
     <figure style={{ margin: 0, display: 'grid', gap: 12, justifyItems: 'center' }}>
-      <motion.div
-        whileHover={{ scale: 1.015, borderColor: 'rgba(255,255,255,0.22)' }}
-        transition={{ duration: DURATION.spring, ease: EASE.spring }}
+      <button
+        type="button"
+        onClick={(e) => openLightbox({ src, alt, caption }, e.currentTarget)}
+        aria-label={`View larger: ${alt}`}
         style={{
-          width, maxWidth: '100%', aspectRatio: '9 / 19.5', borderRadius: 34, overflow: 'hidden', background: '#000',
-          border: '1px solid rgba(255,255,255,0.14)',
-          boxShadow: '0 30px 70px rgba(0,0,0,0.55)',
+          display: 'block', width, maxWidth: '100%', padding: 0, border: 'none',
+          background: 'none', cursor: 'pointer', borderRadius: 34,
         }}
       >
-        <picture>
-          <source
-            type="image/webp"
-            srcSet={`${webpBase}-600.webp 600w, ${webpBase}-900.webp 900w`}
-            sizes={`${width}px`}
-          />
-          <img
-            src={src} alt={alt}
-            width={width} height={Math.round((width * 19.5) / 9)}
-            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-            loading={priority ? 'eager' : 'lazy'}
-            decoding="async"
-            {...(lcp ? { fetchpriority: 'high' } : {})}
-          />
-        </picture>
-      </motion.div>
+        <motion.div
+          whileHover={{ scale: 1.015, borderColor: 'rgba(255,255,255,0.22)' }}
+          transition={{ duration: DURATION.spring, ease: EASE.spring }}
+          style={{
+            width: '100%', aspectRatio: '9 / 19.5', borderRadius: 34, overflow: 'hidden', background: '#000',
+            border: '1px solid rgba(255,255,255,0.14)',
+            boxShadow: '0 30px 70px rgba(0,0,0,0.55)',
+          }}
+        >
+          <picture>
+            <source
+              type="image/webp"
+              srcSet={`${webpBase}-600.webp 600w, ${webpBase}-900.webp 900w`}
+              sizes={`${width}px`}
+            />
+            <img
+              src={src} alt={alt}
+              width={width} height={Math.round((width * 19.5) / 9)}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              loading={priority ? 'eager' : 'lazy'}
+              decoding="async"
+              {...(lcp ? { fetchpriority: 'high' } : {})}
+            />
+          </picture>
+        </motion.div>
+      </button>
       {caption && (
         <figcaption style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)', textAlign: 'center', maxWidth: width }}>
           {caption}
@@ -171,27 +188,60 @@ export function Shot({ src, alt, width = 300, caption, priority = false, lcp = f
 // beyond plain scaling, see App Store Marketing Guidelines.
 const APP_STORE_BADGE_HEIGHT = { large: 56, medium: 48, small: 40 };
 
-/** App Store CTA, used in hero, pricing, and footer. Reads SITE.released:
- * pre-launch it's an inert, muted label (not a link, no badge, the Marketing
- * Agreement only permits the real badge once the app is actually live). Once
- * released, renders Apple's official badge (site/public/assets/, downloaded
- * per-app from toolbox.marketingtools.apple.com/app-store/) linking straight
- * to the App Store listing, per Apple's own guidelines. */
+/** App Store CTA, used in hero, pricing, and footer. Always shows Apple's
+ * official badge (site/public/assets/, downloaded per-app from
+ * toolbox.marketingtools.apple.com/app-store/), the correct one now that
+ * SITE.released is true, per the Marketing Guidelines' own badge-replacement
+ * rule ("replace with download badge immediately upon app release"). Still
+ * reads SITE.released rather than always linking, so that if the listing is
+ * ever pulled this reverts to a plain (unlinked) badge instead of quietly
+ * pointing at a dead page. */
 export function AppStoreButton({ size = 'large' }) {
-  if (!SITE.released) {
-    return (
-      <Button size={size} variant="secondary" disabled style={{ opacity: 1, cursor: 'default' }}>
-        {SITE.ctaPrimaryPrelaunch}
-      </Button>
-    );
-  }
+  const height = APP_STORE_BADGE_HEIGHT[size];
+  // Clear space is baked into the element itself, 1/4 of the badge's own
+  // height on every side, so it's correct wherever this is dropped rather
+  // than relying on a caller's layout gap to happen to be wide enough.
+  const badge = (
+    <img
+      src={asset(SITE.appStoreBadgeSrc)}
+      alt="Download on the App Store"
+      style={{ height, display: 'block', padding: height / 4 }}
+    />
+  );
+  if (!SITE.released) return badge;
   return (
     <a href={SITE.links.appStore} aria-label={SITE.ctaPrimary}>
-      <img
-        src={asset(SITE.appStoreBadgeSrc)}
-        alt="Download on the App Store"
-        style={{ height: APP_STORE_BADGE_HEIGHT[size], display: 'block' }}
-      />
+      {badge}
     </a>
+  );
+}
+
+// Apple's on-screen minimum for this badge is 30px. It matches the App Store
+// badge's own "large" height (56px) rather than sitting at its own minimum,
+// since the two badges appear side by side in the hero, and two
+// differently-sized official marks in one CTA row reads as unbalanced.
+// The "smaller than your main message" placement rule this badge also carries
+// is about the heading above it, not about matching a sibling badge, and 56px
+// still clears its own 30px minimum with plenty of room.
+const HEALTH_BADGE_HEIGHT = APP_STORE_BADGE_HEIGHT.large;
+
+/** "Works with Apple Health" badge. Renders nothing until the real artwork is
+ * in place (see SITE.healthBadgeReady in config.js), never a placeholder or a
+ * hand-drawn stand-in: this is a licensed trademark, not decoration.
+ *
+ * Not a link (unlike AppStoreButton): Apple's guidelines describe this as a
+ * compatibility mark placed next to the feature it describes, not a CTA, and
+ * pairing it with a click target it doesn't control is not part of the
+ * licensed use. Callers are responsible for the "one badge per promotion" and
+ * "not alongside the Apple logo" rules, this component only renders the mark
+ * itself plus its required clear space. */
+export function HealthBadge() {
+  if (!SITE.healthBadgeReady) return null;
+  return (
+    <img
+      src={asset(SITE.healthBadgeSrc)}
+      alt="Works with Apple Health"
+      style={{ height: HEALTH_BADGE_HEIGHT, display: 'block', padding: HEALTH_BADGE_HEIGHT / 4 }}
+    />
   );
 }

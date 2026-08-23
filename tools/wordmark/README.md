@@ -3,29 +3,34 @@
 Generates `site/public/assets/logo.svg` (the lockup) and `site/public/assets/mark.svg`
 (the flask alone, used as the favicon).
 
-**The outputs are generated. Do not hand edit the path data in them.** If you
-need a different weight, tracking, or cap height, change it here and re-ship.
+**The mark's path data is generated. Do not hand edit it.** The wordmark text
+is a live `<text>` element; edit its font, weight, size, or spacing directly in
+`assemble.py` and re-ship.
 
 ## Why this exists
 
-The wordmark used to be set in whatever Inkscape's generic `Sans` family
-resolved to. On the machine that drew it that alias resolved to **Verdana
-Bold**, which is where the slab serifs on the capital I came from. That was a
-default rather than a choice, and Verdana's licence permits neither embedding
-in an app nor self-hosting, so it could never have shipped as-is.
+The original artwork asked for Inkscape's generic `Sans` family at weight 800.
+`Sans` is not a font, it is fontconfig's alias, and `fc-match "Sans:weight=800"`
+resolves it to **Verdana Bold** on every machine this has been checked on,
+including the one that drew the original artwork.
 
-It is now set in **Barlow ExtraBold (800)**, the weight the original artwork
-asked for. Barlow is the same face `tokens/fonts.css` loads for headings and the
-app bundles in `Theme/Fonts`, so the logo, every heading on this site, and every
-title in the app are one set of letterforms. It is licensed SIL OFL, which
-permits outlining glyphs into a logo. Apple's SF Pro Rounded does not, which is
-why the outlines cannot simply come from whatever the CSS stack prefers.
+Two earlier versions of this file tried to outline a substitute typeface
+instead of using Verdana directly (first Arimo, standing in for a mistaken
+guess that `Sans` meant Arial; then Noto Sans Black, chosen only because
+Arial/Arimo cannot reach weight 800 at all). The substitution was there because
+converting Verdana's letterforms into shipped, redistributable vector artwork
+is what its licence restricts.
 
-Barlow is also not an outside pick: the original logo file already set its other
-text in it.
+This version does not outline anything. The wordmark is **live text** asking
+for `Verdana, sans-serif` by name, the same way any webpage's body copy asks
+for a font. That is not embedding or redistributing the font file, it is a
+request the viewer's own already-licensed OS fulfils, so the licence
+restriction that ruled out Verdana before does not apply here. `sans-serif` is
+the fallback for the rare viewer without Verdana installed.
 
-Text is outlined rather than left live so the logo never depends on a font
-being present, including when it loads through an `img` tag or as the favicon.
+The flask and barbell mark is still outlined to a path, since it is original
+artwork rather than type and always needs to render as the same shape
+regardless of what fonts a viewer has.
 
 ## Two traps, both of which have already bitten
 
@@ -43,31 +48,28 @@ LAB with no flask, which is invisible at 16px. It parses the XML now.
 ## Running it
 
 ```bash
-python3 -m venv /tmp/fontenv && /tmp/fontenv/bin/pip install fonttools brotli uharfbuzz
+python3 tools/wordmark/assemble.py ship
 ```
 
-```bash
-/tmp/fontenv/bin/python tools/wordmark/assemble.py ship
-```
-
-Without `ship` it writes `logo-<weight>-<tracking>.svg` candidates beside the
-script instead of overwriting the shipped assets, which is how the current
-settings (weight 900, tracking +0.01em) were chosen.
+No dependencies beyond the standard library, there is no font to shape or
+outline any more. Without `ship` it writes `logo-candidate.svg` beside the
+script instead of overwriting the shipped assets, for a quick look before
+committing to a change.
 
 ## The files
 
 | File | What it is |
 |---|---|
-| `wordmark.py` | Instances the variable font at a weight, shapes through HarfBuzz so GPOS kerning applies (LA needs it), returns SVG path data and an advance width per line. |
-| `assemble.py` | Places the mark and the two outlined lines in the lockup's original geometry, writes the SVGs. |
-| `mark-source.svg` | The previous lockup, kept only because `path1-4` inside it is the sole usable copy of the flask drawing. Not loaded by the site. |
+| `assemble.py` | Places the mark's outlined path and the wordmark's live `<text>` in the lockup's original geometry, writes the SVGs. |
+| `mark-source.svg` | The artist's lockup file, kept only because `path1-4` inside it is the sole usable copy of the flask drawing. Not loaded by the site. |
+| `social.py` | Composes the Open Graph card from the generated `logo.svg`. Needs `rsvg-convert` (`brew install librsvg`). |
 
-The lockup geometry in `assemble.py` (`TEXT_X`, `BASE_1`, `BASE_2`, `CAP`,
-`MARK_TF`) was measured off the original file and is deliberately unchanged, so
-this is a type substitution and not a redrawn logo. Only the width moved,
-because Nunito sets `LIFTING` narrower than the old face did: the lockup went
-from 3.69:1 to 3.46:1. Both `img` tags set a height and let width follow, so
-nothing needed adjusting for that.
+The lockup geometry in `assemble.py` (`TEXT_X`, `BASE_1`, `BASE_2`, `MARK_TF`)
+was measured off the original file and is deliberately unchanged. `WIDTH` is
+measured against Verdana's actual rendered advance for "LIFTING" plus headroom,
+since Verdana is a wide face by design; re-measure it (see the comment beside
+`WIDTH`) if the font stack changes again. Both `img` tags set a height and let
+width follow, so the page layout does not need adjusting when it does.
 
 Amber is a hex literal in both outputs rather than a token, because each file is
 an isolated document that cannot see the page's custom properties. If the amber

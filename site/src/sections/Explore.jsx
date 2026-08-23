@@ -9,29 +9,34 @@ const EXPLORE_GROUPS = [
   { g: 'Train', items: [
     { k: 'pr', label: 'PR tracker', body: 'Every 1-rep max, logged the moment you hit it.', src: 'assets/screens/03-pr-tracker.png' },
     { k: 'chart', label: 'Progress charts', body: 'Snatch, clean & jerk, and every accessory, charted over time.', src: 'assets/screens/04-exercise-progress-chart-snatch.png' },
-    { k: 'warmup', label: 'Warm-up ramps', body: 'Raise, potentiate, ramp. Sets built the way a coach would jump you.', src: 'assets/screens/09-warmup-raise-phase.png' },
+    { k: 'warmup', label: 'Warm-up ramps', body: 'Raise, potentiate, ramp, sets built the way a coach would jump you, or set up your own routine and save it for next time.', src: 'assets/screens/09-warmup-routine-editor.png' },
   ] },
   { g: 'Learn', items: [
     { k: 'library', label: 'Exercise library', body: 'Illustrated library for every lift and accessory.', src: 'assets/screens/05-exercise-library.png' },
     { k: 'detail', label: 'Lift detail', body: 'Cues, video, and common faults for the snatch.', src: 'assets/screens/06-exercise-detail-snatch.png' },
-    { k: 'learn', label: 'Learn the Lifts', body: 'Step-by-step breakdowns of the classic lifts.', src: 'assets/screens/07-learn-the-snatch.png' },
   ] },
   { g: 'Calculate', items: [
     { k: '1rm', label: '1RM estimator', body: 'Estimate a true max without testing it.', src: 'assets/screens/19-1rm-estimator.png' },
     { k: 'ratios', label: 'Strength ratios', body: 'Where your lifts sit relative to each other.', src: 'assets/screens/20-strength-ratios.png' },
   ] },
-  { g: 'Coach Studio', items: [
-    { k: 'editor', label: 'Program editor', body: 'Author a multi-week cycle from scratch.', src: 'assets/screens/31-coach-studio-program-editor.png' },
-    { k: 'share', label: 'Share a program', body: 'Send a finished program straight to an athlete.', src: 'assets/screens/32-coach-studio-program-list-share.png' },
-  ] },
   { g: 'Setup', items: [
-    { k: 'gym', label: 'Gym profile', body: 'Tell Lifting Lab what plates and bars your gym actually has.', src: 'assets/screens/30-gym-profile-equipment.png' },
-    { k: 'integrations', label: 'Integrations', body: 'HealthKit and CSV export. Your data, your call.', src: 'assets/screens/36-settings-integrations.png' },
-    { k: 'about', label: 'About the data', body: 'What’s tracked, what’s not, and why.', src: 'assets/screens/37-about-the-data.png' },
+    { k: 'gym', label: 'Gym profile', body: 'Tell Lifting Lab what equipment your gym actually has.', src: 'assets/screens/30-gym-profile-equipment.png' },
+    { k: 'integrations', label: 'Integrations', body: 'Finished workouts write to Health as strength training and count toward your Activity rings; Health can feed back heart rate for adaptive rest and your latest bodyweight. Every toggle is optional, and CSV export is there when you want your data out too.', src: 'assets/screens/36-settings-integrations.png' },
+    { k: 'about', label: 'About the data', body: 'What\'s tracked, what\'s not, and why.', src: 'assets/screens/37-about-the-data.png' },
   ] },
 ];
 
 const EXPLORE_FLAT = EXPLORE_GROUPS.flatMap((g) => g.items);
+
+// Clips the inactive thirteen descriptions out of view without removing them
+// from the DOM or the accessibility tree, the same "visually hidden" pattern
+// as the skip link. `{isActive && <span>…}` used to unmount them instead,
+// which meant a crawler that never clicks a tab, everything but Google, and
+// even Google only on a deferred pass, saw one feature description instead
+// of fourteen.
+const offscreenUnlessActive = (isActive) => (isActive ? undefined : {
+  position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0 0 0 0)', whiteSpace: 'nowrap',
+});
 
 export function Explore() {
   const [active, setActive] = React.useState(EXPLORE_FLAT[0].k);
@@ -64,7 +69,7 @@ export function Explore() {
       <div style={siteWrap}>
         <Reveal>
           <SiteHead title="The rest of it." max={640}
-            body="A cycle is the spine, but most of the app is the things you reach for between sets. All of this is in the free tier." />
+            body="A cycle is the spine, but most of the app is the things you reach for between sets. All of it is free." />
         </Reveal>
         <div style={{ marginTop: 44, '--split-cols': 'minmax(0,1.15fr) minmax(0,0.85fr)', alignItems: 'start' }} className="split">
           {/* The group wrappers are presentational so the tabs stay effective
@@ -108,7 +113,7 @@ export function Explore() {
                         />
                       )}
                       <span style={{ font: 'var(--type-headline)', fontWeight: 700, color: isActive ? 'var(--text-primary)' : 'var(--text-secondary)' }}>{item.label}</span>
-                      {isActive && <span style={{ font: 'var(--type-subheadline)', color: 'var(--text-secondary)' }}>{item.body}</span>}
+                      <span style={{ font: 'var(--type-subheadline)', color: 'var(--text-secondary)', ...offscreenUnlessActive(isActive) }}>{item.body}</span>
                     </button>
                   );
                 })}

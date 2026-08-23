@@ -1,21 +1,25 @@
 import React from 'react';
-import { siteWrap, AppStoreButton, Shot } from './Chrome';
-import { SITE } from '../config';
+import { siteWrap, AppStoreButton, HealthBadge, Shot } from './Chrome';
 import { asset } from '../lib/asset';
 import { STATIONS, gapAfter, HERO_WEEK_PX } from './Arc';
 
 export function Hero() {
   return (
     <header style={{
-      background: 'radial-gradient(110% 80% at 76% 6%, rgba(245,166,35,0.16), transparent 60%), var(--bg)',
+      background: `radial-gradient(110% 80% at 76% 6%, rgba(245,166,35,0.16), transparent 60%),
+        linear-gradient(90deg, var(--bg) 0%, var(--bg) 30%, rgba(26,26,26,0.72) 62%, rgba(26,26,26,0.42) 100%),
+        url(${asset('assets/backgrounds/hero-mens-snatch.webp')})`,
+      backgroundSize: 'auto, auto, cover',
+      backgroundPosition: 'center, center, right center',
+      backgroundRepeat: 'no-repeat',
       paddingBottom: 'clamp(56px,7vw,104px)',
     }}>
       <div className="hero-grid" style={{ ...siteWrap, paddingTop: 'clamp(36px,4vw,60px)' }}>
         {/* No pill row above the h1. It used to read "Coming soon" and "Built for
             competitive weightlifting", a kicker stack saying nothing the
             heading and subhead don't, and the same device removed from every
-            other section. The pre-launch fact still ships, honestly, next to
-            the inert CTA where it is load-bearing rather than decorative. */}
+            other section. The real App Store badge is the CTA now, no
+            caption needed beside it. */}
         <div style={{ display: 'grid', gap: 22, justifyItems: 'start', maxWidth: 680 }}>
           <h1 style={{
             margin: 0, fontFamily: 'var(--font-display)', fontWeight: 'var(--weight-extrabold)',
@@ -31,26 +35,17 @@ export function Hero() {
             margin: 0, maxWidth: '52ch', fontSize: 19, lineHeight: 1.55,
             color: 'var(--text-secondary)',
           }}>
-            Lifting Lab programs your cycle, analyzes your lifts frame by frame, tells you why the last one
-            missed, and gets you through meet day. Built for one sport.
+            Lifting Lab programs your cycle, analyzes your lifts frame by frame, tells you why it missed,
+            and gets you through meet day. Built for one sport, Olympic weightlifting: the snatch and
+            the clean & jerk.
           </p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginTop: 6, flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap', marginTop: 6 }}>
             <AppStoreButton />
-            <span style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>{SITE.ctaNote}</span>
+            <HealthBadge />
           </div>
         </div>
 
         <div className="hero-pair">
-          <div>
-            <Shot
-              src={asset('assets/screens/08-readiness-checkin.png')}
-              alt="Readiness check-in: energy, soreness and time build today's session"
-              width={240}
-              priority
-              lcp
-              caption="Tell it how you feel, and it builds the session"
-            />
-          </div>
           <div style={{ position: 'relative' }}>
             <div style={{
               position: 'absolute', inset: '-8% -8% 20%',
@@ -60,11 +55,21 @@ export function Hero() {
               <Shot
                 src={asset('assets/screens/15-bar-trace-analysis-detail.png')}
                 alt="Bar Trace: skeleton overlay, bar path and phase split on a snatch turnover"
-                width={240}
+                width={260}
                 priority
-                caption="Film a set, and it reads the pull phase by phase"
+                lcp
+                caption="Film a clean & jerk, and it reads the pull phase by phase"
               />
             </div>
+          </div>
+          <div>
+            <Shot
+              src={asset('assets/screens/34-technique-doctor-detail.png')}
+              alt="Technique Doctor: a recurring fault trending worse across your last two clean lifts"
+              width={260}
+              priority
+              caption="Arms bending early, and getting worse. It caught the trend before you did."
+            />
           </div>
         </div>
       </div>

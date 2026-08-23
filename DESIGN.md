@@ -22,21 +22,21 @@ colors:
   hairline: "rgba(255, 255, 255, 0.08)"
 typography:
   display:
-    fontFamily: "ui-rounded, 'SF Pro Rounded', 'Nunito', -apple-system, system-ui, sans-serif"
+    fontFamily: "Verdana, sans-serif"
     fontSize: "clamp(44px, 5.4vw, 64px)"
-    fontWeight: 900
+    fontWeight: 800
     lineHeight: 1.0
     letterSpacing: "-2px"
   headline:
-    fontFamily: "ui-rounded, 'SF Pro Rounded', 'Nunito', -apple-system, system-ui, sans-serif"
+    fontFamily: "Verdana, sans-serif"
     fontSize: "clamp(30px, 3.4vw, 48px)"
-    fontWeight: 900
+    fontWeight: 800
     lineHeight: 1.06
     letterSpacing: "-1px"
   title:
-    fontFamily: "ui-rounded, 'SF Pro Rounded', 'Nunito', -apple-system, system-ui, sans-serif"
+    fontFamily: "Verdana, sans-serif"
     fontSize: "clamp(28px, 3.2vw, 44px)"
-    fontWeight: 900
+    fontWeight: 800
     lineHeight: 1.08
     letterSpacing: "-1px"
   numeric:
@@ -57,7 +57,7 @@ typography:
     fontWeight: 400
     lineHeight: 1.35
   label:
-    fontFamily: "ui-rounded, 'SF Pro Rounded', 'Nunito', -apple-system, system-ui, sans-serif"
+    fontFamily: "Verdana, sans-serif"
     fontSize: "12px"
     fontWeight: 600
     lineHeight: 1.35
@@ -256,8 +256,8 @@ mid-session, chalked hands. Adding one is a product decision, not a styling task
 
 ## Typography
 
-**Heading Font:** the platform's own sans at weight 800, via the
-`--font-heading` token. Nothing is downloaded for it.
+**Heading Font:** Verdana at weight 800, via the `--font-heading` token, with a
+`sans-serif` fallback for the rare viewer without it installed.
 **Numeric Font:** SF Pro Rounded, resolved via `ui-rounded` on Apple platforms,
 with self-hosted Nunito behind it everywhere else. The hero readouts only.
 **Body Font:** The platform's own UI face (`-apple-system` / `system-ui` /
@@ -268,21 +268,26 @@ Consolas).
 **Character:** Plain and heavy for anything structural; rounded for anything you
 read as a number; neutral and quiet for anything you read as a sentence.
 
-**The heading face is deliberately the system sans.** The logo asked for
-`Sans, Ultra-Bold` at weight 800, and that is not a typeface: `Sans` is
-fontconfig's generic alias and `Ultra-Bold` is a weight name. Asking the browser
-for the system sans at 800 is the same request written the way the web writes
-it, which is why nothing is downloaded to satisfy it.
+**The heading face is Verdana, deliberately and literally.** The logo asked for
+`Sans, Ultra-Bold` at weight 800, and `Sans` is not a typeface, it is
+fontconfig's generic alias. Two earlier passes here guessed at what the alias
+meant and outlined a substitute (first Arimo, standing in for a mistaken guess
+that `Sans` meant Arial; then Noto Sans Black, chosen only because Arial/Arimo
+cannot reach weight 800 at all). Barlow and Inter were tried even earlier and
+also removed, each a different guess. `fc-match "Sans:weight=800"` settles it:
+the alias resolves to **Verdana Bold**, confirmed on the machine that drew the
+original artwork and every machine checked since, so Verdana is not a
+substitute here, it is the literal answer to what the brief already asked for.
 
-The wordmark cannot resolve a font at render time, so it is cut from **Arimo**
-(`tools/wordmark/face`), metrically compatible with Arial and drawn to match it,
-because Arial is what that alias actually resolved to and Arial may not itself
-be outlined into a logo. Mark and headings are one request answered two ways:
-outlines where a shape is needed, the live system face where text is needed.
-
-Barlow and Inter were both self-hosted here and both removed. Each was a guess
-at what `Sans` resolved to; the brief was a plain system sans and neither is
-one.
+Every heading, section label, and the wordmark now ask for `Verdana` directly
+rather than for the platform's generic sans-serif. This is a live font request,
+not an embedded or outlined one, so it costs nothing to download (Verdana ships
+with essentially every OS) and carries none of the licence restriction that
+rules out shipping Verdana's letterforms as outlined artwork. The wordmark's
+flask-and-barbell mark is still outlined to a path, since it is original
+artwork rather than type, but its text and every heading on the page are now
+one request answered the same way (`tools/wordmark/assemble.py`,
+`tokens/fonts.css`).
 
 Nunito still ships (two variable subsets, 73 KB, self-hosted at
 `site/public/assets/fonts/`) and now backs the numeric role only; nothing on the
@@ -488,6 +493,16 @@ bezel shadow beneath. Sources ship as WebP at 600w and 900w through a `<picture>
 element with the PNG as archival fallback; `site/scripts/build-screens.sh`
 regenerates them. Hover lifts the scale to 1.015 and brightens the hairline to
 22%. Captions sit beneath in tertiary caption type.
+
+### Photographic backgrounds (deliberate exception)
+Three sections, Hero, Pricing, and the footer, carry a full-bleed photo
+(AI-generated weightlifting shots) behind a dark gradient scrim. This is a
+knowing exception to "screenshots are the only proof," made at these three
+spots, for mood rather than evidence. It is not a pattern to extend
+casually: any new section reaching for a background photo should have as
+specific a reason as these three do. Each scrim is tuned to its section's own
+text load, near-opaque left-to-right behind the Hero's headline, heaviest in
+Pricing where dense card copy needs the most contrast.
 
 ### Icons
 Three icons exist, menu, close, and check, vendored inline from lucide-static

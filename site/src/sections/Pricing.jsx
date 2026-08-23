@@ -2,30 +2,41 @@ import React from 'react';
 import { Card, SectionLabel, Icon } from '../design-system';
 import { siteWrap, SiteHead, AppStoreButton } from './Chrome';
 import { SITE } from '../config';
+import { asset } from '../lib/asset';
 
 export function Pricing() {
-  const { free, pro, coach } = SITE.pricing;
+  const { free, pro } = SITE.pricing;
   const tiers = [
-    { t: free.name, price: free.price, note: 'Unlimited training log and history, forever.', highlight: false, items: [
-      'Adaptive daily workout builder: feel, soreness, equipment, time',
-      'All 5 periodized programs', 'PR tracker', 'Illustrated exercise library (71 movements)',
-      'Log book, per-session notes, periodic reflections, and trends',
-      'Every calculator: plate loader, 1RM, % table, Prilepin, Sinclair, Robi, strength ratios',
-      'Warm-up generator', 'Learn the Lifts', '3 bar-path analyses per month', 'HealthKit sync', 'CSV export',
+    { t: free.name, price: free.price, note: 'Everything you need to train, forever, no account required.', highlight: false, items: [
+      'Unlimited training log and history',
+      'The adaptive daily workout builder, shaped by your own training record',
+      'Beginner Foundation, the full 12-week program',
+      'Technique Doctor, including recent-lift technique diagnosis',
+      'PR tracker, exercise library, and every training calculator',
+      'Warm-up generator',
+      'Three bar-path video analyses every month',
+      'Levels, streaks, badges, and HealthKit sync',
     ] },
-    { t: pro.name, price: pro.monthly, sub: `${pro.yearly} · ${pro.lifetime}`, note: 'The unlock for Bar Trace at full depth.', highlight: true, items: [
-      'Unlimited analyses', 'Side-by-side compare', 'Fix My Miss + Technique Doctor', 'Meet Day',
-      'Multi-week program authoring (Coach Studio)', 'Hardware VBT import', 'Advanced analytics', 'iCloud clip sync',
-    ] },
-    { t: coach.name, price: coach.monthly, sub: coach.yearly, note: 'Flat price, unlimited athletes, never per-athlete.', highlight: false, items: [
-      'Everything in Pro', 'Receive completed sessions from athletes', 'Program distribution',
+    { t: pro.name, price: pro.monthly, sub: pro.yearly, note: 'The coaching: full video analysis and the rest of the programs.', highlight: true, items: [
+      'Unlimited bar-path analyses, with side-by-side compare',
+      'Full Technique Doctor history',
+      'The other four programs: Strength, Specification, Peak, and Masters',
+      'Meet Day: warm-up pacing and the attempt board',
+      'Import data from a VBT sensor you already own',
     ] },
   ];
   return (
-    <section id="pricing" style={{ background: 'var(--surface)', padding: 'clamp(60px,7vw,110px) 0' }}>
+    <section id="pricing" style={{
+      background: `linear-gradient(180deg, rgba(35,35,35,0.85) 0%, rgba(35,35,35,0.68) 45%, rgba(35,35,35,0.82) 100%),
+        url(${asset('assets/backgrounds/pricing-womens-clean.webp')})`,
+      backgroundSize: 'auto, cover',
+      backgroundPosition: 'center, center 20%',
+      backgroundRepeat: 'no-repeat',
+      padding: 'clamp(60px,7vw,110px) 0',
+    }}>
       <div style={{ ...siteWrap, display: 'grid', gap: 36 }}>
-        <SiteHead center title="Free, unlimited, forever." max={720}
-          body="The training log, programs, and calculators never expire and never lock. Pro adds full-depth video analysis. Coach adds a roster." />
+        <SiteHead center title="Everything you need to start is free." max={720}
+          body="Log your training, get an adaptive session every day, and run Beginner Foundation, free, forever. Pro adds unlimited video analysis, the other four programs, and meet day." />
         <div className="pricing-grid">
           {tiers.map((tier) => (
             <Card key={tier.t} className={tier.highlight ? 'animated-border' : undefined} style={{
@@ -55,8 +66,10 @@ export function Pricing() {
           </p>
         )}
         <div style={{ display: 'grid', gap: 14, justifyItems: 'center', marginTop: 8 }}>
+          {/* The Works with Apple Health badge lives in the hero, not here:
+              Apple's guideline caps it at one per web page, and this is a
+              single-page site. */}
           <AppStoreButton />
-          <span style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>{SITE.ctaNote}</span>
         </div>
       </div>
     </section>

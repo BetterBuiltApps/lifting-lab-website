@@ -5,6 +5,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://liftinglab.app/</loc>
+    <!-- No lastmod here: it is stamped onto the built copy at deploy time
+         with today's real date, see scripts/prerender.mjs. A hand-written
+         date in source is exactly the kind of thing that goes stale the
+         first time nobody remembers to bump it. -->
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
