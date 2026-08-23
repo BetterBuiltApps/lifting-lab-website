@@ -35,37 +35,44 @@ const sitemapFile = resolve(root, 'dist/sitemap.xml');
   const stamped = sitemap.replace(
     /(<loc>https:\/\/liftinglab\.app\/<\/loc>\s*)(?:<lastmod>[^<]*<\/lastmod>\s*)?/,
     `$1<lastmod>${today}</lastmod>\n    `
-  );
+    );
   writeFileSync(sitemapFile, stamped);
 }
 
 const server = await preview({ root, preview: { port: 0, strictPort: false } });
 const url = server.resolvedUrls.local[0];
 
-const browser = await puppeteer.launch({ headless: true });
+// --no-sandbox is required in GitHub Actions' runner: it has no unprivileged
+// user namespaces available, so Chromium's own sandbox refuses to start
+// ("No usable sandbox!"). The build container is already isolated per-run, so
+// this doesn't weaken anything the CI environment was relying on.
+const browser = await puppeteer.launch({
+  headless: true,
+  args: ['--no-sandbox', '--disable-setuid-sandbox'],
+});
 try {
   const page = await browser.newPage();
   await page.goto(url, { waitUntil: 'networkidle0' });
 
-  // The page reveals sections on scroll via IntersectionObserver
-  // (`Reveal`/`whileInView`). Walking down once settles every section into
-  // its final, visible state before the snapshot is taken, rather than
-  // freezing some of them mid-animation at opacity 0.
-  await page.evaluate(async () => {
-    const step = 600;
-    const height = document.body.scrollHeight;
-    for (let y = 0; y < height; y += step) {
-      window.scrollTo(0, y);
-      await new Promise((r) => setTimeout(r, 40));
-    }
-    window.scrollTo(0, 0);
-  });
+// The page reveals sections on scroll via IntersectionObserver
+// (`Reveal`/`whileInView`). Walking down once settles every section into
+// its final, visible state before the snapshot is taken, rather than
+// freezing some of them mid-animation at opacity 0.
+await page.evaluate(async () => {
+  const step = 600;
+  const height = document.body.scrollHeight;
+  for (let y = 0; y < height; y += step) {
+    window.scrollTo(0, y);
+    await new Promise((r) => setTimeout(r, 40));
+  }
+  window.scrollTo(0, 0);
+});
   await new Promise((r) => setTimeout(r, 200));
 
-  const html = await page.evaluate(() => document.documentElement.outerHTML);
+const html = await page.evaluate(() => document.documentElement.outerHTML);
   writeFileSync(outFile, `<!doctype html>\n${html}\n`);
 
-  const words = await page.evaluate(() => document.body.innerText.trim().split(/\s+/).length);
+const words = await page.evaluate(() => document.body.innerText.trim().split(/\s+/).length);
   console.log(`prerender: wrote ${words} words of rendered text into dist/index.html`);
 } finally {
   await browser.close();
