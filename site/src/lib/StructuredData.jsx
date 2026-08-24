@@ -40,10 +40,16 @@ export function StructuredData() {
     operatingSystem: 'iOS',
     description: 'Lifting Lab programs your cycle, analyzes your lifts frame by frame, tells you why it missed, and gets you through meet day. Built for one sport: the snatch and the clean & jerk.',
     url: 'https://liftinglab.app/',
-    offers: [
-      { ...priceToOffer(free.price), name: free.name },
-      { ...priceToOffer(pro.monthly), name: pro.name },
-    ],
+    // Same reasoning as AppStoreButton (Chrome.jsx): don't tell Google there
+    // are live purchasable offers for an app that isn't in the App Store
+    // yet. Google can surface `offers` as a price rich result, which would
+    // be as misleading pre-release as showing the real download badge.
+    ...(SITE.released && {
+      offers: [
+        { ...priceToOffer(free.price), name: free.name },
+        { ...priceToOffer(pro.monthly), name: pro.name },
+      ],
+    }),
   };
 
   const faqPage = {

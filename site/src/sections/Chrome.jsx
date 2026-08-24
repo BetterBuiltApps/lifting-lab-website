@@ -188,16 +188,35 @@ export function Shot({ src, alt, width = 300, caption, priority = false, lcp = f
 // beyond plain scaling, see App Store Marketing Guidelines.
 const APP_STORE_BADGE_HEIGHT = { large: 56, medium: 48, small: 40 };
 
-/** App Store CTA, used in hero, pricing, and footer. Always shows Apple's
- * official badge (site/public/assets/, downloaded per-app from
- * toolbox.marketingtools.apple.com/app-store/), the correct one now that
- * SITE.released is true, per the Marketing Guidelines' own badge-replacement
- * rule ("replace with download badge immediately upon app release"). Still
- * reads SITE.released rather than always linking, so that if the listing is
- * ever pulled this reverts to a plain (unlinked) badge instead of quietly
- * pointing at a dead page. */
+/** App Store CTA, used in hero and pricing. Shows Apple's official badge
+ * (site/public/assets/, downloaded per-app from
+ * toolbox.marketingtools.apple.com/app-store/) once SITE.released is true,
+ * per the Marketing Guidelines' own badge-replacement rule ("replace with
+ * download badge immediately upon app release"), and a plain "coming soon"
+ * pill before then, see the !SITE.released branch below. The same flag also
+ * governs whether this links anywhere: if a released listing is ever
+ * pulled, flipping `released` back reverts this to the pill rather than
+ * quietly linking to a dead page. */
 export function AppStoreButton({ size = 'large' }) {
   const height = APP_STORE_BADGE_HEIGHT[size];
+  // Pre-release, this doesn't fall back to an unlinked copy of the real
+  // badge: Apple's own badge-replacement rule reserves the "Download on the
+  // App Store" artwork for an app that's actually live, so rendering it
+  // before the listing exists is the guideline violation, not just the
+  // link going nowhere. A plain, unbranded pill fills the same CTA slot
+  // honestly instead, and costs nothing to swap out once `released` flips.
+  if (!SITE.released) {
+    return (
+      <span style={{
+        display: 'inline-flex', alignItems: 'center', height, boxSizing: 'border-box',
+        padding: '0 22px', borderRadius: 'var(--radius-pill)',
+        background: 'var(--amber-16)', border: '1px solid var(--amber-40)',
+        font: 'var(--type-subheadline)', fontWeight: 700, color: 'var(--amber)',
+      }}>
+        Coming soon to the App Store
+      </span>
+    );
+  }
   // Clear space is baked into the element itself, 1/4 of the badge's own
   // height on every side, so it's correct wherever this is dropped rather
   // than relying on a caller's layout gap to happen to be wide enough.
@@ -208,7 +227,6 @@ export function AppStoreButton({ size = 'large' }) {
       style={{ height, display: 'block', padding: height / 4 }}
     />
   );
-  if (!SITE.released) return badge;
   return (
     <a href={SITE.links.appStore} aria-label={SITE.ctaPrimary}>
       {badge}
