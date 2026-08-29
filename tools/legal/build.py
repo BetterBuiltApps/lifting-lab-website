@@ -124,6 +124,14 @@ def page(body: str, meta: dict, updated: str) -> str:
     return f"""<!doctype html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js). Kept in sync with the same snippet in index.html. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KQ7CEKMPMJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  gtag('js', new Date());
+  gtag('config', 'G-KQ7CEKMPMJ');
+</script>
 <meta charset="utf-8" />
 <title>{meta['title']}: Lifting Lab</title>
 <meta name="viewport" content="width=device-width,initial-scale=1" />
