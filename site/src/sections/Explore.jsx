@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { siteWrap, SiteHead, Shot } from './Chrome';
 import { asset } from '../lib/asset';
 import { DURATION, EASE } from '../lib/motion';
@@ -127,17 +127,13 @@ export function Explore() {
             id="explore-panel"
             aria-labelledby={`explore-tab-${current.k}`}
           >
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={current.k}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: DURATION.fade, ease: EASE.inOut }}
-              >
-                <Shot src={asset(current.src)} alt={current.label} width={260} />
-              </motion.div>
-            </AnimatePresence>
+            {/* Plain keyed swap, not an AnimatePresence crossfade: wrapping this
+                in <AnimatePresence mode="wait"><motion.div key={current.k}>
+                never got past the exit phase, so React had the right image
+                queued on every render but the DOM stayed frozen on whichever
+                one loaded first, no crossfade is better than a tab that looks
+                broken. */}
+            <Shot key={current.k} src={asset(current.src)} alt={current.label} width={260} />
           </div>
         </div>
       </div>

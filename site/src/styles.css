@@ -162,7 +162,11 @@ a:hover { color: var(--amber); }
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
   gap: clamp(32px, 4vw, 60px);
-  align-items: center;
+  /* start, not center: the phone pair runs ~600px tall against ~380px of
+     text, and centering the shorter column against the taller one pushed
+     the headline down by half that difference, enough to clear the fold
+     entirely on a wide-but-short window. */
+  align-items: start;
 }
 
 .hero-pair {
@@ -263,7 +267,10 @@ a:hover { color: var(--amber); }
   /* The hero splits only while both halves have room. Below this the display
      type would be setting in a ~270px measure. */
   .hero-grid { grid-template-columns: 1fr; }
-  .explore-shot-col { position: static; top: auto; }
+  /* Sticky tracking only makes sense beside a scrolling tab list; stacked,
+     the image just needs to render first so tapping a tab near the top of
+     a ten-item list doesn't require scrolling past the rest to see it change. */
+  .explore-shot-col { position: static; top: auto; order: -1; }
   .site-nav-links { display: none; }
   .site-nav-toggle { display: inline-flex; }
 }
