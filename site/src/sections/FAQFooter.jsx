@@ -36,7 +36,7 @@ function FAQItem({ q, a }) {
           aria-expanded={open}
           aria-controls={`${id}-panel`}
           style={{
-            width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 16,
+            width: '100%', minHeight: 44, display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 16,
             background: 'none', border: 'none', padding: 0, cursor: 'pointer', textAlign: 'left',
             font: 'var(--type-headline)', color: 'var(--text-primary)',
           }}

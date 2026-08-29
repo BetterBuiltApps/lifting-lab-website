@@ -14,7 +14,7 @@ const sizes = {
   // 52pt is the app's primary CTA height; 48 the secondary capture buttons.
   large: { minHeight: 'var(--tap-target-big)', fontSize: 'var(--text-headline)', padding: '0 20px' },
   medium: { minHeight: 48, fontSize: 'var(--text-headline)', padding: '0 18px' },
-  small: { minHeight: 36, fontSize: 'var(--text-subheadline)', padding: '0 14px' },
+  small: { minHeight: 44, fontSize: 'var(--text-subheadline)', padding: '0 14px' },
 };
 
 const variants = {

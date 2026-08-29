@@ -252,7 +252,7 @@ a:hover { color: var(--amber); }
   display: none;
   background: none;
   border: none;
-  padding: 8px;
+  padding: 10px;
   cursor: pointer;
 }
 
@@ -514,7 +514,7 @@ a:hover { color: var(--amber); }
 }
 .arc-miss { display: grid; grid-template-columns: minmax(0, 200px) minmax(0, 1fr); gap: clamp(24px, 3.5vw, 52px); }
 .arc-miss-trace { display: grid; gap: 14px; align-content: start; }
-.arc-trace { width: 100%; height: auto; max-width: 180px; }
+.arc-trace { width: 100%; height: auto; max-width: 180px; aspect-ratio: 180 / 340; }
 .arc-trace-plumb { stroke: var(--hairline); stroke-width: 1; stroke-dasharray: 3 5; }
 .arc-trace-key { display: grid; gap: 5px; margin: 0; font: var(--type-caption); }
 .arc-trace-key span { display: flex; align-items: center; gap: 8px; color: var(--text-tertiary); }
@@ -543,7 +543,7 @@ a:hover { color: var(--amber); }
   background: var(--hairline);
   border: var(--border-hairline-1);
 }
-@media (max-width: 520px) { .arc-facts { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .arc-facts { grid-template-columns: 1fr; } }
 .arc-facts > div { background: var(--bg); padding: 14px 16px; display: grid; gap: 3px; }
 .arc-facts dt {
   font-family: var(--font-label);
@@ -565,7 +565,7 @@ a:hover { color: var(--amber); }
   background: var(--hairline);
   border: var(--border-hairline-1);
 }
-@media (max-width: 520px) { .engine-facts { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .engine-facts { grid-template-columns: 1fr; } }
 .engine-facts > div { background: var(--bg); padding: 14px 16px; display: grid; gap: 3px; }
 .engine-facts dt {
   font-family: var(--font-label);
@@ -606,6 +606,10 @@ a:hover { color: var(--amber); }
   .arc-pair { grid-template-columns: 1fr; justify-items: center; }
   /* The arrow points down once the pair stacks, or it points at nothing. */
   .arc-pair-arrow { transform: rotate(90deg); }
+  /* These rows wrap to fewer per line on a narrow screen, and a short last
+     row (or a single image) packed to flex-start reads as mis-centered next
+     to every other section, which centers by default. */
+  .arc-miss-shots, .arc-dense-shots, .arc-close-shots { justify-content: center; }
 }
 
 /* ---------------------------------------------------------------------------

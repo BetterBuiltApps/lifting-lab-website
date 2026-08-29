@@ -99,9 +99,10 @@ export function Explore() {
                       onClick={() => setActive(item.k)}
                       style={{
                         position: 'relative',
-                        display: 'grid', gap: 4, textAlign: 'left', width: '100%', cursor: 'pointer',
+                        display: 'grid', gap: 4, textAlign: 'left', width: '100%', minHeight: 44, cursor: 'pointer',
                         background: 'none', border: 'none',
                         padding: '10px 0 10px 16px', borderRadius: 4,
+                        alignContent: 'center',
                       }}
                     >
                       {isActive && (

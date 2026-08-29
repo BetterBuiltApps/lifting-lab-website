@@ -65,7 +65,7 @@ export function SiteNav() {
             transition={{ duration: prefersReduced ? 0 : DURATION.fade, ease: EASE.inOut }}
             style={{ overflow: 'hidden', borderTop: 'var(--border-hairline-1)' }}
           >
-            <div style={{ ...siteWrap, display: 'grid', padding: '8px 0 20px' }}>
+            <div style={{ ...siteWrap, display: 'grid', justifyItems: 'center', textAlign: 'center', padding: '8px 0 20px' }}>
               {NAV_LINKS.map(([l, h]) => (
                 <a key={l} href={h} onClick={() => setMenuOpen(false)}
                    style={{ font: 'var(--type-headline)', color: 'var(--text-secondary)', padding: '14px 0' }}>{l}</a>

@@ -13,8 +13,8 @@
  * Motion is one orchestrated moment for the whole arc, the axis marker tracks
  * the station you are reading, rather than the same fade-up fired ten times.
  */
-import React from 'react';
-import { motion, useReducedMotion } from 'motion/react';
+import React, { useRef } from 'react';
+import { motion, useReducedMotion, useInView } from 'motion/react';
 import { siteWrap, Shot } from './Chrome';
 import { asset } from '../lib/asset';
 import { DURATION, EASE } from '../lib/motion';
@@ -135,6 +135,14 @@ function Station({ id, week, unit, title, children, className = '', ...rest }) {
  * this station is about. */
 function BarPathTrace() {
   const reduced = useReducedMotion();
+  // Safari's IntersectionObserver has long-standing trouble targeting bare SVG
+  // shape elements (a <path> has no CSS box of its own), so each motion.path
+  // observing its own whileInView never fires there even once the parent SVG
+  // itself has real, on-screen dimensions. Observing the <svg> instead, which
+  // is a normal CSS box, and driving every path from that one boolean sidesteps
+  // the per-path observer entirely.
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
   const phases = [
     { d: 'M92,300 C88,270 84,244 82,214', stroke: 'var(--phase-first-pull)' },
     { d: 'M82,214 C81,196 84,180 92,166', stroke: 'var(--phase-transition)' },
@@ -143,7 +151,7 @@ function BarPathTrace() {
     { d: 'M84,50 C74,45 66,44 60,46', stroke: 'var(--phase-catch)' },
   ];
   return (
-    <svg className="arc-trace" viewBox="0 0 180 340" role="img"
+    <svg ref={ref} className="arc-trace" viewBox="0 0 180 340" width="180" height="340" role="img"
          aria-label="A snatch bar path, split into its five phases: first pull, transition, second pull, turnover, catch.">
       <line x1="60" y1="20" x2="60" y2="320" className="arc-trace-plumb" />
       {phases.map((p, i) => (
@@ -155,8 +163,7 @@ function BarPathTrace() {
           strokeWidth="3.5"
           strokeLinecap="round"
           initial={reduced ? { pathLength: 1 } : { pathLength: 0 }}
-          whileInView={{ pathLength: 1 }}
-          viewport={{ once: true, amount: 0.5 }}
+          animate={{ pathLength: reduced || isInView ? 1 : 0 }}
           transition={reduced ? { duration: 0 } : { duration: 0.5, delay: 0.12 * i, ease: EASE.spring }}
         />
       ))}
