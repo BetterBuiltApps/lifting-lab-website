@@ -1,9 +1,10 @@
 // Renders the App Store Connect submission screenshots: real app UI inside
 // the site's own device-frame styling (site/src/sections/Chrome.jsx's `Shot`
 // component bezel/shadow values, copied literally below since that's a React
-// component and this isn't rendering React), on the site's own #1a1a1a
-// background, using the real design tokens (../../../tokens/*.css) rather
-// than hand-copied hex values.
+// component and this isn't rendering React), over a full-bleed lifter photo
+// with a dark gradient scrim (the site's own "photographic exception" per
+// DESIGN.md, normally Hero/Pricing/footer only), using the real design
+// tokens (../../../tokens/*.css) rather than hand-copied hex values.
 //
 // This is static HTML, one <img> per shot, no client-side JS, no routing,
 // so unlike scripts/prerender.mjs it doesn't need a Vite preview server.
@@ -44,6 +45,13 @@ function nativeSize(imagePath) {
   return { width, height };
 }
 
+// file:// URLs need their path percent-encoded (the background photos'
+// filenames have spaces and parentheses), but the leading "file://" itself
+// must stay literal.
+function fileUrl(path) {
+  return `file://${encodeURI(path)}`;
+}
+
 for (const shot of SHOTS) {
   if (!existsSync(shot.sourceImage)) {
     console.error(`Shot ${shot.order} (${shot.outFile}): source image missing at ${shot.sourceImage}`);
@@ -56,6 +64,10 @@ for (const shot of SHOTS) {
       `smaller than the ${device.width}x${device.height} target canvas. ` +
       `Recapture at the right resolution rather than letting this upscale.`
     );
+    process.exit(1);
+  }
+  if (!existsSync(shot.background.file)) {
+    console.error(`Shot ${shot.order} (${shot.outFile}): background image missing at ${shot.background.file}`);
     process.exit(1);
   }
 }
@@ -78,7 +90,9 @@ try {
       .replaceAll('{{FRAME_WIDTH}}', device.frameWidth)
       .replaceAll('{{HEADLINE}}', shot.headline)
       .replaceAll('{{SUBHEAD}}', shot.subhead)
-      .replaceAll('{{SHOT_SRC}}', `file://${shot.sourceImage}`);
+      .replaceAll('{{SHOT_SRC}}', fileUrl(shot.sourceImage))
+      .replaceAll('{{BG_SRC}}', fileUrl(shot.background.file))
+      .replaceAll('{{BG_POSITION_X}}', shot.background.x);
 
     const renderPath = resolve(scriptDir, `_render-${shot.order}.html`);
     writeFileSync(renderPath, html);

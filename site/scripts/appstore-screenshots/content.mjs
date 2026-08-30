@@ -22,6 +22,22 @@ const ROOT = '/Users/davidhicka/Library/CloudStorage/SynologyDrive-MacBackup/App
 const SCREENCAPS = resolve(ROOT, 'Screencaps');
 const IMAGES = resolve(ROOT, 'Images');
 
+// The 4 AI-generated (ChatGPT) lifter photos in Images/, used as full-bleed
+// backgrounds per the "photographic exception" DESIGN.md reserves for
+// Hero/Pricing/footer, extended here to the App Store set. Each is 1672x941
+// landscape; `cover` on the 1320x2868 portrait canvas scales by height and
+// crops nearly all the width away, so `x` below is the lifter's horizontal
+// center as a % of image width, tuned per photo so the crop lands on the
+// athlete rather than a default 50% (which could land on empty background
+// depending on the shot). Cycled round-robin across the 8 shots.
+const BG = {
+  cleanJerkMale: { file: resolve(IMAGES, 'ChatGPT Image Aug 17, 2026, 07_36_59 PM (1).png'), x: 66 },
+  snatchFemale: { file: resolve(IMAGES, 'ChatGPT Image Aug 17, 2026, 07_36_59 PM (2).png'), x: 24 },
+  splitJerkMale: { file: resolve(IMAGES, 'ChatGPT Image Aug 17, 2026, 07_36_59 PM (3).png'), x: 66 },
+  cleanCatchFemale: { file: resolve(IMAGES, 'ChatGPT Image Aug 17, 2026, 07_37_00 PM (4).png'), x: 20 },
+};
+const BG_ROTATION = [BG.cleanJerkMale, BG.snatchFemale, BG.splitJerkMale, BG.cleanCatchFemale];
+
 // Device config, kept as data so the iPad 13" follow-up is a new entry here
 // plus a sibling content array, not a template/script rewrite.
 export const DEVICES = {
@@ -97,6 +113,6 @@ export const SHOTS = [
     subhead: 'Sinclair, Prilepin, plate math, in one tab.',
     sourceImage: resolve(SCREENCAPS, '39-tools-hub.png'),
   },
-];
+].map((shot, i) => ({ ...shot, background: BG_ROTATION[i % BG_ROTATION.length] }));
 
 export const OUTPUT_ROOT = ROOT;
