@@ -111,7 +111,7 @@ export const SHOTS = [
     outFile: '08-tools-grid.png',
     headline: 'The maths the sport actually runs on.',
     subhead: 'Sinclair, Prilepin, plate math, in one tab.',
-    sourceImage: resolve(SCREENCAPS, '39-tools-hub.png'),
+    sourceImage: resolve(SCREENCAPS, '44-tools-hub-masonry.png'),
   },
 ].map((shot, i) => ({ ...shot, background: BG_ROTATION[i % BG_ROTATION.length] }));
 

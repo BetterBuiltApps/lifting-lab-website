@@ -35,6 +35,16 @@ if (!device) {
   process.exit(1);
 }
 
+// Optional third arg renders a single shot by order number, so recapturing
+// one screen (a UI change, a bad crop) doesn't require every other shot's
+// source image to already exist and pass preflight too.
+const onlyOrder = process.argv[3] ? Number(process.argv[3]) : null;
+const shotsToRender = onlyOrder === null ? SHOTS : SHOTS.filter((shot) => shot.order === onlyOrder);
+if (onlyOrder !== null && shotsToRender.length === 0) {
+  console.error(`No shot with order ${onlyOrder}. Known orders: ${SHOTS.map((shot) => shot.order).join(', ')}`);
+  process.exit(1);
+}
+
 // Reads native pixel dimensions via macOS's `sips`, so a source image
 // smaller than the target canvas fails loudly and names the offending shot,
 // rather than silently getting stretched by object-fit: cover.
@@ -52,7 +62,7 @@ function fileUrl(path) {
   return `file://${encodeURI(path)}`;
 }
 
-for (const shot of SHOTS) {
+for (const shot of shotsToRender) {
   if (!existsSync(shot.sourceImage)) {
     console.error(`Shot ${shot.order} (${shot.outFile}): source image missing at ${shot.sourceImage}`);
     process.exit(1);
@@ -78,7 +88,7 @@ const browser = await puppeteer.launch({
 });
 
 try {
-  for (const shot of SHOTS) {
+  for (const shot of shotsToRender) {
     const html = templateSource
       .replaceAll('{{CANVAS_WIDTH}}', device.width)
       .replaceAll('{{CANVAS_HEIGHT}}', device.height)
