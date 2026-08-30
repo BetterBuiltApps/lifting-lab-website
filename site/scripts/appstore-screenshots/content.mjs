@@ -56,13 +56,15 @@ export const DEVICES = {
 export const SHOTS = [
   {
     order: 1,
-    outFile: '01-bar-trace-phase-breakdown.png',
-    headline: "It missed. Here's where it went.",
-    subhead: 'Five phases, split from your own film.',
-    // Needs a real filmed/analyzed clip, the simulator's seed data has no
-    // video attached so this screen renders "Video unavailable" there.
-    // Drop the real-device capture into Images/ at native resolution.
-    sourceImage: resolve(IMAGES, '01-bar-trace-phase-breakdown.png'),
+    outFile: '01-bar-trace-path-score.png',
+    headline: 'A path score, off your own film.',
+    subhead: 'Peak speed, pull speed, straightness and smoothness, scored.',
+    // Real filmed/analyzed clip (skeleton overlay, path score), the
+    // simulator's seed data has no video attached so this screen renders
+    // "Video unavailable" there. Source is a real-device capture at
+    // 1179x2556, upscaled ~12% to the 1320x2868 canvas (see Screencaps/
+    // 46-bar-trace-path-score.png); same aspect ratio, no letterboxing.
+    sourceImage: resolve(SCREENCAPS, '46-bar-trace-path-score.png'),
   },
   {
     order: 2,
