@@ -8,7 +8,9 @@
     "build": "vite build && node scripts/prerender.mjs",
     "preview": "vite preview",
     "//screens": "Regenerates the WebP variants after adding or replacing a PNG in public/assets/screens/. Deliberately NOT part of `build`: the variants are committed, and the GitHub Actions runner has no cwebp.",
-    "screens": "./scripts/build-screens.sh"
+    "screens": "./scripts/build-screens.sh",
+    "//appstore-screenshots": "Renders the App Store Connect submission screenshots (iPhone 6.9\" master, 1320x2868) from real app captures. Writes outside the repo to the private asset folder named in content.mjs, not site/public/, these aren't web assets.",
+    "appstore-screenshots": "node scripts/appstore-screenshots/generate.mjs"
   },
   "dependencies": {
     "motion": "^12.43.0",

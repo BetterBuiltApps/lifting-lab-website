@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>App Store screenshot</title>
+<link rel="stylesheet" href="../../../tokens/fonts.css">
+<link rel="stylesheet" href="../../../tokens/colors.css">
+<link rel="stylesheet" href="../../../tokens/typography.css">
+<style>
+  /* Fixed canvas, not responsive: this is composited at exactly one pixel
+     size per device class (generate.mjs sets the Puppeteer viewport to
+     match), so there's no need for clamp()/vw sizing here the way the
+     live site uses it. */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    width: {{CANVAS_WIDTH}}px;
+    height: {{CANVAS_HEIGHT}}px;
+    background: var(--bg);
+    overflow: hidden;
+  }
+
+  .canvas {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: {{TOP_PADDING}}px 96px 0;
+  }
+
+  /* Fixed-height reservation so the device frame lands at the same
+     vertical position across all 8 shots regardless of whether a
+     headline wraps to one line or two: the block bottom-aligns its
+     content, so a short one-line headline drops down toward the frame
+     instead of leaving it floating higher on that shot only. */
+  .header {
+    height: {{HEADER_HEIGHT}}px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .headline {
+    font-family: var(--font-display);
+    font-weight: var(--weight-extrabold);
+    font-size: {{HEADLINE_SIZE}}px;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    text-align: center;
+    max-width: 100%;
+    text-wrap: balance;
+  }
+
+  .subhead {
+    font-family: var(--font-body);
+    font-weight: var(--weight-regular);
+    font-size: {{SUBHEAD_SIZE}}px;
+    line-height: 1.35;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-top: 20px;
+    max-width: 92%;
+  }
+
+  .frame {
+    margin-top: {{FRAME_GAP}}px;
+    width: {{FRAME_WIDTH}}px;
+    aspect-ratio: 9 / 19.5;
+    border-radius: 34px;
+    overflow: hidden;
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+  }
+
+  .frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="header">
+      <h1 class="headline">{{HEADLINE}}</h1>
+      <p class="subhead">{{SUBHEAD}}</p>
+    </div>
+    <div class="frame">
+      <img src="{{SHOT_SRC}}" alt="">
+    </div>
+  </div>
+</body>
+</html>
