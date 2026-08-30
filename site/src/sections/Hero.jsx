@@ -36,8 +36,8 @@ export function Hero() {
             color: 'var(--text-secondary)',
           }}>
             Lifting Lab programs your cycle, analyzes your lifts frame by frame, tells you why it missed,
-            and gets you through meet day. Built for one sport, Olympic weightlifting: the snatch and
-            the clean & jerk.
+            and gets you through meet day. Built for one sport, competitive weightlifting: the snatch
+            and the clean & jerk.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap', marginTop: 6 }}>
             <AppStoreButton />
