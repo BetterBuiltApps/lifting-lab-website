@@ -22,13 +22,17 @@ import puppeteer from 'puppeteer';
 import { readFileSync, writeFileSync, existsSync, unlinkSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { DEVICES, SHOTS, OUTPUT_ROOT } from './content.mjs';
-
 const scriptDir = resolve(import.meta.dirname);
 const templatePath = resolve(scriptDir, 'template.html');
 const templateSource = readFileSync(templatePath, 'utf8');
 
 const deviceKey = process.argv[2] ?? 'iphone-6.9';
+
+// Each device class keeps its own content module (own SHOTS, own source
+// images), per this pipeline's own design intent: the iPad follow-up is "a
+// new config entry and a second content.mjs, not a rewrite" of SHOTS itself.
+const contentModule = deviceKey.startsWith('ipad') ? './content-ipad.mjs' : './content.mjs';
+const { DEVICES, SHOTS, OUTPUT_ROOT } = await import(contentModule);
 const device = DEVICES[deviceKey];
 if (!device) {
   console.error(`Unknown device "${deviceKey}". Known: ${Object.keys(DEVICES).join(', ')}`);
@@ -98,6 +102,7 @@ try {
       .replaceAll('{{SUBHEAD_SIZE}}', device.subheadSize)
       .replaceAll('{{FRAME_GAP}}', device.frameGap)
       .replaceAll('{{FRAME_WIDTH}}', device.frameWidth)
+      .replaceAll('{{FRAME_ASPECT}}', device.frameAspect)
       .replaceAll('{{HEADLINE}}', shot.headline)
       .replaceAll('{{SUBHEAD}}', shot.subhead)
       .replaceAll('{{SHOT_SRC}}', fileUrl(shot.sourceImage))

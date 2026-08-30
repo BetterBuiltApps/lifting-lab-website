@@ -45,6 +45,7 @@ export const DEVICES = {
     width: 1320,
     height: 2868,
     frameWidth: 1000,
+    frameAspect: '9 / 19.5',
     topPadding: 170,
     headerHeight: 262,
     headlineSize: 92,
