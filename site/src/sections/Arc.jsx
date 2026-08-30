@@ -208,7 +208,7 @@ export function Arc() {
           </p>
           <div className="arc-pair">
             <figure className="arc-pair-half">
-              <Shot src={asset('assets/screens/08-readiness-checkin.png')}
+              <Shot src={asset('assets/screens/checkin-build-workout.png')}
                     alt="Check-in: energy, sore muscles to avoid, and what you're training today" width={260} />
               <figcaption className="arc-pair-cap">What you tell it</figcaption>
             </figure>
@@ -216,7 +216,7 @@ export function Arc() {
               <svg viewBox="0 0 40 12" focusable="false"><path d="M0 6h34M28 1l6 5-6 5" /></svg>
             </div>
             <figure className="arc-pair-half">
-              <Shot src={asset('assets/screens/11-session-hub.png')}
+              <Shot src={asset('assets/screens/custom-workout-hub.png')}
                     alt="A custom workout put together: four blocks, set counts, and volume and intensity dialed in" width={260} />
               <figcaption className="arc-pair-cap">What you get back</figcaption>
             </figure>
