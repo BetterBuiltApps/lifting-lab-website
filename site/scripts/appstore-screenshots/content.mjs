@@ -69,7 +69,7 @@ export const SHOTS = [
     outFile: '02-check-in-builds-session.png',
     headline: 'Tell it how you feel.',
     subhead: 'It builds today’s session around it.',
-    sourceImage: resolve(SCREENCAPS, '08-readiness-checkin.png'),
+    sourceImage: resolve(SCREENCAPS, '45-checkin-build-my-workout.png'),
   },
   {
     order: 3,
