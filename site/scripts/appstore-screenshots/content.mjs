@@ -58,7 +58,7 @@ export const SHOTS = [
     order: 1,
     outFile: '01-bar-trace-path-score.png',
     headline: 'A path score, off your own film.',
-    subhead: 'Peak speed, pull speed, straightness and smoothness, scored.',
+    subhead: 'Peak speed, straightness, smoothness, scored.',
     // Real filmed/analyzed clip (skeleton overlay, path score), the
     // simulator's seed data has no video attached so this screen renders
     // "Video unavailable" there. Source is a real-device capture at
@@ -99,7 +99,7 @@ export const SHOTS = [
     outFile: '06-program-week.png',
     headline: 'A cycle built off your real numbers.',
     subhead: 'Every week periodized off your own PRs.',
-    sourceImage: resolve(SCREENCAPS, '38-program-week-detail.png'),
+    sourceImage: resolve(SCREENCAPS, '47-program-week-detail.png'),
   },
   {
     order: 7,
@@ -113,7 +113,7 @@ export const SHOTS = [
     outFile: '08-tools-grid.png',
     headline: 'The maths the sport actually runs on.',
     subhead: 'Sinclair, Prilepin, plate math, in one tab.',
-    sourceImage: resolve(SCREENCAPS, '44-tools-hub-masonry.png'),
+    sourceImage: resolve(SCREENCAPS, '48-tools-hub-compact.png'),
   },
 ].map((shot, i) => ({ ...shot, background: BG_ROTATION[i % BG_ROTATION.length] }));
 
