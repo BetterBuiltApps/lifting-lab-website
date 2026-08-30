@@ -22,7 +22,6 @@ const EXPLORE_GROUPS = [
   { g: 'Setup', items: [
     { k: 'gym', label: 'Gym profile', body: 'Tell Lifting Lab what equipment your gym actually has.', src: 'assets/screens/30-gym-profile-equipment.png' },
     { k: 'integrations', label: 'Integrations', body: 'Finished workouts write to Health as strength training and count toward your Activity rings; Health can feed back heart rate for adaptive rest and your latest bodyweight. Every toggle is optional, and CSV export is there when you want your data out too.', src: 'assets/screens/36-settings-integrations.png' },
-    { k: 'about', label: 'About the data', body: 'What\'s tracked, what\'s not, and why.', src: 'assets/screens/37-about-the-data.png' },
   ] },
 ];
 
