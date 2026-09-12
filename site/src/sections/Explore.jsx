@@ -13,7 +13,7 @@ const EXPLORE_GROUPS = [
   ] },
   { g: 'Learn', items: [
     { k: 'library', label: 'Exercise library', body: 'Illustrated library for every lift and accessory.', src: 'assets/screens/05-exercise-library.png' },
-    { k: 'detail', label: 'Lift detail', body: 'Cues, video, and common faults for the snatch.', src: 'assets/screens/06-exercise-detail-snatch.png' },
+    { k: 'detail', label: 'Lift detail', body: 'A descriptive how-to diagram, key cues, and common faults for the snatch.', src: 'assets/screens/06-exercise-detail-snatch.png' },
   ] },
   { g: 'Calculate', items: [
     { k: '1rm', label: '1RM estimator', body: 'Estimate a true max without testing it.', src: 'assets/screens/19-1rm-estimator.png' },
