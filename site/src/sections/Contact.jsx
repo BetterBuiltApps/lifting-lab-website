@@ -63,7 +63,7 @@ export function Contact() {
           <SiteHead
             title="Have a question?"
             max={420}
-            body="Got a question the FAQ didn't answer? Ask it here. Bug reports and feature requests land in the same inbox, and a real person reads every message."
+            body="Got a question the FAQ didn't answer? Ask it here. Bug reports and feature requests land in the same inbox, and a real person reads every message: a software engineer and weightlifter who built Lifting Lab to run his own training."
           />
 
           <form className="contact-form" onSubmit={onSubmit}>
