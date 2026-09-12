@@ -217,7 +217,7 @@ export function Arc() {
             </div>
             <figure className="arc-pair-half">
               <Shot src={asset('assets/screens/custom-workout-hub.png')}
-                    alt="A custom workout put together: four blocks, set counts, and volume and intensity dialed in" width={260} />
+                    alt="A custom workout put together: three blocks, set counts, and volume and intensity dialed in" width={260} />
               <figcaption className="arc-pair-cap">What you get back</figcaption>
             </figure>
           </div>
