@@ -190,13 +190,12 @@ const APP_STORE_BADGE_HEIGHT = { large: 56, medium: 48, small: 40 };
 
 /** App Store CTA, used in hero and pricing. Shows Apple's official badge
  * (site/public/assets/, downloaded per-app from
- * toolbox.marketingtools.apple.com/app-store/) once SITE.released is true,
- * per the Marketing Guidelines' own badge-replacement rule ("replace with
- * download badge immediately upon app release"), and a plain "coming soon"
- * pill before then, see the !SITE.released branch below. The same flag also
- * governs whether this links anywhere: if a released listing is ever
- * pulled, flipping `released` back reverts this to the pill rather than
- * quietly linking to a dead page. */
+ * toolbox.marketingtools.apple.com/app-store/) now that SITE.released is
+ * true, per the Marketing Guidelines' own badge-replacement rule ("replace
+ * with download badge immediately upon app release"), linked to
+ * SITE.links.appStore. If a released listing is ever pulled, flipping
+ * `released` back to false reverts this to a plain "coming soon" pill, see
+ * the !SITE.released branch below. */
 export function AppStoreButton({ size = 'large' }) {
   const height = APP_STORE_BADGE_HEIGHT[size];
   // Pre-release, this doesn't fall back to an unlinked copy of the real

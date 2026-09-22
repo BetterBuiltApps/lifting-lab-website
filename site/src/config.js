@@ -1,26 +1,17 @@
-/* Lifting Lab landing page, configuration. Pre-release presentation: the app
-   isn't in the App Store yet (a few weeks out as of writing), so every CTA
-   on the site reads from `released` below and shows honest "coming soon"
-   messaging instead of a live download link. Flip to true, and drop the
-   real listing URL into `links.appStore`, once the App Store listing is
-   actually live. See git tag `release-ready-2026-08-23` for the last
-   released:true snapshot, so that work isn't lost while this reverts. */
+/* Lifting Lab landing page, configuration. The app is live on the App Store,
+   so every CTA on the site reads from `released` below and shows the real
+   download badge and listing link. Flip back to false only if the listing
+   is ever pulled. */
 
 export const SITE = {
-  // Every CTA on the site reads from this one flag. `links.appStore` still
-  // needs the real listing URL dropped in, see the note beside it below,
-  // the flag alone does not make the badge link anywhere real.
-  released: false,
+  // Every CTA on the site reads from this one flag.
+  released: true,
   pricing: {
     free: { name: 'Free', price: '$0' },
     pro: { name: 'Pro', monthly: '$12.99/mo', yearly: '$99.99/yr' },
   },
   links: {
-    // Real URL still TODO: drop the actual App Store listing link in here
-    // when it exists, alongside flipping `released` to true. Until then
-    // AppStoreButton never wraps this in an `<a>` at all (see Chrome.jsx),
-    // so an unset placeholder here can't become a dead link on the page.
-    appStore: '#app-store',
+    appStore: 'https://apps.apple.com/us/app/lifting-lab-weightlifting/id6804514003',
     // Real pages now, built from legal/*.md by tools/legal/build.py and served
     // as their own static files (see the multi-page input in vite.config.js).
     // These were '#privacy' and '#terms', in-page anchors matching no element,
@@ -49,11 +40,9 @@ export const SITE = {
   // Official badge, US/UK English, white lockup (product owner's call, over
   // the black lockup Apple states as its preferred default). The App Store
   // Marketing Guidelines only permit this specific badge, "Download on the
-  // App Store", once the app is actually released, its own badge-replacement
-  // rule says to use the pre-order badge before then. `released` is false
-  // right now, so AppStoreButton (Chrome.jsx) doesn't render this artwork at
-  // all yet, a plain "coming soon" pill fills that slot honestly instead.
-  // Flip `released` to true once the listing is live to start showing it.
+  // App Store", once the app is actually released. `released` is true now
+  // that the listing is live, so AppStoreButton (Chrome.jsx) renders this
+  // artwork, linked to `links.appStore` above.
   appStoreBadgeSrc: 'assets/app-store-badge-white.svg',
   ctaPrimary: 'Download on the App Store',
   // "Works with Apple Health" badge. Unlike the App Store badge this does not
