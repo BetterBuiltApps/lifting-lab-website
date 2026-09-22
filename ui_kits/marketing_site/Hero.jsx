@@ -16,7 +16,7 @@ function Hero() {
             fontSize: 'clamp(44px,5.4vw,64px)', lineHeight: 1.0, letterSpacing: '-2px',
             color: 'var(--text-primary)',
           }}>
-            The coach you don't have.
+            The weightlifting coach you don't have.
           </h1>
           <p style={{
             margin: 0, maxWidth: '52ch', fontSize: 19, lineHeight: 1.55,
