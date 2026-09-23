@@ -13,7 +13,7 @@ function Hero() {
           }}>Built for competitive weightlifting</span>
           <h1 style={{
             margin: 0, fontFamily: 'var(--font-display)', fontWeight: 900,
-            fontSize: 'clamp(44px,5.4vw,64px)', lineHeight: 1.0, letterSpacing: '-2px',
+            fontSize: 'clamp(44px,5.4vw,59px)', lineHeight: 1.0, letterSpacing: '-2px',
             color: 'var(--text-primary)',
           }}>
             Your weightlifting coach, always on.
