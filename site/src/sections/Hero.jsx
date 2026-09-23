@@ -29,7 +29,7 @@ export function Hero() {
             letterSpacing: '-0.03em',
             color: 'var(--text-primary)',
           }}>
-            The weightlifting coach you don't have.
+            Your weightlifting coach, always on.
           </h1>
           <p style={{
             margin: 0, maxWidth: '52ch', fontSize: 19, lineHeight: 1.55,
