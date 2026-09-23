@@ -18,6 +18,10 @@
      it into a 16px box draws the flask about 4px wide and the wordmark as mush. -->
 <link rel="icon" type="image/svg+xml" href="%BASE_URL%assets/mark.svg" />
 <link rel="canonical" href="https://liftinglab.app/" />
+<!-- The hero's background photo is set via CSS background-image, which the
+     browser's preload scanner doesn't discover until it parses styles.css.
+     Preloading it here gets the request started immediately instead. -->
+<link rel="preload" as="image" href="%BASE_URL%assets/backgrounds/hero-mens-snatch.webp" type="image/webp" fetchpriority="high" />
 <!-- Matches BPColor.background, so Safari's chrome and the Android address bar
      continue the page instead of framing it in white. -->
 <meta name="theme-color" content="#1A1A1A" />
