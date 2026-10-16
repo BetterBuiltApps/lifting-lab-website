@@ -1,6 +1,6 @@
 **Privacy Policy**
 
-This privacy policy explains how Better Built Apps LLC ("Better Built Apps," "we," "us") handles data in connection with the Lifting Lab app for iOS (the "Application"). It is written to describe what Lifting Lab actually does, not a generic template, because the honest answer to most of these questions is: your training data never leaves your device and your own iCloud account.
+This privacy policy explains how Better Built Apps LLC ("Better Built Apps," "we," "us") handles data in connection with the Lifting Lab app for iPhone and for Android (the "Application"). It is written to describe what Lifting Lab actually does, not a generic template, because the honest answer to most of these questions is: your training data stays on your device, and on iPhone, in your own iCloud account. Where the two versions differ, this policy says which one it is describing.
 
 **Company Information**
 
@@ -14,16 +14,18 @@ For any question about this policy or your data, use that form.
 
 Lifting Lab does not require or offer account registration. There is no username, no password, and no Better Built Apps server that receives, stores, or has visibility into your workouts, personal records, video, or profile information.
 
-Your data is stored in two places, both under your own control:
+On iPhone, your data is stored in two places, both under your own control:
 
 *   On your device, in the app's local database.
 *   In your own private iCloud account, if iCloud sync is available and you're signed in. This uses Apple's CloudKit private database (container iCloud.com.betterbuiltapps.LiftingLab), which is a private container tied to your own Apple ID. Better Built Apps LLC cannot access, read, or export data from your private iCloud container. Apple's own privacy practices govern how iCloud itself works; see Apple's privacy policy for that layer.
 
 Sessions, programs, personal records, your profile, and your gym setup sync automatically between your own devices this way when iCloud is available. If iCloud can't be reached, the app keeps working fully offline using the local copy on your device.
 
+On Android, your data is stored on your device, in the app's local database and its private app storage. The Android version does not sync between devices and has no cloud account of its own. The one thing outside our control is Android's own system backup: if you have Google's device backup turned on, Android may copy some of the app's files (for example your bar-path video clips and app settings) to your Google account. Lifting Lab excludes its main training database from that backup. A backup copy lives in your own Google account, which Better Built Apps LLC cannot access, and you manage it in your Google account and device backup settings.
+
 **Health data**
 
-With your permission, Lifting Lab reads the following from Apple Health:
+On iPhone, with your permission, Lifting Lab reads the following from Apple Health:
 
 *   Heart rate, to power the adaptive rest timer during a workout.
 *   Heart rate variability, resting heart rate, and sleep, to suggest a readiness level before a session.
@@ -33,17 +35,39 @@ With your permission, Lifting Lab also writes your finished workouts to Apple He
 
 Every one of these is optional and can be turned off individually in Settings. None of it is requested up front: iOS asks for each permission only when you first use the specific feature that needs it, with an explanation of why beforehand. Health data is read and written through Apple's HealthKit store on your device. We do not receive a copy of it, we do not use it for advertising, and we do not share it with any third party.
 
+On Android, Lifting Lab connects to Health Connect, Android's on-device health data store. With your permission, it reads:
+
+*   Heart rate, to power the adaptive rest timer during a workout.
+*   Heart rate variability, resting heart rate, and sleep, to suggest a readiness level before a session.
+*   Your weight, to keep your bodyweight current.
+
+With your permission, Lifting Lab also writes your finished workouts to Health Connect as exercise sessions with active calories burned, so other health apps you use can show them.
+
+Every one of these is optional and has its own switch in Settings. Nothing is requested up front: Android shows its Health Connect permission screen only when you turn on the feature that needs it, and you can withdraw any permission at any time in Health Connect. Health Connect data is read and written on your device. We do not receive a copy of it. We use it only to provide the features described above. We do not sell it, we do not use it for advertising, and we do not transfer it to any third party.
+
 **Camera, video, and on-device body tracking**
 
-Lifting Lab's bar-path analysis feature uses your device's camera to record video of a lift, with your permission, so it can be analyzed. That analysis, including tracking the barbell and estimating your body's position through the lift, runs entirely on your device using Apple's built in Vision framework. No video, image, or position data generated by this analysis is transmitted to Better Built Apps LLC or to any third party, at any point, unless you deliberately choose to export or share a specific clip yourself.
+Lifting Lab's bar-path analysis feature uses your device's camera to record video of a lift, with your permission, so it can be analyzed. That analysis, including tracking the barbell and estimating your body's position through the lift, runs entirely on your device, using Apple's built in Vision framework on iPhone and an on-device pose model (Google's MediaPipe) on Android. No video, image, or position data generated by this analysis is transmitted to Better Built Apps LLC or to any third party, at any point, unless you deliberately choose to export or share a specific clip yourself.
+
+On Android, the camera permission is required to record a lift in the app, and the microphone permission is optional: if you allow it, the clip's sound is recorded with the video, and if you don't, the clip is recorded without sound. The analysis never uses sound. You can also import a clip you already have instead of recording one.
 
 We're describing this processing explicitly and separately from the rest of this policy, even though it never leaves your device, because it involves estimating a body's position and movement, which some jurisdictions treat as sensitive or biometric information regardless of where the processing happens. Nothing about this analysis is used to identify you as a person; it exists only to measure a barbell's path and give you feedback on your technique.
 
-Recordings you make in the app are also saved to your device's Photos library as a backup, so switching phones never loses your analysis history. Whether the video files themselves also sync through iCloud is a separate, opt-in setting, kept apart from the rest of sync so filming does not silently consume a large amount of your iCloud storage.
+On iPhone, recordings you make in the app are also saved to your device's Photos library as a backup, so switching phones never loses your analysis history. Whether the video files themselves also sync through iCloud is a separate, opt-in setting, kept apart from the rest of sync so filming does not silently consume a large amount of your iCloud storage.
+
+On Android, recordings you make are kept in the app's private storage and are not added to your Photos or gallery app. Deleting a clip in the app deletes its file.
+
+**Subscriptions and purchases**
+
+Lifting Lab Pro is a subscription sold through the Apple App Store on iPhone and through Google Play on Android. The store handles the purchase: Apple or Google collects your payment details and manages billing, and Better Built Apps LLC never sees your card or other payment information. The app asks the store whether your account has an active subscription, and on Android it also asks Google Play for the price to display. That is how the app knows whether to unlock Pro features. Neither store's answer is shared with anyone else by us. Apple's and Google's own privacy policies govern what they do with purchase data.
+
+**Notifications and other Android permissions**
+
+On Android, the app may ask for permission to show notifications, which it uses for the rest timer: an ongoing notification that counts the rest while you are out of the app, and, if you turn rest alerts on, a "Rest complete" alert. It also uses vibration for haptic feedback. The internet permission exists for Google Play, described above, and nothing else: the only network traffic Lifting Lab generates on Android is with Google Play, for your subscription. The app does not request your location or your contacts.
 
 **Sharing a program or session with a coach**
 
-If you use Lifting Lab's coaching features, you can export a training program or a completed session as a file (a .liftinglab or .liftinglabsession file) and send it to someone directly, using your device's own share sheet: AirDrop, Mail, Messages, or Files. This is a transfer you initiate, directly between devices. It does not pass through, and is never visible to, Better Built Apps LLC. If you are a coach entering information about an athlete you train, that information is stored on your own device and, like everything else described in this policy, is never sent to us.
+If you use Lifting Lab's coaching features, you can export a training program or a completed session as a file (a .liftinglab or .liftinglabsession file) and send it to someone directly, using your device's own share sheet: for example AirDrop, Mail, Messages, or Files on iPhone, or any app on your Android share sheet. This is a transfer you initiate, directly between devices. It does not pass through, and is never visible to, Better Built Apps LLC. If you are a coach entering information about an athlete you train, that information is stored on your own device and, like everything else described in this policy, is never sent to us.
 
 **What we do not do**
 
@@ -65,11 +89,13 @@ Lifting Lab's coaching features let an adult coach enter and manage training inf
 
 **Your data, your control**
 
-Because your training data lives on your device and, optionally, in your own iCloud account rather than on our systems, you are the one who controls its retention:
+Because your training data lives on your device and, on iPhone, optionally in your own iCloud account rather than on our systems, you are the one who controls its retention:
 
-*   Deleting data within the app removes it from your device (and from iCloud, once sync catches up).
+*   Deleting data within the app removes it from your device (and, on iPhone, from iCloud once sync catches up).
 *   Deleting the app removes its local data from your device.
 *   Managing or deleting your iCloud data is done through your Apple ID / iCloud settings.
+*   On Android, if Google's device backup is on, any backup copy is managed and deleted through your Google account and device backup settings.
+*   On Android, Health Connect data is managed in Health Connect, where you can review and delete it and withdraw Lifting Lab's access.
 
 Because we hold no copy of your training data, there is nothing on our end to delete when you take any of these steps, we simply never had it. The one thing we do hold is any correspondence you've sent us directly (for example, through our contact form), which we retain only as long as needed to handle it, and which you can ask us to delete at any time through that same [contact form](https://liftinglab.app/#contact).
 
@@ -77,17 +103,17 @@ Because we hold no copy of your training data, there is nothing on our end to de
 
 Depending on where you live, you may have rights under laws like the EU/UK GDPR or the California Consumer Privacy Act (CCPA/CPRA), including the right to know what personal data is held about you, to correct it, to delete it, to receive a copy of it, and to object to or restrict certain processing.
 
-For the vast majority of your data, the practical way to exercise these rights is directly, in the app or in your device's iCloud settings, since that's where your data actually lives and we have no access to it. For anything we do hold (your correspondence with us, described above), reach us through the [contact form](https://liftinglab.app/#contact) and we will respond within the time required by applicable law. If you believe your rights have been violated, you may also contact your local data protection authority.
+For the vast majority of your data, the practical way to exercise these rights is directly, in the app or in your device's iCloud, Google account, or Health Connect settings, since that's where your data actually lives and we have no access to it. For anything we do hold (your correspondence with us, described above), reach us through the [contact form](https://liftinglab.app/#contact) and we will respond within the time required by applicable law. If you believe your rights have been violated, you may also contact your local data protection authority.
 
 **Security**
 
-Your training data benefits from the security of your device and your own Apple ID and iCloud account, both of which are protected by Apple's platform security. Because we never receive a copy of your data, there is no central Better Built Apps database of user training data to be breached.
+Your training data benefits from the security of your device and, on iPhone, your own Apple ID and iCloud account, both of which are protected by Apple's platform security. On Android, it benefits from your device's lock screen, storage encryption, and Android's app sandbox, and your Google account if you use device backup. Because we never receive a copy of your data, there is no central Better Built Apps database of user training data to be breached.
 
 **Changes to this policy**
 
 We may update this policy as the app changes. We'll post the updated version here with a new effective date. If a change is significant, we'll make a reasonable effort to let you know inside the app.
 
-This privacy policy is effective as of 2026-08-16.
+This privacy policy is effective as of 2026-10-16.
 
 **Contact**
 
