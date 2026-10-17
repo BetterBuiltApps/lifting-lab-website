@@ -31,7 +31,13 @@ const deviceKey = process.argv[2] ?? 'iphone-6.9';
 // Each device class keeps its own content module (own SHOTS, own source
 // images), per this pipeline's own design intent: the iPad follow-up is "a
 // new config entry and a second content.mjs, not a rewrite" of SHOTS itself.
-const contentModule = deviceKey.startsWith('ipad') ? './content-ipad.mjs' : './content.mjs';
+const contentModule = deviceKey.startsWith('ipad')
+  ? './content-ipad.mjs'
+  : deviceKey === 'android-tablet'
+    ? './content-android-tablet.mjs'
+    : deviceKey.startsWith('android')
+      ? './content-android.mjs'
+      : './content.mjs';
 const { DEVICES, SHOTS, OUTPUT_ROOT } = await import(contentModule);
 const device = DEVICES[deviceKey];
 if (!device) {
@@ -72,10 +78,16 @@ for (const shot of shotsToRender) {
     process.exit(1);
   }
   const { width, height } = nativeSize(shot.sourceImage);
-  if (width < device.width || height < device.height) {
+  // A device may set `minSource` when its canvas is larger than the capture
+  // it frames (Play wants 9:16 images, but an Android capture is 1:2, so the
+  // canvas is bigger than the capture while the frame, which the capture
+  // fills, is not). Without it the canvas size is the floor, exactly as
+  // before for the iPhone and iPad sets.
+  const floor = device.minSource ?? { width: device.width, height: device.height };
+  if (width < floor.width || height < floor.height) {
     console.error(
       `Shot ${shot.order} (${shot.outFile}): source is ${width}x${height}, ` +
-      `smaller than the ${device.width}x${device.height} target canvas. ` +
+      `smaller than the ${floor.width}x${floor.height} minimum. ` +
       `Recapture at the right resolution rather than letting this upscale.`
     );
     process.exit(1);
