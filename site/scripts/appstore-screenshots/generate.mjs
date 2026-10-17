@@ -33,9 +33,11 @@ const deviceKey = process.argv[2] ?? 'iphone-6.9';
 // new config entry and a second content.mjs, not a rewrite" of SHOTS itself.
 const contentModule = deviceKey.startsWith('ipad')
   ? './content-ipad.mjs'
-  : deviceKey.startsWith('android')
-    ? './content-android.mjs'
-    : './content.mjs';
+  : deviceKey === 'android-tablet'
+    ? './content-android-tablet.mjs'
+    : deviceKey.startsWith('android')
+      ? './content-android.mjs'
+      : './content.mjs';
 const { DEVICES, SHOTS, OUTPUT_ROOT } = await import(contentModule);
 const device = DEVICES[deviceKey];
 if (!device) {
