@@ -145,6 +145,14 @@ a:hover { color: var(--amber); }
   justify-items: center;
 }
 
+/* The Log Book pair sits in half the page, so between 981px and about 1100px
+   two 260px phones do not fit. Each Shot is a one-column grid whose implicit
+   track sizes to the phone's fixed 260px width, so it has to be told to follow
+   the cell instead: fill the cell, and make its single column shrinkable. The
+   phone then scales down to the cell. Scoped here so the other .shot-row users
+   are untouched. */
+.logbook-shots > * { min-width: 0; width: 100%; grid-template-columns: minmax(0, 1fr); }
+
 /* Three click-to-play walkthrough videos. Phone-shaped (9:16), one column on
    narrow screens. */
 .clip-row {
