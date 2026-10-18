@@ -1,6 +1,7 @@
 import React from 'react';
 import { siteWrap, AppStoreButton, HealthBadge, Shot } from './Chrome';
 import { asset } from '../lib/asset';
+import { SITE } from '../config';
 import { STATIONS, gapAfter, HERO_WEEK_PX } from './Arc';
 
 export function Hero() {
@@ -29,7 +30,7 @@ export function Hero() {
             letterSpacing: '-0.03em',
             color: 'var(--text-primary)',
           }}>
-            Your weightlifting coach, always on.
+            {SITE.slogan}
           </h1>
           <p style={{
             margin: 0, maxWidth: '52ch', fontSize: 19, lineHeight: 1.55,
