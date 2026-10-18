@@ -2,23 +2,21 @@
 // QR code, and social bio link, so a store listing change or an Android
 // launch never means re-cutting a caption or re-printing a code. Reads
 // SITE.links.appStore and SITE.android from config.js, the same source every
-// other CTA on the site reads, so there is nothing here to keep in sync by
-// hand.
+// other CTA on the site reads, and detectDevice from lib/device.js, the same
+// sniffing AppStoreButton/HealthBadge (Chrome.jsx) use, so there is nothing
+// here to keep in sync by hand.
 import { SITE } from './config.js';
+import { detectDevice } from './lib/device.js';
 
-const ua = navigator.userAgent;
-// iPadOS 13+ reports as "Macintosh" with touch support, not "iPad".
-const isIOS = /iPhone|iPad|iPod/.test(ua)
-  || (ua.includes('Macintosh') && navigator.maxTouchPoints > 1);
-const isAndroid = /Android/.test(ua);
+const device = detectDevice();
 
 function redirect(url) {
   location.replace(url);
 }
 
-if (isIOS) {
+if (device === 'ios') {
   redirect(SITE.links.appStore);
-} else if (isAndroid && SITE.android.released && SITE.android.playStoreUrl) {
+} else if (device === 'android' && SITE.android.released && SITE.android.playStoreUrl) {
   redirect(SITE.android.playStoreUrl);
 } else {
   // Desktop, an unreleased Android visitor, or UA sniffing that guessed

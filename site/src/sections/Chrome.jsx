@@ -6,6 +6,7 @@ import { SITE } from '../config';
 import { asset } from '../lib/asset';
 import { DURATION, EASE } from '../lib/motion';
 import { useLightbox } from '../lib/Lightbox';
+import { useDevice } from '../lib/device';
 
 export const siteWrap = { maxWidth: 1240, margin: '0 auto', padding: '0 clamp(20px,5vw,60px)' };
 
@@ -188,16 +189,53 @@ export function Shot({ src, alt, width = 300, caption, priority = false, lcp = f
 // beyond plain scaling, see App Store Marketing Guidelines.
 const APP_STORE_BADGE_HEIGHT = { large: 56, medium: 48, small: 40 };
 
-/** App Store CTA, used in hero and pricing. Shows Apple's official badge
- * (site/public/assets/, downloaded per-app from
- * toolbox.marketingtools.apple.com/app-store/) now that SITE.released is
- * true, per the Marketing Guidelines' own badge-replacement rule ("replace
- * with download badge immediately upon app release"), linked to
- * SITE.links.appStore. If a released listing is ever pulled, flipping
- * `released` back to false reverts this to a plain "coming soon" pill, see
- * the !SITE.released branch below. */
+/** The unbranded "coming soon" pill, shared by the pre-release App Store
+ * state and the Android state below: neither has a real badge to show (the
+ * App Store Marketing Guidelines reserve the official badge for a live
+ * listing; there's no Google Play badge artwork in this repo, and no Play
+ * listing to link it to yet either), so both fall back to this same honest,
+ * unbranded slot rather than a dead or guideline-violating badge. */
+function ComingSoonPill({ height, children }) {
+  return (
+    <span style={{
+      display: 'inline-flex', alignItems: 'center', height, boxSizing: 'border-box',
+      padding: '0 22px', borderRadius: 'var(--radius-pill)',
+      background: 'var(--amber-16)', border: '1px solid var(--amber-40)',
+      font: 'var(--type-subheadline)', fontWeight: 700, color: 'var(--amber)',
+    }}>
+      {children}
+    </span>
+  );
+}
+
+/** App Store / Google Play CTA, used in hero and pricing. On Android
+ * (`useDevice`, same UA sniff liftinglab.app/get uses), this reads
+ * SITE.android: no real Play Store listing exists yet, so it shows a
+ * "coming soon" pill rather than a store badge nothing backs, and skips
+ * straight to a real Play Store link the moment SITE.android.released flips.
+ *
+ * Everywhere else, shows Apple's official badge (site/public/assets/,
+ * downloaded per-app from toolbox.marketingtools.apple.com/app-store/) now
+ * that SITE.released is true, per the Marketing Guidelines' own
+ * badge-replacement rule ("replace with download badge immediately upon app
+ * release"), linked to SITE.links.appStore. If a released listing is ever
+ * pulled, flipping `released` back to false reverts this to the same
+ * "coming soon" pill, see the !SITE.released branch below. */
 export function AppStoreButton({ size = 'large' }) {
+  const device = useDevice();
   const height = APP_STORE_BADGE_HEIGHT[size];
+
+  if (device === 'android') {
+    if (SITE.android.released && SITE.android.playStoreUrl) {
+      return (
+        <a href={SITE.android.playStoreUrl} aria-label="Get it on Google Play">
+          <ComingSoonPill height={height}>Get it on Google Play</ComingSoonPill>
+        </a>
+      );
+    }
+    return <ComingSoonPill height={height}>Coming soon to Google Play</ComingSoonPill>;
+  }
+
   // Pre-release, this doesn't fall back to an unlinked copy of the real
   // badge: Apple's own badge-replacement rule reserves the "Download on the
   // App Store" artwork for an app that's actually live, so rendering it
@@ -205,16 +243,7 @@ export function AppStoreButton({ size = 'large' }) {
   // link going nowhere. A plain, unbranded pill fills the same CTA slot
   // honestly instead, and costs nothing to swap out once `released` flips.
   if (!SITE.released) {
-    return (
-      <span style={{
-        display: 'inline-flex', alignItems: 'center', height, boxSizing: 'border-box',
-        padding: '0 22px', borderRadius: 'var(--radius-pill)',
-        background: 'var(--amber-16)', border: '1px solid var(--amber-40)',
-        font: 'var(--type-subheadline)', fontWeight: 700, color: 'var(--amber)',
-      }}>
-        Coming soon to the App Store
-      </span>
-    );
+    return <ComingSoonPill height={height}>Coming soon to the App Store</ComingSoonPill>;
   }
   // Clear space is baked into the element itself, 1/4 of the badge's own
   // height on every side, so it's correct wherever this is dropped rather
@@ -244,7 +273,10 @@ const HEALTH_BADGE_HEIGHT = APP_STORE_BADGE_HEIGHT.large;
 
 /** "Works with Apple Health" badge. Renders nothing until the real artwork is
  * in place (see SITE.healthBadgeReady in config.js), never a placeholder or a
- * hand-drawn stand-in: this is a licensed trademark, not decoration.
+ * hand-drawn stand-in: this is a licensed trademark, not decoration. Also
+ * renders nothing on Android (`useDevice`): the Android app syncs with
+ * Health Connect, not Apple Health, so this badge would be a false claim
+ * there, not just an irrelevant one.
  *
  * Not a link (unlike AppStoreButton): Apple's guidelines describe this as a
  * compatibility mark placed next to the feature it describes, not a CTA, and
@@ -253,6 +285,8 @@ const HEALTH_BADGE_HEIGHT = APP_STORE_BADGE_HEIGHT.large;
  * "not alongside the Apple logo" rules, this component only renders the mark
  * itself plus its required clear space. */
 export function HealthBadge() {
+  const device = useDevice();
+  if (device === 'android') return null;
   if (!SITE.healthBadgeReady) return null;
   return (
     <img
