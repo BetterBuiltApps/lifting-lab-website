@@ -7,6 +7,7 @@ import { SiteNav } from './sections/Chrome';
 import { Hero } from './sections/Hero';
 import { Arc } from './sections/Arc';
 import { Engine } from './sections/Engine';
+import { Measured } from './sections/Measured';
 import { Explore } from './sections/Explore';
 import { Progress } from './sections/Progress';
 import { LogBook } from './sections/LogBook';
@@ -38,6 +39,7 @@ function App() {
         <Hero />
         <Arc />
         <Engine />
+        <Measured />
         <LogBook />
         <Progress />
         <Explore />

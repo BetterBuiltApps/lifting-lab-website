@@ -145,6 +145,20 @@ a:hover { color: var(--amber); }
   justify-items: center;
 }
 
+/* Three click-to-play walkthrough videos. Phone-shaped (9:16), one column on
+   narrow screens. */
+.clip-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 44px);
+  align-items: start;
+  justify-items: center;
+  margin-top: 44px;
+}
+@media (max-width: 640px) {
+  .clip-row { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+}
+
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

@@ -97,6 +97,12 @@ export function SiteFooter() {
     }}>
       <div style={{ ...siteWrap, display: 'grid', gap: 24, justifyItems: 'center', textAlign: 'center' }}>
         <img src={asset('assets/logo.svg')} alt="Lifting Lab" style={{ height: 40 }} />
+        <p style={{
+          margin: 0, fontFamily: 'var(--font-display)', fontWeight: 'var(--weight-extrabold)',
+          fontSize: 'clamp(18px,2vw,22px)', letterSpacing: '-0.01em', color: 'var(--text-secondary)',
+        }}>
+          {SITE.slogan}
+        </p>
         {/* Only renders links whose target exists, see SITE.links. A link that
             goes nowhere is worse than an absent one, and privacy/terms have no
             pages yet.
