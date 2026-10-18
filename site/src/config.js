@@ -6,6 +6,8 @@
 export const SITE = {
   // Every CTA on the site reads from this one flag.
   released: true,
+  // The brand slogan. Used by the Measured section heading and the footer.
+  slogan: 'Snatch & Clean & Jerk, measured.',
   pricing: {
     free: { name: 'Free', price: '$0' },
     pro: { name: 'Pro', monthly: '$12.99/mo', yearly: '$99.99/yr' },
