@@ -16,11 +16,15 @@ export default defineConfig({
       // the link a lawyer or an App Store reviewer follows. These build to
       // /privacy/ and /terms/ as real files that resolve on first request.
       //
-      // Both are generated: tools/legal/build.py, from legal/*.md.
+      // privacy and terms are generated: tools/legal/build.py, from legal/*.md.
+      // get is the device-detecting smart link (get.js): one URL for every
+      // video description and QR code that never needs editing when a store
+      // listing changes or the Android app ships.
       input: {
         main: resolve(__dirname, 'index.html'),
         privacy: resolve(__dirname, 'privacy/index.html'),
         terms: resolve(__dirname, 'terms/index.html'),
+        get: resolve(__dirname, 'get/index.html'),
       },
     },
   },

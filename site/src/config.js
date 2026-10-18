@@ -6,8 +6,9 @@
 export const SITE = {
   // Every CTA on the site reads from this one flag.
   released: true,
-  // The brand slogan. Used by the Measured section heading and the footer.
-  slogan: 'Snatch & Clean & Jerk, measured.',
+  // The brand slogan. Used by the Measured section heading, the footer, and
+  // the page title (index.html), so this is the one place to change it.
+  slogan: 'Snatch. Clean & Jerk. Measured.',
   pricing: {
     free: { name: 'Free', price: '$0' },
     pro: { name: 'Pro', monthly: '$12.99/mo', yearly: '$99.99/yr' },
@@ -27,6 +28,20 @@ export const SITE = {
     // No `support` mailto any more. It sent people out to a mail client, which
     // most never came back from, and the contact form is now the one route in.
     // The footer drops any link whose href is missing, so nothing else changed.
+    //
+    // No Play Store entry: the Android app (com.betterbuiltapps.liftinglab in
+    // the sibling lifting-lab-android repo) has never shipped a tagged release,
+    // so there's no public listing to link to. See `android` below, which
+    // /get (get.js) reads instead of this flag.
+  },
+  // Mirrors `released` above, but for the Android app. /get (the smart link
+  // at liftinglab.app/get) reads this to decide whether an Android visitor
+  // gets sent to a real Play Store listing or sees a "coming soon" message.
+  // Flip `released` to true and fill in `playStoreUrl` once there's a tagged
+  // Play Console release (see the sibling repo's Docs/RELEASE_PROCESS.md).
+  android: {
+    released: false,
+    playStoreUrl: null,
   },
   // The contact form posts here. Web3Forms relays a plain form POST as email,
   // which is the whole reason a static Pages site can take messages at all.

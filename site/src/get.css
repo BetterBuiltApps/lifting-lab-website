@@ -1,0 +1,64 @@
+/* The smart link page, liftinglab.app/get. Same tokens as the marketing page,
+   but static like legal.css: this page redirects before a visitor has time
+   to look at it, so the only design job left is the fallback a script-free
+   crawler or a desktop visitor actually sees. */
+
+@import "../../tokens/fonts.css";
+@import "../../tokens/colors.css";
+@import "../../tokens/typography.css";
+@import "../../tokens/spacing.css";
+@import "../../tokens/base.css";
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  color: var(--text-secondary);
+  font: var(--type-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.get {
+  display: grid;
+  gap: 28px;
+  justify-items: center;
+  max-width: 420px;
+  padding: clamp(32px, 6vw, 56px) clamp(20px, 5vw, 40px);
+  text-align: center;
+}
+
+.get img.logo { height: 34px; width: auto; }
+
+.get h1 {
+  font: var(--type-headline);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.get-paths {
+  display: grid;
+  gap: 18px;
+  width: 100%;
+}
+
+.get-ios a {
+  display: inline-flex;
+  min-height: var(--tap-target-big);
+  align-items: center;
+  justify-content: center;
+}
+.get-ios img { height: 44px; width: auto; }
+
+.get-android {
+  font: var(--type-caption);
+  color: var(--text-tertiary);
+}
+.get-android a { color: var(--amber); text-underline-offset: 3px; }
+
+:where(a):focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+  border-radius: 4px;
+}

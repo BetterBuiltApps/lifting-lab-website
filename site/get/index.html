@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Get Lifting Lab</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="description" content="Get Lifting Lab for your device." />
+<!-- This page exists to redirect, not to be found. Keeping it out of search
+     results also keeps it out of the sitemap; see public/sitemap.xml. -->
+<meta name="robots" content="noindex,follow" />
+<link rel="canonical" href="https://liftinglab.app/get/" />
+<meta name="theme-color" content="#1A1A1A" />
+<link rel="icon" type="image/svg+xml" href="/assets/mark.svg" />
+<link rel="stylesheet" href="../src/get.css" />
+</head>
+<body>
+<!-- Hidden until get.js decides no redirect fired: see the `root.hidden`
+     branch there. A visitor whose browser runs the script never sees this
+     render at all. -->
+<div id="get-root" class="get" hidden>
+  <img class="logo" src="/assets/logo.svg" alt="Lifting Lab" />
+  <h1>Get Lifting Lab</h1>
+  <div class="get-paths">
+    <p class="get-ios">
+      <a href="#" aria-label="Download on the App Store">
+        <img src="/assets/app-store-badge-white.svg" alt="Download on the App Store" />
+      </a>
+    </p>
+    <p class="get-android">Lifting Lab for Android is coming soon.</p>
+  </div>
+</div>
+<script type="module" src="../src/get.js"></script>
+</body>
+</html>
