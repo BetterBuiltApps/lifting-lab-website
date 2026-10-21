@@ -25,6 +25,8 @@ export const SITE = {
     // The privacy URL is the one App Store review asks for.
     privacy: '/privacy/',
     terms: '/terms/',
+    instagram: 'https://www.instagram.com/liftinglabapp/',
+    tiktok: 'https://www.tiktok.com/@liftinglabapp',
     // No `support` mailto any more. It sent people out to a mail client, which
     // most never came back from, and the contact form is now the one route in.
     // The footer drops any link whose href is missing, so nothing else changed.

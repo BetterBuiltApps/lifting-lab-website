@@ -110,6 +110,14 @@ export function SiteFooter() {
             Support used to be a third entry here, a mailto:. The contact form
             sits directly above this footer now and is the only route in, so the
             mailto went with it rather than offering two doors to one room. */}
+        <nav aria-label="Social" style={{ display: 'flex', gap: 22, flexWrap: 'wrap', justifyContent: 'center' }}>
+          {[['Instagram', SITE.links.instagram], ['TikTok', SITE.links.tiktok]]
+            .filter(([, href]) => href)
+            .map(([label, href]) => (
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer"
+                style={{ display: 'inline-flex', alignItems: 'center', minHeight: 44 }}>{label}</a>
+            ))}
+        </nav>
         <nav aria-label="Legal" style={{ display: 'flex', gap: 22, flexWrap: 'wrap', justifyContent: 'center' }}>
           {[['Privacy', SITE.links.privacy], ['Terms', SITE.links.terms]]
             .filter(([, href]) => href)
