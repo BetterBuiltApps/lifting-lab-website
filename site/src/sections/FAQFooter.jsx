@@ -110,12 +110,22 @@ export function SiteFooter() {
             Support used to be a third entry here, a mailto:. The contact form
             sits directly above this footer now and is the only route in, so the
             mailto went with it rather than offering two doors to one room. */}
-        <nav aria-label="Social" style={{ display: 'flex', gap: 22, flexWrap: 'wrap', justifyContent: 'center' }}>
-          {[['Instagram', SITE.links.instagram], ['TikTok', SITE.links.tiktok]]
+        {/* Both glyphs sit on a white tile: the TikTok mark's body is black and
+            would vanish on the #1A1A1A page. Icons are from Flaticon (free
+            licence), credited below. */}
+        <nav aria-label="Social" style={{ display: 'flex', gap: 16, justifyContent: 'center' }}>
+          {[['Instagram', SITE.links.instagram, 'assets/social/instagram.png'],
+            ['TikTok', SITE.links.tiktok, 'assets/social/tiktok.png']]
             .filter(([, href]) => href)
-            .map(([label, href]) => (
+            .map(([label, href, src]) => (
               <a key={label} href={href} target="_blank" rel="noopener noreferrer"
-                style={{ display: 'inline-flex', alignItems: 'center', minHeight: 44 }}>{label}</a>
+                aria-label={`Lifting Lab on ${label}`}
+                style={{
+                  display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                  width: 48, height: 48, borderRadius: 'var(--radius-row)', background: 'var(--text-primary)',
+                }}>
+                <img src={asset(src)} alt="" width="32" height="32" style={{ display: 'block' }} />
+              </a>
             ))}
         </nav>
         <nav aria-label="Legal" style={{ display: 'flex', gap: 22, flexWrap: 'wrap', justifyContent: 'center' }}>
@@ -136,6 +146,7 @@ export function SiteFooter() {
               doesn't show would be false. */}
           {' App Store is a service mark of Apple Inc.'}
           {SITE.healthBadgeReady && ' Apple, the Apple logo, and iPhone are trademarks of Apple Inc., registered in the U.S. and other countries.'}
+          {' Social icons from '}<a href="https://www.flaticon.com" target="_blank" rel="noopener noreferrer">Flaticon</a>.
         </p>
       </div>
     </footer>
