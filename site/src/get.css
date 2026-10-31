@@ -55,7 +55,14 @@ body {
   font: var(--type-caption);
   color: var(--text-tertiary);
 }
-.get-android a { color: var(--amber); text-underline-offset: 3px; }
+.get-android a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+/* The PNG carries Google's required clear space, so 66px of image is a 44px
+   visible badge, matching the App Store badge above. */
+.get-android img { height: 66px; width: auto; display: block; }
 
 :where(a):focus-visible {
   outline: 2px solid var(--amber);

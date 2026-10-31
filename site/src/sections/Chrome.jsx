@@ -212,8 +212,8 @@ const APP_STORE_BADGE_HEIGHT = { large: 56, medium: 48, small: 40 };
 /** The unbranded "coming soon" pill, shared by the pre-release App Store
  * state and the Android state below: neither has a real badge to show (the
  * App Store Marketing Guidelines reserve the official badge for a live
- * listing; there's no Google Play badge artwork in this repo, and no Play
- * listing to link it to yet either), so both fall back to this same honest,
+ * listing; Google's badge is likewise only for a live Play listing), so both
+ * fall back to this same honest,
  * unbranded slot rather than a dead or guideline-violating badge. */
 function ComingSoonPill({ height, children }) {
   return (
@@ -230,9 +230,9 @@ function ComingSoonPill({ height, children }) {
 
 /** App Store / Google Play CTA, used in hero and pricing. On Android
  * (`useDevice`, same UA sniff liftinglab.app/get uses), this reads
- * SITE.android: no real Play Store listing exists yet, so it shows a
- * "coming soon" pill rather than a store badge nothing backs, and skips
- * straight to a real Play Store link the moment SITE.android.released flips.
+ * SITE.android: with a released listing it shows Google's official badge
+ * linked to Play; before that it shows a "coming soon" pill rather than a
+ * store badge nothing backs.
  *
  * Everywhere else, shows Apple's official badge (site/public/assets/,
  * downloaded per-app from toolbox.marketingtools.apple.com/app-store/) now
@@ -249,7 +249,16 @@ export function AppStoreButton({ size = 'large' }) {
     if (SITE.android.released && SITE.android.playStoreUrl) {
       return (
         <a href={SITE.android.playStoreUrl} aria-label="Get it on Google Play">
-          <ComingSoonPill height={height}>Get it on Google Play</ComingSoonPill>
+          {/* The official badge, scaled only. The artwork carries its own clear
+              space (visible badge is 166 of 250px tall), so the element is
+              sized to 250/166 of the height the visible badge should have. */}
+          <img
+            src={asset(SITE.googlePlayBadgeSrc)}
+            alt="Get it on Google Play"
+            width={Math.round(height * 1.506 * (646 / 250))}
+            height={Math.round(height * 1.506)}
+            style={{ display: 'block', height: height * 1.506, width: 'auto' }}
+          />
         </a>
       );
     }

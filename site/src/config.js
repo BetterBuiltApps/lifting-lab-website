@@ -62,6 +62,11 @@ export const SITE = {
   // that the listing is live, so AppStoreButton (Chrome.jsx) renders this
   // artwork, linked to `links.appStore` above.
   appStoreBadgeSrc: 'assets/app-store-badge-white.svg',
+  // Official "Get it on Google Play" badge (English, generic), downloaded from
+  // play.google.com/intl/en_us/badges/. Scale only: Google's brand guidelines
+  // forbid recoloring or redrawing it. The PNG ships with its required clear
+  // space baked in, so it is rendered at 1.5x the visible badge height.
+  googlePlayBadgeSrc: 'assets/google-play-badge.png',
   ctaPrimary: 'Download on the App Store',
   // "Works with Apple Health" badge. Unlike the App Store badge this does not
   // wait on `released`, HealthKit sync is a real, shipped feature today, not a

@@ -29,6 +29,6 @@ if (device === 'ios') {
 
   const android = root.querySelector('.get-android');
   if (SITE.android.released && SITE.android.playStoreUrl) {
-    android.innerHTML = `<a href="${SITE.android.playStoreUrl}">Get it on Google Play</a>`;
+    android.innerHTML = `<a href="${SITE.android.playStoreUrl}"><img src="/${SITE.googlePlayBadgeSrc}" alt="Get it on Google Play" width="171" height="66" /></a>`;
   }
 }
