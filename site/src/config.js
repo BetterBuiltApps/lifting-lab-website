@@ -31,19 +31,18 @@ export const SITE = {
     // most never came back from, and the contact form is now the one route in.
     // The footer drops any link whose href is missing, so nothing else changed.
     //
-    // No Play Store entry: the Android app (com.betterbuiltapps.liftinglab in
-    // the sibling lifting-lab-android repo) has never shipped a tagged release,
-    // so there's no public listing to link to. See `android` below, which
-    // /get (get.js) reads instead of this flag.
+    // Google Play listing for the Android app. Gated by `android.released`
+    // below, which /get (get.js) and AppStoreButton (Chrome.jsx) read.
+    playStore: 'https://play.google.com/store/apps/details?id=com.betterbuiltapps.liftinglab',
   },
   // Mirrors `released` above, but for the Android app. /get (the smart link
   // at liftinglab.app/get) reads this to decide whether an Android visitor
   // gets sent to a real Play Store listing or sees a "coming soon" message.
-  // Flip `released` to true and fill in `playStoreUrl` once there's a tagged
-  // Play Console release (see the sibling repo's Docs/RELEASE_PROCESS.md).
+  // The app is live on Google Play, so this is true. Flip it back to false
+  // only if the listing is ever pulled.
   android: {
-    released: false,
-    playStoreUrl: null,
+    released: true,
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.betterbuiltapps.liftinglab',
   },
   // The contact form posts here. Web3Forms relays a plain form POST as email,
   // which is the whole reason a static Pages site can take messages at all.

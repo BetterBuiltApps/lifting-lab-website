@@ -15,7 +15,7 @@ export const FAQ_ITEMS = [
   ['How accurate is the video analysis?', 'It depends on the clip: side-on, whole bar in frame, steady phone. When tracking is weak, Lifting Lab says so and shows the evidence, rather than giving you a number it can\'t back up.'],
   ['Does my data leave my phone?', 'Video analysis runs entirely on-device. No clip or lift data is sent anywhere to score it. Training data syncs to your own private iCloud so it follows you across devices (clip sync is a separate opt-in), never to a third-party server, and there\'s no Lifting Lab account required.'],
   ['Kilos or pounds?', 'Both. Pick kg or lb in Settings and every screen follows your choice, plus there\'s a dedicated kg to lb converter in Tools. Everything is stored in kg internally, matching IWF competition and the way the sport is actually coached, and converted for display.'],
-  ['Android?', 'Not yet. Lifting Lab is iOS-only today.'],
+  ['Android?', 'Yes. Lifting Lab is on the App Store for iPhone and on Google Play for Android.'],
   ['Do I have to fill any of this in?', 'No. Every field is optional, nothing is scored, and skipping it costs you nothing. Lifting Lab suggests a reflection every few weeks and that suggestion is dismissible.'],
 ];
 
