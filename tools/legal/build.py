@@ -139,6 +139,8 @@ def page(body: str, meta: dict, updated: str) -> str:
 <link rel="canonical" href="https://liftinglab.app/{meta['slug']}/" />
 <meta name="theme-color" content="#1A1A1A" />
 <link rel="icon" type="image/svg+xml" href="/assets/mark.svg" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Lifting Lab" />
 <meta property="og:url" content="https://liftinglab.app/{meta['slug']}/" />

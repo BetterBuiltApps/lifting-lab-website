@@ -32,11 +32,12 @@ const variants = {
  * idiom (scale to --press-scale), two distinct, already-idiomatic feels. */
 export function Button({
   variant = 'primary', size = 'large', full = false, disabled = false,
-  icon = null, children, style, ...rest
+  icon = null, children, style, as = 'button', ...rest
 }) {
+  const Tag = as === 'a' ? motion.a : motion.button;
   return (
-    <motion.button
-      disabled={disabled}
+    <Tag
+      disabled={as === 'a' ? undefined : disabled}
       whileHover={disabled ? undefined : { scale: 1.02, filter: 'brightness(1.08)', transition: { duration: DURATION.spring, ease: EASE.spring } }}
       whileTap={disabled ? undefined : { scale: PRESS_SCALE, transition: { duration: DURATION.press, ease: EASE.pop } }}
       style={{
@@ -44,12 +45,13 @@ export function Button({
         width: full ? '100%' : undefined,
         opacity: disabled ? 0.35 : 1,
         cursor: disabled ? 'default' : 'pointer',
+        textDecoration: 'none',
         ...style,
       }}
       {...rest}
     >
       {icon}
       {children}
-    </motion.button>
+    </Tag>
   );
 }

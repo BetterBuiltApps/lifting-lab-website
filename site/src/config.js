@@ -6,8 +6,8 @@
 export const SITE = {
   // Every CTA on the site reads from this one flag.
   released: true,
-  // The brand slogan. Used by the Measured section heading, the footer, and
-  // the page title (index.html), so this is the one place to change it.
+  // The brand slogan. Used by the hero h1 and the footer. The page title
+  // (index.html) now leads with a plain-language descriptor for search.
   slogan: 'Snatch. Clean & Jerk. Measured.',
   pricing: {
     free: { name: 'Free', price: '$0' },

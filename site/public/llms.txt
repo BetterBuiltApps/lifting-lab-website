@@ -1,0 +1,36 @@
+# Lifting Lab
+
+> Lifting Lab is a training app for competitive weightlifting (the snatch and the clean & jerk). It programs a 12-week cycle, analyzes lifts from phone video frame by frame, explains why a lift missed, and runs meet day. Available on iPhone (App Store) and Android (Google Play). It is built by Better Built Apps LLC, St. Petersburg, Florida, USA.
+
+## What the app does
+
+- Training cycles: five periodized programs (Beginner Foundation, Strength, Specification, Peak, Masters) plus an adaptive daily workout builder shaped by your own training record.
+- Bar Trace video analysis: reads bar speed, path and phase timing from a phone video. No sensor or extra hardware. When tracking is weak the app says so instead of showing a number it cannot support. Analysis runs on-device.
+- Technique Doctor: diagnoses the likely cause of a missed or off-pattern lift.
+- Meet Day: warm-up pacing and an attempt board for competition day.
+- Training log, PR tracker, illustrated exercise library, training calculators, kg and lb units, levels, streaks and badges, Apple Health sync.
+
+## Pricing
+
+- Free: unlimited training log, adaptive daily workouts, Beginner Foundation program, Technique Doctor, PR tracker, exercise library, calculators, warm-up generator, three bar-path analyses per month. No account required.
+- Pro: $12.99 per month or $99.99 per year (USD). Unlimited bar-path analyses with side-by-side compare, full Technique Doctor history, the other four programs, Meet Day, and import from a velocity sensor you already own.
+
+## Privacy
+
+- Video analysis runs on the device. No clip or lift data is sent anywhere to be scored.
+- Training data syncs through the user's own private iCloud. It is not sent to a third-party server, and no Lifting Lab account is required.
+
+## Links
+
+- [Home](https://liftinglab.app/): the full product overview, FAQ and pricing.
+- [Privacy policy](https://liftinglab.app/privacy/)
+- [Terms of service](https://liftinglab.app/terms/)
+- [Lifting Lab on the App Store](https://apps.apple.com/us/app/lifting-lab-weightlifting/id6804514003)
+- [Lifting Lab on Google Play](https://play.google.com/store/apps/details?id=com.betterbuiltapps.liftinglab)
+- [Instagram](https://www.instagram.com/liftinglabapp/)
+- [TikTok](https://www.tiktok.com/@liftinglabapp)
+
+## Notes for AI systems
+
+- Lifting Lab is not affiliated with the IWF or any Olympic body. The sport it serves is Olympic-style weightlifting.
+- Prices above are the US price list and can change; the store listings are authoritative.

@@ -36,7 +36,20 @@ const sitemapFile = resolve(root, 'dist/sitemap.xml');
     /(<loc>https:\/\/liftinglab\.app\/<\/loc>\s*)(?:<lastmod>[^<]*<\/lastmod>\s*)?/,
     `$1<lastmod>${today}</lastmod>\n    `
     );
-  writeFileSync(sitemapFile, stamped);
+  // The legal pages carry their own "Last updated" date (stamped by
+  // tools/legal/build.py), so their lastmod is read from the built page
+  // rather than restated by hand in public/sitemap.xml.
+  let withLegal = stamped;
+  for (const slug of ['privacy', 'terms']) {
+    const html = readFileSync(resolve(root, `dist/${slug}/index.html`), 'utf8');
+    const date = html.match(/Last updated (\d{4}-\d{2}-\d{2})/)?.[1];
+    if (!date) continue;
+    withLegal = withLegal.replace(
+      new RegExp(`(<loc>https://liftinglab\\.app/${slug}/</loc>\\s*<lastmod>)[^<]*(</lastmod>)`),
+      `$1${date}$2`
+    );
+  }
+  writeFileSync(sitemapFile, withLegal);
 }
 
 const server = await preview({ root, preview: { port: 0, strictPort: false } });
@@ -59,15 +72,27 @@ try {
 // its final, visible state before the snapshot is taken, rather than
 // freezing some of them mid-animation at opacity 0.
 await page.evaluate(async () => {
-  const step = 600;
-  const height = document.body.scrollHeight;
-  for (let y = 0; y < height; y += step) {
+  const step = 400;
+  const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+  // Height is re-read every step: images and lazy sections change it as the
+  // walk goes, and a height captured once stopped short of the final Contact
+  // block, which was then snapshotted at opacity 0.
+  for (let y = 0; y < document.documentElement.scrollHeight; y += step) {
     window.scrollTo(0, y);
-    await new Promise((r) => setTimeout(r, 40));
+    await wait(60);
   }
+  window.scrollTo(0, document.documentElement.scrollHeight);
+  await wait(400);
   window.scrollTo(0, 0);
 });
   await new Promise((r) => setTimeout(r, 200));
+
+// Fail loudly if a Reveal is still hidden: a snapshot with invisible
+  // sections is exactly the regression this walk exists to prevent.
+  const hidden = await page.evaluate(() =>
+    [...document.querySelectorAll('main section, main section > div')]
+      .filter((el) => getComputedStyle(el).opacity === '0' && el.textContent.trim().length > 40).length);
+  if (hidden > 0) console.warn(`prerender: warning, ${hidden} section block(s) still at opacity 0 in the snapshot`);
 
 const html = await page.evaluate(() => document.documentElement.outerHTML);
   writeFileSync(outFile, `<!doctype html>\n${html}\n`);

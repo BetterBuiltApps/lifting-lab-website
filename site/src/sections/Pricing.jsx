@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, SectionLabel, Icon } from '../design-system';
+import { Card, Icon } from '../design-system';
 import { siteWrap, SiteHead, AppStoreButton } from './Chrome';
 import { SITE } from '../config';
 import { asset } from '../lib/asset';
@@ -43,20 +43,23 @@ export function Pricing() {
               background: 'var(--bg)', display: 'grid', gap: 14, alignContent: 'start',
               border: tier.highlight ? 'var(--border-accent-1)' : 'none',
             }}>
-              <SectionLabel tone={tier.highlight ? 'amber' : 'secondary'}>{tier.t}</SectionLabel>
+              <h3 style={{
+                margin: 0, font: 'var(--type-label)', letterSpacing: 'var(--tracking-label)',
+                textTransform: 'uppercase', color: tier.highlight ? 'var(--amber)' : 'var(--text-secondary)',
+              }}>{tier.t}</h3>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, flexWrap: 'wrap' }}>
                 <span style={{ font: 'var(--type-title)', fontSize: 34, fontWeight: 'var(--weight-extrabold)', color: tier.highlight ? 'var(--amber)' : 'var(--text-primary)' }}>{tier.price}</span>
               </div>
               {tier.sub && <div style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>{tier.sub}</div>}
               <div style={{ font: 'var(--type-subheadline)', color: 'var(--text-secondary)', fontWeight: 600 }}>{tier.note}</div>
-              <div style={{ display: 'grid', gap: 8, marginTop: 4 }}>
+              <ul style={{ display: 'grid', gap: 8, marginTop: 4, padding: 0, listStyle: 'none' }}>
                 {tier.items.map((i) => (
-                  <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
+                  <li key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                     <Icon name="check" size={16} color={tier.highlight ? 'var(--amber)' : 'var(--make)'} style={{ marginTop: 3, flexShrink: 0 }} />
                     <span style={{ font: 'var(--type-subheadline)', color: 'var(--text-secondary)' }}>{i}</span>
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </Card>
           ))}
         </div>

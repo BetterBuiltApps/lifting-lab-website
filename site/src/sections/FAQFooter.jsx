@@ -58,8 +58,6 @@ function FAQItem({ q, a }) {
           old mount/unmount, but the text stays in the DOM either way. */}
       <motion.div
         id={`${id}-panel`}
-        role="region"
-        aria-labelledby={`${id}-trigger`}
         initial={false}
         animate={{ height: open ? 'auto' : 0, opacity: open ? 1 : 0 }}
         transition={{ duration, ease: EASE.inOut }}
@@ -131,7 +129,7 @@ export function SiteFooter() {
         <nav aria-label="Legal" style={{ display: 'flex', gap: 22, flexWrap: 'wrap', justifyContent: 'center' }}>
           {[['Privacy', SITE.links.privacy], ['Terms', SITE.links.terms]]
             .filter(([, href]) => href)
-            .map(([label, href]) => <a key={label} href={href}>{label}</a>)}
+            .map(([label, href]) => <a key={label} href={href} style={{ display: 'inline-flex', alignItems: 'center', minHeight: 44 }}>{label}</a>)}
         </nav>
         <p style={{ margin: 0, maxWidth: '68ch', font: 'var(--type-caption)', color: 'var(--text-tertiary)' }}>
           Built for competitive weightlifting. Sinclair coefficients are the official 2021 to 2024 IWF values.

@@ -48,10 +48,17 @@ export function LightboxProvider({ children }) {
     if (!image) return undefined;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
+    // The dialog is portalled to <body>, so making #root inert takes the whole
+    // page behind it out of the tab order and the accessibility tree: focus
+    // cannot leave the dialog (WCAG 2.4.3) and a screen reader cannot wander
+    // behind it.
+    const appRoot = document.getElementById('root');
+    appRoot?.setAttribute('inert', '');
     const onKeyDown = (e) => { if (e.key === 'Escape') close(); };
     window.addEventListener('keydown', onKeyDown);
     return () => {
       document.body.style.overflow = previousOverflow;
+      appRoot?.removeAttribute('inert');
       window.removeEventListener('keydown', onKeyDown);
     };
   }, [image, close]);

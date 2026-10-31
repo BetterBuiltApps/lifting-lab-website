@@ -1,6 +1,5 @@
 import React from 'react';
 import { siteWrap, SiteHead } from './Chrome';
-import { SITE } from '../config';
 import { asset } from '../lib/asset';
 import { Reveal } from '../lib/Reveal';
 
@@ -117,7 +116,7 @@ export function Measured() {
       <div style={siteWrap}>
         <Reveal>
           <SiteHead
-            title={SITE.slogan}
+            title="Film it. Measure it. Fix it."
             body="Three short walkthroughs, with sound and captions. Film a lift and get a path score. Miss one and get the cause and the fix. Plan meet day one attempt at a time."
           />
         </Reveal>

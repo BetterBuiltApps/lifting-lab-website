@@ -18,14 +18,27 @@ const NAV_LINKS = [['The cycle', '#cycle'], ['How it adapts', '#engine'], ['Ever
 export function SiteNav() {
   const [menuOpen, setMenuOpen] = React.useState(false);
   const prefersReduced = useReducedMotion();
+  const toggleRef = React.useRef(null);
+  // Escape closes the drawer and hands focus back to the toggle that opened it.
+  React.useEffect(() => {
+    if (!menuOpen) return undefined;
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') { setMenuOpen(false); toggleRef.current?.focus(); }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [menuOpen]);
   return (
-    <nav style={{
+    <header style={{
       position: 'sticky', top: 0, zIndex: 40,
       background: 'rgba(26,26,26,0.82)', backdropFilter: 'blur(20px)',
       borderBottom: 'var(--border-hairline-1)',
     }}>
+    <nav aria-label="Primary">
       <div style={{ ...siteWrap, display: 'flex', alignItems: 'center', gap: 28, height: 68 }}>
-        <img src={asset('assets/logo.svg')} alt="Lifting Lab" style={{ height: 34 }} />
+        <a href="#main" aria-label="Lifting Lab, back to top" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' }); }} style={{ display: 'inline-flex' }}>
+          <img src={asset('assets/logo.svg')} alt="" style={{ height: 34 }} />
+        </a>
         <span style={{ flex: 1 }} />
         <div className="site-nav-links">
           {NAV_LINKS.map(([l, h]) => (
@@ -42,16 +55,21 @@ export function SiteNav() {
             `.site-nav-cta { display: none }` on the button itself did nothing.
             The wrapper has no inline style, so the breakpoint just works. */}
         <span className="site-nav-cta">
-          <Button variant="outline" size="small" onClick={() => {
+          {/* A real link, so the pricing anchor is crawlable and works without
+              JS; the click handler only adds the nav-height offset. */}
+          <Button as="a" variant="outline" size="small" href="#pricing" onClick={(e) => {
             const el = document.getElementById('pricing');
-            if (el) window.scrollTo({ top: el.offsetTop - 88, behavior: 'smooth' });
+            if (!el) return;
+            e.preventDefault();
+            window.scrollTo({ top: el.offsetTop - 88, behavior: prefersReduced ? 'auto' : 'smooth' });
           }}>
             Get Lifting Lab
           </Button>
         </span>
         <button
+          ref={toggleRef}
           onClick={() => setMenuOpen((v) => !v)}
-          aria-label="Menu" aria-expanded={menuOpen}
+          aria-label="Menu" aria-expanded={menuOpen} aria-controls="site-nav-drawer"
           className="site-nav-toggle"
         >
           <Icon name={menuOpen ? 'x' : 'menu'} size={24} color="var(--text-primary)" />
@@ -60,6 +78,7 @@ export function SiteNav() {
       <AnimatePresence initial={false}>
         {menuOpen && (
           <motion.div
+            id="site-nav-drawer"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -81,6 +100,7 @@ export function SiteNav() {
         )}
       </AnimatePresence>
     </nav>
+    </header>
   );
 }
 

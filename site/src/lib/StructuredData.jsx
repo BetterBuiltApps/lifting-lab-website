@@ -2,7 +2,7 @@ import React from 'react';
 import { SITE } from '../config';
 import { FAQ_ITEMS } from '../sections/FAQFooter';
 
-/* Renders three JSON-LD blocks. Plain <script> tags in the render tree
+/* Renders four JSON-LD blocks. Plain <script> tags in the render tree
    rather than a head-manipulation effect, so they exist on first paint and
    flow straight into the build's prerendered snapshot (scripts/prerender.mjs)
    for crawlers that never run the JS at all.
@@ -36,8 +36,21 @@ export function StructuredData() {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: 'Lifting Lab',
+    '@id': 'https://liftinglab.app/#app',
     applicationCategory: 'HealthApplication',
-    operatingSystem: 'iOS',
+    applicationSubCategory: 'Weightlifting training',
+    // Android is live on Google Play (SITE.android.released).
+    operatingSystem: SITE.android.released ? 'iOS, Android' : 'iOS',
+    image: 'https://liftinglab.app/assets/og.png',
+    publisher: { '@id': 'https://liftinglab.app/#org' },
+    featureList: [
+      '12-week and peaking training cycles',
+      'Frame-by-frame bar-path video analysis',
+      'Technique Doctor diagnosis of missed lifts',
+      'Adaptive daily workouts',
+      'Meet Day warm-up pacing and attempt board',
+      'Apple Health sync',
+    ],
     description: 'Lifting Lab programs your cycle, analyzes your lifts frame by frame, tells you why it missed, and gets you through meet day. Built for one sport: the snatch and the clean & jerk.',
     url: 'https://liftinglab.app/',
     // Same reasoning as AppStoreButton (Chrome.jsx): don't tell Google there
@@ -45,9 +58,12 @@ export function StructuredData() {
     // yet. Google can surface `offers` as a price rich result, which would
     // be as misleading pre-release as showing the real download badge.
     ...(SITE.released && {
+      downloadUrl: SITE.links.appStore,
+      installUrl: SITE.links.appStore,
       offers: [
         { ...priceToOffer(free.price), name: free.name },
-        { ...priceToOffer(pro.monthly), name: pro.name },
+        { ...priceToOffer(pro.monthly), name: `${pro.name} monthly` },
+        { ...priceToOffer(pro.yearly), name: `${pro.name} yearly` },
       ],
     }),
   };
@@ -66,8 +82,12 @@ export function StructuredData() {
   const organization = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': 'https://liftinglab.app/#org',
     name: 'Better Built Apps LLC',
+    alternateName: 'Lifting Lab',
     url: 'https://liftinglab.app/',
+    logo: 'https://liftinglab.app/assets/mark.svg',
+    sameAs: [SITE.links.instagram, SITE.links.tiktok].filter(Boolean),
     address: {
       '@type': 'PostalAddress',
       streetAddress: '7901 4th St N STE 300',
@@ -78,8 +98,19 @@ export function StructuredData() {
     },
   };
 
+  const website = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': 'https://liftinglab.app/#website',
+    name: 'Lifting Lab',
+    url: 'https://liftinglab.app/',
+    publisher: { '@id': 'https://liftinglab.app/#org' },
+    inLanguage: 'en',
+  };
+
   return (
     <>
+      {jsonLd('ld-website', website)}
       {jsonLd('ld-software', softwareApplication)}
       {jsonLd('ld-faq', faqPage)}
       {jsonLd('ld-org', organization)}

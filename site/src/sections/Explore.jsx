@@ -113,7 +113,7 @@ export function Explore() {
                         />
                       )}
                       <span style={{ font: 'var(--type-headline)', fontWeight: 700, color: isActive ? 'var(--text-primary)' : 'var(--text-secondary)' }}>{item.label}</span>
-                      <span style={{ font: 'var(--type-subheadline)', color: 'var(--text-secondary)', ...offscreenUnlessActive(isActive) }}>{item.body}</span>
+                      <span aria-hidden={isActive ? undefined : true} style={{ font: 'var(--type-subheadline)', color: 'var(--text-secondary)', ...offscreenUnlessActive(isActive) }}>{item.body}</span>
                     </button>
                   );
                 })}
@@ -124,6 +124,7 @@ export function Explore() {
             className="explore-shot-col"
             role="tabpanel"
             id="explore-panel"
+            tabIndex={0}
             aria-labelledby={`explore-tab-${current.k}`}
           >
             {/* Plain keyed swap, not an AnimatePresence crossfade: wrapping this
