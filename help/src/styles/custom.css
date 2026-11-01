@@ -28,3 +28,13 @@
   --sl-color-text-invert: #000000;
   --sl-font: 'SF Pro Rounded', ui-rounded, 'Nunito', system-ui, sans-serif;
 }
+
+/* Phone screenshots: keep them phone-sized and centered, not full column width. */
+.sl-markdown-content img {
+  display: block;
+  max-width: min(100%, 300px);
+  height: auto;
+  margin: 1.5rem auto;
+  border-radius: 24px;
+  border: 1px solid var(--sl-color-hairline);
+}

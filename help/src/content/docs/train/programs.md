@@ -37,6 +37,8 @@ To skip a day on purpose, tap **Skip Today** on the Train tab before you start i
 
 If a scheduled day passes without a session, the app asks what to do about it:
 
+![The missed session sheet with three choices: Skip it, Reschedule and Merge into next.](../../../assets/screens/missed-session.png)
+
 - **Skip it:** logged as missed, and the program continues from tomorrow. Good late in a cycle, in a deload week, or when you chose to rest.
 - **Reschedule:** the session moves to today and later sessions shift back a day. Good for a single miss early on.
 - **Merge into next:** a reduced version is added to your next session, so you keep some of the volume without doubling the load.
@@ -58,4 +60,4 @@ When a program ends, Pro members see a report of what it changed:
 
 Ending from inside a workout does not interrupt you with the report. Finished programs keep their report under **Previous Programs** on the Programs list.
 
-<!-- screenshot: Programs list with an active program card -->
+![The Train tab with an active program: a Start Today's Program button, today's session, Skip Today and End Program, and this week's schedule.](../../../assets/screens/train-dashboard.png)
