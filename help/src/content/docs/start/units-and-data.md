@@ -15,7 +15,7 @@ You pick a unit during first-run setup, and you can change it at any time.
 
 1. Open the **Locker** tab.
 2. Open **Settings**.
-3. Find **Units** and choose **Kilograms** or **Pounds**.
+3. Find **Units**, near the top just under **Training**, and choose **Kilograms** or **Pounds**.
 
 Every weight in the app then shows in your chosen unit. That includes the set card, your PRs, your history, and the numbers on screen when you load the bar.
 
