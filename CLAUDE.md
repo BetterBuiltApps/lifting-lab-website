@@ -5,7 +5,7 @@ It markets the Lifting Lab iOS app, which lives in a sibling repo (`../LiftingLa
 
 ## What actually ships
 
-**Only `site/` is built.** `npm run build` in `site/` produces `site/dist`, and
+**Only `site/` and `help/` are built.** `npm run build` in `site/` produces `site/dist`, and
 `.github/workflows/deploy.yml` publishes that on push to `main`.
 
 Everything else at the repo root is design-system source material that the build
@@ -18,6 +18,7 @@ never touches:
 | `guidelines/` | 21 `*.card.html` spec cards. Documentation. |
 | `ui_kits/marketing_site/` | The prototype ancestor of `site/src/sections/`. Superseded. |
 | `ui_kits/ios_app/` | An HTML recreation of the iPhone app. **Read-only.** See below. |
+| `help/` | The how-to guides (Starlight). **Also ships**, at `liftinglab.app/help/`. See below. |
 | `_ds_bundle.js`, `_ds_manifest.json` | Generated dumps. Derived, not authored. |
 
 Editing anything outside `site/` and `tokens/` expecting the site to change is
@@ -109,6 +110,18 @@ the CSS stack prefers ahead of it on Apple devices, does not.
 
 The favicon points at `mark.svg`, not `logo.svg`. The lockup is 3.5:1, so a
 browser fitting it into a 16px box drew the flask about 4px wide.
+
+## The how-to guides (`help/`)
+
+A separate Astro/Starlight build. `deploy.yml` builds it after the site and copies
+`help/dist` into `site/dist/help`, so `base: '/help'` in `help/astro.config.mjs`
+must match. Articles are Markdown with schema-checked frontmatter (`covers`,
+`verified_for`); the app repo's `Scripts/help-drift-check.sh` and `/update-help`
+read them to keep the guides current, so keep those keys honest. Never rename an
+article slug: the apps link to them. Same writing rules as everywhere (no dashes,
+only what a Release build ships, Pro marked). Its dark theme in
+`help/src/styles/custom.css` mirrors `tokens/`; change `tokens/` first.
+`impeccable detect` does not scan `help/`. See `help/README.md`.
 
 ## Regenerating the app screenshots
 
