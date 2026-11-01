@@ -3,7 +3,6 @@ title: What's new in Lifting Lab
 description: Release notes for each version of Lifting Lab that has shipped.
 covers:
   - Docs/WHATS_NEW.md
-  - LiftingLab/App/Brand.swift
 verified_for: "1.4"
 ---
 

@@ -3,9 +3,9 @@ title: Film a lift and read your bar path
 description: Record or import a clip, mark the plate, and read the bar path Lifting Lab traces for you.
 covers:
   - Docs/FEATURES.md#Tab 2, Bar Trace
-  - LiftingLab/Features/BarPath/BarPathView.swift
+  - LiftingLab/Features/BarPath/BarPathHomeView.swift
   - LiftingLab/Features/BarPath/DelayedReplayView.swift
-  - LiftingLab/Features/BarPath/ShareClipView.swift
+  - LiftingLab/Features/BarPath/Share/ShareClipView.swift
 verified_for: "1.4"
 ---
 

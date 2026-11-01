@@ -4,7 +4,7 @@ description: Where to find your profile, XP and badges, settings, Apple Health, 
 covers:
   - Docs/FEATURES.md#Tab 4, Locker
   - LiftingLab/Features/Me/SettingsView.swift
-  - LiftingLab/Features/Me/PlayerProgressView.swift
+  - LiftingLab/Features/Me/Progress/PlayerProgressView.swift
 verified_for: "1.4"
 ---
 
