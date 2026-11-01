@@ -33,7 +33,7 @@ Open Settings from the Locker. The main rows are:
 
 - **Training**: rest timer, bar choice, your warm-up ramp, and how custom workouts pick exercises.
 - **Reset Your Numbers**: coming back from illness or injury? Enter what you can lift now and workouts load from that. Your records stay untouched.
-- **Apple Health**: four switches for adapting rest, suggesting readiness, saving workouts and syncing bodyweight.
+- **Apple Health** (Health Connect on Android): four switches for adapting rest, suggesting readiness, saving workouts and syncing bodyweight.
 - **Film Room**: the grading level for technique grades. It never changes the referee lights.
 - **Sounds**, and **Units** for kilograms or pounds.
 - **Data and Privacy**: clip storage, exporting your data as CSV files, the Privacy Policy and Terms.
@@ -56,5 +56,9 @@ The Subscription section shows your plan and lets you view Pro. **Restore Purcha
 Help now lives in Settings. **How-to Guides** opens these articles and needs an internet connection. **Contact Support** opens the support page.
 
 :::tip
-Switching to a new phone? Tap Restore Purchases once you have signed in with the same Apple ID.
+Switching to a new iPhone? Tap Restore Purchases once you have signed in with the same Apple ID.
+:::
+
+:::note[Android]
+On Android, Pro is billed to your Google Play account, and the Subscription screen has a Manage in Google Play button to change or cancel it.
 :::

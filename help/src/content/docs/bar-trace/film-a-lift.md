@@ -27,7 +27,7 @@ Standing too close is the most common problem: the plate looks oversized and the
 ## Record or import a clip
 
 1. Open the Bar Trace tab.
-2. Tap **Record** to film, or **Import** to pick a clip from your photo library.
+2. Tap **Record** to film, or **Import** to pick a clip from your phone's video picker (your photo library on iPhone).
 3. When recording, you can flip between the back and front cameras, pinch to zoom, and use the rotate button if the phone is lying flat or leaning on a plate. The front camera preview looks mirrored, but the saved clip is not.
 
 ## Trim the clip
@@ -44,7 +44,7 @@ If the trace fails, the app takes you back to the circle. Most failures are a ci
 
 ## Read the result
 
-The bar path is traced on your phone using Apple's built-in vision tools. From the top of the result screen down you get:
+The bar path is traced on your phone (on iPhone with Apple's built-in vision tools, on Android with its own on-device analysis). From the top of the result screen down you get:
 
 1. Your video with the traced path.
 2. Whether the lift would count, shown as three referee-style lights (for the snatch, clean, and their variations).

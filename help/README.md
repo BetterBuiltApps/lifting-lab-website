@@ -39,3 +39,11 @@ verified_for: "1.4"
 
 Dark only, amber accent, mirrored from `tokens/colors.css` in `src/styles/custom.css`
 (change `tokens/` first). The theme picker is removed on purpose.
+
+## iPhone and Android
+
+One set of guides covers both apps. Where behavior differs, add a Starlight
+`:::note[Android]` aside (or name both in the sentence), and only state what you
+checked in the Android source (`lifting-lab-android`). The drift check reads the
+iOS app's paths only, so an Android-only change will not be flagged: skim
+`lifting-lab-android` Settings, Data & Privacy and Bar Trace when you verify.

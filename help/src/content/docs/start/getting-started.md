@@ -11,6 +11,8 @@ verified_for: "1.4"
 
 Lifting Lab is a training companion for Olympic weightlifting. It helps you plan a session, log every set, film a lift and trace the bar, and keep track of your records. This page covers the first launch and where things live.
 
+These guides cover Lifting Lab on iPhone and on Android. Where the two differ, a note says so.
+
 ## What you will see the first time
 
 The first time you open the app, a short setup walks you through a few screens. Almost everything is optional, and you can change any answer later in Settings.
