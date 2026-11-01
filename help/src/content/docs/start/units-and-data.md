@@ -33,6 +33,10 @@ Your sessions, sets and records are stored on your device, so the app works with
 
 Bar Trace video clips are handled separately. They save to your photo library either way. You can choose in Data & Privacy whether they also sync to iCloud so your other devices can play them, and the screen shows how much space your clips use.
 
+:::note[Android]
+Android keeps everything on the phone. There is no iCloud sync and no sync setting. Your sessions, records, profile and Bar Trace clips are stored on this device only, clips are copied into the app's private storage, and the app makes no network calls of its own.
+:::
+
 ## Export your data as CSV
 
 You can take your data out as spreadsheet files at any time. Export is free.
