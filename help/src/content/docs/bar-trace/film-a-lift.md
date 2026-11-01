@@ -11,7 +11,7 @@ verified_for: "1.4"
 
 Bar Trace turns a video of your lift into a line showing where the bar travelled, plus a grade and the things worth fixing. You can film inside the app or bring in a clip you already have.
 
-<!-- screenshot: Bar Trace tab with Record and Import buttons -->
+![The Bar Trace tab: Record and Import buttons, a Delayed Replay card, and a list of your past analyses with grades and bar speed.](../../../assets/screens/bar-trace-home.png)
 
 ## Set up the phone
 

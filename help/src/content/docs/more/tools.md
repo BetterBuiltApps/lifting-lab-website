@@ -11,7 +11,7 @@ verified_for: "1.4"
 
 The Tools tab holds quick calculators and planners. They work offline, and weights show in the unit you chose in Settings.
 
-<!-- screenshot: Tools tab with its four groups -->
+![The Tools tab, with tools grouped under Prep, Diagnose, Calculate and Compete.](../../../assets/screens/tools-hub.png)
 
 ## What is in there
 

@@ -57,7 +57,7 @@ Press Save as routine to keep a draft you like. It appears under Routines in My 
 
 Tap **Send It** to begin. The workout opens in the live session screen, where you log each set.
 
-<!-- screenshot: workout builder draft with blocks and Send It button -->
+![A workout draft: four blocks with their share of the session, an Add block button, Volume and Intensity sliders, and the Send It button.](../../../assets/screens/workout-builder.png)
 
 :::note
 Settings has an Exercise variety option under Custom Workouts. Focused sticks to a short list of proven lifts, Varied (the default) uses any movement that does the same job, and Wide reaches into lighter technique and position work.

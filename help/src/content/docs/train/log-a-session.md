@@ -17,6 +17,10 @@ Open the **Train** tab. Whatever is waiting for you sits near the top.
 - **A session you left open.** It appears as a row saying which workout, how far in you were, and how long ago. Tap it to go back in.
 - **Something new.** Tap **Build** (the plus in the middle of the tab bar), then **Build My Workout** for a session made around how you feel today.
 
+![The Check In sheet: Fresh, Normal, Tired and Smoked, with Tired easing today's weights by 5 percent and Smoked by 10 percent.](../../../assets/screens/check-in.png)
+
+![The Train tab with a paused session: a Back Under the Bar row showing the workout and how many sets are logged.](../../../assets/screens/resume-session.png)
+
 Leaving a session never loses a set. Backing out just pauses it, and every set you logged is already saved.
 
 ## The set card
@@ -40,7 +44,7 @@ Once you log a set, the rest timer starts. By default it counts up so you can se
 
 ## The Accessibility view
 
-If you prop your phone on the floor, or you simply want bigger controls, turn on the Accessibility view. Tap the text-size button in the session's top corner, or go to **Settings > Accessibility**. The weight, reps and set label become very large, white on black. **Made** and **Miss** grow into huge buttons, and gray controls get a clear outline. You can still type or step the weight and set the reps.
+If you prop your phone on the floor, or you simply want bigger controls, turn on the Accessibility view. Tap the **A** in the session's top corner, or go to **Settings > Accessibility**. The weight, reps and set label become very large, white on black. **Made** and **Miss** grow into huge buttons, and gray controls get a clear outline. You can still type or step the weight and set the reps.
 
 :::tip
 Switching the view on and off mid-session never changes your logged sets.
@@ -52,4 +56,4 @@ When every set is done, tap **Finish Session**. You can end early with **Cut It 
 
 Changed your mind about a workout? The finish menu also offers **Discard Workout**, which asks before deleting.
 
-<!-- screenshot: set card with Made and Miss -->
+![The set card: the exercise name, the weight in large type with the reps, a bar loading diagram, a Reps done stepper, and Made and Miss buttons.](../../../assets/screens/set-card.png)

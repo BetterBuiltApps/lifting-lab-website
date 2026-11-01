@@ -10,7 +10,7 @@ verified_for: "1.4"
 
 The Locker tab is about you: who you are as a lifter, how you are progressing, and how the app behaves.
 
-<!-- screenshot: Locker tab header -->
+![The Locker tab: your profile card, level and XP, Sinclair, Total and ratio tiles, then My Gyms, Body, Profile and Settings.](../../../assets/screens/locker.png)
 
 ## Your profile and numbers
 
