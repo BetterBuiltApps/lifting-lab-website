@@ -23,6 +23,9 @@ export const SITE = {
     // documents existed.
     //
     // The privacy URL is the one App Store review asks for.
+    // The how-to guides: a separate Astro build that deploy.yml copies into
+    // dist/help (see help/README.md).
+    help: '/help/',
     privacy: '/privacy/',
     terms: '/terms/',
     instagram: 'https://www.instagram.com/liftinglabapp/',
