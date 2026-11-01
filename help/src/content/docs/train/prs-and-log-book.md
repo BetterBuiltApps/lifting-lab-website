@@ -44,9 +44,13 @@ The Log Book is a newest-first timeline grouped by month. It holds your sessions
 - Use the notes button to write a reflection. After 28 days the app suggests taking stock.
 - To delete a workout, press and hold its row, or use the menu on its detail screen. You are asked to confirm. A PR you set in that session, your Apple Health workout and any bar-path clip are kept.
 
+:::note[Android]
+Press and hold works the same on Android: the menu on a Log Book row offers share and export, and Delete Workout.
+:::
+
 Use the menu at the top to export your history, or your PRs, stats and history, as CSV files.
 
-<!-- screenshot: Log Book list with calendar toggle -->
+![The Log Book: a List and Calendar switch, a Trends row, and your sessions newest first with sets completed, time and total weight.](../../../assets/screens/log-book.png)
 
 ## Import bar-speed data (Pro)
 
