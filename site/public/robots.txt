@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://liftinglab.app/sitemap.xml
+Sitemap: https://liftinglab.app/help/sitemap-index.xml

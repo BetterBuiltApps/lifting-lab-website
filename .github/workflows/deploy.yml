@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - "site/**"
+      # The how-to guides are a separate Astro build, copied into site/dist/help.
+      - "help/**"
       # site/src/styles.css @imports these, so a token edit changes the built
       # CSS without touching anything under site/. Without this line the deploy
       # silently never fires for a colour or type change.
@@ -50,13 +52,27 @@ jobs:
           # someone adds a tool to the wrong job.
           node-version: 22
           cache: npm
-          cache-dependency-path: site/package-lock.json
+          cache-dependency-path: |
+            site/package-lock.json
+            help/package-lock.json
       - name: Install dependencies
         working-directory: site
         run: npm ci
       - name: Build
         working-directory: site
         run: npm run build
+      # The guides are served at liftinglab.app/help/ (astro base: /help), so
+      # their build output is copied under the site's dist after the site build.
+      - name: Install help dependencies
+        working-directory: help
+        run: npm ci
+      - name: Build help
+        working-directory: help
+        run: npm run build
+      - name: Add help to the site
+        run: |
+          mkdir -p site/dist/help
+          cp -R help/dist/. site/dist/help/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

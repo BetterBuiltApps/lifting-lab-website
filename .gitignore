@@ -5,3 +5,7 @@ site/dist/
 # The real lockfile is site/package-lock.json. A root one is a stub from before
 # site/ became the only npm workspace, nothing installs from the repo root.
 /package-lock.json
+
+# Help site (Astro/Starlight) build output
+help/dist/
+help/.astro/
