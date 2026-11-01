@@ -59,6 +59,12 @@ Tap **Send It** to begin. The workout opens in the live session screen, where yo
 
 ![A workout draft: four blocks with their share of the session, an Add block button, Volume and Intensity sliders, and the Send It button.](../../../assets/screens/workout-builder.png)
 
+<video controls muted playsinline preload="metadata" poster="/help/videos/build-a-workout-poster.png" width="300" aria-describedby="build-a-workout-desc">
+  <source src="/help/videos/build-a-workout.mp4" type="video/mp4">
+</video>
+
+<p id="build-a-workout-desc"><em>Video, 12 seconds, no sound: tap Build, choose Build My Workout, answer the check-in and tap Load It Up. The draft opens with its blocks, ready to adjust.</em></p>
+
 :::note
 Settings has an Exercise variety option under Custom Workouts. Focused sticks to a short list of proven lifts, Varied (the default) uses any movement that does the same job, and Wide reaches into lighter technique and position work.
 :::

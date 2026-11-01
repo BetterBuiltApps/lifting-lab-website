@@ -50,7 +50,7 @@ Press and hold works the same on Android: the menu on a Log Book row offers shar
 
 Use the menu at the top to export your history, or your PRs, stats and history, as CSV files.
 
-<!-- screenshot: Log Book list with calendar toggle -->
+![The Log Book: a List and Calendar switch, a Trends row, and your sessions newest first with sets completed, time and total weight.](../../../assets/screens/log-book.png)
 
 ## Import bar-speed data (Pro)
 

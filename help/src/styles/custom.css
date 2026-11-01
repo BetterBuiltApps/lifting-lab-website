@@ -38,3 +38,20 @@
   border-radius: 24px;
   border: 1px solid var(--sl-color-hairline);
 }
+
+/* Short silent task clips, sized like the phone screenshots. */
+.sl-markdown-content video {
+  display: block;
+  max-width: min(100%, 300px);
+  height: auto;
+  margin: 1.5rem auto 0.5rem;
+  border-radius: 24px;
+  border: 1px solid var(--sl-color-hairline);
+}
+.sl-markdown-content video + p {
+  text-align: center;
+  font-size: var(--sl-text-sm);
+  color: var(--sl-color-gray-3);
+  max-width: 36ch;
+  margin: 0 auto 1.5rem;
+}

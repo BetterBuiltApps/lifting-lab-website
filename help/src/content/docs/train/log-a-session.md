@@ -57,3 +57,9 @@ When every set is done, tap **Finish Session**. You can end early with **Cut It 
 Changed your mind about a workout? The finish menu also offers **Discard Workout**, which asks before deleting.
 
 ![The set card: the exercise name, the weight in large type with the reps, a bar loading diagram, a Reps done stepper, and Made and Miss buttons.](../../../assets/screens/set-card.png)
+
+<video controls muted playsinline preload="metadata" poster="/help/videos/log-a-set-poster.png" width="300" aria-describedby="log-a-set-desc">
+  <source src="/help/videos/log-a-set.mp4" type="video/mp4">
+</video>
+
+<p id="log-a-set-desc"><em>Video, 12 seconds, no sound: from the session list, open an exercise and tap Made. The rest timer starts and the next warm-up set loads.</em></p>
