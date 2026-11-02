@@ -17,7 +17,7 @@ A program is a multi-week plan with every session laid out for you. Use one when
 1. Tap the **Build** button, then **Start a Program**.
 2. Browse the list. Each card shows the number of weeks and the type of training.
 3. Open one to preview its weeks and days.
-4. Start it, and choose a start date if asked.
+4. Tap **Start This Program**, then **Start Today**. The program begins today. If you already have a program running, the app asks before it abandons that one, and the sessions you finished stay in your Log Book.
 
 Beginner Foundation is free. The other programs are Pro. Pro programs include Three-Day Simple, Youth Technique, Squat Volume, Weight Gain and Daily Max, along with the longer strength, specification, competition and masters cycles.
 
