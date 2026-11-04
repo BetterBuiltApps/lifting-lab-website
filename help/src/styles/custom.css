@@ -1,0 +1,57 @@
+/* Brand tokens, mirrored from tokens/colors.css (which mirrors Theme.swift).
+   Help is a separate build, so the values are repeated here instead of
+   @imported; change tokens/ first, then this file. */
+:root,
+:root[data-theme='light'],
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --sl-color-bg: #1a1a1a;                 /* --bg */
+  --sl-color-bg-nav: #1a1a1a;
+  --sl-color-bg-sidebar: #1a1a1a;
+  --sl-color-bg-inline-code: #2c2c2e;     /* --surface-elevated */
+  --sl-color-hairline: rgba(255, 255, 255, 0.08);
+  --sl-color-hairline-light: rgba(255, 255, 255, 0.08);
+  --sl-color-hairline-shade: rgba(255, 255, 255, 0.08);
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: #ffffff;
+  --sl-color-gray-2: rgba(255, 255, 255, 0.8);
+  --sl-color-gray-3: rgba(255, 255, 255, 0.6);
+  --sl-color-gray-4: rgba(255, 255, 255, 0.5);
+  --sl-color-gray-5: #2c2c2e;
+  --sl-color-gray-6: #232323;             /* --surface */
+  --sl-color-black: #1a1a1a;
+  /* Amber is an accent, never a fill behind amber text. */
+  --sl-color-accent-low: rgba(245, 166, 35, 0.16);
+  --sl-color-accent: #f5a623;             /* --amber */
+  --sl-color-accent-high: #ffc74d;        /* --amber-light */
+  --sl-color-text-accent: #f5a623;
+  --sl-color-text-invert: #000000;
+  --sl-font: 'SF Pro Rounded', ui-rounded, 'Nunito', system-ui, sans-serif;
+}
+
+/* Phone screenshots: keep them phone-sized and centered, not full column width. */
+.sl-markdown-content img {
+  display: block;
+  max-width: min(100%, 300px);
+  height: auto;
+  margin: 1.5rem auto;
+  border-radius: 24px;
+  border: 1px solid var(--sl-color-hairline);
+}
+
+/* Short silent task clips, sized like the phone screenshots. */
+.sl-markdown-content video {
+  display: block;
+  max-width: min(100%, 300px);
+  height: auto;
+  margin: 1.5rem auto 0.5rem;
+  border-radius: 24px;
+  border: 1px solid var(--sl-color-hairline);
+}
+.sl-markdown-content video + p {
+  text-align: center;
+  font-size: var(--sl-text-sm);
+  color: var(--sl-color-gray-3);
+  max-width: 36ch;
+  margin: 0 auto 1.5rem;
+}

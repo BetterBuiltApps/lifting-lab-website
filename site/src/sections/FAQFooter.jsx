@@ -127,7 +127,7 @@ export function SiteFooter() {
             ))}
         </nav>
         <nav aria-label="Legal" style={{ display: 'flex', gap: 22, flexWrap: 'wrap', justifyContent: 'center' }}>
-          {[['Privacy', SITE.links.privacy], ['Terms', SITE.links.terms]]
+          {[['Help', SITE.links.help], ['Privacy', SITE.links.privacy], ['Terms', SITE.links.terms]]
             .filter(([, href]) => href)
             .map(([label, href]) => <a key={label} href={href} style={{ display: 'inline-flex', alignItems: 'center', minHeight: 44 }}>{label}</a>)}
         </nav>
