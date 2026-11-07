@@ -6,6 +6,25 @@ covers:
   - LiftingLab/Features/BarPath/BarPathHomeView.swift
   - LiftingLab/Features/BarPath/DelayedReplayView.swift
   - LiftingLab/Features/BarPath/Share/ShareClipView.swift
+  - LiftingLab/Features/BarPath/CameraPlacementGuide.swift
+  - LiftingLab/Features/BarPath/ClipTrimView.swift
+  - LiftingLab/Features/BarPath/PlateSeedView.swift
+  - LiftingLab/Features/BarPath/CaptureResultView.swift
+  - LiftingLab/Features/BarPath/BarPathPlayerView.swift
+  - LiftingLab/Features/BarPath/JudgingLightsCard.swift
+  - LiftingLab/Features/BarPath/ScoreRingCard.swift
+  - LiftingLab/Features/BarPath/TechniqueFindingsCard.swift
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/barpath/ui/BarTraceHomeScreen.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/barpath/ui/CameraPlacementGuide.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/barpath/ui/CameraCaptureScreen.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/barpath/ui/ClipTrimScreen.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/barpath/ui/PlateSeedScreen.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/barpath/ui/CaptureResultScreen.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/barpath/ui/DelayedReplayScreen.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/barpath/player/BarPathPlayerScreen.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/barpath/player/JudgingLightsCard.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/barpath/player/TechniqueFindingsCard.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/barpath/share/ShareClipScreen.kt
 verified_for: "1.4"
 ---
 

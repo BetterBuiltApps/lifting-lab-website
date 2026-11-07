@@ -6,6 +6,8 @@ covers:
   - Docs/FEATURES.md#Active session
   - Docs/FEATURES.md#Pre-session
   - LiftingLab/Features/Train/Session/ActiveSessionView.swift
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/TrainDashboardScreen.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/session/ActiveSessionScreen.kt
 verified_for: "1.4"
 ---
 

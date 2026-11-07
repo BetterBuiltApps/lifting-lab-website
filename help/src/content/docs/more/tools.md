@@ -6,6 +6,9 @@ covers:
   - LiftingLab/Features/Tools/ToolsHubView.swift
   - LiftingLab/Features/Tools/BarbellLoaderView.swift
   - LiftingLab/Features/Tools/OneRMView.swift
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/tools/ToolsHubScreen.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/tools/BarbellLoaderScreen.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/tools/OneRMScreen.kt
 verified_for: "1.4"
 ---
 

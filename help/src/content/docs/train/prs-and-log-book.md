@@ -8,6 +8,9 @@ covers:
   - LiftingLab/Features/Train/PRTracker/PRTrackerView.swift
   - LiftingLab/Features/Train/History/LogBookView.swift
   - LiftingLab/Features/Train/History/VBTImport/VBTImporter.swift
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/prtracker/PRTrackerScreen.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/logbook/LogBookScreen.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/interop/vbt/VBTImportScreen.kt
 verified_for: "1.4"
 ---
 
