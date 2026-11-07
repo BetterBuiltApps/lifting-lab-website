@@ -6,6 +6,7 @@ covers:
   - LiftingLab/Features/Tools/ToolsHubView.swift
   - LiftingLab/Features/Tools/BarbellLoaderView.swift
   - LiftingLab/Features/Tools/OneRMView.swift
+  - LiftingLab/Features/Tools/ToolRoute.swift
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/tools/ToolsHubScreen.kt
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/tools/BarbellLoaderScreen.kt
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/tools/OneRMScreen.kt
@@ -21,6 +22,7 @@ The Tools tab holds quick calculators and planners. They work offline, and weigh
 **Prep**
 
 - **Warm-Up**: a guided warm-up, using your own routine if you have written one.
+- **Complex Builder** (Pro): chain lifts on one bar and check every transition. See [Build and log a complex](/help/train/complexes/).
 
 **Calculate**
 

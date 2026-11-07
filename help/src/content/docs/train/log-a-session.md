@@ -6,6 +6,7 @@ covers:
   - Docs/FEATURES.md#Active session
   - Docs/FEATURES.md#Pre-session
   - LiftingLab/Features/Train/Session/ActiveSessionView.swift
+  - LiftingLab/Features/Train/Complex/ComplexSequenceRow.swift
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/TrainDashboardScreen.kt
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/session/ActiveSessionScreen.kt
 verified_for: "1.4"
@@ -39,6 +40,8 @@ To log a set:
 Some sets ask how hard it felt. Pick the answer that fits, from easy to all out. Rating a working set as all out holds the next sets at that weight instead of climbing.
 
 If you change a weight and make the lift, the remaining sets of that exercise move by the same amount, so you do not have to retype it each time.
+
+A complex (several lifts on one bar) is one set with its lifts listed in order. If you miss one, the app asks **Where did it go?** so you can tap the lift that failed. Complexes cannot be filmed yet. See [Build and log a complex](/help/train/complexes/).
 
 ## Rest timer
 
