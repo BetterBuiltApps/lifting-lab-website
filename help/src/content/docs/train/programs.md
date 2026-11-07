@@ -7,6 +7,9 @@ covers:
   - LiftingLab/Features/Train/Programs/ProgramDetailView.swift
   - LiftingLab/Features/Train/Programs/CycleReportView.swift
   - LiftingLab/Features/Train/MissedSession/MissedSessionView.swift
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/programs/ProgramDetailScreen.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/programs/CycleReportScreen.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/MissedSessionSheet.kt
 verified_for: "1.4"
 ---
 

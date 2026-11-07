@@ -22,13 +22,18 @@ description: One sentence.
 covers:
   - Docs/FEATURES.md#Active session            # informational
   - LiftingLab/Features/Train/Session/ActiveSessionView.swift   # drift-checked
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/session/ActiveSessionScreen.kt   # drift-checked
 verified_for: "1.4"
 ---
 ```
 
-- `covers` is what makes drift detectable. The app repo's
+- `covers` is what makes drift detectable. List every screen the article
+  describes, on both apps: iOS paths from the app repo root, Android paths from the
+  Android repo root with `lifting-lab-android/` in front. The app repo's
   `Scripts/help-drift-check.sh --report` lists articles whose covered code changed
-  since they were verified. `/update-help` (app repo skill) drafts the fixes.
+  since they were verified, uncommitted edits included, and it runs as a Claude Code
+  `Stop` hook there, so drift is raised at the end of the session that caused it.
+  `/update-help` (app repo skill) drafts the fixes.
 - Bump `verified_for` only after checking the article against that app build.
 - **Never rename a slug**: the apps link to these URLs. Add a redirect if one must move.
 - Plain second person, numbered steps, mark paid features "Pro", describe only what
@@ -45,5 +50,6 @@ Dark only, amber accent, mirrored from `tokens/colors.css` in `src/styles/custom
 One set of guides covers both apps. Where behavior differs, add a Starlight
 `:::note[Android]` aside (or name both in the sentence), and only state what you
 checked in the Android source (`lifting-lab-android`). The drift check reads the
-iOS app's paths only, so an Android-only change will not be flagged: skim
-`lifting-lab-android` Settings, Data & Privacy and Bar Trace when you verify.
+Android paths an article lists, so an Android-only change to a covered screen is
+flagged too. It cannot flag a screen nobody listed: when an article starts
+describing another screen, add both apps' files to its `covers`.

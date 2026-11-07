@@ -7,6 +7,9 @@ covers:
   - LiftingLab/Features/Train/Builder/WorkoutBuilderView.swift
   - LiftingLab/Features/Train/Builder/CheckInSheet.swift
   - LiftingLab/Features/Train/Builder/ExercisePickerSheet.swift
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/builder/WorkoutBuilderScreen.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/session/ExercisePickerSheet.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/CreateWorkoutSheet.kt
 verified_for: "1.4"
 ---
 

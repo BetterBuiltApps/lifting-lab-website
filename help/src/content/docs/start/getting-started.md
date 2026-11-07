@@ -6,6 +6,8 @@ covers:
   - Docs/FEATURES.md#The Build tab
   - LiftingLab/Features/Onboarding/OnboardingFlowView.swift
   - LiftingLab/App/RootTabView.swift
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/onboarding/OnboardingFlowScreen.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/RootTabView.kt
 verified_for: "1.4"
 ---
 
