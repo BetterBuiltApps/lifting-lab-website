@@ -7,6 +7,8 @@ covers:
   - Docs/FEATURES.md#VBT import (`Train/History/VBTImport/`)
   - LiftingLab/Features/Train/PRTracker/PRTrackerView.swift
   - LiftingLab/Features/Train/History/LogBookView.swift
+  - LiftingLab/Features/Train/History/SessionDetailView.swift
+  - LiftingLab/Domain/Complex/ComplexHistory.swift
   - LiftingLab/Features/Train/History/VBTImport/VBTImporter.swift
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/prtracker/PRTrackerScreen.kt
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/logbook/LogBookScreen.kt
@@ -31,6 +33,8 @@ A heavier set of 2 to 5 reps is saved as a **rep record**, such as a 2RM or 3RM.
 :::note
 If you reset your numbers in Settings, the board and Total still show your true records. Strength ratios use your current strength, and a line at the top tells you when a reset is active.
 :::
+
+A lift done inside a complex never counts as a record for that lift, because the weight was chosen to suit the complex's weakest part. Each complex keeps its own **Complex best** instead. A session's detail shows it, along with **Save as complex** to keep that complex in your library. See [Build and log a complex](/help/train/complexes/).
 
 ## Make rate
 
