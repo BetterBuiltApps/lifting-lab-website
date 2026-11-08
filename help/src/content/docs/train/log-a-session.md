@@ -65,7 +65,9 @@ A complex (several lifts on one bar) is one set with its lifts listed in order. 
 
 ## Rest timer
 
-Once you log a set, the rest timer starts. By default it counts up so you can see how long you have rested. In **Settings > Training** you can turn on the countdown timer, which signals when rest is up even if your phone is locked. It keeps running if you leave the session and come back.
+Once you log a set, the rest timer starts. By default it counts up so you can see how long you have rested. In **Settings > Training** you can turn on the countdown timer, which signals when rest is up even if your phone is locked. It keeps running if you leave the session and come back, and adding an exercise from the session list does not restart it.
+
+If you turn on **Spoken rest cues** in **Settings > Accessibility**, the phone says when 30 seconds remain and when rest is over. At the end of a rest it names the set you are about to do, numbered the way the card shows it (a warm-up as a warm-up set), at the weight on the bar. After the last set of an exercise it just says rest is over.
 
 <!-- since 1.5 -->
 

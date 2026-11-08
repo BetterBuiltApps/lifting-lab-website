@@ -40,6 +40,8 @@ A record on the board is always a single. When you make a heavier set during a s
 
 The **NEW PR** banner and the **Recent PRs** strip on the Train tab only show a real record: a single heavier than your best on the day it was set. If you add an older or lighter single by hand, it goes into the lift's history but is not celebrated and does not appear as a recent PR.
 
+A record follows the set that earned it. If you step back to a set you just logged and correct the weight or the reps, or log it again as a miss, the record the session saved for it is corrected or removed to match. A record from an earlier session, or one you added by hand, is never touched.
+
 A heavier set of 2 to 5 reps is saved as a **rep record**, such as a 2RM or 3RM. Rep records appear under **Rep records** on the lift's history. They never change your 1RM, your Total, or the weights the app prescribes. The first rep record at a given rep count has to be close to your max, so an ordinary working double is not celebrated.
 
 <!-- /since -->
