@@ -65,6 +65,12 @@ Standing too close is the most common problem: the plate looks oversized and the
 3. When recording, you can flip between the back and front cameras, pinch to zoom, and use the rotate button if the phone is lying flat or leaning on a plate. The front camera preview looks mirrored, but the saved clip is not.
 4. If a call or another interruption ends the recording, a clip that was saved whole is kept and goes on to analysis. If it was not saved, the app says so and you can try again.
 
+A clip you record in the app is also saved to your photo library, so the video survives a new phone or a reinstall. The first time, iPhone asks for permission to add to Photos. Clips you import are already in your library and are not copied again.
+
+:::note[Android]
+Recorded clips are copied to your gallery, in the Movies folder under Lifting Lab, on Android 10 and newer, with no permission prompt. On Android 9 and older the clip stays in the app only, so keep your own copy if you want one.
+:::
+
 ## Trim the clip
 
 If you filmed yourself walking to the bar and back, trim the clip so only the lift is analysed. Drag the two handles to the stretch you want. The video file itself is never cut, so nothing is lost. Skipping the trim analyses the whole clip, which just takes longer.

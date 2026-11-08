@@ -46,7 +46,7 @@ On a new iPhone signed in to the same iCloud account, the app waits a few second
 Bar Trace video clips are handled separately. They save to your photo library either way. You can choose in Data & Privacy whether they also sync to iCloud so your other devices can play them, and the screen shows how much space your clips use.
 
 :::note[Android]
-Android keeps everything on the phone. There is no iCloud sync and no sync setting. Your sessions, records, profile and Bar Trace clips are stored on this device only, clips are copied into the app's private storage, and the app makes no network calls of its own.
+Android keeps everything on the phone. There is no iCloud sync and no sync setting. Your sessions, records, profile and Bar Trace clips are stored on this device only, clips are copied into the app's private storage, and the app makes no network calls of its own. Clips you record in the app are also copied to your gallery (Movies, then Lifting Lab) on Android 10 and newer, so you keep the video if you change phones. What your gallery backs up is up to you; Lifting Lab sends nothing.
 :::
 
 <!-- since 1.5 -->
