@@ -14,6 +14,7 @@ covers:
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/prtracker/PRTrackerScreen.kt
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/logbook/LogBookScreen.kt
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/interop/vbt/VBTImportScreen.kt
+  - LiftingLab/Domain/LoadVelocityProfile.swift
 verified_for: "1.4"
 ---
 
@@ -58,7 +59,7 @@ A lift done inside a complex never counts as a record for that lift, because the
 
 Each lift's history includes **Make rate by intensity**. It shows one bar for each weight band you have attempted (as a share of your best), with the share you made and the number of sets. Bands with fewer than five sets are drawn faint, because a few sets say little. The headline names the heaviest band you make at least four times in five.
 
-Below it you may see **Effort at the same weight**, which shows whether the same loads are feeling harder or easier lately, and **Load and bar speed**, which plots how fast the bar moves at each weight.
+Below it you may see **Effort at the same weight**, which shows whether the same loads are feeling harder or easier lately, and **Load and bar speed**, which plots how fast the bar moves at each weight. It only comments on your last session when the line is a good fit and your weights sit inside the range it covers, so a PR heavier than anything on the line is not called slow. Camera peak speed is a rough measure, so a slow day there is a hint, not proof of fatigue.
 
 <!-- /since -->
 

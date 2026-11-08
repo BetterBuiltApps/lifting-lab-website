@@ -26,6 +26,8 @@ covers:
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/barpath/player/TechniqueFindingsCard.kt
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/barpath/share/ShareClipScreen.kt
   - LiftingLab/Features/BarPath/BarPathCompareView.swift
+  - LiftingLab/Domain/BarPath/MetricBaseline.swift
+  - LiftingLab/Domain/BarPath/JointAngles.swift
 verified_for: "1.4"
 ---
 
@@ -84,7 +86,9 @@ The bar path is traced on your phone (on iPhone with Apple's built-in vision too
 4. What to fix first, with drills that address it.
 5. Speed, phase and position details. Tap a row or drag the graph to jump to that moment in the video.
 
-Once you have two or more lifts of the same type, numbers are compared with your own average. If something could not be read, the card says why.
+Once you have two or more lifts of the same type, numbers are compared with your own average. Speed and bar height depend on the weight, so those are only compared with your clips within about 10% of this weight, and a new Speed PR is judged the same way: a light clip never holds the record for a heavy attempt. Peak speed counts only the upward pull, never a bar you dropped. If something could not be read, the card says why.
+
+The Setup note about your hips and knees only appears for lifts that start from the floor. Hang, block, segment and tall lifts start with a straighter knee by design, so they get no setup note. If the bar leaves the top of the frame before the catch, the app cannot see the catch and leaves it out of the grade rather than giving you credit for it.
 
 <!-- since 1.5 -->
 
