@@ -30,6 +30,12 @@ Standing too close is the most common problem: the plate looks oversized and the
 2. Tap **Record** to film, or **Import** to pick a clip from your phone's video picker (your photo library on iPhone).
 3. When recording, you can flip between the back and front cameras, pinch to zoom, and use the rotate button if the phone is lying flat or leaning on a plate. The front camera preview looks mirrored, but the saved clip is not.
 
+A clip you record in the app is also saved to your photo library, so the video survives a new phone or a reinstall. The first time, iPhone asks for permission to add to Photos. Clips you import are already in your library and are not copied again.
+
+:::note[Android]
+Recorded clips are copied to your gallery, in the Movies folder under Lifting Lab, on Android 10 and newer, with no permission prompt. On Android 9 and older the clip stays in the app only, so keep your own copy if you want one.
+:::
+
 ## Trim the clip
 
 If you filmed yourself walking to the bar and back, trim the clip so only the lift is analysed. Drag the two handles to the stretch you want. The video file itself is never cut, so nothing is lost. Skipping the trim analyses the whole clip, which just takes longer.
@@ -61,9 +67,9 @@ Delayed Replay shows the camera feed 3, 5, 8 or 10 seconds behind. Prop the phon
 ## Share, compare and manage
 
 - **Share** makes a vertical clip with the trace and stats on it.
-- **Compare** overlays two analyses (Pro).
+- **Compare** overlays two analyses (Pro). On a Free plan the Compare button is still there: tap it and Lifting Lab shows what Pro adds and how to get it.
 - **Re-analyze** and **Delete** are in the menu on the result screen.
 
 :::note
-Free accounts can run three analyses a month. Pro removes the limit. A failed trace does not count against it.
+Free accounts can run three analyses a month. Pro removes the limit. A failed trace does not count against it. Once you have used the three, the Bar Trace tab says so and offers **Analyse Without Limits**.
 :::
