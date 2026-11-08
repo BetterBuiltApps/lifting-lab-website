@@ -4,6 +4,7 @@ description: Record or import a clip, mark the plate, and read the bar path Lift
 covers:
   - Docs/FEATURES.md#Tab 2, Bar Trace
   - LiftingLab/Features/BarPath/BarPathHomeView.swift
+  - LiftingLab/Features/BarPath/AnalysisAllowanceGate.swift
   - LiftingLab/Features/BarPath/DelayedReplayView.swift
   - LiftingLab/Features/BarPath/Share/ShareClipView.swift
 verified_for: "1.4"
@@ -65,5 +66,9 @@ Delayed Replay shows the camera feed 3, 5, 8 or 10 seconds behind. Prop the phon
 - **Re-analyze** and **Delete** are in the menu on the result screen.
 
 :::note
-Free accounts can run three analyses a month. Pro removes the limit. A failed trace does not count against it.
+Free accounts can run three analyses a month. Filming a set from inside a workout uses the same three, and once they are gone the app shows what Pro adds instead of opening the camera. Pro removes the limit. A failed trace does not count against it, and re-analyzing a clip you already have is always free.
+:::
+
+:::note[Android]
+Android has no upgrade screen yet, so with this month's analyses used up, filming a set shows a short message saying so instead of opening the camera.
 :::
