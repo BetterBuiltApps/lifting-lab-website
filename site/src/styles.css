@@ -208,8 +208,8 @@ a:hover { color: var(--amber); }
 }
 .watch-foot a { color: var(--text-secondary); text-decoration: underline; }
 @media (max-width: 640px) {
-  .watch-tabs { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; }
-  .watch-tab { flex: 0 0 auto; }
+  /* Wrap and centre: a sideways-scrolling row hides most of the tabs behind a swipe. */
+  .watch-tabs { justify-content: center; }
   .watch-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; justify-items: center; }
 }
 
@@ -617,9 +617,10 @@ a:hover { color: var(--amber); }
     radial-gradient(120% 90% at 18% 30%, rgba(255, 59, 48, 0.09), transparent 62%),
     var(--surface);
 }
-.arc-miss { display: grid; grid-template-columns: minmax(0, 200px) minmax(0, 1fr); gap: clamp(24px, 3.5vw, 52px); }
-.arc-miss-trace { display: grid; gap: 14px; align-content: start; }
-.arc-trace { width: 100%; height: auto; max-width: 180px; aspect-ratio: 180 / 340; }
+.arc-miss { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: clamp(24px, 3.5vw, 52px); }
+/* The legend sits beside the line, not under it: the trace is tall and narrow, so stacking them left a column of empty space. */
+.arc-miss-trace { display: flex; align-items: center; gap: 22px; align-content: start; }
+.arc-trace { flex: 0 0 auto; width: 150px; height: auto; aspect-ratio: 180 / 340; }
 .arc-trace-plumb { stroke: var(--hairline); stroke-width: 1; stroke-dasharray: 3 5; }
 .arc-trace-key { display: grid; gap: 5px; margin: 0; font: var(--type-caption); }
 .arc-trace-key span { display: flex; align-items: center; gap: 8px; color: var(--text-tertiary); }
@@ -703,11 +704,26 @@ a:hover { color: var(--amber); }
   .arc { grid-template-columns: 1fr; gap: 0; }
   .arc-axis { display: none; }
   .arc-miss { grid-template-columns: 1fr; }
-  .arc-trace { max-width: 140px; }
+  .arc-trace { width: 130px; }
+  .arc-miss-trace { justify-content: center; }
   .arc-row { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {
+  /* Phones centre their copy: section heads (SiteHead), the hero text and badges, the arc stations. Variables, not overrides,
+     so the inline styles that read them need no !important. */
+  :root {
+    --head-text: center; --head-align: center;
+    --copy-text: center; --copy-align: center; --copy-justify: center;
+  }
+  .center-sm { text-align: center; }
+  .arc-station-mark { justify-content: center; }
+  .arc-station-title, .arc-lede { margin-inline: auto; text-align: center; }
+  .arc-trace { width: 135px; }
+  .arc-miss-trace { gap: 22px; }
+  .arc-trace-key { font-size: 14px; gap: 8px; }
+  .proof-item { text-align: center; }
+  .watch-foot { text-align: center; margin-inline: auto; }
   .arc-pair { grid-template-columns: 1fr; justify-items: center; }
   /* The arrow points down once the pair stacks, or it points at nothing. */
   .arc-pair-arrow { transform: rotate(90deg); }

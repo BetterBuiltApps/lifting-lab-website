@@ -121,8 +121,9 @@ export function SiteHead({ title, body, center = false, max = 640 }) {
   return (
     <div style={{
       display: 'grid', gap: 14,
-      textAlign: center ? 'center' : 'left',
-      justifyItems: center ? 'center' : 'start',
+      // Left on desktop, centred on phones (--head-text and --head-align are set in styles.css under 640px).
+      textAlign: center ? 'center' : 'var(--head-text, left)',
+      justifyItems: center ? 'center' : 'var(--head-align, start)',
     }}>
       {/* The heading is not capped to `max`: that width is tuned for the
           body paragraph's reading measure, and a heading held to the same

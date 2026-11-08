@@ -30,7 +30,7 @@ export function Engine() {
                   <div key={k}><dt>{k}</dt><dd>{v}</dd></div>
                 ))}
               </dl>
-              <p style={{ margin: 0, font: 'var(--type-subheadline)', color: 'var(--text-secondary)' }}>
+              <p className="center-sm" style={{ margin: 0, font: 'var(--type-subheadline)', color: 'var(--text-secondary)' }}>
                 A rough month never spirals: a floor stops it from easing a session below 70% of normal.
                 Free, from the first session.
               </p>

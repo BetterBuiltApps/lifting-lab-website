@@ -41,7 +41,7 @@ export function Hero() {
             heading and subhead don't, and the same device removed from every
             other section. The real App Store badge is the CTA now, no
             caption needed beside it. */}
-        <div style={{ display: 'grid', gap: 22, justifyItems: 'start', maxWidth: 680 }}>
+        <div style={{ display: 'grid', gap: 22, justifyItems: 'var(--copy-align, start)', textAlign: 'var(--copy-text, left)', maxWidth: 680 }}>
           <h1 style={{
             margin: 0, fontFamily: 'var(--font-display)', fontWeight: 'var(--weight-extrabold)',
             fontSize: 'clamp(44px,5.4vw,59px)', lineHeight: 1.0,
@@ -64,7 +64,7 @@ export function Hero() {
           }}>
             No account. No signup. Free to download.
           </p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap', marginTop: 6 }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'var(--copy-justify, flex-start)', gap: 20, flexWrap: 'wrap', marginTop: 6 }}>
             <AppStoreButton />
             {/* Apple's Works with Apple Health rules: smaller than the main badge, paired with text about the Health
                 feature, one per page. HealthBadge renders nothing on Android. */}
@@ -73,16 +73,17 @@ export function Hero() {
         </div>
 
         <div className="hero-pair">
-          <div style={{ position: 'relative' }}>
+          <div style={{ position: 'relative', width: '100%', display: 'grid', justifyItems: 'center' }}>
             <div style={{
               position: 'absolute', inset: '-8% -8% 20%',
               background: 'radial-gradient(circle, rgba(245,166,35,0.14), transparent 65%)', filter: 'blur(8px)',
             }} />
-            <div style={{ position: 'relative' }}>
+            {/* A percentage-width child inside a shrink-wrapped box collapses and lands off-centre on phones, so this box has the media width itself. */}
+            <div style={{ position: 'relative', width: 'min(100%, var(--media-w))' }}>
               <VideoClip clip={HERO_VIDEO} />
             </div>
           </div>
-          <div>
+          <div style={{ width: '100%', display: 'grid', justifyItems: 'center' }}>
             <StillShot s={still('F3', 1)} priority lcp caption="One grade out of 100, checked against the competition rules" />
           </div>
         </div>
