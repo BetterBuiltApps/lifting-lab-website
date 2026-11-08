@@ -55,7 +55,7 @@ The Tools tab holds quick calculators and planners. They work offline, and weigh
 
 <!-- since 1.5 -->
 
-- **Meet Planner** (Pro): counts down to your meets and works your training blocks backward from them. Opening it does not plan a meet: nothing is saved until you change the name, date, priority or target class.
+- **Meet Planner** (Pro): counts down to your meets and works your training blocks backward from them. Opening it does not plan a meet: nothing is saved until you change the name, date, priority or target class. In the days before a meet, workouts you build drop their volume, use lighter loads in the last two days, and give only recovery work on meet day.
 
 <!-- /since -->
 
