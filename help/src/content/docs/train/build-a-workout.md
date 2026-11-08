@@ -57,6 +57,8 @@ Cards on this screen explain the draft: what the app adjusted from your history,
 ## Change exercises
 
 - **Swap:** tap Swap on an exercise. The closest matches from the same kind of lift appear first, and the list is limited to the equipment you have. The new exercise keeps the sets, and keeps the reps when it is counted the same way. A plank swapped for sit-ups gets the sit-ups' own rep count, and a rowing machine swapped for a run keeps the same number of minutes.
+
+- **Swap:** tap Swap on an exercise. The closest matches from the same kind of lift appear first, and the list is limited to the equipment you have. Sets and reps carry over to the new exercise, but a number measured differently does not: swap a run for a rower, or a plank for sit-ups, and the new exercise starts from its own default.
 - **Add exercise:** use Add exercise at the foot of a block.
 
 <!-- since 1.5 -->
@@ -66,6 +68,8 @@ Cards on this screen explain the draft: what the app adjusted from your history,
 <!-- /since -->
 
 - **Remove a block:** use Remove block.<!-- since 1.5 --> Emptying a block removes it, and the time it frees is shared among the blocks that are left.<!-- /since -->
+
+- **Remove a block:** use Remove block. Emptying a block removes it, and the time it frees is shared among the blocks that are left. Anything you set by hand in those blocks stays: typed percentages, reps and sets, dumbbell choices, Pyramid switches and the order you dragged the blocks into.
 - **Add block:** use Add block to bring in a whole new part of the session.
 
 <!-- since 1.5 -->
@@ -87,6 +91,12 @@ Sliders for volume and intensity scale the whole session. The intensity slider n
 The percentage on a single or a double is the weight you lift: when a snatch single reads 87%, 87% of your snatch is what goes on the bar.
 
 Sliders for volume and intensity scale the whole session. If you gave a time limit, the sets it trimmed stay trimmed when you set a block to Light, Normal or Heavy, or move the volume slider; only what you change grows or shrinks.
+
+Each exercise has steppers for sets and reps. Timed and distance work steps in its own unit: seconds for a hold such as a plank, minutes for a rower, bike or ski machine, and kilometres for a run. Percentage work shows a percent of your record for that lift, and effort-based work shows a target effort rating (RPE, a 1-10 scale of how hard a set feels).
+
+Each loaded exercise also has a **Pyramid** switch. When it is on, the sets climb or descend like a ladder instead of repeating one weight. Low-rep work such as doubles and singles holds its reps and ramps the weight.
+
+Sliders for volume and intensity scale the whole session. The intensity slider sets each percentage from where the slider sits, so sliding it up and back returns the same numbers, and the weights match what a new draft at that setting would give. A percentage you typed moves with the slider from where you typed it.
 
 ## Reshuffle
 
