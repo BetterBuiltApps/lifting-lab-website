@@ -25,6 +25,7 @@ covers:
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/barpath/player/JudgingLightsCard.kt
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/barpath/player/TechniqueFindingsCard.kt
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/barpath/share/ShareClipScreen.kt
+  - LiftingLab/Features/BarPath/BarPathCompareView.swift
 verified_for: "1.4"
 ---
 
@@ -96,7 +97,7 @@ Delayed Replay shows the camera feed 3, 5, 8 or 10 seconds behind. Prop the phon
 ## Share, compare and manage
 
 - **Share** makes a vertical clip with the trace and stats on it.<!-- since 1.5 --> A NEW PR badge is added only when the clip is of a made single, filmed from a logged set, that set your record. A miss, a tie of your best, or a clip imported on its own never carries it.<!-- /since -->
-- **Compare** overlays two analyses (Pro). Once you pick the first clip, only clips of the same exercise are listed, so you can never compare two different lifts.
+- **Compare** overlays two analyses (Pro). Once you pick the first clip, only clips of the same exercise are listed, so you can never compare two different lifts.<!-- since 1.5 --> A change too small to measure is not called better or worse, and when the two lifts were at different weights, bar speed is shown but not judged, because the bar moves slower as the weight goes up.<!-- /since -->
 - **Re-analyze** and **Delete** are in the menu on the result screen.
 
 :::note
