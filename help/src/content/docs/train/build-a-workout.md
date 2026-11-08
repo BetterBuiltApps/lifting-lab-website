@@ -21,6 +21,10 @@ The workout builder is for days when you are not following a program. You answer
 
 If you leave the blocks blank, the app chooses the shape of the session. If you tick blocks, such as Clean & Jerk and Squats, you get exactly those and nothing bolted on. Your choice is remembered for next time.
 
+Tick both Snatch and Clean & Jerk and you get both, snatch first. One of them is the day's main lift and gets the full load for your energy; the other is built a step lighter so two heavy lifts do not stack.
+
+If an injury you logged rules out the full snatch or clean, a strong day gives you the closest lift your injury allows, such as a power snatch, instead of leaving the lift out.
+
 The "Training at" row lets you pick which gym you are in, so the bar, plates and equipment match what you actually have.
 
 ## Read the draft
@@ -31,8 +35,8 @@ Cards on this screen explain the draft: what the app adjusted from your history,
 
 ## Change exercises
 
-- **Swap:** tap Swap on an exercise. The closest matches from the same kind of lift appear first, and the list is limited to the equipment you have.
-- **Add exercise:** use Add exercise at the foot of a block.
+- **Swap:** tap Swap on an exercise. The closest matches from the same kind of lift appear first, and the list is limited to the equipment you have. The new exercise keeps the sets and reps of the one it replaced, and its weight is set for today the same way the app would set it, so swapping in a full clean on a technique day does not jump to a near-maximum.
+- **Add exercise:** use Add exercise at the foot of a block. The weight follows the same rule as a swap.
 - **Remove an exercise:** tap its delete button and confirm.
 - **Remove a block:** use Remove block. Emptying a block removes it, and the time it frees is shared among the blocks that are left.
 - **Add block:** use Add block to bring in a whole new part of the session.
@@ -43,7 +47,7 @@ Each exercise has steppers for sets and reps. Percentage work shows a percent of
 
 Each loaded exercise also has a **Pyramid** switch. When it is on, the sets climb or descend like a ladder instead of repeating one weight. Low-rep work such as doubles and singles holds its reps and ramps the weight.
 
-Sliders for volume and intensity scale the whole session.
+Sliders for volume and intensity scale the whole session. The intensity slider never takes a set above 95% of your record once its reps are counted (80% for a beginner), and moving it back to zero puts every weight back where it started. Pulls and deadlifts written above that line keep their weight unless you lower the slider.
 
 ## Reshuffle
 
