@@ -9,6 +9,13 @@ covers:
 verified_for: "1.4"
 ---
 
+<video controls playsinline preload="none" poster="/help/videos/v2/B2-poster.webp" width="300" aria-describedby="B2-desc">
+  <source src="/help/videos/v2/B2.mp4" type="video/mp4">
+  <track kind="captions" src="/help/videos/v2/B2.vtt" srclang="en" label="English" default>
+</video>
+
+<p id="B2-desc"><em>Video, 23 seconds, with narration and captions. The next set loads. Rest starts. 6 easy to 10 all out. Tag how it failed, or skip the tag.</em></p>
+
 ## Start a session
 
 Open the **Train** tab. Whatever is waiting for you sits near the top.

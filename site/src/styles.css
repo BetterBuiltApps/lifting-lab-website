@@ -169,6 +169,73 @@ a:hover { color: var(--amber); }
   .clip-row { grid-template-columns: minmax(0, 1fr); gap: 36px; }
 }
 
+/* Watch it work: area tabs, a grid of walkthrough videos, and a strip of stills.
+   Tabs are 44px tall (the tap-target minimum); on narrow screens they scroll
+   sideways instead of wrapping into a tall block. */
+.watch-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 36px;
+}
+.watch-tab {
+  min-height: var(--tap-target-min);
+  padding: 0 20px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: transparent;
+  color: var(--text-secondary);
+  font: var(--type-subheadline);
+  cursor: pointer;
+}
+.watch-tab:hover { border-color: rgba(255, 255, 255, 0.28); color: var(--text-primary); }
+.watch-tab[aria-selected='true'] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-fg);
+  font-weight: var(--weight-bold);
+}
+.watch-tab:focus-visible, .watch-still:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.watch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: clamp(20px, 3vw, 44px);
+  align-items: start;
+  justify-items: center;
+  margin-top: 44px;
+}
+.watch-stills-wrap { margin-top: 56px; }
+.watch-stills-title {
+  margin: 0 0 16px;
+  font: var(--type-subheadline);
+  font-weight: var(--weight-bold);
+  color: var(--text-secondary);
+}
+.watch-stills { display: flex; gap: 14px; overflow-x: auto; padding: 4px 4px 18px; }
+.watch-still {
+  flex: 0 0 auto;
+  width: 150px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #000;
+  cursor: pointer;
+}
+.watch-still img { display: block; width: 100%; height: auto; }
+.watch-foot {
+  margin: 40px 0 0;
+  max-width: 640px;
+  font: var(--type-caption);
+  color: var(--text-tertiary);
+}
+.watch-foot a { color: var(--text-secondary); text-decoration: underline; }
+@media (max-width: 640px) {
+  .watch-tabs { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; }
+  .watch-tab { flex: 0 0 auto; }
+  .watch-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+}
+
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

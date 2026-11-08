@@ -13,6 +13,13 @@ verified_for: "1.4"
 
 The PR Tracker holds your records. The Log Book holds everything you have trained.
 
+<video controls playsinline preload="none" poster="/help/videos/v2/G1-poster.webp" width="300" aria-describedby="G1-desc">
+  <source src="/help/videos/v2/G1.mp4" type="video/mp4">
+  <track kind="captions" src="/help/videos/v2/G1.vtt" srclang="en" label="English" default>
+</video>
+
+<p id="G1-desc"><em>Video, 18 seconds, with narration and captions. Snatch plus clean and jerk. Primary and secondary lifts. Your current best, over time.</em></p>
+
 ## The PR Tracker
 
 The tracker shows your main lifts, your Total (calculated for you), your secondary lifts, and a history for each lift with a progress line. A summary of your strength ratios links to the full ratios screen.

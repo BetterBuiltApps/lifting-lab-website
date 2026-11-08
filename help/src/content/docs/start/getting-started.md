@@ -13,6 +13,13 @@ Lifting Lab is a training companion for Olympic weightlifting. It helps you plan
 
 These guides cover Lifting Lab on iPhone and on Android. Where the two differ, a note says so.
 
+<video controls playsinline preload="none" poster="/help/videos/v2/L4-poster.webp" width="300" aria-describedby="L4-desc">
+  <source src="/help/videos/v2/L4.mp4" type="video/mp4">
+  <track kind="captions" src="/help/videos/v2/L4.vtt" srclang="en" label="English" default>
+</video>
+
+<p id="L4-desc"><em>Video, 13 seconds, with narration and captions. Units, bar, experience, current bests. 16 or older, or a guardian agrees.</em></p>
+
 ## What you will see the first time
 
 The first time you open the app, a short setup walks you through a few screens. Almost everything is optional, and you can change any answer later in Settings.

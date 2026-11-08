@@ -13,6 +13,13 @@ Bar Trace turns a video of your lift into a line showing where the bar travelled
 
 ![The Bar Trace tab: Record and Import buttons, a Delayed Replay card, and a list of your past analyses with grades and bar speed.](../../../assets/screens/bar-trace-home.png)
 
+<video controls playsinline preload="none" poster="/help/videos/v2/F1-poster.webp" width="300" aria-describedby="F1-desc">
+  <source src="/help/videos/v2/F1.mp4" type="video/mp4">
+  <track kind="captions" src="/help/videos/v2/F1.vtt" srclang="en" label="English" default>
+</video>
+
+<p id="F1-desc"><em>Video, 32 seconds, with narration and captions. Whole lift in frame, head to feet. Pick a clip from Photos and trim it. It sets the scale and what to track. Your clip stays on your device. Three analyses a month are free.</em></p>
+
 ## Set up the phone
 
 The first time you tap Record or Import, the app shows a short guide. You can reopen it any time from "Where to put the phone".

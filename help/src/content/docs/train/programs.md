@@ -12,6 +12,13 @@ verified_for: "1.4"
 
 A program is a multi-week plan with every session laid out for you. Use one when you want structure instead of deciding each day.
 
+<video controls playsinline preload="none" poster="/help/videos/v2/D1-poster.webp" width="300" aria-describedby="D1-desc">
+  <source src="/help/videos/v2/D1.mp4" type="video/mp4">
+  <track kind="captions" src="/help/videos/v2/D1.vtt" srclang="en" label="English" default>
+</video>
+
+<p id="D1-desc"><em>Video, 22 seconds, with narration and captions. Build, then Start a Program. The rest are marked Pro. 4x2 at 63% shows as 79 kg.</em></p>
+
 ## Start a program
 
 1. Tap the **Build** button, then **Start a Program**.

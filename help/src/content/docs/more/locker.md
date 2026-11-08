@@ -12,6 +12,13 @@ The Locker tab is about you: who you are as a lifter, how you are progressing, a
 
 ![The Locker tab: your profile card, level and XP, Sinclair, Total and ratio tiles, then My Gyms, Body, Profile and Settings.](../../../assets/screens/locker.png)
 
+<video controls playsinline preload="none" poster="/help/videos/v2/K4-poster.webp" width="300" aria-describedby="K4-desc">
+  <source src="/help/videos/v2/K4.mp4" type="video/mp4">
+  <track kind="captions" src="/help/videos/v2/K4.vtt" srclang="en" label="English" default>
+</video>
+
+<p id="K4-desc"><em>Video, 22 seconds, with narration and captions. 275 / 900 XP to level 4. Records, lifts analyzed, sessions and more. Tracked on the same screen.</em></p>
+
 ## Your profile and numbers
 
 The top of the Locker shows your photo, age category, bodyweight and experience, plus your level, XP and streak. Three stats sit underneath: Sinclair, your total, and your clean and jerk to snatch ratio. Tap any of them to open the tool that works it out. That includes a stat showing a dash, where the tool will tell you what is missing.

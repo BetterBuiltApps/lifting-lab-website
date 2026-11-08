@@ -12,6 +12,13 @@ verified_for: "1.4"
 
 The workout builder is for days when you are not following a program. You answer a few questions about how you feel, the app drafts a session, and you change anything you like before you start.
 
+<video controls playsinline preload="none" poster="/help/videos/v2/C1-poster.webp" width="300" aria-describedby="C1-desc">
+  <source src="/help/videos/v2/C1.mp4" type="video/mp4">
+  <track kind="captions" src="/help/videos/v2/C1.vtt" srclang="en" label="English" default>
+</video>
+
+<p id="C1-desc"><em>Video, 34 seconds, with narration and captions. Energy, sore muscles and time. Sore muscles avoided. Sets and time shown. Light, Normal or Heavy. One set at a time. No program needed.</em></p>
+
 ## Start a workout
 
 1. Tap the **Build** button (the plus in the middle of the tab bar).

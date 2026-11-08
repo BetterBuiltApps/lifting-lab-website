@@ -8,6 +8,7 @@ import { Hero } from './sections/Hero';
 import { Arc } from './sections/Arc';
 import { Engine } from './sections/Engine';
 import { Measured } from './sections/Measured';
+import { Watch } from './sections/Watch';
 import { Explore } from './sections/Explore';
 import { Progress } from './sections/Progress';
 import { LogBook } from './sections/LogBook';
@@ -40,6 +41,7 @@ function App() {
         <Arc />
         <Engine />
         <Measured />
+        <Watch />
         <LogBook />
         <Progress />
         <Explore />

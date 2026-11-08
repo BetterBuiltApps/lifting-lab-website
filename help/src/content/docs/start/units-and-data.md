@@ -9,6 +9,13 @@ covers:
 verified_for: "1.4"
 ---
 
+<video controls playsinline preload="none" poster="/help/videos/v2/K10-poster.webp" width="300" aria-describedby="K10-desc">
+  <source src="/help/videos/v2/K10.mp4" type="video/mp4">
+  <track kind="captions" src="/help/videos/v2/K10.vtt" srclang="en" label="English" default>
+</video>
+
+<p id="K10-desc"><em>Video, 14 seconds, with narration and captions. Units, rest timer, grading, sounds.</em></p>
+
 ## Switch between kilograms and pounds
 
 You pick a unit during first-run setup, and you can change it at any time.

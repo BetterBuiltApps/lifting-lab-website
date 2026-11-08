@@ -13,6 +13,13 @@ The Tools tab holds quick calculators and planners. They work offline, and weigh
 
 ![The Tools tab, with tools grouped under Prep, Diagnose, Calculate and Compete.](../../../assets/screens/tools-hub.png)
 
+<video controls playsinline preload="none" poster="/help/videos/v2/I4-poster.webp" width="300" aria-describedby="I4-desc">
+  <source src="/help/videos/v2/I4.mp4" type="video/mp4">
+  <track kind="captions" src="/help/videos/v2/I4.vtt" srclang="en" label="English" default>
+</video>
+
+<p id="I4-desc"><em>Video, 21 seconds, with narration and captions. 100 kg: 25 + 15 per side, exact. 103 kg on a 15 kg bar, exact.</em></p>
+
 ## What is in there
 
 **Prep**
