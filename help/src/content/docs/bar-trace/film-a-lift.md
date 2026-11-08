@@ -29,6 +29,13 @@ covers:
   - LiftingLab/Features/BarPath/BarPathCompareView.swift
   - LiftingLab/Domain/BarPath/MetricBaseline.swift
   - LiftingLab/Domain/BarPath/JointAngles.swift
+  - LiftingLab/Features/BarPath/CameraCaptureView.swift
+  - LiftingLab/Features/BarPath/PlateSeedView.swift
+  - LiftingLab/Features/BarPath/BarPathCompareView.swift
+  - LiftingLab/Features/BarPath/BarPathTrendCard.swift
+  - LiftingLab/Features/BarPath/PhotoLibrarySaver.swift
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/barpath/ui/PlateSeedScreen.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/barpath/ui/CameraCaptureScreen.kt
 verified_for: "1.4"
 ---
 
@@ -71,13 +78,25 @@ A clip you record in the app is also saved to your photo library, so the video s
 Recorded clips are copied to your gallery, in the Movies folder under Lifting Lab, on Android 10 and newer, with no permission prompt. On Android 9 and older the clip stays in the app only, so keep your own copy if you want one.
 :::
 
+While a take is running, the close button is greyed out. Tap Stop first, so the clip is kept and analysed.
+
+:::note
+On iPhone the first recording asks to add the clip to your photo library. If you decline, or a save fails, the app tells you once: your recordings then live only inside Lifting Lab and are left out of iCloud backup, so a new phone will not bring them over. You can allow "Add Photos Only" in Settings. Clips you import already live in your library.
+:::
+
+:::note[Android]
+Android does not copy recordings to the gallery, so there is no photo-library prompt or notice.
+:::
+
 ## Trim the clip
 
 If you filmed yourself walking to the bar and back, trim the clip so only the lift is analysed. Drag the two handles to the stretch you want. The video file itself is never cut, so nothing is lost. Skipping the trim analyses the whole clip, which just takes longer.
 
 ## Mark the plate
 
-Drag the circle over the plate nearest the camera and size it to match. This tells the app what to follow and gives it a sense of scale. The app often suggests a circle for you, so check it sits on the plate and adjust if not.
+Drag the circle over the plate nearest the camera and size it to match. This tells the app what to follow and gives it a sense of scale.
+
+Circle a full-size 450 mm plate, the kind of bumper plate marked 20 kg or 45 lb. The scale for every speed and distance comes from it. A smaller plate, such as a 5 kg or 2.5 kg change plate, would make every figure wrong by about half. If the circle looks too small or too large for a full-size plate in your frame, the app says so over the picture. The app often suggests a circle for you, so check it sits on the plate and adjust if not.
 
 :::tip
 If the trace fails, the app takes you back to the circle. Most failures are a circle that sat slightly off the plate, so nudge it and try again.
@@ -98,6 +117,10 @@ Once you have two or more lifts of the same type, numbers are compared with your
 The Setup note about your hips and knees only appears for lifts that start from the floor. Hang, block, segment and tall lifts start with a straighter knee by design, so they get no setup note. If the bar leaves the top of the frame before the catch, the app cannot see the catch and leaves it out of the grade rather than giving you credit for it.
 
 <!-- since 1.5 -->
+
+A new speed PR is judged against your earlier clips of the same lift at a similar weight, within about 5 kg or 5 percent of the bar. A light warm-up does not hold the record against your working sets, and a light day does not beat heavy work.
+
+When the tracker lost the bar for much of a clip, its speeds and distances are not trusted. That clip is left out of your trend charts (the card says how many), it is not scored against your average, and it can never set a speed PR. Compare still shows both clips' numbers but not the differences between them, and the share screen starts with bar speed, path score and the velocity graph switched off. You can switch them on yourself.
 
 ## Replay it a few seconds late
 
