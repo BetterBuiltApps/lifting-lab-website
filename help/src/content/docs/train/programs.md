@@ -7,6 +7,7 @@ covers:
   - LiftingLab/Features/Train/Programs/ProgramDetailView.swift
   - LiftingLab/Features/Train/Programs/CycleReportView.swift
   - LiftingLab/Features/Train/MissedSession/MissedSessionView.swift
+  - LiftingLab/Domain/MissedSessionPolicy.swift
 verified_for: "1.4"
 ---
 
@@ -41,9 +42,15 @@ If a scheduled day passes without a session, the app asks what to do about it:
 
 - **Skip it:** logged as missed, and the program continues from tomorrow. Good late in a cycle, in a deload week, or when you chose to rest.
 - **Reschedule:** the session moves to today and later sessions shift back a day. Good for a single miss early on.
-- **Merge into next:** a reduced version is added to your next session, so you keep some of the volume without doubling the load.
+- **Merge into next:** a reduced version is added to your next session, so you keep some of the volume without doubling the load. Accessories are dropped, the sets are halved, and any prescribed pause stays. If your next session already holds a merged day, it goes to the one after. When there is no later session to add it to, for example on the last day of a program, Merge is greyed out.
+
+If you skip or merge a session that was holding a merged day, that merged day moves on to your next free session rather than being lost.
 
 If you missed several days, you get one question about the most recent one. The older days are logged as missed once you choose. If you close it without choosing, nothing changes and it asks again next time.
+
+### Optional days
+
+Some programs offer a day you can take or leave. In the Masters Cycle, the fourth day each week is an optional technique and accessory session. If you train it, it counts like any other day. If you let it pass, the app does not ask about it, does not count it as missed or skipped, and does not hold the program open for it.
 
 :::tip
 Not sure? Skip it. One missed session does not break a program.
