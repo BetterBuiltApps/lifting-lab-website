@@ -27,7 +27,7 @@ The "Training at" row lets you pick which gym you are in, so the bar, plates and
 
 The draft shows an estimated time, the total working sets and a list of blocks. A block is one part of the session, such as a lift, squats or accessories. Drag blocks to reorder them.
 
-Cards on this screen explain the draft: what the app adjusted from your history, which weak point a choice addresses, and a "How this session was built" note that says why you are snatching today and what the time limit trimmed.
+Cards on this screen explain the draft: what the app adjusted from your history, which weak point a choice addresses, and a "How this session was built" note that says why you are snatching today and what the time limit trimmed. Under a weak point, tap a movement listed under In this session to open that exercise. The note describes what the app did when it built the draft, so it stays the same when you edit the draft yourself.
 
 ## Change exercises
 
@@ -39,7 +39,7 @@ Cards on this screen explain the draft: what the app adjusted from your history,
 
 ## Edit sets and weights
 
-Each exercise has steppers for sets and reps. Percentage work shows a percent of your record for that lift, and effort-based work shows a target effort rating (RPE, a 1-10 scale of how hard a set feels).
+Each exercise has steppers for sets and reps. A cardio piece, such as a row or a bike, has a Minutes stepper instead, which moves in 5 minute steps from 5 to 60. Percentage work shows a percent of your record for that lift, and effort-based work shows a target effort rating (RPE, a 1-10 scale of how hard a set feels).
 
 Each loaded exercise also has a **Pyramid** switch. When it is on, the sets climb or descend like a ladder instead of repeating one weight. Low-rep work such as doubles and singles holds its reps and ramps the weight.
 
@@ -51,6 +51,8 @@ Not keen on the draft? Tap **Reshuffle** for a different set of movements. Anyth
 
 :::tip
 Press Save as routine to keep a draft you like. It appears under Routines in My Programs. Percentages are worked out when you start it, so a routine follows your latest records rather than the weights you had when you saved it.
+
+If you are training around an injury when you start a routine, any movement that loads the hurt area is swapped for a safer relative, or left out when there is none, the same way a new draft would be. "How this session was built" names each change. Your saved routine is not altered, and Swap puts the original movement back if you choose.
 :::
 
 ## Start
