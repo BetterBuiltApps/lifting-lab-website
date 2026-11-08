@@ -67,3 +67,5 @@ Delayed Replay shows the camera feed 3, 5, 8 or 10 seconds behind. Prop the phon
 :::note
 Free accounts can run three analyses a month. Pro removes the limit. A failed trace does not count against it.
 :::
+
+The same allowance covers **Film this set** during a workout. Once the three are used, tapping it opens the Pro page instead of the camera, and your workout carries on as it was. Watching clips you already have, and Delayed Replay, stay free.
