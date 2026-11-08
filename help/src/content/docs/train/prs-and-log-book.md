@@ -89,3 +89,5 @@ If you use a separate bar-speed device, you can bring its CSV file in.
 3. Choose the file.
 
 If the app does not recognize the layout, it asks you to match each column to what it holds (such as weight or speed), choose units, and check a preview before importing.
+
+A date given as a plain number is accepted only if it falls between the years 2000 and 2100. Anything else, such as a column of other large numbers, is reported as a date the app could not read, and those rows import without a time, as standalone readings instead of being matched to a logged set.
