@@ -32,6 +32,8 @@ The workout builder is for days when you are not following a program. You answer
 
 If you leave the blocks blank, the app chooses the shape of the session. If you tick blocks, such as Clean & Jerk and Squats, you get exactly those and nothing bolted on. Your choice is remembered for next time.
 
+Low energy changes what you get. With the blocks left blank, an energy of 1 turns the day into a short recovery session of light technique work. With blocks ticked, you still get those blocks, with fewer sets and lighter top sets.
+
 The "Training at" row lets you pick which gym you are in, so the bar, plates and equipment match what you actually have.
 
 ## Read the draft
@@ -41,6 +43,8 @@ The draft shows an estimated time, the total working sets and a list of blocks. 
 Cards on this screen explain the draft: what the app adjusted from your history, which weak point a choice addresses, and a "How this session was built" note that says why you are snatching today and what the time limit trimmed.
 
 If your sessions usually run longer than the estimate, the app fits the draft to the time your sessions really take, or to the time you gave in the check-in. A line that is greyed out is something the app noticed that changed nothing today, for example when the draft already fits your time.
+
+Distances, such as a run, are shown in kilometres or miles to match your kg or lb setting.
 
 ## Change exercises
 
@@ -71,6 +75,8 @@ Each loaded exercise also has a **Pyramid** switch. When it is on, the sets clim
 Sliders for volume and intensity scale the whole session. The intensity slider never takes a lift past your own record for it: a single of the snatch, the clean & jerk or a squat stops at 95%. Pulls and deadlifts are the exception, because they are meant to be heavier than the lift they help.
 
 The percentage on a single or a double is the weight you lift: when a snatch single reads 87%, 87% of your snatch is what goes on the bar.
+
+Sliders for volume and intensity scale the whole session. If you gave a time limit, the sets it trimmed stay trimmed when you set a block to Light, Normal or Heavy, or move the volume slider; only what you change grows or shrinks.
 
 ## Reshuffle
 
