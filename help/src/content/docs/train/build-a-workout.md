@@ -31,19 +31,19 @@ Cards on this screen explain the draft: what the app adjusted from your history,
 
 ## Change exercises
 
-- **Swap:** tap Swap on an exercise. The closest matches from the same kind of lift appear first, and the list is limited to the equipment you have.
+- **Swap:** tap Swap on an exercise. The closest matches from the same kind of lift appear first, and the list is limited to the equipment you have. Sets and reps carry over to the new exercise, but a number measured differently does not: swap a run for a rower, or a plank for sit-ups, and the new exercise starts from its own default.
 - **Add exercise:** use Add exercise at the foot of a block.
 - **Remove an exercise:** tap its delete button and confirm.
-- **Remove a block:** use Remove block. Emptying a block removes it, and the time it frees is shared among the blocks that are left.
+- **Remove a block:** use Remove block. Emptying a block removes it, and the time it frees is shared among the blocks that are left. Anything you set by hand in those blocks stays: typed percentages, reps and sets, dumbbell choices, Pyramid switches and the order you dragged the blocks into.
 - **Add block:** use Add block to bring in a whole new part of the session.
 
 ## Edit sets and weights
 
-Each exercise has steppers for sets and reps. Percentage work shows a percent of your record for that lift, and effort-based work shows a target effort rating (RPE, a 1-10 scale of how hard a set feels).
+Each exercise has steppers for sets and reps. Timed and distance work steps in its own unit: seconds for a hold such as a plank, minutes for a rower, bike or ski machine, and kilometres for a run. Percentage work shows a percent of your record for that lift, and effort-based work shows a target effort rating (RPE, a 1-10 scale of how hard a set feels).
 
 Each loaded exercise also has a **Pyramid** switch. When it is on, the sets climb or descend like a ladder instead of repeating one weight. Low-rep work such as doubles and singles holds its reps and ramps the weight.
 
-Sliders for volume and intensity scale the whole session.
+Sliders for volume and intensity scale the whole session. The intensity slider sets each percentage from where the slider sits, so sliding it up and back returns the same numbers, and the weights match what a new draft at that setting would give. A percentage you typed moves with the slider from where you typed it.
 
 ## Reshuffle
 
