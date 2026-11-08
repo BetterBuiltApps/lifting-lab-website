@@ -29,7 +29,11 @@ The session screen has a kg/lb button in its toolbar. It shows what that screen 
 
 ## Where your data lives
 
-Your sessions, sets and records are stored on your device, so the app works without a connection. The Data & Privacy screen lists the data location as "This device + iCloud" and notes that training data syncs to iCloud.
+Your sessions, sets and records are stored on your device, so the app works without a connection. The Data & Privacy screen shows where your training data is kept right now:
+
+- **This device + iCloud** when it is syncing to iCloud.
+- **This device only** when it is not. The note underneath says why: you are not signed in to iCloud, or iCloud sync could not start this time. Your data is safe on the phone but is not backed up to iCloud, so check this before you wipe or replace your iPhone.
+- **Not saving** if the app could not open your training data. Nothing logged then is saved. Quit and reopen the app to try again.
 
 Bar Trace video clips are handled separately. They save to your photo library either way. You can choose in Data & Privacy whether they also sync to iCloud so your other devices can play them, and the screen shows how much space your clips use.
 
