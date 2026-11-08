@@ -1,10 +1,10 @@
 {
+  "hero": "ML0",
   "tabs": [
     {
-      "key": "overview",
-      "label": "Overview",
+      "key": "start",
+      "label": "Start here",
       "ids": [
-        "ML0",
         "BR1"
       ]
     },
@@ -60,6 +60,13 @@
         "G1",
         "G8",
         "G10"
+      ]
+    },
+    {
+      "key": "compete",
+      "label": "Compete",
+      "ids": [
+        "J1"
       ]
     },
     {
@@ -523,6 +530,35 @@
           "src": "assets/stills/G10-1-600.webp",
           "large": "assets/stills/G10-1-900.webp",
           "alt": "Reflections. Take stock of the last block. Sleep, fatigue, difficulty and more. Screen from the app."
+        }
+      ]
+    },
+    "J1": {
+      "id": "J1",
+      "title": "Meet Day warm-up room",
+      "kind": "item",
+      "plan": "Pro",
+      "hook": "Run your own platform.",
+      "body": "Snatch 96 kg. Clean and jerk 120 kg.",
+      "seconds": 22,
+      "mp4": "assets/video/v2/J1.mp4",
+      "poster": "assets/video/v2/J1-poster.webp",
+      "vtt": "assets/video/v2/J1.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/J1-1-600.webp",
+          "large": "assets/stills/J1-1-900.webp",
+          "alt": "Meet Day. Set your openers. Start the room. Snatch 96 kg. Clean and jerk 120 kg. Screen from the app."
+        },
+        {
+          "src": "assets/stills/J1-2-600.webp",
+          "large": "assets/stills/J1-2-900.webp",
+          "alt": "Count attempts. Count the attempts before yours. Tap minus as each attempt happens. Screen from the app."
+        },
+        {
+          "src": "assets/stills/J1-3-600.webp",
+          "large": "assets/stills/J1-3-900.webp",
+          "alt": "Warm-up card. A card says when to lift. Each set timed to the attempts out. Screen from the app."
         }
       ]
     },

@@ -7,11 +7,9 @@ import { SiteNav } from './sections/Chrome';
 import { Hero } from './sections/Hero';
 import { Arc } from './sections/Arc';
 import { Engine } from './sections/Engine';
-import { Measured } from './sections/Measured';
 import { Watch } from './sections/Watch';
-import { Explore } from './sections/Explore';
-import { Progress } from './sections/Progress';
-import { LogBook } from './sections/LogBook';
+import { Record } from './sections/Record';
+import { ProofStrip, DownloadRow } from './sections/Conversion';
 import { Pricing } from './sections/Pricing';
 import { FAQ, SiteFooter } from './sections/FAQFooter';
 import { Contact } from './sections/Contact';
@@ -27,24 +25,19 @@ function App() {
           every visit. Visually hidden until focused, see .skip-link. */}
       <a className="skip-link" href="#main">Skip to content</a>
       <SiteNav />
-      {/* Order is the argument: follow one cycle from twelve weeks out to the
-          platform (Arc), then reveal the engine that was shaping every one of
-          those sessions underneath (Engine), then everything that outlasts
-          a single meet (LogBook, Progress), then the index of the rest
-          (Explore). Pricing and FAQ close because they answer questions the
-          page has by then earned the right to be asked. Contact is last for
-          the same reason: it is the one question the FAQ could not answer,
-          and asking for a message before the page has made its case is
-          asking a stranger for their email. */}
+      {/* Order is the argument: the promise and the overview video first (Hero), then proof straight away (ProofStrip), then every
+          area on video (Watch), then the cycle from twelve weeks out to the platform (Arc), the engine that shapes every session
+          (Engine) and the record it leaves (Record). A download ask follows each stretch. Pricing and FAQ close because they
+          answer questions the page has by then earned the right to be asked. Contact is last for the same reason. */}
       <main id="main">
         <Hero />
+        <ProofStrip />
+        <Watch />
+        <DownloadRow title="Seen enough? Try it." />
         <Arc />
         <Engine />
-        <Measured />
-        <Watch />
-        <LogBook />
-        <Progress />
-        <Explore />
+        <Record />
+        <DownloadRow />
         <Pricing />
         <FAQ />
         <Contact />

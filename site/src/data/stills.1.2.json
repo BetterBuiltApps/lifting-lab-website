@@ -1,0 +1,452 @@
+{
+  "BR1": {
+    "plan": "Free",
+    "stills": [
+      {
+        "src": "assets/stills/BR1-1-600.webp",
+        "large": "assets/stills/BR1-1-900.webp",
+        "alt": "Step 1 · Open the app. No account to make. Pick kg or lb. Or tap Skip. Screen from the app."
+      },
+      {
+        "src": "assets/stills/BR1-2-600.webp",
+        "large": "assets/stills/BR1-2-900.webp",
+        "alt": "Step 2 · Optional. Your numbers are all optional. Bar, experience, bodyweight. Skip it. Screen from the app."
+      },
+      {
+        "src": "assets/stills/BR1-3-600.webp",
+        "large": "assets/stills/BR1-3-900.webp",
+        "alt": "Step 3 · One tap. One tap is required. Age 16 or older, or a guardian agrees. Screen from the app."
+      },
+      {
+        "src": "assets/stills/BR1-4-600.webp",
+        "large": "assets/stills/BR1-4-900.webp",
+        "alt": "Step 4 · Train. Straight to Train. Nothing to enter. No sign in. No permission pop-ups. Screen from the app."
+      }
+    ]
+  },
+  "B1": {
+    "plan": "Free",
+    "stills": [
+      {
+        "src": "assets/stills/B1-1-600.webp",
+        "large": "assets/stills/B1-1-900.webp",
+        "alt": "Step 1 · Set card. One set at a time. Built big. Weight, set count and your cue. Screen from the app."
+      },
+      {
+        "src": "assets/stills/B1-2-600.webp",
+        "large": "assets/stills/B1-2-900.webp",
+        "alt": "Step 2 · Plates. Plates worked out for you. 98 kg exact, shown per side. Screen from the app."
+      },
+      {
+        "src": "assets/stills/B1-3-600.webp",
+        "large": "assets/stills/B1-3-900.webp",
+        "alt": "Step 3 · Made. Made it? One tap. The next set loads up a step. Screen from the app."
+      },
+      {
+        "src": "assets/stills/B1-4-600.webp",
+        "large": "assets/stills/B1-4-900.webp",
+        "alt": "Step 4 · Miss. Missed it? Tag it and go on. Call the miss. Get the drills. Screen from the app."
+      }
+    ]
+  },
+  "B3": {
+    "plan": "Free",
+    "stills": [
+      {
+        "src": "assets/stills/B3-1-600.webp",
+        "large": "assets/stills/B3-1-900.webp",
+        "alt": "Rest timer. Rest starts on its own. Tap Made. The countdown begins. Screen from the app."
+      },
+      {
+        "src": "assets/stills/B3-2-600.webp",
+        "large": "assets/stills/B3-2-900.webp",
+        "alt": "Your call. Need more time? Add 30 seconds. Reset it, or skip the rest. Screen from the app."
+      }
+    ]
+  },
+  "B7": {
+    "plan": "Free",
+    "stills": [
+      {
+        "src": "assets/stills/B7-1-600.webp",
+        "large": "assets/stills/B7-1-900.webp",
+        "alt": "Call the miss. Missed it? Tag why. In front, behind, press-out, drop. Screen from the app."
+      },
+      {
+        "src": "assets/stills/B7-2-600.webp",
+        "large": "assets/stills/B7-2-900.webp",
+        "alt": "The fix. Causes, drills and a cue. Matched to the tag you picked. Screen from the app."
+      }
+    ]
+  },
+  "C1": {
+    "plan": "Free",
+    "stills": [
+      {
+        "src": "assets/stills/C1-1-600.webp",
+        "large": "assets/stills/C1-1-900.webp",
+        "alt": "Step 1 · Check in. Tell it how you feel. Energy, sore muscles and time. Screen from the app."
+      },
+      {
+        "src": "assets/stills/C1-2-600.webp",
+        "large": "assets/stills/C1-2-900.webp",
+        "alt": "Step 2 · Your session. A session built around you. Sore muscles avoided. Sets and time shown. Screen from the app."
+      },
+      {
+        "src": "assets/stills/C1-3-600.webp",
+        "large": "assets/stills/C1-3-900.webp",
+        "alt": "Step 3 · Dial it. Dial any block up or down. Light, Normal or Heavy. Screen from the app."
+      },
+      {
+        "src": "assets/stills/C1-4-600.webp",
+        "large": "assets/stills/C1-4-900.webp",
+        "alt": "Step 4 · Train. Plates worked out for you. One set at a time. No program needed. Screen from the app."
+      }
+    ]
+  },
+  "C5": {
+    "plan": "Free",
+    "stills": [
+      {
+        "src": "assets/stills/C5-1-600.webp",
+        "large": "assets/stills/C5-1-900.webp",
+        "alt": "Save as routine. Keep the workout you built. It waits in My Programs, under Routines. Screen from the app."
+      }
+    ]
+  },
+  "D7": {
+    "plan": "Pro",
+    "stills": [
+      {
+        "src": "assets/stills/D7-1-600.webp",
+        "large": "assets/stills/D7-1-900.webp",
+        "alt": "Program Builder. Add a week. Add a day. Write a program week by week. Screen from the app."
+      },
+      {
+        "src": "assets/stills/D7-2-600.webp",
+        "large": "assets/stills/D7-2-900.webp",
+        "alt": "Add exercises. Sets, reps and percent of your PR. Pick from the library. Load by percent. Screen from the app."
+      },
+      {
+        "src": "assets/stills/D7-3-600.webp",
+        "large": "assets/stills/D7-3-900.webp",
+        "alt": "Run it. Name it. Your cycle joins the list. Preview it, then Start This Program. Screen from the app."
+      }
+    ]
+  },
+  "D8": {
+    "plan": "Free",
+    "stills": [
+      {
+        "src": "assets/stills/D8-1-600.webp",
+        "large": "assets/stills/D8-1-900.webp",
+        "alt": "Share a program. Print it, or save it as a PDF. One tap from any program. Screen from the app."
+      },
+      {
+        "src": "assets/stills/D8-2-600.webp",
+        "large": "assets/stills/D8-2-900.webp",
+        "alt": "Print preview. Every week, with your weights. Page 1 of 7 for Beginner Foundation. Screen from the app."
+      }
+    ]
+  },
+  "F3": {
+    "plan": "Free",
+    "stills": [
+      {
+        "src": "assets/stills/F3-1-600.webp",
+        "large": "assets/stills/F3-1-900.webp",
+        "alt": "Step 1 · The grade. One grade out of 100 for the lift. Pull under, bar path and rhythm. Screen from the app."
+      },
+      {
+        "src": "assets/stills/F3-2-600.webp",
+        "large": "assets/stills/F3-2-900.webp",
+        "alt": "Step 2 · The rules. Checked against competition rules. Every rule listed with its number. Screen from the app."
+      },
+      {
+        "src": "assets/stills/F3-3-600.webp",
+        "large": "assets/stills/F3-3-900.webp",
+        "alt": "Step 3 · Not sure?. Can't see a rule? It says so. Graded on the bar alone. Screen from the app."
+      },
+      {
+        "src": "assets/stills/F3-4-600.webp",
+        "large": "assets/stills/F3-4-900.webp",
+        "alt": "Step 4 · The lights. No clear view? No guess. It says Can't judge, not a guess. Screen from the app."
+      }
+    ]
+  },
+  "F9": {
+    "plan": "Free",
+    "stills": [
+      {
+        "src": "assets/stills/F9-1-600.webp",
+        "large": "assets/stills/F9-1-900.webp",
+        "alt": "Share Video. Your lift, with the bar path burned in. Story or square, with a speed graph. Screen from the app."
+      },
+      {
+        "src": "assets/stills/F9-2-600.webp",
+        "large": "assets/stills/F9-2-900.webp",
+        "alt": "Make it yours. Phase colors, your choice of stats. Weight, speed and path score on or off. Screen from the app."
+      }
+    ]
+  },
+  "G1": {
+    "plan": "Free",
+    "stills": [
+      {
+        "src": "assets/stills/G1-1-600.webp",
+        "large": "assets/stills/G1-1-900.webp",
+        "alt": "PR Tracker. Your total, always on top. Snatch plus clean and jerk. Screen from the app."
+      },
+      {
+        "src": "assets/stills/G1-2-600.webp",
+        "large": "assets/stills/G1-2-900.webp",
+        "alt": "Every lift. Each lift, its best, and its trend. Primary and secondary lifts. Screen from the app."
+      },
+      {
+        "src": "assets/stills/G1-3-600.webp",
+        "large": "assets/stills/G1-3-900.webp",
+        "alt": "Tap a lift. Tap one. See every PR. Your current best, over time. Screen from the app."
+      }
+    ]
+  },
+  "G8": {
+    "plan": "Free",
+    "stills": [
+      {
+        "src": "assets/stills/G8-1-600.webp",
+        "large": "assets/stills/G8-1-900.webp",
+        "alt": "Calendar. Your month, at a glance. Trained, missed, scheduled. Screen from the app."
+      }
+    ]
+  },
+  "G10": {
+    "plan": "Free",
+    "stills": [
+      {
+        "src": "assets/stills/G10-1-600.webp",
+        "large": "assets/stills/G10-1-900.webp",
+        "alt": "Reflections. Take stock of the last block. Sleep, fatigue, difficulty and more. Screen from the app."
+      }
+    ]
+  },
+  "J1": {
+    "plan": "Pro",
+    "stills": [
+      {
+        "src": "assets/stills/J1-1-600.webp",
+        "large": "assets/stills/J1-1-900.webp",
+        "alt": "Meet Day. Set your openers. Start the room. Snatch 96 kg. Clean and jerk 120 kg. Screen from the app."
+      },
+      {
+        "src": "assets/stills/J1-2-600.webp",
+        "large": "assets/stills/J1-2-900.webp",
+        "alt": "Count attempts. Count the attempts before yours. Tap minus as each attempt happens. Screen from the app."
+      },
+      {
+        "src": "assets/stills/J1-3-600.webp",
+        "large": "assets/stills/J1-3-900.webp",
+        "alt": "Warm-up card. A card says when to lift. Each set timed to the attempts out. Screen from the app."
+      }
+    ]
+  },
+  "I9": {
+    "plan": "Free",
+    "stills": [
+      {
+        "src": "assets/stills/I9-1-600.webp",
+        "large": "assets/stills/I9-1-900.webp",
+        "alt": "Robi points. Your total against the world record. 227 kg is 62.2% of 365 kg: 229 points. Screen from the app."
+      }
+    ]
+  },
+  "K3": {
+    "plan": "Free",
+    "stills": [
+      {
+        "src": "assets/stills/K3-1-600.webp",
+        "large": "assets/stills/K3-1-900.webp",
+        "alt": "Body. Log an injury. Pick a stage. Protect, Reintroduce or Rebuild. Screen from the app."
+      },
+      {
+        "src": "assets/stills/K3-2-600.webp",
+        "large": "assets/stills/K3-2-900.webp",
+        "alt": "Your training. Your training works around it. Movements that load it are kept out. Screen from the app."
+      },
+      {
+        "src": "assets/stills/K3-3-600.webp",
+        "large": "assets/stills/K3-3-900.webp",
+        "alt": "Not medical advice. It changes your training, not treatment. Cleared by a professional? Move on. Screen from the app."
+      }
+    ]
+  },
+  "M1": {
+    "plan": "Free",
+    "stills": [
+      {
+        "src": "assets/stills/M1-1-600.webp",
+        "large": "assets/stills/M1-1-900.webp",
+        "alt": "The Help center. Short guides. One task each. Logging, workouts, Bar Trace and more. Screen from the app."
+      },
+      {
+        "src": "assets/stills/M1-2-600.webp",
+        "large": "assets/stills/M1-2-900.webp",
+        "alt": "Search. Type a word. Find the section. Try export. Three guides come up. Screen from the app."
+      },
+      {
+        "src": "assets/stills/M1-3-600.webp",
+        "large": "assets/stills/M1-3-900.webp",
+        "alt": "Step by step. Numbered steps. No guessing. Check weight and reps. Tap Made or Miss. Screen from the app."
+      },
+      {
+        "src": "assets/stills/M1-4-600.webp",
+        "large": "assets/stills/M1-4-900.webp",
+        "alt": "Then do it. Then try it in the app. Log a set and the rest timer starts. Screen from the app."
+      }
+    ]
+  },
+  "D2": {
+    "plan": "Free",
+    "stills": [
+      {
+        "src": "assets/stills/D2-1-600.webp",
+        "large": "assets/stills/D2-1-900.webp",
+        "alt": "Beginner Foundation. The free program for new lifters. 10 weeks, 3 days a week, 30 sessions. Screen from the app."
+      },
+      {
+        "src": "assets/stills/D2-2-600.webp",
+        "large": "assets/stills/D2-2-900.webp",
+        "alt": "Preview it first. Read week one before you start. Every lift, set and percent listed. Screen from the app."
+      },
+      {
+        "src": "assets/stills/D2-3-600.webp",
+        "large": "assets/stills/D2-3-900.webp",
+        "alt": "Easy on you. Intensity stays under 70%. Learn the positions. Build a base. Screen from the app."
+      }
+    ]
+  },
+  "B13": {
+    "plan": "Free",
+    "stills": [
+      {
+        "src": "assets/stills/B13-1-600.webp",
+        "large": "assets/stills/B13-1-900.webp",
+        "alt": "Check in. One tap tells it how you feel. Fresh, Normal, Tired or Smoked. Screen from the app."
+      },
+      {
+        "src": "assets/stills/B13-2-600.webp",
+        "large": "assets/stills/B13-2-900.webp",
+        "alt": "Weights adjust. Bad day? The weights back off. Tired eases 5%. Smoked eases 10%. Screen from the app."
+      }
+    ]
+  },
+  "C3": {
+    "plan": "Free",
+    "stills": [
+      {
+        "src": "assets/stills/C3-1-600.webp",
+        "large": "assets/stills/C3-1-900.webp",
+        "alt": "Weak-point picks. It reads your own bar traces. Your recent lifts shape the session. Screen from the app."
+      },
+      {
+        "src": "assets/stills/C3-2-600.webp",
+        "large": "assets/stills/C3-2-900.webp",
+        "alt": "Lab Notes. Every pick says why it is there. Seen in 4 recent lifts. Miss tags agree. Screen from the app."
+      },
+      {
+        "src": "assets/stills/C3-3-600.webp",
+        "large": "assets/stills/C3-3-900.webp",
+        "alt": "Tap a note. Tap it. See the fix. A cue, and drills to fix it. Screen from the app."
+      }
+    ]
+  },
+  "F4": {
+    "plan": "Free",
+    "stills": [
+      {
+        "src": "assets/stills/F4-1-600.webp",
+        "large": "assets/stills/F4-1-900.webp",
+        "alt": "What the trace says. One fault named. One cue to fix it. In plain words. Screen from the app."
+      },
+      {
+        "src": "assets/stills/F4-2-600.webp",
+        "large": "assets/stills/F4-2-900.webp",
+        "alt": "Fix with. Drills to fix it, handed to you. Muscle, tall and scarecrow snatch. Screen from the app."
+      }
+    ]
+  },
+  "I8": {
+    "plan": "Free",
+    "stills": [
+      {
+        "src": "assets/stills/I8-1-600.webp",
+        "large": "assets/stills/I8-1-900.webp",
+        "alt": "Sinclair. Your total, scored for your bodyweight. 1.3549 coefficient × 227 kg = 307.6 Screen from the app."
+      },
+      {
+        "src": "assets/stills/I8-2-600.webp",
+        "large": "assets/stills/I8-2-900.webp",
+        "alt": "Change bodyweight. Same total, different score. 89 kg: 1.2088 × 227 kg = 274.4 Screen from the app."
+      }
+    ]
+  },
+  "I4": {
+    "plan": "Free",
+    "stills": [
+      {
+        "src": "assets/stills/I4-1-600.webp",
+        "large": "assets/stills/I4-1-900.webp",
+        "alt": "Barbell Loader. Enter the weight. See the bar. 100 kg: 25 + 15 per side, exact. Screen from the app."
+      },
+      {
+        "src": "assets/stills/I4-2-600.webp",
+        "large": "assets/stills/I4-2-900.webp",
+        "alt": "Your bar. Any jump, any bar. 103 kg on a 15 kg bar, exact. Screen from the app."
+      }
+    ]
+  },
+  "G7": {
+    "plan": "Free",
+    "stills": [
+      {
+        "src": "assets/stills/G7-1-600.webp",
+        "large": "assets/stills/G7-1-900.webp",
+        "alt": "Log Book. Every session, newest first. Sets made, tonnage and time. Screen from the app."
+      },
+      {
+        "src": "assets/stills/G7-2-600.webp",
+        "large": "assets/stills/G7-2-900.webp",
+        "alt": "Open a session. Tap in for every set. Weight and reps, set by set. Screen from the app."
+      }
+    ]
+  },
+  "K4": {
+    "plan": "Free",
+    "stills": [
+      {
+        "src": "assets/stills/K4-1-600.webp",
+        "large": "assets/stills/K4-1-900.webp",
+        "alt": "Gains. Every set earns XP. Every level shows. 275 / 900 XP to level 4. Screen from the app."
+      },
+      {
+        "src": "assets/stills/K4-2-600.webp",
+        "large": "assets/stills/K4-2-900.webp",
+        "alt": "How you earned it. See where the XP came from. Records, lifts analyzed, sessions and more. Screen from the app."
+      },
+      {
+        "src": "assets/stills/K4-3-600.webp",
+        "large": "assets/stills/K4-3-900.webp",
+        "alt": "Streaks. Weekly streaks, perfect weeks. Tracked on the same screen. Screen from the app."
+      }
+    ]
+  },
+  "K5": {
+    "plan": "Free",
+    "stills": [
+      {
+        "src": "assets/stills/K5-1-600.webp",
+        "large": "assets/stills/K5-1-900.webp",
+        "alt": "Badges. Milestones you can see and earn. Earned ones light up. Tap one for details. Screen from the app."
+      }
+    ]
+  }
+}

@@ -13,7 +13,7 @@ export const siteWrap = { maxWidth: 1240, margin: '0 auto', padding: '0 clamp(20
 /* Every href here must resolve to an id that exists. "Pillars" pointed at
    #pillars, which stopped existing when that section was absorbed into the arc,
    so the first nav item silently went nowhere. */
-const NAV_LINKS = [['The cycle', '#cycle'], ['How it adapts', '#engine'], ['Everything else', '#explore'], ['Pricing', '#pricing'], ['FAQ', '#faq'], ['Contact', '#contact']];
+const NAV_LINKS = [['Watch', '#watch'], ['The cycle', '#cycle'], ['How it adapts', '#engine'], ['Pricing', '#pricing'], ['FAQ', '#faq'], ['Contact', '#contact']];
 
 export function SiteNav() {
   const [menuOpen, setMenuOpen] = React.useState(false);
@@ -138,61 +138,41 @@ export function SiteHead({ title, body, center = false, max = 640 }) {
   );
 }
 
-/** A real app screenshot in a minimal dark bezel. `priority` = above-the-fold
- * (eager decode, no lazy-load); `lcp` additionally hints this is the largest
- * contentful paint candidate. Fixed aspect-ratio reserves layout space before
- * the image decodes, so nothing shifts (CLS) regardless of exact PNG dims.
- *
- * Every screenshot on the site goes through here, which is why the responsive
- * sources live here rather than at 30 call sites. The PNGs are full iPhone
- * captures (~1300x2870) and nothing renders wider than 300 CSS px, so
- * scripts/build-screens.sh emits 600w and 900w WebP beside each one and the
- * browser takes the one its DPR needs. `sizes` is the element's real CSS width,
- * so a 2x display picks 600w and a 3x picks 900w.
- *
- * The PNG stays as the img fallback: it costs nothing unless the browser has
- * no WebP support, and it keeps the original as the archival source.
- *
- * (Written without an angle-bracketed img tag on purpose, impeccable's
- * broken-image detector scans comments too and reads one as a src-less tag.) */
-export function Shot({ src, alt, width = 300, caption, priority = false, lcp = false }) {
-  const webpBase = src.replace(/\.png$/, '');
+/** A still from a walkthrough video (see lib/stills.js): a headline above a phone, already composed as a 9:16 image, so it gets no
+ * bezel of its own and is never cropped. Same hairline frame and shadow as the video, so stills and videos read as one family.
+ * Explicit width and height reserve the space before the image decodes (no layout shift). The 600w file serves the page, the 900w
+ * file opens in the lightbox. Pro stills carry their own "Pro" pill in the image itself. */
+export function StillShot({ s, width = 260, caption, priority = false, lcp = false }) {
   const openLightbox = useLightbox();
+  const height = Math.round((width * 16) / 9);
   return (
     <figure style={{ margin: 0, display: 'grid', gap: 12, justifyItems: 'center' }}>
       <button
         type="button"
-        onClick={(e) => openLightbox({ src, alt, caption }, e.currentTarget)}
-        aria-label={`View larger: ${alt}`}
-        style={{
-          display: 'block', width, maxWidth: '100%', padding: 0, border: 'none',
-          background: 'none', cursor: 'pointer', borderRadius: 34,
-        }}
+        onClick={(e) => openLightbox({ src: asset(s.large), alt: s.alt, caption }, e.currentTarget)}
+        aria-label={`View larger: ${s.alt}`}
+        style={{ display: 'block', width, maxWidth: '100%', padding: 0, border: 'none', background: 'none', cursor: 'pointer', borderRadius: 28 }}
       >
         <motion.div
           whileHover={{ scale: 1.015, borderColor: 'rgba(255,255,255,0.22)' }}
           transition={{ duration: DURATION.spring, ease: EASE.spring }}
           style={{
-            width: '100%', aspectRatio: '9 / 19.5', borderRadius: 34, overflow: 'hidden', background: '#000',
-            border: '1px solid rgba(255,255,255,0.14)',
-            boxShadow: '0 30px 70px rgba(0,0,0,0.55)',
+            width: '100%', aspectRatio: '9 / 16', borderRadius: 28, overflow: 'hidden', background: '#000',
+            border: '1px solid rgba(255,255,255,0.14)', boxShadow: '0 30px 70px rgba(0,0,0,0.55)',
           }}
         >
-          <picture>
-            <source
-              type="image/webp"
-              srcSet={`${webpBase}-600.webp 600w, ${webpBase}-900.webp 900w`}
-              sizes={`${width}px`}
-            />
-            <img
-              src={src} alt={alt}
-              width={width} height={Math.round((width * 19.5) / 9)}
-              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-              loading={priority ? 'eager' : 'lazy'}
-              decoding="async"
-              {...(lcp ? { fetchpriority: 'high' } : {})}
-            />
-          </picture>
+          <img
+            src={asset(s.src)}
+            srcSet={`${asset(s.src)} 600w, ${asset(s.large)} 900w`}
+            sizes={`${width}px`}
+            alt={s.alt}
+            width={width}
+            height={height}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            loading={priority ? 'eager' : 'lazy'}
+            decoding="async"
+            {...(lcp ? { fetchpriority: 'high' } : {})}
+          />
         </motion.div>
       </button>
       {caption && (

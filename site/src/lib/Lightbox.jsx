@@ -6,7 +6,7 @@ import { DURATION } from './motion';
 
 const LightboxContext = React.createContext(null);
 
-/** Every `Shot` on the page opens through this one instance, not one modal
+/** Every `StillShot` on the page opens through this one instance, not one modal
  * per screenshot: a single portal at the app root, so z-index and body-scroll
  * locking only ever have to be reasoned about in one place.
  *

@@ -3,7 +3,7 @@
 //   1. no staged file (site/release/<v>/**, help/release/<v>/**) exists in the output
 //   2. no Help page whose frontmatter says `since: "<v>"` was built
 //   3. no since marker was left in any built HTML
-//   4. none of the gallery video files that only exist from <v> are named in the shipped HTML or JavaScript
+//   4. none of the gallery videos or page stills that only exist from <v> are named in the shipped HTML or JavaScript
 // With the flag at the newest release it only checks 3. Exit code 1 on any finding.
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative, resolve } from 'node:path';
@@ -44,6 +44,16 @@ for (const v of later) {
     const f = join(root, 'site/src/data', `videos.${ver}.json`);
     return existsSync(f) ? new Set(Object.keys(JSON.parse(read(f)).videos)) : new Set();
   };
+  const stillIdsAt = (ver) => {
+    const f = join(root, 'site/src/data', `stills.${ver}.json`);
+    return existsSync(f) ? new Set(Object.keys(JSON.parse(read(f)))) : new Set();
+  };
+  const lowerStills = new Set(RELEASES.filter((r) => r < v).flatMap((r) => [...stillIdsAt(r)]));
+  for (const id of stillIdsAt(v)) {
+    if (lowerStills.has(id)) continue;
+    const needle = `assets/stills/${id}-`;
+    for (const p of textFiles) if (read(p).includes(needle)) { problems.push(`${v} still ${id} is named in ${relative(out, p)}`); break; }
+  }
   const lower = new Set(RELEASES.filter((r) => r < v).flatMap((r) => [...idsAt(r)]));
   for (const id of idsAt(v)) {
     if (lower.has(id)) continue;

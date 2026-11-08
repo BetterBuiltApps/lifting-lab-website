@@ -1,41 +1,23 @@
 import React from 'react';
 import { siteWrap, SiteHead } from './Chrome';
-import { asset } from '../lib/asset';
 import { Reveal } from '../lib/Reveal';
 import { VideoClip } from '../lib/VideoClip';
-import { useLightbox } from '../lib/Lightbox';
 // The data file is picked at build time for the release being built (vite.config.js, alias @videos): videos.<release>.json,
 // written by the video project's scripts/v2/web-export.mjs. A release that is not reached is not imported, so its titles,
 // captions and paths are not in the shipped JavaScript.
 import data from '@videos';
 
 /* A gallery of short walkthroughs, one tab per area: the area's summary first,
-   then the videos that go deeper. Generated data: src/data/videos.json comes from
-   the video project's scripts/v2/web-export.mjs, which only exports features that
-   are live in the App Store build, so this section never announces a feature that
-   has not shipped. Items for a later release are staged behind the release flag, see RELEASING.md. Click to play, never autoplay (see lib/VideoClip.jsx). The stills
-   under the videos are frames from the same walkthroughs. */
-
-function Still({ still }) {
-  const openLightbox = useLightbox();
-  return (
-    <button
-      type="button"
-      className="watch-still"
-      onClick={(e) => openLightbox({ src: asset(still.large), alt: still.alt }, e.currentTarget)}
-      aria-label={`View larger: ${still.alt}`}
-    >
-      <img src={asset(still.src)} alt={still.alt} width={150} height={267} loading="lazy" decoding="async" />
-    </button>
-  );
-}
+   then the videos that go deeper. The data is generated (src/data/videos.<release>.json, written by the video project's
+   scripts/v2/web-export.mjs) and already resolved for the release being built, so this section never announces a feature
+   that has not shipped: later releases are staged behind the release flag, see RELEASING.md. Click to play, never
+   autoplay (see lib/VideoClip.jsx). */
 
 export function Watch() {
   const [active, setActive] = React.useState(data.tabs[0].key);
   const tabRefs = React.useRef({});
   const tab = data.tabs.find((t) => t.key === active) ?? data.tabs[0];
   const clips = tab.ids.map((id) => data.videos[id]).filter(Boolean);
-  const stills = clips.flatMap((c) => c.stills ?? []);
 
   const onKeyDown = (e) => {
     const i = data.tabs.findIndex((t) => t.key === active);
@@ -52,8 +34,8 @@ export function Watch() {
       <div style={siteWrap}>
         <Reveal>
           <SiteHead
-            title="Watch it work."
-            body="Every area has a short video, with sound and captions. Start with the overview, then open any area."
+            title="See it in 45 seconds."
+            body="Start with the overview. Then open any area. Short videos, with sound and captions."
           />
         </Reveal>
 
@@ -80,15 +62,6 @@ export function Watch() {
           <div className="watch-grid">
             {clips.map((c) => <VideoClip key={c.id} clip={c} maxWidth={260} />)}
           </div>
-
-          {stills.length > 0 && (
-            <div className="watch-stills-wrap">
-              <h3 className="watch-stills-title">Screens from these videos</h3>
-              <div className="watch-stills">
-                {stills.map((s) => <Still key={s.src} still={s} />)}
-              </div>
-            </div>
-          )}
         </div>
 
         <p className="watch-foot">

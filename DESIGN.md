@@ -342,7 +342,7 @@ before/after arrow ninety degrees so it points down rather than at nothing.
 
 **Base layout lives in CSS classes, never in inline styles.** A set of class names
 is load-bearing, and losing any of them breaks mobile silently: `.split`,
-`.shot-row`, `.pricing-grid`, `.hero-pair`, `.explore-shot-col`, `.site-nav-links`,
+`.shot-row`, `.pricing-grid`, `.hero-pair`, `.site-nav-links`,
 `.site-nav-toggle`. Per-section variance rides on the `--split-cols` custom
 property set inline, deliberately: a custom property is data, not a competing
 declaration, so the media query still wins without `!important`.
@@ -545,7 +545,7 @@ component; there is no icon package on the render path and no runtime fetch.
   off a layout.
 - **Don't** add a third breakpoint. 980px and 640px are the whole responsive story.
 - **Don't** rename or drop the load-bearing layout classes (`.split`, `.shot-row`,
-  `.pricing-grid`, `.hero-pair`, `.explore-shot-col`, `.site-nav-links`,
+  `.pricing-grid`, `.hero-pair`, `.site-nav-links`,
   `.site-nav-toggle`). Losing one breaks mobile silently.
 - **Don't** use `!important`. If a media query is losing, the base rule is in the
   wrong place.

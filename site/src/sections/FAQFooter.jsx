@@ -9,6 +9,7 @@ import { DURATION, EASE } from '../lib/motion';
 // FAQPage JSON-LD from the exact same list rather than a restated copy that
 // could drift from what this section actually renders.
 export const FAQ_ITEMS = [
+  ['Do I need an account?', 'No. There is no account and no signup. Setup asks a few questions you can skip, and one tap to confirm you are 16 or older, or that a guardian agrees.'],
   ['Is it really free?', 'Yes, and generously. The daily dashboard, guided workouts, Build My Workout, the Beginner Foundation program, the PR tracker, the illustrated exercise library, every calculator, sharing, and three bar-path analyses a month never expire, never lock, and need no account. Pro is a separate add-on for unlimited analysis and the rest of the programs.'],
   ['Do I have to follow a fixed program?', 'No. Tell Lifting Lab how you feel, what\'s sore, and how much time you have, and it builds the session, or run one of the five periodized programs if you want a full cycle. Either way, nothing is locked: reorder, swap, or adjust anything before or during the workout.'],
   ['Do I need any hardware?', 'No. Bar Trace reads speed, path and phase timing from a phone video. No sensor, no clip-on unit, no pairing.'],
@@ -73,7 +74,7 @@ export function FAQ() {
   return (
     <section id="faq" style={{ padding: 'clamp(60px,7vw,110px) 0' }}>
       <div style={{ ...siteWrap, maxWidth: 760 }}>
-        <SiteHead title="Questions." max={640} />
+        <SiteHead title="Before you download." max={640} />
         <div style={{ marginTop: 20 }}>
           {FAQ_ITEMS.map(([q, a]) => <FAQItem key={q} q={q} a={a} />)}
         </div>

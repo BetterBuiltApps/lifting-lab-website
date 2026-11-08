@@ -1,8 +1,14 @@
 import React from 'react';
-import { siteWrap, AppStoreButton, HealthBadge, Shot } from './Chrome';
+import { siteWrap, AppStoreButton, HealthBadge, StillShot } from './Chrome';
 import { asset } from '../lib/asset';
+import { VideoClip } from '../lib/VideoClip';
+import { still } from '../lib/stills';
+import videos from '@videos';
 import { SITE } from '../config';
 import { STATIONS, gapAfter, HERO_WEEK_PX } from './Arc';
+
+// The overview video: ML0 (live items only) until the release that has the full master M0.
+const HERO_VIDEO = videos.videos[videos.hero];
 
 export function Hero() {
   return (
@@ -36,9 +42,13 @@ export function Hero() {
             margin: 0, maxWidth: '52ch', fontSize: 19, lineHeight: 1.55,
             color: 'var(--text-secondary)',
           }}>
-            Lifting Lab programs your cycle, analyzes your lifts frame by frame, tells you why it missed,
-            and gets you through meet day. Built for one sport, competitive weightlifting: the snatch
-            and the clean & jerk.
+            Film a lift and see where the bar went. Get the fix before your next set. Built for one sport:
+            the snatch and the clean & jerk.
+          </p>
+          <p style={{
+            margin: 0, fontSize: 17, fontWeight: 'var(--weight-bold)', color: 'var(--text-primary)',
+          }}>
+            No account. No signup. Free to download.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap', marginTop: 6 }}>
             <AppStoreButton />
@@ -53,24 +63,11 @@ export function Hero() {
               background: 'radial-gradient(circle, rgba(245,166,35,0.14), transparent 65%)', filter: 'blur(8px)',
             }} />
             <div style={{ position: 'relative' }}>
-              <Shot
-                src={asset('assets/screens/15-bar-trace-analysis-detail.png')}
-                alt="Bar Trace: skeleton overlay, bar path and phase split on a snatch turnover"
-                width={260}
-                priority
-                lcp
-                caption="Film a clean & jerk, and it reads the pull phase by phase"
-              />
+              <VideoClip clip={HERO_VIDEO} maxWidth={260} />
             </div>
           </div>
           <div>
-            <Shot
-              src={asset('assets/screens/34-technique-doctor-detail.png')}
-              alt="Technique Doctor: a recurring fault trending worse across your last two clean lifts"
-              width={260}
-              priority
-              caption="Arms bending early, and getting worse. It caught the trend before you did."
-            />
+            <StillShot s={still('F3', 1)} width={260} priority lcp caption="One grade out of 100, checked against the competition rules" />
           </div>
         </div>
       </div>

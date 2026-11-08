@@ -1,19 +1,19 @@
 import React from 'react';
-import { siteWrap, SiteHead, Shot } from './Chrome';
-import { asset } from '../lib/asset';
+import { siteWrap, SiteHead, StillShot } from './Chrome';
 import { Reveal } from '../lib/Reveal';
+import { still } from '../lib/stills';
+import { released } from '../lib/release';
 
-/* Real sentences pulled from a live "how this session was built" card (see the
-   screenshot beside this), not invented copy. The four labels are the site's
-   own grouping of the app's signals, not a name the app itself uses:
-   effort and pacing come from the athlete's training log (consistency and
-   realism), fatigue and technique come from the same recurring-fault review
-   that also runs the miss coach and the technique doctor. */
+/* Real sentences pulled from a live "how this session was built" card, not invented copy. The labels are the site's own
+   grouping of the app's signals, not names the app uses. The Technique line names Technique Doctor, so it only appears once
+   that feature is released (release flag, see RELEASING.md). */
 const FACTS = [
   ['Effort', 'You trained 5 of the last 12 scheduled days.'],
   ['Pacing', 'Your last 8 sessions ran about 100 minutes against a 73 minute estimate.'],
   ['Fatigue', '9 of your last 9 misses came in the last third of a session.'],
-  ['Technique', 'Bar Trace caught "Bar Swung Away" twice on film. Technique Doctor named it, and today\'s session swaps in Segment Clean to fix it.'],
+  ...(released('1.5')
+    ? [['Technique', 'Bar Trace caught "Bar Swung Away" twice on film. Technique Doctor named it, and today\'s session swaps in Segment Clean to fix it.']]
+    : []),
 ];
 
 export function Engine() {
@@ -22,34 +22,25 @@ export function Engine() {
       <div style={siteWrap}>
         <Reveal>
           <div className="split" style={{ '--split-cols': 'minmax(0,1.15fr) minmax(0,0.85fr)', alignItems: 'start' }}>
-            <SiteHead title="It already knows how you actually train." max={560}
-              body="Before it builds today's session, Lifting Lab reads your last month: how often you trained, how long sessions actually ran, where your misses clustered, and what Bar Trace and Technique Doctor caught on film. Then it scales volume, intensity, and rest to match, real progressive overload instead of a fixed plan, and swaps in a corrective exercise for a fault that keeps showing up. It never rewrites your program, and it always shows its work." />
-            <Shot
-              src={asset('assets/screens/session-signals.png')}
-              alt="How this session was built: effort, pacing, fatigue, and technique summarized from your training log"
-              width={260}
-            />
+            <div style={{ display: 'grid', gap: 28 }}>
+              <SiteHead title="It already knows how you train." max={560}
+                body="Before it builds today's session, Lifting Lab reads your last month: how often you trained, how long sessions ran, where your misses clustered. Then it scales volume, intensity and rest to match. It never rewrites your program, and it shows its work." />
+              <dl className="engine-facts">
+                {FACTS.map(([k, v]) => (
+                  <div key={k}><dt>{k}</dt><dd>{v}</dd></div>
+                ))}
+              </dl>
+              <p style={{ margin: 0, font: 'var(--type-subheadline)', color: 'var(--text-secondary)' }}>
+                A rough month never spirals: a floor stops it from easing a session below 70% of normal.
+                Free, from the first session.
+              </p>
+            </div>
+            <div className="shot-row">
+              <StillShot s={still('B13', 2)} width={200} />
+              <StillShot s={still('C3', 2)} width={200} caption="Every pick says why it is there" />
+            </div>
           </div>
         </Reveal>
-        <div style={{ '--split-cols': 'minmax(0,1.15fr) minmax(0,0.85fr)', alignItems: 'start' }} className="split engine-lower">
-          <div>
-            <dl className="engine-facts">
-              {FACTS.map(([k, v]) => (
-                <div key={k}><dt>{k}</dt><dd>{v}</dd></div>
-              ))}
-            </dl>
-            <p style={{ margin: '20px 0 0', font: 'var(--type-subheadline)', color: 'var(--text-secondary)' }}>
-              A rough month never spirals: a floor stops it from easing a session
-              below 70% of normal. Free, from the first session, no upgrade required.
-            </p>
-          </div>
-          <Shot
-            src={asset('assets/screens/session-rationale.png')}
-            alt="How this session was built: a technique fault caught on film, named, and matched to today's corrective exercise"
-            width={260}
-            caption="Every line is a fact it counted, never a guess"
-          />
-        </div>
       </div>
     </section>
   );

@@ -147,14 +147,6 @@ a:hover { color: var(--amber); }
   justify-items: center;
 }
 
-/* The Log Book pair sits in half the page, so between 981px and about 1100px
-   two 260px phones do not fit. Each Shot is a one-column grid whose implicit
-   track sizes to the phone's fixed 260px width, so it has to be told to follow
-   the cell instead: fill the cell, and make its single column shrinkable. The
-   phone then scales down to the cell. Scoped here so the other .shot-row users
-   are untouched. */
-.logbook-shots > * { min-width: 0; width: 100%; grid-template-columns: minmax(0, 1fr); }
-
 /* Three click-to-play walkthrough videos. Phone-shaped (9:16), one column on
    narrow screens. */
 .clip-row {
@@ -169,7 +161,7 @@ a:hover { color: var(--amber); }
   .clip-row { grid-template-columns: minmax(0, 1fr); gap: 36px; }
 }
 
-/* Watch it work: area tabs, a grid of walkthrough videos, and a strip of stills.
+/* Watch it work: area tabs and a grid of walkthrough videos.
    Tabs are 44px tall (the tap-target minimum); on narrow screens they scroll
    sideways instead of wrapping into a tall block. */
 .watch-tabs {
@@ -195,7 +187,7 @@ a:hover { color: var(--amber); }
   color: var(--accent-fg);
   font-weight: var(--weight-bold);
 }
-.watch-tab:focus-visible, .watch-still:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.watch-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .watch-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -204,25 +196,6 @@ a:hover { color: var(--amber); }
   justify-items: center;
   margin-top: 44px;
 }
-.watch-stills-wrap { margin-top: 56px; }
-.watch-stills-title {
-  margin: 0 0 16px;
-  font: var(--type-subheadline);
-  font-weight: var(--weight-bold);
-  color: var(--text-secondary);
-}
-.watch-stills { display: flex; gap: 14px; overflow-x: auto; padding: 4px 4px 18px; }
-.watch-still {
-  flex: 0 0 auto;
-  width: 150px;
-  padding: 0;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 18px;
-  overflow: hidden;
-  background: #000;
-  cursor: pointer;
-}
-.watch-still img { display: block; width: 100%; height: auto; }
 .watch-foot {
   margin: 40px 0 0;
   max-width: 640px;
@@ -332,15 +305,6 @@ a:hover { color: var(--amber); }
   color: var(--text-tertiary);
 }
 
-/* The screenshot tracks the reader down the Explore list, until the list is
-   above it rather than beside it, at which point sticky would pin dead space. */
-.explore-shot-col {
-  position: sticky;
-  top: 100px;
-  display: flex;
-  justify-content: center;
-}
-
 .site-nav-links { display: flex; gap: 26px; }
 
 .site-nav-toggle {
@@ -358,10 +322,6 @@ a:hover { color: var(--amber); }
   /* The hero splits only while both halves have room. Below this the display
      type would be setting in a ~270px measure. */
   .hero-grid { grid-template-columns: 1fr; }
-  /* Sticky tracking only makes sense beside a scrolling tab list; stacked,
-     the image just needs to render first so tapping a tab near the top of
-     a ten-item list doesn't require scrolling past the rest to see it change. */
-  .explore-shot-col { position: static; top: auto; order: -1; }
   .site-nav-links { display: none; }
   .site-nav-toggle { display: inline-flex; }
 }
@@ -376,17 +336,57 @@ a:hover { color: var(--amber); }
   .hero-pair { grid-template-columns: 1fr; }
 }
 
-/* Progress: a centred row of shots under a centred head, not another
-   text-beside-image split. */
-.progress-row {
+/* Record: four stills in a row under a centred head. Wraps to two, then one, so a still never drops below 240px. */
+.record-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(28px, 4vw, 56px);
-  align-items: center;
-  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: clamp(20px, 3vw, 40px);
+  justify-items: center;
 }
+
+/* Proof strip: five facts under the hero. A hairline-bordered row, wrapping on narrow screens. */
+.engine-facts > div:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.proof-strip { border-top: var(--border-hairline-1); border-bottom: var(--border-hairline-1); background: var(--surface); }
+.proof-list {
+  list-style: none;
+  margin: 0;
+  padding: 18px 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px clamp(16px, 2vw, 32px);
+}
+.proof-item { display: grid; gap: 2px; align-content: start; }
+.proof-item strong { font: var(--type-subheadline); font-weight: var(--weight-bold); color: var(--text-primary); }
+.proof-item span { font: var(--type-caption); color: var(--text-secondary); }
 @media (max-width: 980px) {
-  .progress-row { grid-template-columns: 1fr; justify-items: center; }
+  .proof-list { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+}
+
+/* Download row: the repeated ask. Text left, store button right; stacked and centred below 640px. */
+.download-row { padding: clamp(36px, 4.5vw, 64px) 0; }
+.download-row-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: clamp(22px, 3vw, 36px) clamp(22px, 3vw, 40px);
+  border: var(--border-hairline-1);
+  border-radius: 24px;
+  background: radial-gradient(80% 140% at 100% 0%, rgba(245, 166, 35, 0.10), transparent 60%), var(--surface);
+}
+.download-row-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: var(--weight-extrabold);
+  font-size: clamp(24px, 2.6vw, 34px);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+}
+.download-row-line { margin: 8px 0 0; font: var(--type-body); color: var(--text-secondary); }
+@media (max-width: 640px) {
+  .download-row-inner { justify-content: center; text-align: center; }
 }
 
 /* ---------------------------------------------------------------------------
@@ -581,9 +581,9 @@ a:hover { color: var(--amber); }
 .arc-pair {
   display: grid;
   /* minmax(0, ...), not plain 1fr, matching every other mixed-content grid in
-     this file (.split, .hero-grid, .progress-row, .arc-miss, .arc-facts,
+     this file (.split, .hero-grid, .arc-miss, .arc-facts,
      .engine-facts, .contact-form): a plain 1fr track carries an implicit auto
-     minimum sized to its content, so a track holding a fixed-width Shot can
+     minimum sized to its content, so a track holding a fixed-width StillShot can
      resist shrinking below that width in the 640-980px range, just above
      where this collapses to one column. */
   grid-template-columns: minmax(0,1fr) auto minmax(0,1fr);

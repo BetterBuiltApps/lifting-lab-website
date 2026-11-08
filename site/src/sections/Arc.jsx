@@ -15,8 +15,8 @@
  */
 import React, { useRef } from 'react';
 import { motion, useReducedMotion, useInView } from 'motion/react';
-import { siteWrap, Shot } from './Chrome';
-import { asset } from '../lib/asset';
+import { siteWrap, StillShot } from './Chrome';
+import { still } from '../lib/stills';
 import { DURATION, EASE } from '../lib/motion';
 
 /* `week` is the real position on the axis, and it is what drives spacing, the
@@ -178,18 +178,22 @@ export function Arc() {
       <Axis active={active} />
 
       <div className="arc-stations">
-        {/* -12w, wide and calm. One screenshot, large, plenty of air. */}
-        <Station id="cycle" week={12} unit="weeks out" title="A cycle built off your real numbers."
+        {/* -12w, wide and calm. A free program, read before you start. */}
+        <Station id="cycle" week={12} unit="weeks out" title="Pick a program. Run it."
                  className="arc-station--wide">
           <div className="arc-row">
-            <p className="arc-lede">
-              Technique, strength, specification, peak, and masters cycles, periodized off your actual
-              PRs, not a generic percentage table. Every set arrives with target weight, percentage, and
-              plates already loaded. Miss a session and Lifting Lab reschedules it, no guilt trip.
-            </p>
-            <div className="arc-figure">
-              <Shot src={asset('assets/screens/02-programs-list.png')}
-                    alt="Programs list: five periodized cycles" width={260} />
+            <div>
+              <p className="arc-lede">
+                Beginner Foundation is free: 10 weeks, 3 days a week. Read week one before you start.
+                Weights come from your real PRs, with the plates already worked out.
+              </p>
+              <p className="arc-lede arc-lede--quiet">
+                Miss a session and Lifting Lab reschedules it. More programs are Pro.
+              </p>
+            </div>
+            <div className="arc-close-shots">
+              <StillShot s={still('D2', 1)} width={260} />
+              <StillShot s={still('D2', 2)} width={260} />
             </div>
           </div>
         </Station>
@@ -198,33 +202,26 @@ export function Arc() {
         <Station id="daily" week={8} unit="weeks out" title="Tell it how you feel. It builds the day."
                  className="arc-station--pair">
           <p className="arc-lede">
-            Energy, soreness, your equipment, the time you have. Lifting Lab builds the session around
-            it: the right lift for today's rotation, strength work that avoids what's sore, accessories
-            that balance the day. Then it's yours to reorder, swap, or dial up or down.
-          </p>
-          <p className="arc-lede arc-lede--quiet">
-            Open the app on any day and it already knows: an unfinished session waiting to resume, the
-            week at a glance, and a flag the moment the same technique fault shows up twice.
+            Tap Fresh, Normal, Tired or Smoked. Weights back off when you do. Or build a session around
+            your energy, your sore spots and the time you have.
           </p>
           <div className="arc-pair">
             <figure className="arc-pair-half">
-              <Shot src={asset('assets/screens/checkin-build-workout.png')}
-                    alt="Check-in: energy, sore muscles to avoid, and what you're training today" width={260} />
+              <StillShot s={still('B13', 1)} width={260} />
               <figcaption className="arc-pair-cap">What you tell it</figcaption>
             </figure>
             <div className="arc-pair-arrow" aria-hidden="true">
               <svg viewBox="0 0 40 12" focusable="false"><path d="M0 6h34M28 1l6 5-6 5" /></svg>
             </div>
             <figure className="arc-pair-half">
-              <Shot src={asset('assets/screens/custom-workout-hub.png')}
-                    alt="A custom workout put together: three blocks, set counts, and volume and intensity dialed in" width={260} />
+              <StillShot s={still('C1', 2)} width={260} />
               <figcaption className="arc-pair-cap">What you get back</figcaption>
             </figure>
           </div>
         </Station>
 
         {/* -4w, the signature station. Darkest, tightest, the trace as hero. */}
-        <Station id="miss" week={4} unit="weeks out" title="It missed. Here's where it went."
+        <Station id="miss" week={4} unit="weeks out" title="It missed. See where it went."
                  className="arc-station--dark">
           <div className="arc-miss">
             <div className="arc-miss-trace">
@@ -239,21 +236,15 @@ export function Arc() {
             </div>
             <div className="arc-miss-body">
               <p className="arc-lede">
-                Film a set on your phone. Lifting Lab plots the bar path, splits it into five phases,
-                and shows you where it drifts, no sensor, no pairing. Compare today's snatch against
-                your best one, at true scale.
+                Film the set on your phone. Lifting Lab traces the bar, grades the lift and names the one
+                thing to fix. No sensor, no pairing.
               </p>
               <p className="arc-lede arc-lede--quiet">
-                And when the tracking isn't clean, it says so and shows the evidence, rather than
-                handing you a number it can't stand behind.
+                If it can't see the lift clearly, it says so. No made-up numbers.
               </p>
               <div className="arc-miss-shots">
-                <Shot src={asset('assets/screens/15b-bar-trace-live-metrics.png')}
-                      alt="Bar Trace metrics: peak speed, mean pull speed, bar height" width={260} />
-                <Shot src={asset('assets/screens/33-technique-doctor-list.png')}
-                      alt="Technique Doctor: say where the lift went wrong" width={260} />
-                <Shot src={asset('assets/screens/34-technique-doctor-detail.png')}
-                      alt="Technique Doctor: likely causes and corrective drills" width={260} />
+                <StillShot s={still('F4', 1)} width={240} />
+                <StillShot s={still('B7', 1)} width={240} />
               </div>
             </div>
           </div>
@@ -265,25 +256,19 @@ export function Arc() {
           <div className="arc-dense">
             <div className="arc-row">
               <div>
-                {/* No weight-class records here. Measuring a lifter against the
-                    world best is not what motivates anyone in a taper week; the
-                    numbers that matter are their own, moving. */}
                 <p className="arc-lede">
-                  Taper week is arithmetic. Lifting Lab carries the maths the sport actually runs on,
-                  worked against your lifts rather than a table.
+                  Taper week is arithmetic. Lifting Lab does it from your own lifts, not a table.
                 </p>
                 <dl className="arc-facts">
-                  <div><dt>Sinclair</dt><dd>Your total, scored across bodyweights</dd></div>
-                  <div><dt>Openers</dt><dd>A first attempt you will make, not one you hope for</dd></div>
-                  <div><dt>Prilepin</dt><dd>Rep and intensity ranges per block</dd></div>
-                  <div><dt>Plate math</dt><dd>Loaded for your gym's actual inventory</dd></div>
+                  <div><dt>Sinclair</dt><dd>Your total, scored for your bodyweight</dd></div>
+                  <div><dt>Barbell loader</dt><dd>Enter the weight, see the bar</dd></div>
+                  <div><dt>Percentages</dt><dd>Every percentage off your PR, plates per side</dd></div>
                   <div><dt>Warm-up ramps</dt><dd>Jumps shaped the way a coach would set them</dd></div>
-                  <div><dt>Your own history</dt><dd>Every number above, against what you lifted last cycle</dd></div>
                 </dl>
               </div>
               <div className="arc-dense-shots">
-                <Shot src={asset('assets/screens/21-sinclair.png')} alt="Sinclair score calculator" width={260} />
-                <Shot src={asset('assets/screens/17-barbell-loader.png')} alt="Barbell loader: plate math for your gym" width={260} />
+                <StillShot s={still('I8', 1)} width={240} />
+                <StillShot s={still('I4', 1)} width={240} />
               </div>
             </div>
           </div>
@@ -294,15 +279,12 @@ export function Arc() {
                  className="arc-station--close">
           <div className="arc-row">
             <p className="arc-lede">
-              Lifting Lab counts your warm-ups, tells you when to take the next one, and tracks your six
-              attempts on the board. Openers you'll make. Totals you'll keep. Nobody explains the
-              warm-up room. This does.
+              Set your openers. Count the attempts before yours. A card tells you when to take the next
+              warm-up. Nobody explains the warm-up room. This does. Meet Day is Pro.
             </p>
             <div className="arc-close-shots">
-              <Shot src={asset('assets/screens/24-meet-day-warmup-room.png')}
-                    alt="Meet Day: the warm-up room, counted in attempts" width={260} />
-              <Shot src={asset('assets/screens/25-meet-day-attempt-board.png')}
-                    alt="Meet Day: the six-attempt board" width={260} />
+              <StillShot s={still('J1', 2)} width={240} />
+              <StillShot s={still('J1', 3)} width={240} />
             </div>
           </div>
         </Station>

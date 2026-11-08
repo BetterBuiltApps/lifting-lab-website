@@ -56,7 +56,7 @@ behaviour is media-query overrides keyed to these class names:
 
 ```
 .split  .shot-row  .pricing-grid  .hero-pair
-.explore-shot-col  .site-nav-links  .site-nav-toggle
+.site-nav-links  .site-nav-toggle
 ```
 
 Drop, rename, or restructure one of these and **mobile breaks with no test
@@ -130,25 +130,14 @@ only what a Release build ships, Pro marked). Its dark theme in
 `help/src/styles/custom.css` mirrors `tokens/`; change `tokens/` first.
 `impeccable detect` does not scan `help/`. See `help/README.md`.
 
-## Regenerating the app screenshots
+## Regenerating the page images
 
-The screenshots are the site's only proof, and they go stale every time the app
-changes. The whole path:
-
-1. In the app repo, run the walk on its own so the shared-store ordering
-   contract in the other UI tests is not disturbed:
-   `xcodebuild ... -only-testing:LiftingLabUITests/ScreenshotWalkTests -resultBundlePath out.xcresult test`
-2. `xcrun xcresulttool export attachments --path out.xcresult --output-path shots/`
-   The files come out named for their screen (`02-Dashboard.png` and so on).
-3. Copy the ones the site uses into `site/public/assets/screens/`, keeping the
-   existing filenames, because `Explore.jsx` and `Arc.jsx` reference them by name.
-4. `npm run screens --prefix site` to regenerate the 600w and 900w WebP variants.
-5. Re-read the `alt` text. It describes what is *in* each shot, so a redesigned
-   screen can silently invalidate it even when the filename still fits.
-
-`site/public/assets/screens/22-world-records.png` is currently orphaned: the site
-no longer sells weight classes or world records. Keep or delete it as you like,
-but nothing references it.
+The home page no longer uses app screenshots. Every image of the app is a **still from a walkthrough video** (a headline above a
+phone), made by the video project (`Lifting Lab - Videos`, `scripts/v2/web-export.mjs`) and read through `site/src/lib/stills.js`
+and `StillShot` in `Chrome.jsx`. To change one: re-render the video in the video project, run `node scripts/v2/web-export.mjs`
+there, review the new `site/src/data/stills.<release>.json` and `site/public/assets/stills/`, and commit. The old PNGs in
+`site/public/assets/screens/` are unreferenced; delete them when you are sure nothing needs them. Alt text lives in the data
+file and describes what is in the still, so re-read it after a redesign.
 
 ## Commands
 
