@@ -8,7 +8,7 @@
 - Bar Trace video analysis: reads bar speed, path and phase timing from a phone video. No sensor or extra hardware. When tracking is weak the app says so instead of showing a number it cannot support. Analysis runs on-device.
 - Technique Doctor: diagnoses the likely cause of a missed or off-pattern lift.
 - Meet Day: warm-up pacing and an attempt board for competition day.
-- Training log, PR tracker, illustrated exercise library, training calculators, kg and lb units, levels, streaks and badges, Apple Health sync.
+- Training log, PR tracker, illustrated exercise library, training calculators, kg and lb units, levels, streaks and badges, and Apple Health sync on iPhone.
 
 ## Pricing
 
@@ -18,7 +18,8 @@
 ## Privacy
 
 - Video analysis runs on the device. No clip or lift data is sent anywhere to be scored.
-- Training data syncs through the user's own private iCloud. It is not sent to a third-party server, and no Lifting Lab account is required.
+- On iPhone, training data syncs through the user's own private iCloud. It is not sent to a third-party server. On Android there is no sync: sessions, records and clips stay on the phone.
+- No Lifting Lab account is required on either platform.
 
 ## Links
 

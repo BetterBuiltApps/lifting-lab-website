@@ -67,7 +67,7 @@ warm at the wrong time is a real failure.
 
 ## Capabilities and Constraints
 
-- iOS only today. Android is not planned and the site says so.
+- iPhone and Android. Both apps are live (App Store and Google Play), and the site says so: the FAQ, `/get`, the structured data and `llms.txt` all cover Android. Differences to keep honest in copy: Android has no iCloud sync (data stays on the phone), Health data comes through Health Connect rather than Apple Health, and Pro is billed through Google Play there.
 - Video analysis runs on-device; no clip or lift data is sent anywhere to score
   it. Training data syncs to the user's own private iCloud; clip sync is a
   separate opt-in. No account required.

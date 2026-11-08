@@ -14,9 +14,9 @@ export const FAQ_ITEMS = [
   ['Do I have to follow a fixed program?', 'No. Tell Lifting Lab how you feel, what\'s sore, and how much time you have, and it builds the session, or run one of the five periodized programs if you want a full cycle. Either way, nothing is locked: reorder, swap, or adjust anything before or during the workout.'],
   ['Do I need any hardware?', 'No. Bar Trace reads speed, path and phase timing from a phone video. No sensor, no clip-on unit, no pairing.'],
   ['How accurate is the video analysis?', 'It depends on the clip: side-on, whole bar in frame, steady phone. When tracking is weak, Lifting Lab says so and shows the evidence, rather than giving you a number it can\'t back up.'],
-  ['Does my data leave my phone?', 'Video analysis runs entirely on-device. No clip or lift data is sent anywhere to score it. Training data syncs to your own private iCloud so it follows you across devices (clip sync is a separate opt-in), never to a third-party server, and there\'s no Lifting Lab account required.'],
+  ['Does my data leave my phone?', 'Video analysis runs entirely on-device. No clip or lift data is sent anywhere to score it. On iPhone, training data syncs to your own private iCloud so it follows you across devices (clip sync is a separate opt-in), never to a third-party server. On Android there is no sync: your sessions, records and clips stay on the phone. Either way, no Lifting Lab account is required.'],
   ['Kilos or pounds?', 'Both. Pick kg or lb in Settings and every screen follows your choice, plus there\'s a dedicated kg to lb converter in Tools. Everything is stored in kg internally, matching IWF competition and the way the sport is actually coached, and converted for display.'],
-  ['Android?', 'Yes. Lifting Lab is on the App Store for iPhone and on Google Play for Android.'],
+  ['Is there an Android app?', 'Yes. Lifting Lab is on the App Store for iPhone and on Google Play for Android. Neither needs an account, and the free tier is the same on both. Pro is billed through the store you installed from: Apple on iPhone, Google Play on Android.'],
   ['Do I have to fill any of this in?', 'No. Every field is optional, nothing is scored, and skipping it costs you nothing. Lifting Lab suggests a reflection every few weeks and that suggestion is dismissible.'],
 ];
 
