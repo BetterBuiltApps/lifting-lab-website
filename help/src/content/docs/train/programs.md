@@ -41,7 +41,7 @@ If a scheduled day passes without a session, the app asks what to do about it:
 
 - **Skip it:** logged as missed, and the program continues from tomorrow. Good late in a cycle, in a deload week, or when you chose to rest.
 - **Reschedule:** the session moves to today and later sessions shift back a day. Good for a single miss early on.
-- **Merge into next:** a reduced version is added to your next session, so you keep some of the volume without doubling the load.
+- **Merge into next:** a reduced version is fitted into your next session, so you keep some of the volume without doubling the load. Its lifts go in with that day's lifts, ahead of the pulls and squats, and if both days have a squat you do only the one already planned.
 
 If you missed several days, you get one question about the most recent one. The older days are logged as missed once you choose. If you close it without choosing, nothing changes and it asks again next time.
 

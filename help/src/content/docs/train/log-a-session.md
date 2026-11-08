@@ -25,7 +25,7 @@ Leaving a session never loses a set. Backing out just pauses it, and every set y
 
 ## The set card
 
-The session shows one set at a time. You see the exercise, the weight in large type, the target reps, and a picture of the bar with the plates on each side. The classic lifts, squats, pulls and presses open with warm-up sets first, starting with the empty bar. These are labelled as warm-ups and are not counted as training.
+The session shows one set at a time. You see the exercise, the weight in large type, the target reps, and a picture of the bar with the plates on each side. The classic lifts, squats, pulls and presses open with warm-up sets first, starting with the empty bar. These are labelled as warm-ups and are not counted as training. When the same lift comes back later in the session, such as back-off sets after a heavy top set, it has no second warm-up: you are already warm from the first.
 
 To log a set:
 
