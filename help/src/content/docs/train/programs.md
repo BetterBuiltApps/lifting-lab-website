@@ -68,7 +68,15 @@ Open today's session from the Train tab and it runs in the same live screen as a
 
 On the Programs list and on the running program's own page you can **End Program** or **Restart from Week 1**. Both ask you to confirm. Ending only stops the remaining schedule. Sessions you already finished stay in your Log Book.
 
-If your Pro subscription ends while you are running a Pro program, you can still continue it to the end, or end it. **Restart from Week 1** is not offered, because restarting schedules a new run of a Pro program.
+<!-- since 1.5 -->
+
+Restarting a Pro program starts it again from the beginning, so it needs Pro. If your subscription has ended, you can still continue or end a Pro program you started, but **Restart from Week 1** asks you to unlock Pro first. Beginner Foundation and your own programs can always be restarted.
+
+:::note[Android]
+On Android, the Restart from Week 1 button is replaced by a line saying that restarting needs Pro. Continue Program and End Program stay available.
+:::
+
+<!-- /since -->
 
 ## Skipping and missed days
 
