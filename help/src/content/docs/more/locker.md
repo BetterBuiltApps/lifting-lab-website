@@ -60,5 +60,5 @@ Switching to a new iPhone? Tap Restore Purchases once you have signed in with th
 :::
 
 :::note[Android]
-On Android, Pro is billed to your Google Play account, and the Subscription screen has a Manage in Google Play button to change or cancel it. There is no Restore Purchases button: the app checks Google Play for your subscription itself, so a new phone signed in with the same Google account gets Pro back.
+On Android, Pro is billed to your Google Play account, and the Subscription screen has a Manage in Google Play button to change or cancel it. There is no Restore Purchases button: the app checks Google Play for your subscription itself, so a new phone signed in with the same Google account gets Pro back. If you pay with a slower method such as cash or a bank transfer, the screen says the payment is pending, and Pro unlocks as soon as Google Play confirms it. Buying again does not speed it up.
 :::

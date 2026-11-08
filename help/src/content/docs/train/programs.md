@@ -31,6 +31,8 @@ Open today's session from the Train tab and it runs in the same live screen as a
 
 On the Programs list and on the running program's own page you can **End Program** or **Restart from Week 1**. Both ask you to confirm. Ending only stops the remaining schedule. Sessions you already finished stay in your Log Book.
 
+If your Pro subscription ends while you are running a Pro program, you can still continue it to the end, or end it. **Restart from Week 1** is not offered, because restarting schedules a new run of a Pro program.
+
 ## Skipping and missed days
 
 To skip a day on purpose, tap **Skip Today** on the Train tab before you start it. The day is recorded as skipped and the program carries on with the next one.
