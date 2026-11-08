@@ -95,7 +95,7 @@ Delayed Replay shows the camera feed 3, 5, 8 or 10 seconds behind. Prop the phon
 ## Share, compare and manage
 
 - **Share** makes a vertical clip with the trace and stats on it.
-- **Compare** overlays two analyses (Pro).
+- **Compare** overlays two analyses (Pro). Once you pick the first clip, only clips of the same exercise are listed, so you can never compare two different lifts.
 - **Re-analyze** and **Delete** are in the menu on the result screen.
 
 :::note
