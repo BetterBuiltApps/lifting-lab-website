@@ -30,7 +30,7 @@ The workout builder is for days when you are not following a program. You answer
 3. Fill in the check-in: your energy, which muscles are sore, which blocks you want to train, and optionally how much time you have. Sore muscles are filled in from your recent training, so just adjust them.
 4. Tap **Load It Up**.
 
-If you leave the blocks blank, the app chooses the shape of the session. If you tick blocks, such as Clean & Jerk and Squats, you get exactly those and nothing bolted on. Your choice is remembered for next time.
+If you leave the blocks blank, the app chooses the shape of the session. If you tick blocks, such as Clean & Jerk and Squats, you get exactly those and nothing bolted on. A block you tick is built even when a sore muscle would normally keep it out, such as Core on a day your core is sore, just with less work in it. Your choice is remembered for next time.
 
 Low energy changes what you get. With the blocks left blank, an energy of 1 turns the day into a short recovery session of light technique work. With blocks ticked, you still get those blocks, with fewer sets and lighter top sets.
 
@@ -49,6 +49,14 @@ Distances, such as a run, are shown in kilometres or miles to match your kg or l
 ## Change exercises
 
 - **Swap:** tap Swap on an exercise<!-- since 1.5 -->. The closest matches from the same kind of lift appear first<!-- /since -->, and the list is limited to the equipment you have.
+
+The estimated time includes the warm-up sets the session adds in front of each loaded lift, when warm-up ramps are on in Settings. If you gave a time limit, the app fits the session to it in this order: core comes out first, then the cardio it added is shortened or dropped, then accessories and working sets come down, so your main lifts are cut last. If even the shortest version runs over, the "How this session was built" note says how long it will take rather than claiming it fits.
+
+Cards on this screen explain the draft: what the app adjusted from your history, which weak point a choice addresses, and a "How this session was built" note that says why you are snatching today and what the time limit trimmed.
+
+## Change exercises
+
+- **Swap:** tap Swap on an exercise. The closest matches from the same kind of lift appear first, and the list is limited to the equipment you have. The new exercise keeps the sets, and keeps the reps when it is counted the same way. A plank swapped for sit-ups gets the sit-ups' own rep count, and a rowing machine swapped for a run keeps the same number of minutes.
 - **Add exercise:** use Add exercise at the foot of a block.
 
 <!-- since 1.5 -->
@@ -69,6 +77,8 @@ Distances, such as a run, are shown in kilometres or miles to match your kg or l
 ## Edit sets and weights
 
 Each exercise has steppers for sets and reps. A cardio piece, such as a row or a bike, has a Minutes stepper instead, which moves in 5 minute steps from 5 to 60. Percentage work shows a percent of your record for that lift, and effort-based work shows a target effort rating (RPE, a 1-10 scale of how hard a set feels).
+
+Each exercise has steppers for sets and reps. Percentage work shows a percent of your record for that lift, and effort-based work shows a target effort rating (RPE, a 1-10 scale of how hard a set feels). Cardio is set in minutes, from 5 to 60 in steps of 5, whether the machine counts time or the run counts distance.
 
 Each loaded exercise also has a **Pyramid** switch. When it is on, the sets climb or descend like a ladder instead of repeating one weight. Low-rep work such as doubles and singles holds its reps and ramps the weight.
 
