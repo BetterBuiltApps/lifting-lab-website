@@ -27,11 +27,15 @@ These guides cover Lifting Lab on iPhone and on Android. Where the two differ, a
 The first time you open the app, a short setup walks you through a few screens. Almost everything is optional, and you can change any answer later in Settings.
 
 1. **Units.** Choose kilograms or pounds. Kilograms are the competition standard. Pounds work everywhere too. See [Units and your data](/help/start/units-and-data/) for how this works.
-2. **About you.** Pick your bar (men's 20 kg or women's 15 kg), your experience level, and optionally your bodyweight. This sets your starting bar, your warm-up sets, and how programs scale. Bodyweight is also used for your Sinclair score, a number that lets lifters of different sizes be compared.
+2. **About you.** Pick your bar (men's 20 kg or women's 15 kg), your experience level, and optionally your bodyweight. This sets your starting bar, your warm-up sets, and how programs scale. If you chose pounds, the men's choice is the 45 lb bar and the women's choice is the 15 kg bar. The bar choice also sets men's or women's scoring for your Sinclair and weight classes. Bodyweight is used for your Sinclair score too, a number that lets lifters of different sizes be compared.
 3. **Starting PRs (optional).** Enter your current best lifts if you know them. Programs use these to work out percentages. Skip any you are unsure of. You can add records later, or set them in a session.
 4. **Ready to go.** The last screen lists the tabs and asks for one confirmation: tick the box that says you are 16 or older, or that a parent or guardian is agreeing on your behalf. The Start training button stays off until you do. Weightlifting carries a risk of injury, so this screen also shows a short safety note, with the Terms and Privacy Policy one tap away.
 
 If you tap Skip on an earlier screen, you keep anything you already entered and jump to the last screen. You still need to tick the box there.
+
+:::note[Android]
+On Android the Back gesture steps back one screen during setup, keeping what you typed. If you go back to Starting PRs and fix a number, the new number replaces the old one, and clearing a box removes that starting PR.
+:::
 
 The app does not ask for any permissions up front. Camera, notifications and similar requests appear later, at the moment you use a feature that needs them.
 
