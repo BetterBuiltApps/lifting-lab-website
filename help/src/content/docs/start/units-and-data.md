@@ -50,9 +50,13 @@ The three files are:
 
 - **Lift Summary.** One row per lift: your best PR, your training max, your heaviest made set, your best estimated one-rep max, how many sessions and sets you have done, your total tonnage, and when you last trained it.
 - **Personal Records.** Every PR you have logged.
-- **Training History.** Every set you have logged. Warm-up sets are marked and never counted toward your totals.
+- **Training History.** Every set you have logged. Warm-up sets are marked and never counted toward your totals. The last two columns, Metric and Quantity, say what a set was measured in: a timed set such as a plank shows its seconds, and a distance set such as a row shows its meters, so neither reads as a rep count or a zero weight.
 
 Weights in the files appear in kilograms and in your chosen unit.
+
+:::note[Android]
+The Android export has the same Metric and Quantity columns at the end of Training History.
+:::
 
 :::note
 Data & Privacy also holds the Terms & Conditions and Privacy Policy, which you can read offline, a record of when you accepted the Terms, and an About the Data screen that names the sources behind the app's numbers.
