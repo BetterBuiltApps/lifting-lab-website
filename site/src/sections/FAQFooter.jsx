@@ -143,9 +143,9 @@ export function SiteFooter() {
               joins it once that badge actually ships, see
               SITE.healthBadgeReady, crediting a trademark for a mark the page
               doesn't show would be false. */}
-          {' App Store is a service mark of Apple Inc.'}
+          {' App Store is a service mark of Apple Inc., registered in the U.S. and other countries.'}
           {SITE.android.released && ' Google Play and the Google Play logo are trademarks of Google LLC.'}
-          {SITE.healthBadgeReady && ' Apple, the Apple logo, and iPhone are trademarks of Apple Inc., registered in the U.S. and other countries.'}
+          {SITE.healthBadgeReady && ' Apple, the Apple logo, iPhone and Apple Health are trademarks of Apple Inc., registered in the U.S. and other countries.'}
           {' Social icons from '}<a href="https://www.flaticon.com" target="_blank" rel="noopener noreferrer">Flaticon</a>.
         </p>
       </div>

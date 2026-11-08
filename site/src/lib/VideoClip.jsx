@@ -25,7 +25,7 @@ function PlayIcon() {
   );
 }
 
-export function VideoClip({ clip, maxWidth = 300 }) {
+export function VideoClip({ clip }) {
   const [playing, setPlaying] = React.useState(false);
   const videoRef = React.useRef(null);
   const label = `${clip.title}, ${clip.seconds} second walkthrough with narration`;
@@ -42,7 +42,7 @@ export function VideoClip({ clip, maxWidth = 300 }) {
   };
 
   return (
-    <figure style={{ margin: 0, display: 'grid', gap: 14, justifyItems: 'center', width: '100%', maxWidth }}>
+    <figure style={{ margin: 0, display: 'grid', gap: 14, justifyItems: 'center', width: 'min(100%, var(--media-w))' }}>
       <div style={{
         position: 'relative', width: '100%', aspectRatio: '9 / 16', borderRadius: 28, overflow: 'hidden',
         background: '#000', border: '1px solid rgba(255,255,255,0.14)', boxShadow: '0 30px 70px rgba(0,0,0,0.55)',
@@ -80,7 +80,7 @@ export function VideoClip({ clip, maxWidth = 300 }) {
           </button>
         )}
       </div>
-      <figcaption style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)', textAlign: 'center', maxWidth: 280 }}>
+      <figcaption style={{ font: 'var(--type-caption)', color: 'var(--text-tertiary)', textAlign: 'center', maxWidth: 'var(--media-w)', minHeight: '2.8em' }}>
         <strong style={{ color: 'var(--text-secondary)', fontWeight: 'var(--weight-bold)' }}>{clip.title}.</strong>{' '}
         {clip.plan === 'Pro' && (
           <span style={{

@@ -130,6 +130,9 @@ a:hover { color: var(--amber); }
    still wins without !important.
    --------------------------------------------------------------------------- */
 
+/* One size for every video and still (see lib/media.js). */
+:root { --media-w: 240px; }
+
 /* Two-column text/media row. --split-cols is the per-section ratio. */
 .split {
   display: grid;
@@ -141,10 +144,11 @@ a:hover { color: var(--amber); }
 /* A row of phone screenshots inside a .split column. Identical everywhere. */
 .shot-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, var(--media-w));
   gap: 18px;
   justify-content: center;
   justify-items: center;
+  align-items: start;
 }
 
 /* Three click-to-play walkthrough videos. Phone-shaped (9:16), one column on
@@ -190,10 +194,10 @@ a:hover { color: var(--amber); }
 .watch-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .watch-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, var(--media-w));
   gap: clamp(20px, 3vw, 44px);
   align-items: start;
-  justify-items: center;
+  justify-content: start;
   margin-top: 44px;
 }
 .watch-foot {
@@ -206,7 +210,7 @@ a:hover { color: var(--amber); }
 @media (max-width: 640px) {
   .watch-tabs { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; }
   .watch-tab { flex: 0 0 auto; }
-  .watch-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .watch-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; justify-items: center; }
 }
 
 .pricing-grid {
@@ -235,9 +239,11 @@ a:hover { color: var(--amber); }
 
 .hero-pair {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, var(--media-w));
   gap: 28px;
-  align-items: end;
+  justify-content: start;
+  /* start, not end: the video and the still must share a top edge (same size, same line). */
+  align-items: start;
 }
 
 /* The arc, previewed in the first screen. Horizontal here rather than vertical:
@@ -333,15 +339,16 @@ a:hover { color: var(--amber); }
 }
 
 @media (max-width: 640px) {
-  .hero-pair { grid-template-columns: 1fr; }
+  .hero-pair { grid-template-columns: 1fr; justify-items: center; }
 }
 
 /* Record: four stills in a row under a centred head. Wraps to two, then one, so a still never drops below 240px. */
 .record-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  grid-template-columns: repeat(auto-fit, var(--media-w));
   gap: clamp(20px, 3vw, 40px);
-  justify-items: center;
+  justify-content: center;
+  align-items: start;
 }
 
 /* Proof strip: five facts under the hero. A hairline-bordered row, wrapping on narrow screens. */
@@ -624,7 +631,7 @@ a:hover { color: var(--amber); }
 .arc-trace-key [data-phase='second-pull']::before { background: var(--phase-second-pull); }
 .arc-trace-key [data-phase='turnover']::before { background: var(--phase-turnover); }
 .arc-trace-key [data-phase='catch']::before { background: var(--phase-catch); }
-.arc-miss-shots { display: flex; flex-wrap: wrap; gap: 16px; }
+.arc-miss-shots { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
 
 /* -1w: dense and numeric, immediately after the open dark station. */
 /* Explicit column counts, not auto-fit. There are exactly six facts, and
@@ -650,7 +657,7 @@ a:hover { color: var(--amber); }
   color: var(--text-primary);
 }
 .arc-facts dd { margin: 0; font: var(--type-caption); color: var(--text-tertiary); }
-.arc-dense-shots { display: flex; flex-wrap: wrap; gap: 18px; }
+.arc-dense-shots { display: flex; flex-wrap: wrap; gap: 18px; align-items: flex-start; }
 
 /* The engine's four-signal breakdown. Same hairline-cell idea as .arc-facts,
    but at two columns for exactly four items, three would leave one cell
@@ -688,7 +695,7 @@ a:hover { color: var(--amber); }
    heading on the page not matching every other section's color; removed so
    every h2 (SiteHead's and .arc-station-title alike) reads the same. */
 .arc-station--close .arc-station-title { max-width: 40ch; }
-.arc-close-shots { display: flex; flex-wrap: wrap; gap: 20px; justify-content: flex-start; }
+.arc-close-shots { display: flex; flex-wrap: wrap; gap: 20px; justify-content: flex-start; align-items: flex-start; }
 
 @media (max-width: 980px) {
   /* The rail needs room beside the content; without it, each station's own

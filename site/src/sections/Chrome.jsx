@@ -7,6 +7,7 @@ import { asset } from '../lib/asset';
 import { DURATION, EASE } from '../lib/motion';
 import { useLightbox } from '../lib/Lightbox';
 import { useDevice } from '../lib/device';
+import { MEDIA_W } from '../lib/media';
 
 export const siteWrap = { maxWidth: 1240, margin: '0 auto', padding: '0 clamp(20px,5vw,60px)' };
 
@@ -142,8 +143,9 @@ export function SiteHead({ title, body, center = false, max = 640 }) {
  * bezel of its own and is never cropped. Same hairline frame and shadow as the video, so stills and videos read as one family.
  * Explicit width and height reserve the space before the image decodes (no layout shift). The 600w file serves the page, the 900w
  * file opens in the lightbox. Pro stills carry their own "Pro" pill in the image itself. */
-export function StillShot({ s, width = 260, caption, priority = false, lcp = false }) {
+export function StillShot({ s, caption, priority = false, lcp = false }) {
   const openLightbox = useLightbox();
+  const width = MEDIA_W;
   const height = Math.round((width * 16) / 9);
   return (
     <figure style={{ margin: 0, display: 'grid', gap: 12, justifyItems: 'center' }}>
@@ -151,7 +153,7 @@ export function StillShot({ s, width = 260, caption, priority = false, lcp = fal
         type="button"
         onClick={(e) => openLightbox({ src: asset(s.large), alt: s.alt, caption }, e.currentTarget)}
         aria-label={`View larger: ${s.alt}`}
-        style={{ display: 'block', width, maxWidth: '100%', padding: 0, border: 'none', background: 'none', cursor: 'pointer', borderRadius: 28 }}
+        style={{ display: 'block', width: 'min(100%, var(--media-w))', padding: 0, border: 'none', background: 'none', cursor: 'pointer', borderRadius: 28 }}
       >
         <motion.div
           whileHover={{ scale: 1.015, borderColor: 'rgba(255,255,255,0.22)' }}
@@ -278,7 +280,9 @@ export function AppStoreButton({ size = 'large' }) {
 // The "smaller than your main message" placement rule this badge also carries
 // is about the heading above it, not about matching a sibling badge, and 56px
 // still clears its own 30px minimum with plenty of room.
-const HEALTH_BADGE_HEIGHT = APP_STORE_BADGE_HEIGHT.large;
+// Apple: the Works with Apple Health badge must be subordinate to the main message (and at least 30px tall), so it is
+// deliberately smaller than the App Store badge beside it.
+const HEALTH_BADGE_HEIGHT = 40;
 
 /** "Works with Apple Health" badge. Renders nothing until the real artwork is
  * in place (see SITE.healthBadgeReady in config.js), never a placeholder or a
@@ -293,6 +297,21 @@ const HEALTH_BADGE_HEIGHT = APP_STORE_BADGE_HEIGHT.large;
  * licensed use. Callers are responsible for the "one badge per promotion" and
  * "not alongside the Apple logo" rules, this component only renders the mark
  * itself plus its required clear space. */
+/** A plain download button for the repeated asks lower on the page. Apple's badge rules allow one App Store badge per layout,
+ * so the badge itself stays in the hero and in Pricing; these rows use a normal button that goes to the same store listing
+ * (Google Play on Android). Never the Apple logo, never a copy of the badge artwork. */
+export function DownloadButton({ children = 'Download Lifting Lab' }) {
+  const device = useDevice();
+  const android = device === 'android';
+  const href = android ? SITE.android.playStoreUrl : SITE.links.appStore;
+  if (android ? !SITE.android.released : !SITE.released) return null;
+  return (
+    <Button as="a" variant="primary" size="large" href={href}>
+      {children}
+    </Button>
+  );
+}
+
 export function HealthBadge() {
   const device = useDevice();
   if (device === 'android') return null;

@@ -17,10 +17,10 @@ export function Record() {
             body="Your PRs, your Log Book and your notes in one place. Levels, streaks and badges come from your real training, so your history counts from day one. Nothing to fill in." />
         </Reveal>
         <div className="record-row">
-          <StillShot s={still('G1', 1)} width={240} />
-          <StillShot s={still('G7', 1)} width={240} />
-          <StillShot s={still('K4', 1)} width={240} />
-          <StillShot s={still('K5', 1)} width={240} />
+          <StillShot s={still('G1', 1)} />
+          <StillShot s={still('G7', 1)} />
+          <StillShot s={still('K4', 1)} />
+          <StillShot s={still('K5', 1)} />
         </div>
       </div>
     </section>

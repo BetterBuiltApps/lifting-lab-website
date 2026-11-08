@@ -15,7 +15,7 @@ export function Pricing() {
       'PR tracker, exercise library, and every training calculator',
       'Warm-up generator',
       'Three bar-path video analyses every month',
-      'Levels, streaks, badges, and HealthKit sync',
+      'Levels, streaks, badges, and Apple Health sync',
     ] },
     { t: pro.name, price: pro.monthly, sub: pro.yearly, note: 'The coaching: full video analysis and the rest of the programs.', highlight: true, items: [
       'Unlimited bar-path analyses, with side-by-side compare',

@@ -60,7 +60,7 @@ export function Watch() {
 
         <div id="watch-panel" role="tabpanel" aria-labelledby={`watch-tab-${tab.key}`}>
           <div className="watch-grid">
-            {clips.map((c) => <VideoClip key={c.id} clip={c} maxWidth={260} />)}
+            {clips.map((c) => <VideoClip key={c.id} clip={c} />)}
           </div>
         </div>
 

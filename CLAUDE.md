@@ -92,6 +92,16 @@ today, `1.5` is the next release. Copy, guide text, videos and stills for a feat
 "since <version>" so they stay out of the build until the flag is flipped on release day. Read `RELEASING.md` for how to tag content,
 how to preview a release, and how to flip it. `tools/release-guard.mjs` fails the deploy if unreleased content is in the output.
 
+## Page rules that are easy to break
+
+- **One media size.** Every video and still is `--media-w` (240px, 9:16; `site/src/lib/media.js`). Components take no width of their own,
+  and groups align to the top, so any two that sit together share a size and a top edge. Do not give one its own width.
+- **Apple badges.** The App Store badge is Apple's artwork, unmodified, at least 40px with 1/4 clear space, and linked to the live listing.
+  It appears once per layout: the hero and Pricing only (repeated asks use `DownloadButton`). Use the black badge whenever another
+  platform's badge sits beside it (`/get`); the white one only alone on a dark background. The Works with Apple Health badge is
+  hero-only, smaller than the App Store badge, never below 30px, with Health text beside it and never the bare Apple logo. The footer
+  credits every Apple mark shown. Check Apple's current guidelines before changing any of this.
+
 ## Writing conventions
 
 **No em dashes or en dashes.** Not in copy, not in comments, not in commit

@@ -192,8 +192,8 @@ export function Arc() {
               </p>
             </div>
             <div className="arc-close-shots">
-              <StillShot s={still('D2', 1)} width={260} />
-              <StillShot s={still('D2', 2)} width={260} />
+              <StillShot s={still('D2', 1)} />
+              <StillShot s={still('D2', 2)} />
             </div>
           </div>
         </Station>
@@ -207,14 +207,14 @@ export function Arc() {
           </p>
           <div className="arc-pair">
             <figure className="arc-pair-half">
-              <StillShot s={still('B13', 1)} width={260} />
+              <StillShot s={still('B13', 1)} />
               <figcaption className="arc-pair-cap">What you tell it</figcaption>
             </figure>
             <div className="arc-pair-arrow" aria-hidden="true">
               <svg viewBox="0 0 40 12" focusable="false"><path d="M0 6h34M28 1l6 5-6 5" /></svg>
             </div>
             <figure className="arc-pair-half">
-              <StillShot s={still('C1', 2)} width={260} />
+              <StillShot s={still('C1', 2)} />
               <figcaption className="arc-pair-cap">What you get back</figcaption>
             </figure>
           </div>
@@ -243,8 +243,8 @@ export function Arc() {
                 If it can't see the lift clearly, it says so. No made-up numbers.
               </p>
               <div className="arc-miss-shots">
-                <StillShot s={still('F4', 1)} width={240} />
-                <StillShot s={still('B7', 1)} width={240} />
+                <StillShot s={still('F4', 1)} />
+                <StillShot s={still('B7', 1)} />
               </div>
             </div>
           </div>
@@ -267,8 +267,8 @@ export function Arc() {
                 </dl>
               </div>
               <div className="arc-dense-shots">
-                <StillShot s={still('I8', 1)} width={240} />
-                <StillShot s={still('I4', 1)} width={240} />
+                <StillShot s={still('I8', 1)} />
+                <StillShot s={still('I4', 1)} />
               </div>
             </div>
           </div>
@@ -283,8 +283,8 @@ export function Arc() {
               warm-up. Nobody explains the warm-up room. This does. Meet Day is Pro.
             </p>
             <div className="arc-close-shots">
-              <StillShot s={still('J1', 2)} width={240} />
-              <StillShot s={still('J1', 3)} width={240} />
+              <StillShot s={still('J1', 2)} />
+              <StillShot s={still('J1', 3)} />
             </div>
           </div>
         </Station>

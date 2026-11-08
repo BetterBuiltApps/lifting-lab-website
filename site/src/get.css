@@ -49,7 +49,9 @@ body {
   align-items: center;
   justify-content: center;
 }
-.get-ios img { height: 44px; width: auto; }
+/* Apple: the black badge whenever other platforms' badges sit beside it (the white one is only for a single badge on a dark
+   background). Clear space is 1/4 of the badge height on every side, built into the element like the home page does. */
+.get-ios img { height: 44px; width: auto; padding: 11px; display: block; }
 
 .get-android {
   font: var(--type-caption);

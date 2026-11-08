@@ -99,5 +99,5 @@ Delayed Replay shows the camera feed 3, 5, 8 or 10 seconds behind. Prop the phon
 - **Re-analyze** and **Delete** are in the menu on the result screen.
 
 :::note
-Free accounts can run three analyses a month. Pro removes the limit. A failed trace does not count against it.
+Free users can run three analyses a month. Pro removes the limit. A failed trace does not count against it.
 :::

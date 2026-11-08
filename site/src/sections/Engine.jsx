@@ -21,7 +21,7 @@ export function Engine() {
     <section id="engine" style={{ padding: 'clamp(60px,7vw,110px) 0' }}>
       <div style={siteWrap}>
         <Reveal>
-          <div className="split" style={{ '--split-cols': 'minmax(0,1.15fr) minmax(0,0.85fr)', alignItems: 'start' }}>
+          <div className="split" style={{ '--split-cols': 'minmax(0,1fr) minmax(0,1fr)', alignItems: 'start' }}>
             <div style={{ display: 'grid', gap: 28 }}>
               <SiteHead title="It already knows how you train." max={560}
                 body="Before it builds today's session, Lifting Lab reads your last month: how often you trained, how long sessions ran, where your misses clustered. Then it scales volume, intensity and rest to match. It never rewrites your program, and it shows its work." />
@@ -36,8 +36,8 @@ export function Engine() {
               </p>
             </div>
             <div className="shot-row">
-              <StillShot s={still('B13', 2)} width={200} />
-              <StillShot s={still('C3', 2)} width={200} caption="Every pick says why it is there" />
+              <StillShot s={still('B13', 2)} />
+              <StillShot s={still('C3', 2)} caption="Every pick says why it is there" />
             </div>
           </div>
         </Reveal>

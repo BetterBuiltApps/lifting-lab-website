@@ -1,5 +1,6 @@
 import React from 'react';
 import { siteWrap, AppStoreButton, HealthBadge, StillShot } from './Chrome';
+import { useDevice } from '../lib/device';
 import { asset } from '../lib/asset';
 import { VideoClip } from '../lib/VideoClip';
 import { still } from '../lib/stills';
@@ -9,6 +10,19 @@ import { STATIONS, gapAfter, HERO_WEEK_PX } from './Arc';
 
 // The overview video: ML0 (live items only) until the release that has the full master M0.
 const HERO_VIDEO = videos.videos[videos.hero];
+
+function HealthBadgeNote() {
+  const device = useDevice();
+  if (device === 'android') return null;
+  return (
+    <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+      <HealthBadge />
+      <span style={{ font: 'var(--type-caption)', color: 'var(--text-secondary)', maxWidth: '16ch' }}>
+        Syncs with the Apple Health app.
+      </span>
+    </span>
+  );
+}
 
 export function Hero() {
   return (
@@ -52,7 +66,9 @@ export function Hero() {
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap', marginTop: 6 }}>
             <AppStoreButton />
-            <HealthBadge />
+            {/* Apple's Works with Apple Health rules: smaller than the main badge, paired with text about the Health
+                feature, one per page. HealthBadge renders nothing on Android. */}
+            <HealthBadgeNote />
           </div>
         </div>
 
@@ -63,11 +79,11 @@ export function Hero() {
               background: 'radial-gradient(circle, rgba(245,166,35,0.14), transparent 65%)', filter: 'blur(8px)',
             }} />
             <div style={{ position: 'relative' }}>
-              <VideoClip clip={HERO_VIDEO} maxWidth={260} />
+              <VideoClip clip={HERO_VIDEO} />
             </div>
           </div>
           <div>
-            <StillShot s={still('F3', 1)} width={260} priority lcp caption="One grade out of 100, checked against the competition rules" />
+            <StillShot s={still('F3', 1)} priority lcp caption="One grade out of 100, checked against the competition rules" />
           </div>
         </div>
       </div>
