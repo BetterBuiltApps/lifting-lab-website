@@ -59,6 +59,7 @@ Standing too close is the most common problem: the plate looks oversized and the
 1. Open the Bar Trace tab.
 2. Tap **Record** to film, or **Import** to pick a clip from your phone's video picker (your photo library on iPhone).
 3. When recording, you can flip between the back and front cameras, pinch to zoom, and use the rotate button if the phone is lying flat or leaning on a plate. The front camera preview looks mirrored, but the saved clip is not.
+4. If a call or another interruption ends the recording, a clip that was saved whole is kept and goes on to analysis. If it was not saved, the app says so and you can try again.
 
 ## Trim the clip
 
@@ -94,10 +95,10 @@ Delayed Replay shows the camera feed 3, 5, 8 or 10 seconds behind. Prop the phon
 
 ## Share, compare and manage
 
-- **Share** makes a vertical clip with the trace and stats on it.
+- **Share** makes a vertical clip with the trace and stats on it.<!-- since 1.5 --> A NEW PR badge is added only when the clip is of a made single, filmed from a logged set, that set your record. A miss, a tie of your best, or a clip imported on its own never carries it.<!-- /since -->
 - **Compare** overlays two analyses (Pro). Once you pick the first clip, only clips of the same exercise are listed, so you can never compare two different lifts.
 - **Re-analyze** and **Delete** are in the menu on the result screen.
 
 :::note
-Free users can run three analyses a month. Pro removes the limit. A failed trace does not count against it.
+Free users can run three analyses a month. Pro removes the limit<!-- since 1.5 -->, and once the three are used the Bar Trace tab offers **Analyse Without Limits**<!-- /since -->. A failed trace does not count against it.
 :::
