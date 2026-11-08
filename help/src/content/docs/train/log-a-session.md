@@ -6,6 +6,7 @@ covers:
   - Docs/FEATURES.md#Active session
   - Docs/FEATURES.md#Pre-session
   - LiftingLab/Features/Train/Session/ActiveSessionView.swift
+  - LiftingLab/App/LaunchReconciler.swift
 verified_for: "1.4"
 ---
 
@@ -22,6 +23,8 @@ Open the **Train** tab. Whatever is waiting for you sits near the top.
 ![The Train tab with a paused session: a Back Under the Bar row showing the workout and how many sets are logged.](../../../assets/screens/resume-session.png)
 
 Leaving a session never loses a set. Backing out just pauses it, and every set you logged is already saved.
+
+A program day you started late and carried past midnight stays open, so the app does not close it for you in the middle of your workout. A day you stopped more than 12 hours ago is closed with the sets you logged.
 
 ## The set card
 

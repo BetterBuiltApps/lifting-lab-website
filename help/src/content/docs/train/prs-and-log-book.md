@@ -7,6 +7,7 @@ covers:
   - Docs/FEATURES.md#VBT import (`Train/History/VBTImport/`)
   - LiftingLab/Features/Train/PRTracker/PRTrackerView.swift
   - LiftingLab/Features/Train/History/LogBookView.swift
+  - LiftingLab/App/SessionDeletion.swift
   - LiftingLab/Features/Train/History/VBTImport/VBTImporter.swift
 verified_for: "1.4"
 ---
@@ -43,6 +44,7 @@ The Log Book is a newest-first timeline grouped by month. It holds your sessions
 - Switch between **List** and **Calendar** to see trained days in a month view.
 - Use the notes button to write a reflection. After 28 days the app suggests taking stock.
 - To delete a workout, press and hold its row, or use the menu on its detail screen. You are asked to confirm. A PR you set in that session, your Apple Health workout and any bar-path clip are kept.
+- If the workout belonged to a program, that day goes back on your schedule so you can train or skip it. If it was the last day of a finished program, the program opens again to take it.
 
 :::note[Android]
 Press and hold works the same on Android: the menu on a Log Book row offers share and export, and Delete Workout.
