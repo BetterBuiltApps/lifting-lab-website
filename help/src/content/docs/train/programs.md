@@ -59,9 +59,17 @@ On Android, an exercise row in Program Builder also offers **Make it a complex**
 
 <!-- /since -->
 
+Without Pro you can still open a Pro program and read its first week. **Unlock with Pro** at the bottom takes you to the upgrade.
+
+:::note[Android]
+On Android, **Unlock with Pro** opens Settings, Subscription, where you choose a plan.
+:::
+
 ## How sessions are made
 
 You do not build the sessions. Each day in the program lists its exercises, sets and reps, and most weights are a percentage of your record for that lift. When you start a day, the app turns those percentages into real weights using your current records, so the loads follow your progress.
+
+Starting a day opens a short check-in first. The percentages stay as the program wrote them, but the number they come from can move with what your recent sessions show: a lift you made cleanly can go up a little, a lift you missed stays where it was, and a lift you keep missing or stalling on backs off. The check-in lists each lift whose weight moved and why, and you can turn that off for the day. A rough day, or a recovery or injury warning the app has picked up, can also lower the day's weights.
 
 Open today's session from the Train tab and it runs in the same live screen as any other workout.
 
@@ -115,7 +123,7 @@ Not sure? Skip it. One missed session does not break a program.
 
 ## The cycle report (Pro)
 
-When a program ends, Pro members see a report of what it changed:
+When a program ends, Pro members see a report of what it changed, up to and including the last session you trained:
 
 - Your records at the start against the end. The report runs through the whole of the program's last day, so a final test day or heavy singles day counts.
 - Your strength ratios, start to end.
