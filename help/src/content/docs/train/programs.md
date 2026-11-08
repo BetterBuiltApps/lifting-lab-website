@@ -53,7 +53,7 @@ Not sure? Skip it. One missed session does not break a program.
 
 When a program ends, Pro members see a report of what it changed:
 
-- Your records at the start against the end.
+- Your records at the start against the end. The report runs through the whole of the program's last day, so a final test day or heavy singles day counts.
 - Your strength ratios, start to end.
 - Bar speed early against late, if you filmed enough clips.
 - What to run next, with a suggested program.

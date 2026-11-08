@@ -6,6 +6,7 @@ covers:
   - LiftingLab/Features/BarPath/BarPathHomeView.swift
   - LiftingLab/Features/BarPath/DelayedReplayView.swift
   - LiftingLab/Features/BarPath/Share/ShareClipView.swift
+  - LiftingLab/Features/BarPath/BarPathCompareView.swift
 verified_for: "1.4"
 ---
 
@@ -61,7 +62,7 @@ Delayed Replay shows the camera feed 3, 5, 8 or 10 seconds behind. Prop the phon
 ## Share, compare and manage
 
 - **Share** makes a vertical clip with the trace and stats on it.
-- **Compare** overlays two analyses (Pro).
+- **Compare** overlays two analyses of the same lift (Pro). A change too small to measure is not called better or worse, and when the two lifts were at different weights, bar speed is shown but not judged, because the bar moves slower as the weight goes up.
 - **Re-analyze** and **Delete** are in the menu on the result screen.
 
 :::note

@@ -6,6 +6,7 @@ covers:
   - LiftingLab/Features/Tools/ToolsHubView.swift
   - LiftingLab/Features/Tools/BarbellLoaderView.swift
   - LiftingLab/Features/Tools/OneRMView.swift
+  - LiftingLab/Features/Compete/MeetDayView.swift
 verified_for: "1.4"
 ---
 
@@ -32,7 +33,7 @@ The Tools tab holds quick calculators and planners. They work offline, and weigh
 
 **Compete**
 
-- **Meet Day** (Pro): a warm-up room and six-attempt board, with a clock for attempt timing and a check of your attempts against the platform rules.
+- **Meet Day** (Pro): a warm-up room and six-attempt board, with a clock for attempt timing and a check of your attempts against the platform rules. The warm-ups build to your first attempt as it stands on the board, so if you change your opener, the warm-ups and the hold weight change with it.
 - **Meet Planner** (Pro): counts down to your meets and works your training blocks backward from them.
 - **Sinclair**: a score that lets you compare totals across bodyweights.
 - **Robi Points**: your total against the world record for your category.
