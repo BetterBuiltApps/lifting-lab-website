@@ -6,6 +6,7 @@ covers:
   - Docs/FEATURES.md#Active session
   - Docs/FEATURES.md#Pre-session
   - LiftingLab/Features/Train/Session/ActiveSessionView.swift
+  - LiftingLab/Features/Train/Session/ActiveSessionModel.swift
 verified_for: "1.4"
 ---
 
@@ -38,6 +39,12 @@ Some sets ask how hard it felt. Pick the answer that fits, from easy to all out.
 
 If you change a weight and make the lift, the remaining sets of that exercise move by the same amount, so you do not have to retype it each time.
 
+A set that asks you to go by feel, with no weight written, can open on what you lifted last time. The line under the weight says where the number came from. It names the reps that weight was made for, for example "From 100 kg for 1 last time, adjusted for 3 this set", because a weight you made for a single is not a weight to carry unchanged into a triple. Type your own number and the line goes away.
+
+## Swap an exercise mid-session
+
+In a workout you built yourself, tap the circled dots beside the exercise name and choose **Swap exercise** for as long as one of its working sets is still ahead. Sets you have already logged stay under the lift you did them as, and the sets still to come, and any warm-up sets you have not done, move to the new lift. If the new weight is lighter than the old one, a line under the weight says which lift it is now for. Program days cannot be swapped.
+
 ## Rest timer
 
 Once you log a set, the rest timer starts. By default it counts up so you can see how long you have rested. In **Settings > Training** you can turn on the countdown timer, which signals when rest is up even if your phone is locked. It keeps running if you leave the session and come back.
@@ -52,9 +59,11 @@ Switching the view on and off mid-session never changes your logged sets.
 
 ## Finish
 
-When every set is done, tap **Finish Session**. You can end early with **Cut It Short**, which saves what you have logged. A celebration screen shows any new records. From there, tap **Done** to leave, **Log how it went** to add a note, or **Share Workout**. The note is optional and stays available from the Log Book.
+When every set is done, tap **Finish Session**. You can end early with **Cut It Short**, which saves what you have logged. If you have not logged a single set, there is nothing to save, so the same button reads **Discard** and removes the workout instead of counting it as done. A program day you discard goes back on your schedule. A celebration screen shows any new records. From there, tap **Done** to leave, **Log how it went** to add a note, or **Share Workout**. The note is optional and stays available from the Log Book.
 
 Changed your mind about a workout? The finish menu also offers **Discard Workout**, which asks before deleting.
+
+If you paused a session and finished it hours later, it ends at your last logged set, plus up to half an hour for a long rest or a note. The Log Book duration, the shared card and the workout saved to Apple Health (Health Connect on Android) then show the time you trained, not the time the session sat open.
 
 ![The set card: the exercise name, the weight in large type with the reps, a bar loading diagram, a Reps done stepper, and Made and Miss buttons.](../../../assets/screens/set-card.png)
 
