@@ -11,6 +11,7 @@ covers:
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/tools/BarbellLoaderScreen.kt
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/tools/OneRMScreen.kt
   - LiftingLab/Features/Compete/MeetDayView.swift
+  - LiftingLab/Features/Compete/MeetPlannerView.swift
 verified_for: "1.4"
 ---
 
@@ -50,11 +51,11 @@ The Tools tab holds quick calculators and planners. They work offline, and weigh
 
 **Compete**
 
-- **Meet Day** (Pro): a warm-up room and six-attempt board<!-- since 1.5 -->, with a clock for attempt timing and a check of your attempts against the platform rules<!-- /since -->.
+- **Meet Day** (Pro): a warm-up room and six-attempt board<!-- since 1.5 -->, with a clock for attempt timing and a check of your attempts against the platform rules. Type your official weigh-in on the setup screen, or change it on the meet screen once you have weighed in: the Sinclair score and the saved meet use that number, not the weight in your profile. The attempt count, the warm-up marker and the clock stay where you left them if you switch tabs or the app closes mid-meet<!-- /since -->.
 
 <!-- since 1.5 -->
 
-- **Meet Planner** (Pro): counts down to your meets and works your training blocks backward from them.
+- **Meet Planner** (Pro): counts down to your meets and works your training blocks backward from them. Opening it does not plan a meet: nothing is saved until you change the name, date, priority or target class.
 
 <!-- /since -->
 
