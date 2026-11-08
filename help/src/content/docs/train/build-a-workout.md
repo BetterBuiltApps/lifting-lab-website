@@ -7,6 +7,10 @@ covers:
   - LiftingLab/Features/Train/Builder/WorkoutBuilderView.swift
   - LiftingLab/Features/Train/Builder/CheckInSheet.swift
   - LiftingLab/Features/Train/Builder/ExercisePickerSheet.swift
+  - LiftingLab/Domain/Complex/ComplexSelection.swift
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/builder/WorkoutBuilderScreen.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/session/ExercisePickerSheet.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/CreateWorkoutSheet.kt
 verified_for: "1.4"
 ---
 
@@ -43,6 +47,7 @@ Cards on this screen explain the draft: what the app adjusted from your history,
 - **Remove an exercise:** tap its delete button and confirm.
 - **Remove a block:** use Remove block. Emptying a block removes it, and the time it frees is shared among the blocks that are left.
 - **Add block:** use Add block to bring in a whole new part of the session.
+- **Complexes (Pro):** the exercise list shows complexes beside single lifts under **Complexes**, with **Build a new complex** below them. Pro members may also find the app has put one complex in the classic lift block. See [Build and log a complex](/help/train/complexes/).
 
 ## Edit sets and weights
 

@@ -6,6 +6,8 @@ covers:
   - LiftingLab/Features/Me/SettingsView.swift
   - LiftingLab/Features/Me/DataPrivacySettingsView.swift
   - LiftingLab/Features/Me/DataExportView.swift
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/locker/SettingsScreen.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/locker/DataPrivacyScreen.kt
 verified_for: "1.4"
 ---
 

@@ -5,6 +5,9 @@ covers:
   - Docs/FEATURES.md#Tab 4, Locker
   - LiftingLab/Features/Me/SettingsView.swift
   - LiftingLab/Features/Me/Progress/PlayerProgressView.swift
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/locker/SettingsScreen.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/locker/PlayerProgressScreen.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/locker/LockerHomeScreen.kt
 verified_for: "1.4"
 ---
 

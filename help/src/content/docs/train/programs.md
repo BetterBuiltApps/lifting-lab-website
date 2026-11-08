@@ -5,8 +5,13 @@ covers:
   - Docs/FEATURES.md#Programs (`Train/Programs/`)
   - Docs/FEATURES.md#Missed sessions (`Train/MissedSession/`)
   - LiftingLab/Features/Train/Programs/ProgramDetailView.swift
+  - LiftingLab/Features/Train/Programs/MyProgramsView.swift
+  - LiftingLab/SeedData/ProgramTemplates/ClassicSystems.swift
   - LiftingLab/Features/Train/Programs/CycleReportView.swift
   - LiftingLab/Features/Train/MissedSession/MissedSessionView.swift
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/programs/ProgramDetailScreen.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/programs/CycleReportScreen.kt
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/MissedSessionSheet.kt
 verified_for: "1.4"
 ---
 
@@ -26,7 +31,28 @@ A program is a multi-week plan with every session laid out for you. Use one when
 3. Open one to preview its weeks and days.
 4. Tap **Start This Program**, then **Start Today**. The program begins today. If you already have a program running, the app asks before it abandons that one, and the sessions you finished stay in your Log Book.
 
-Beginner Foundation is free. The other programs are Pro. Pro programs include Three-Day Simple, Youth Technique, Squat Volume, Weight Gain and Daily Max, along with the longer strength, specification, competition and masters cycles.
+Beginner Foundation is free. Every other program is Pro, including the Classic Systems below.
+
+## Classic systems (Pro)
+
+Below the Program Library, **Classic Systems** holds four programs built on the principles of well-known national training traditions:
+
+- **Bulgarian-Style High Frequency**: 6 weeks, 5 days. The classic lifts and squats, worked up to a heavy single by feel each day, then back-off singles.
+- **Soviet-Era Multi-Lift**: 8 weeks, 4 days. A wide range of variations and pulls, in two waves with an easier week between.
+- **Chinese-Style Volume and Strength**: 8 weeks, 5 days. High squat and pull volume, with upper back and posterior chain work every day.
+- **Russian-Style Squat Cycle**: 6 weeks, 3 days. A squat block that ends in a test single, with light technique work to keep the lifts sharp.
+
+Open one to see its tradition card, such as **The Bulgarian Tradition**: the principles it is built on and how it was adapted. The sets and percentages are the app's own, not a copy of any team's plan, and each is scaled to one session a day, since the originals were written for full-time athletes training more than once a day.
+
+On a daily-heavy-single day, the back-off sets are a percentage of the top single you actually made, so their weight appears once you log it.
+
+## Complexes in a program (Pro)
+
+In Program Builder, a day's exercise list includes complexes beside single lifts. See [Build and log a complex](/help/train/complexes/).
+
+:::note[Android]
+On Android, an exercise row in Program Builder also offers **Make it a complex**, and a day offers **Add complex**.
+:::
 
 ## How sessions are made
 
