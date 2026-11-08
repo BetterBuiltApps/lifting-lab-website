@@ -36,7 +36,7 @@ covers:
   - LiftingLab/Features/BarPath/PhotoLibrarySaver.swift
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/barpath/ui/PlateSeedScreen.kt
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/barpath/ui/CameraCaptureScreen.kt
-verified_for: "1.4"
+verified_for: "1.5"
 ---
 
 Bar Trace turns a video of your lift into a line showing where the bar travelled, plus a grade and the things worth fixing. You can film inside the app or bring in a clip you already have.
@@ -70,23 +70,17 @@ Standing too close is the most common problem: the plate looks oversized and the
 1. Open the Bar Trace tab.
 2. Tap **Record** to film, or **Import** to pick a clip from your phone's video picker (your photo library on iPhone).
 3. When recording, you can flip between the back and front cameras, pinch to zoom, and use the rotate button if the phone is lying flat or leaning on a plate. The front camera preview looks mirrored, but the saved clip is not.
-4. If a call or another interruption ends the recording, a clip that was saved whole is kept and goes on to analysis. If it was not saved, the app says so and you can try again.
+4. While a take is running, the close button is greyed out. Tap Stop first, so the clip is kept and analysed.<!-- since 1.5 --> On iPhone, if a call or another interruption ends the recording, a clip that was saved whole is kept and goes on to analysis. If it was not saved, the app says so and you can try again.<!-- /since -->
 
-A clip you record in the app is also saved to your photo library, so the video survives a new phone or a reinstall. The first time, iPhone asks for permission to add to Photos. Clips you import are already in your library and are not copied again.
+<!-- since 1.5 -->
+
+A clip you record in the app is also saved to your photo library, so the video survives a new phone or a reinstall. The first time, iPhone asks for permission to add to Photos. If you decline, or a save fails, the app tells you once: your recordings then live only inside Lifting Lab and are left out of iCloud backup, so a new phone will not bring them over. You can allow "Add Photos Only" in Settings. Clips you import already live in your library and are not copied again.
 
 :::note[Android]
 Recorded clips are copied to your gallery, in the Movies folder under Lifting Lab, on Android 10 and newer, with no permission prompt. On Android 9 and older the clip stays in the app only, so keep your own copy if you want one.
 :::
 
-While a take is running, the close button is greyed out. Tap Stop first, so the clip is kept and analysed.
-
-:::note
-On iPhone the first recording asks to add the clip to your photo library. If you decline, or a save fails, the app tells you once: your recordings then live only inside Lifting Lab and are left out of iCloud backup, so a new phone will not bring them over. You can allow "Add Photos Only" in Settings. Clips you import already live in your library.
-:::
-
-:::note[Android]
-Android does not copy recordings to the gallery, so there is no photo-library prompt or notice.
-:::
+<!-- /since -->
 
 ## Trim the clip
 
@@ -94,9 +88,13 @@ If you filmed yourself walking to the bar and back, trim the clip so only the li
 
 ## Mark the plate
 
-Drag the circle over the plate nearest the camera and size it to match. This tells the app what to follow and gives it a sense of scale.
+Drag the circle over the plate nearest the camera and size it to match. This tells the app what to follow and gives it a sense of scale. The app often suggests a circle for you, so check it sits on the plate and adjust if not.
 
-Circle a full-size 450 mm plate, the kind of bumper plate marked 20 kg or 45 lb. The scale for every speed and distance comes from it. A smaller plate, such as a 5 kg or 2.5 kg change plate, would make every figure wrong by about half. If the circle looks too small or too large for a full-size plate in your frame, the app says so over the picture. The app often suggests a circle for you, so check it sits on the plate and adjust if not.
+<!-- since 1.5 -->
+
+Circle a full-size 450 mm plate, the kind of bumper plate marked 20 kg or 45 lb. The scale for every speed and distance comes from it. A smaller plate, such as a 5 kg or 2.5 kg change plate, would make every figure wrong by about half. If the circle looks too small or too large for a full-size plate in your frame, the app says so over the picture.
+
+<!-- /since -->
 
 :::tip
 If the trace fails, the app takes you back to the circle. Most failures are a circle that sat slightly off the plate, so nudge it and try again.
@@ -109,16 +107,18 @@ The bar path is traced on your phone (on iPhone with Apple's built-in vision too
 1. Your video with the traced path.
 2. Whether the lift would count, shown as three referee-style lights (for the snatch, clean, and their variations).
 3. A technique grade, with a bar for each part of the lift.
-4. What to fix first, with drills that address it.
+4. What to fix first, with drills that address it.<!-- since 1.5 --> To see which faults keep coming back across your lifts, open [Technique Doctor](/help/train/technique-doctor/).<!-- /since -->
 5. Speed, phase and position details. Tap a row or drag the graph to jump to that moment in the video.
 
-Once you have two or more lifts of the same type, numbers are compared with your own average. Speed and bar height depend on the weight, so those are only compared with your clips within about 10% of this weight, and a new Speed PR is judged the same way: a light clip never holds the record for a heavy attempt. Peak speed counts only the upward pull, never a bar you dropped. If something could not be read, the card says why.
-
-The Setup note about your hips and knees only appears for lifts that start from the floor. Hang, block, segment and tall lifts start with a straighter knee by design, so they get no setup note. If the bar leaves the top of the frame before the catch, the app cannot see the catch and leaves it out of the grade rather than giving you credit for it.
+Once you have two or more lifts of the same type, numbers are compared with your own average.<!-- since 1.5 --> Speed and bar height depend on the weight, so those are only compared with your clips within about 10% of this weight (90 to 110 kg around a 100 kg lift), and a new Speed PR is judged the same way: a light clip never holds the record for a heavy attempt. Peak speed counts only the upward pull, never a bar you dropped.<!-- /since --> If something could not be read, the card says why.
 
 <!-- since 1.5 -->
 
-A new speed PR is judged against your earlier clips of the same lift at a similar weight, within about 5 kg or 5 percent of the bar. A light warm-up does not hold the record against your working sets, and a light day does not beat heavy work.
+The Setup note about your hips and knees only appears for lifts that start from the floor. Hang, block, segment and tall lifts start with a straighter knee by design, so they get no setup note. If the bar leaves the top of the frame before the catch, the app cannot see the catch and leaves it out of the grade rather than giving you credit for it.
+
+<!-- /since -->
+
+<!-- since 1.5 -->
 
 When the tracker lost the bar for much of a clip, its speeds and distances are not trusted. That clip is left out of your trend charts (the card says how many), it is not scored against your average, and it can never set a speed PR. Compare still shows both clips' numbers but not the differences between them, and the share screen starts with bar speed, path score and the velocity graph switched off. You can switch them on yourself.
 
@@ -130,20 +130,16 @@ Delayed Replay shows the camera feed 3, 5, 8 or 10 seconds behind. Prop the phon
 
 ## Share, compare and manage
 
-- **Share** makes a vertical clip with the trace and stats on it.<!-- since 1.5 --> A NEW PR badge is added only when the clip is of a made single, filmed from a logged set, that set your record. A miss, a tie of your best, or a clip imported on its own never carries it.<!-- /since -->
-- **Compare** overlays two analyses (Pro). Once you pick the first clip, only clips of the same exercise are listed, so you can never compare two different lifts.<!-- since 1.5 --> A change too small to measure is not called better or worse, and when the two lifts were at different weights, bar speed is shown but not judged, because the bar moves slower as the weight goes up.<!-- /since -->
+- **Share** makes a vertical clip with the trace and stats on it.<!-- since 1.5 --> On iPhone, a NEW PR badge is added only when the clip is of a made single, filmed from a logged set, that set your record. A miss, a tie of your best, or a clip imported on its own never carries it. The Android share clip has no PR badge.<!-- /since -->
+- **Compare** overlays two analyses (Pro).<!-- since 1.5 --> The Compare button appears on the Bar Trace tab once you have two analyses. On a Free plan it is still there: tap it and Lifting Lab shows what Pro adds.<!-- /since --> Once you pick the first clip, only clips of the same exercise are listed, so you can never compare two different lifts.<!-- since 1.5 --> A change too small to measure is not called better or worse, and when the two lifts were at different weights, bar speed is shown but not judged, because the bar moves slower as the weight goes up.<!-- /since -->
 - **Re-analyze** and **Delete** are in the menu on the result screen.
 
 :::note
-Free users can run three analyses a month. Pro removes the limit. A failed trace does not count against it, and re-analyzing a clip you already have is always free.
+Free users can run three analyses a month. Pro removes the limit. A failed trace does not count against it<!-- since 1.5 -->, and re-analyzing a clip you already have is always free<!-- /since -->.
 :::
 
 <!-- since 1.5 -->
 
-Filming a set from inside a workout uses the same three. Once they are used, the Bar Trace tab offers **Analyse Without Limits**, and tapping **Film this set** shows what Pro adds instead of opening the camera, while your workout carries on as it was. Watching clips you already have, and Delayed Replay, stay free.
-
-:::note[Android]
-Android has no upgrade screen yet, so with this month's analyses used up, filming a set shows a short message saying so instead of opening the camera.
-:::
+Filming a set from inside a workout uses the same three. Once they are used, the Bar Trace tab offers **Analyse Without Limits**, and tapping **Film this set** shows what Pro adds instead of opening the camera, while your workout carries on as it was. Watching clips you already have, and Delayed Replay, stay free. This works the same on Android.
 
 <!-- /since -->

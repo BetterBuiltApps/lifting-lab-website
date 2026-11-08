@@ -15,7 +15,7 @@ covers:
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/logbook/LogBookScreen.kt
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/interop/vbt/VBTImportScreen.kt
   - LiftingLab/Domain/LoadVelocityProfile.swift
-verified_for: "1.4"
+verified_for: "1.5"
 ---
 
 The PR Tracker holds your records. The Log Book holds everything you have trained.
@@ -70,8 +70,7 @@ The Log Book is a newest-first timeline grouped by month. It holds your sessions
 - Tap a session to see summary numbers and every set grouped by exercise. Filmed sets link to their bar path.
 - Switch between **List** and **Calendar** to see trained days in a month view.
 - Use the notes button to write a reflection. After 28 days the app suggests taking stock.
-- To delete a workout, press and hold its row, or use the menu on its detail screen. You are asked to confirm. A PR you set in that session, your Apple Health workout and any bar-path clip are kept.
-- If the workout belonged to a program, that day goes back on your schedule so you can train or skip it. If it was the last day of a finished program, the program opens again to take it.
+- To delete a workout, press and hold its row, or use the menu on its detail screen. You are asked to confirm. A PR you set in that session, your Apple Health workout and any bar-path clip are kept.<!-- since 1.5 --> If the workout belonged to a program, that day goes back on your schedule so you can train or skip it. If it was the last day of a finished program, the program opens again to take it.<!-- /since -->
 
 :::note[Android]
 Press and hold works the same on Android: the menu on a Log Book row offers share and export, and Delete Workout.
@@ -95,6 +94,10 @@ If you use a separate bar-speed device, you can bring its CSV file in.
 
 If the app does not recognize the layout, it asks you to match each column to what it holds (such as weight or speed), choose units, and check a preview before importing.
 
+<!-- since 1.5 -->
+
 A date given as a plain number is accepted only if it falls between the years 2000 and 2100. Anything else, such as a column of other large numbers, is reported as a date the app could not read, and those rows import without a time, as standalone readings instead of being matched to a logged set.
 
 Units printed in the column headings, such as "Mean Velocity (cm/s)" or "Weight (lb)", are always used, and speeds in m/s, cm/s and mm/s are all converted. A rep that would still read faster than 5 m/s is skipped with a note to check the speed unit, because no bar moves that fast.
+
+<!-- /since -->

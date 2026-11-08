@@ -13,7 +13,12 @@ covers:
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/programs/CycleReportScreen.kt
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/MissedSessionSheet.kt
   - LiftingLab/Domain/MissedSessionPolicy.swift
-verified_for: "1.4"
+  - LiftingLab/Domain/Progression/LoadProgression.swift
+  - LiftingLab/Domain/ProgramEngine.swift
+  - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/programs/MyProgramsScreen.kt
+  - lifting-lab-android/domain/src/main/kotlin/com/betterbuiltapps/liftinglab/domain/MissedSessionPolicy.kt
+  - lifting-lab-android/domain/src/main/kotlin/com/betterbuiltapps/liftinglab/domain/progression/LoadProgression.kt
+verified_for: "1.5"
 ---
 
 A program is a multi-week plan with every session laid out for you. Use one when you want structure instead of deciding each day.
@@ -32,7 +37,7 @@ A program is a multi-week plan with every session laid out for you. Use one when
 3. Open one to preview its weeks and days.
 4. Tap **Start This Program**, then **Start Today**. The program begins today. If you already have a program running, the app asks before it abandons that one, and the sessions you finished stay in your Log Book.
 
-Beginner Foundation is free. Every other program is Pro, including the Classic Systems below.
+Beginner Foundation is free. Every other program is Pro, including the Classic Systems below. To write your own, see [Write your own program](/help/train/program-builder/).
 
 ## Classic systems (Pro)
 
@@ -69,7 +74,17 @@ On Android, **Unlock with Pro** opens Settings, Subscription, where you choose a
 
 You do not build the sessions. Each day in the program lists its exercises, sets and reps, and most weights are a percentage of your record for that lift. When you start a day, the app turns those percentages into real weights using your current records, so the loads follow your progress.
 
+<!-- since 1.5 -->
+
 Starting a day opens a short check-in first. The percentages stay as the program wrote them, but the number they come from can move with what your recent sessions show: a lift you made cleanly can go up a little, a lift you missed stays where it was, and a lift you keep missing or stalling on backs off. The check-in lists each lift whose weight moved and why, and you can turn that off for the day. A rough day, or a recovery or injury warning the app has picked up, can also lower the day's weights.
+
+<!-- /since -->
+
+<!-- since 1.5 -->
+
+A lift is only backed off after a stall when you were really straining on it: a missed rep, an effort of RPE 8 or more, or a set made well under its target percentage. If a program holds a lift at 68% and you made every rep, you are not backed off for it. A rise is a small weekly step, paid in whole kilos when the usual plate step would round down to nothing, so lighter lifters can advance too. After a long break the weights you start from stay a little under your record, rather than jumping back to it.
+
+<!-- /since -->
 
 Open today's session from the Train tab and it runs in the same live screen as any other workout.
 
@@ -111,9 +126,13 @@ If you skip or merge a session that was holding a merged day, that merged day mo
 
 If you missed several days, you get one question about the most recent one. The older days are logged as missed once you choose. If you close it without choosing, nothing changes and it asks again next time.
 
+<!-- since 1.5 -->
+
 ### Optional days
 
 Some programs offer a day you can take or leave. In the Masters Cycle, the fourth day each week is an optional technique and accessory session. If you train it, it counts like any other day. If you let it pass, the app does not ask about it, does not count it as missed or skipped, and does not hold the program open for it.
+
+<!-- /since -->
 
 :::tip
 Not sure? Skip it. One missed session does not break a program.
@@ -123,7 +142,7 @@ Not sure? Skip it. One missed session does not break a program.
 
 ## The cycle report (Pro)
 
-When a program ends, Pro members see a report of what it changed, up to and including the last session you trained:
+When a program ends, Pro members see a report of what it changed:
 
 - Your records at the start against the end. The report runs through the whole of the program's last day, so a final test day or heavy singles day counts.
 - Your strength ratios, start to end.

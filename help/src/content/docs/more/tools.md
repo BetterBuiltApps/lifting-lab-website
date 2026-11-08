@@ -12,7 +12,7 @@ covers:
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/tools/OneRMScreen.kt
   - LiftingLab/Features/Compete/MeetDayView.swift
   - LiftingLab/Features/Compete/MeetPlannerView.swift
-verified_for: "1.4"
+verified_for: "1.5"
 ---
 
 The Tools tab holds quick calculators and planners. They work offline, and weights show in the unit you chose in Settings.
@@ -40,7 +40,7 @@ The Tools tab holds quick calculators and planners. They work offline, and weigh
 
 **Calculate**
 
-- **Training %**: working weights at each percentage of a lift, with the plates to load. A lift you reset under Reset Your Numbers loads from that number, not its old record.
+- **Training %**: working weights at each percentage of a lift, with the plates to load.<!-- since 1.5 --> A lift you reset under Reset Your Numbers loads from that number, not its old record.<!-- /since -->
 - **Barbell Loader**: shows which plates to put on the bar for a target weight.
 - **kg and lb**: converts between the two.
 
@@ -62,7 +62,7 @@ The Tools tab holds quick calculators and planners. They work offline, and weigh
 - **Sinclair**: a score that lets you compare totals across bodyweights.
 - **Robi Points**: your total against the world record for your category.
 
-Pro tools show a lock until you subscribe, and a locked screen has a See Pro button that opens the subscription.
+Pro tools show a lock until you subscribe<!-- since 1.5 -->, and a locked screen has a See Pro button that opens the subscription<!-- /since -->.
 
 ## Load the bar
 
