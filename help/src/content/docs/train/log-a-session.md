@@ -9,6 +9,7 @@ covers:
   - LiftingLab/Features/Train/Complex/ComplexSequenceRow.swift
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/TrainDashboardScreen.kt
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/session/ActiveSessionScreen.kt
+  - LiftingLab/App/LaunchReconciler.swift
 verified_for: "1.4"
 ---
 
@@ -38,6 +39,8 @@ To end a paused session without going back in, press and hold its row. **Finish 
 :::note[Android]
 On Android, tap the three dots at the end of the row instead of pressing and holding.
 :::
+
+A program day you started late and carried past midnight stays open, so the app does not close it for you in the middle of your workout. A day you stopped more than 12 hours ago is closed with the sets you logged.
 
 ## The set card
 
