@@ -1,0 +1,28 @@
+# TEMPORARY: proves the help lockfile installs on Linux. Runs on the fix-help-lock branch only and deploys nothing. Delete before merging.
+name: Check lockfile on Linux
+on:
+  push:
+    branches: [fix-help-lock]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+        working-directory: site
+      - run: npm ci
+        working-directory: help
+      - run: npm run build
+        working-directory: help
+        env:
+          APP_RELEASE: "1.5"
+      - run: npm run build
+        working-directory: site
+      - run: npm run build
+        working-directory: help
+      - run: |
+          mkdir -p site/dist/help && cp -R help/dist/. site/dist/help/
+          node tools/release-guard.mjs
