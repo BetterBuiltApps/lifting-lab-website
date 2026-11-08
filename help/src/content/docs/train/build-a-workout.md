@@ -21,6 +21,8 @@ The workout builder is for days when you are not following a program. You answer
 
 If you leave the blocks blank, the app chooses the shape of the session. If you tick blocks, such as Clean & Jerk and Squats, you get exactly those and nothing bolted on. Your choice is remembered for next time.
 
+Low energy changes what you get. With the blocks left blank, an energy of 1 turns the day into a short recovery session of light technique work. With blocks ticked, you still get those blocks, with fewer sets and lighter top sets.
+
 The "Training at" row lets you pick which gym you are in, so the bar, plates and equipment match what you actually have.
 
 ## Read the draft
@@ -28,6 +30,8 @@ The "Training at" row lets you pick which gym you are in, so the bar, plates and
 The draft shows an estimated time, the total working sets and a list of blocks. A block is one part of the session, such as a lift, squats or accessories. Drag blocks to reorder them.
 
 Cards on this screen explain the draft: what the app adjusted from your history, which weak point a choice addresses, and a "How this session was built" note that says why you are snatching today and what the time limit trimmed.
+
+Distances, such as a run, are shown in kilometres or miles to match your kg or lb setting.
 
 ## Change exercises
 
@@ -43,7 +47,7 @@ Each exercise has steppers for sets and reps. Percentage work shows a percent of
 
 Each loaded exercise also has a **Pyramid** switch. When it is on, the sets climb or descend like a ladder instead of repeating one weight. Low-rep work such as doubles and singles holds its reps and ramps the weight.
 
-Sliders for volume and intensity scale the whole session.
+Sliders for volume and intensity scale the whole session. If you gave a time limit, the sets it trimmed stay trimmed when you set a block to Light, Normal or Heavy, or move the volume slider; only what you change grows or shrinks.
 
 ## Reshuffle
 
