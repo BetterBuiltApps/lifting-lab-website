@@ -33,6 +33,12 @@ Open the **Train** tab. Whatever is waiting for you sits near the top.
 
 Leaving a session never loses a set. Backing out just pauses it, and every set you logged is already saved.
 
+To end a paused session without going back in, press and hold its row. **Finish It** closes the session at the last set you logged, so it shows in your Log Book as the short session it was, and a program day counts as done. **Discard** deletes the workout after asking. If a program day has nothing logged yet, only **Discard** is offered, which puts the day back on your schedule instead of marking a session you never did as complete.
+
+:::note[Android]
+On Android, tap the three dots at the end of the row instead of pressing and holding.
+:::
+
 ## The set card
 
 The session shows one set at a time. You see the exercise, the weight in large type, the target reps, and a picture of the bar with the plates on each side. The classic lifts, squats, pulls and presses open with warm-up sets first, starting with the empty bar. These are labelled as warm-ups and are not counted as training. When the same lift comes back later in the session, such as back-off sets after a heavy top set, it has no second warm-up: you are already warm from the first.
