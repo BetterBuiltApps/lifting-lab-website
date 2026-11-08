@@ -6,6 +6,7 @@ covers:
   - LiftingLab/Features/Tools/ToolsHubView.swift
   - LiftingLab/Features/Tools/BarbellLoaderView.swift
   - LiftingLab/Features/Tools/OneRMView.swift
+  - LiftingLab/Features/Compete/MeetDayView.swift
 verified_for: "1.4"
 ---
 
@@ -63,7 +64,7 @@ Opening a tool from a workout or a logged set can fill in the weight for you.
 Estimates get less reliable as reps go up, so sets of five or fewer give the best guide.
 
 :::note
-An estimated PR is only a starting point. Your own logged lifts replace it as you train.
+An estimated PR is only a starting point. It stays your PR, and programs keep loading from it, until you log a heavier single. A lift you make at a meet that is heavier than anything you have actually lifted is still saved as a competition PR, even when the estimate is higher. To let your real lifts take over from an estimate, delete it from the lift's history in the PR Tracker.
 :::
 
 ## Strength Ratios in a nutshell
