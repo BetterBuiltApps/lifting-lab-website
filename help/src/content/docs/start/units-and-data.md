@@ -1,6 +1,6 @@
 ---
 title: Units and your data
-description: Choose kilograms or pounds, learn where your data lives, and export it as CSV files.
+description: Choose kilograms or pounds and learn where your data lives.
 covers:
   - Docs/FEATURES.md#Tab 4, Locker
   - LiftingLab/Features/Me/SettingsView.swift
@@ -46,6 +46,8 @@ Bar Trace video clips are handled separately. They save to your photo library ei
 Android keeps everything on the phone. There is no iCloud sync and no sync setting. Your sessions, records, profile and Bar Trace clips are stored on this device only, clips are copied into the app's private storage, and the app makes no network calls of its own.
 :::
 
+<!-- since 1.5 -->
+
 ## Export your data as CSV
 
 You can take your data out as spreadsheet files at any time. Export is free.
@@ -66,3 +68,5 @@ Weights in the files appear in kilograms and in your chosen unit.
 :::note
 Data & Privacy also holds the Terms & Conditions and Privacy Policy, which you can read offline, a record of when you accepted the Terms, and an About the Data screen that names the sources behind the app's numbers.
 :::
+
+<!-- /since -->

@@ -12,6 +12,7 @@ covers:
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/complex/ComplexBuilderScreen.kt
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/complex/ExerciseComplexesCard.kt
 verified_for: "1.5"
+since: "1.5"
 ---
 
 A complex is two or more lifts done back to back without putting the bar down, such as a clean, two front squats and a jerk. It is logged as one set.

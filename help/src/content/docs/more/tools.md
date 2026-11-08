@@ -29,7 +29,12 @@ The Tools tab holds quick calculators and planners. They work offline, and weigh
 **Prep**
 
 - **Warm-Up**: a guided warm-up, using your own routine if you have written one.
+
+<!-- since 1.5 -->
+
 - **Complex Builder** (Pro): chain lifts on one bar and check every transition. See [Build and log a complex](/help/train/complexes/).
+
+<!-- /since -->
 
 **Calculate**
 
@@ -44,8 +49,14 @@ The Tools tab holds quick calculators and planners. They work offline, and weigh
 
 **Compete**
 
-- **Meet Day** (Pro): a warm-up room and six-attempt board, with a clock for attempt timing and a check of your attempts against the platform rules.
+- **Meet Day** (Pro): a warm-up room and six-attempt board<!-- since 1.5 -->, with a clock for attempt timing and a check of your attempts against the platform rules<!-- /since -->.
+
+<!-- since 1.5 -->
+
 - **Meet Planner** (Pro): counts down to your meets and works your training blocks backward from them.
+
+<!-- /since -->
+
 - **Sinclair**: a score that lets you compare totals across bodyweights.
 - **Robi Points**: your total against the world record for your category.
 

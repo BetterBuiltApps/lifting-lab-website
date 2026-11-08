@@ -85,6 +85,13 @@ It's useful for previewing a token change in a browser and nothing else. Do not
 treat it as a design surface, changes made there have no path back to Swift and
 no test to catch a bad port.
 
+## Releases: nothing unreleased goes live early
+
+What the site and the guides say is controlled by one flag, `APP_RELEASE` (`tools/release.mjs`): `1.2` is what the App Store ships
+today, `1.5` is the next release. Copy, guide text, videos and stills for a feature that is not in the live app must be tagged
+"since <version>" so they stay out of the build until the flag is flipped on release day. Read `RELEASING.md` for how to tag content,
+how to preview a release, and how to flip it. `tools/release-guard.mjs` fails the deploy if unreleased content is in the output.
+
 ## Writing conventions
 
 **No em dashes or en dashes.** Not in copy, not in comments, not in commit

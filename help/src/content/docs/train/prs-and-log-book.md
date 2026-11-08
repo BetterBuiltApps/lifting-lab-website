@@ -1,6 +1,6 @@
 ---
 title: Track PRs and review your Log Book
-description: See how records are saved, the difference between a 1RM and a 2RM or 3RM, and how to review past sessions and import bar-speed data.
+description: See how records are saved, how to review past sessions, and how to import bar-speed data.
 covers:
   - Docs/FEATURES.md#PR tracker (`Train/PRTracker/`)
   - Docs/FEATURES.md#Log Book (`Train/History/`)
@@ -35,11 +35,17 @@ To add a record by hand, use the new PR button, enter the weight, and set the re
 
 A record on the board is always a single. When you make a heavier set during a session, the app notices and celebrates it.
 
+<!-- since 1.5 -->
+
 A heavier set of 2 to 5 reps is saved as a **rep record**, such as a 2RM or 3RM. Rep records appear under **Rep records** on the lift's history. They never change your 1RM, your Total, or the weights the app prescribes. The first rep record at a given rep count has to be close to your max, so an ordinary working double is not celebrated.
+
+<!-- /since -->
 
 :::note
 If you reset your numbers in Settings, the board and Total still show your true records. Strength ratios use your current strength, and a line at the top tells you when a reset is active.
 :::
+
+<!-- since 1.5 -->
 
 A lift done inside a complex never counts as a record for that lift, because the weight was chosen to suit the complex's weakest part. Each complex keeps its own **Complex best** instead. A session's detail shows it, along with **Save as complex** to keep that complex in your library. See [Build and log a complex](/help/train/complexes/).
 
@@ -48,6 +54,8 @@ A lift done inside a complex never counts as a record for that lift, because the
 Each lift's history includes **Make rate by intensity**. It shows one bar for each weight band you have attempted (as a share of your best), with the share you made and the number of sets. Bands with fewer than five sets are drawn faint, because a few sets say little. The headline names the heaviest band you make at least four times in five.
 
 Below it you may see **Effort at the same weight**, which shows whether the same loads are feeling harder or easier lately, and **Load and bar speed**, which plots how fast the bar moves at each weight.
+
+<!-- /since -->
 
 ## The Log Book
 
@@ -62,7 +70,11 @@ The Log Book is a newest-first timeline grouped by month. It holds your sessions
 Press and hold works the same on Android: the menu on a Log Book row offers share and export, and Delete Workout.
 :::
 
+<!-- since 1.5 -->
+
 Use the menu at the top to export your history, or your PRs, stats and history, as CSV files.
+
+<!-- /since -->
 
 ![The Log Book: a List and Calendar switch, a Trends row, and your sessions newest first with sets completed, time and total weight.](../../../assets/screens/log-book.png)
 
@@ -70,7 +82,7 @@ Use the menu at the top to export your history, or your PRs, stats and history, 
 
 If you use a separate bar-speed device, you can bring its CSV file in.
 
-1. Open the Log Book and tap the export and import menu.
+1. Open the Log Book and tap the <!-- since 1.5 -->export and <!-- /since -->import menu.
 2. Tap **Import Velocity Data (CSV)**.
 3. Choose the file.
 

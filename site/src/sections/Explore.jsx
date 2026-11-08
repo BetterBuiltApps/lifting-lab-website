@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { siteWrap, SiteHead, Shot } from './Chrome';
+import { released } from '../lib/release';
 import { asset } from '../lib/asset';
 import { DURATION, EASE } from '../lib/motion';
 import { Reveal } from '../lib/Reveal';
@@ -21,7 +22,7 @@ const EXPLORE_GROUPS = [
   ] },
   { g: 'Setup', items: [
     { k: 'gym', label: 'Gym profile', body: 'Tell Lifting Lab what equipment your gym actually has.', src: 'assets/screens/30-gym-profile-equipment.png' },
-    { k: 'integrations', label: 'Integrations', body: 'Finished workouts write to Health as strength training and count toward your Activity rings; Health can feed back heart rate for adaptive rest and your latest bodyweight. Every toggle is optional.', src: 'assets/screens/36-settings-integrations.png' },
+    { k: 'integrations', label: 'Integrations', body: `Finished workouts write to Health as strength training and count toward your Activity rings; Health can feed back heart rate for adaptive rest and your latest bodyweight. Every toggle is optional${released('1.5') ? ', and CSV export is there when you want your data out too' : ''}.`, src: 'assets/screens/36-settings-integrations.png' },
   ] },
 ];
 

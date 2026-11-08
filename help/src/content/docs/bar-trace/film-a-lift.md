@@ -30,6 +30,8 @@ verified_for: "1.4"
 
 Bar Trace turns a video of your lift into a line showing where the bar travelled, plus a grade and the things worth fixing. You can film inside the app or bring in a clip you already have.
 
+<!-- since 1.5 -->
+
 ![The Bar Trace tab: Record and Import buttons, a Delayed Replay card, and a list of your past analyses with grades and bar speed.](../../../assets/screens/bar-trace-home.png)
 
 <video controls playsinline preload="none" poster="/help/videos/v2/F1-poster.webp" width="300" aria-describedby="F1-desc">
@@ -49,6 +51,8 @@ The first time you tap Record or Import, the app shows a short guide. You can re
 - Make sure the plate nearest the camera is clearly visible at the start.
 
 Standing too close is the most common problem: the plate looks oversized and the bar can leave the top of the frame.
+
+<!-- /since -->
 
 ## Record or import a clip
 
@@ -80,9 +84,13 @@ The bar path is traced on your phone (on iPhone with Apple's built-in vision too
 
 Once you have two or more lifts of the same type, numbers are compared with your own average. If something could not be read, the card says why.
 
+<!-- since 1.5 -->
+
 ## Replay it a few seconds late
 
 Delayed Replay shows the camera feed 3, 5, 8 or 10 seconds behind. Prop the phone up, lift, and turn around to watch the rep without touching anything. Nothing is recorded or saved, and it does not use up an analysis.
+
+<!-- /since -->
 
 ## Share, compare and manage
 

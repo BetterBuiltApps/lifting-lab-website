@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/prerender.mjs",
+    "build": "vite build && node ../tools/release-assets.mjs . && node scripts/prerender.mjs",
     "preview": "vite preview",
     "//screens": "Regenerates the WebP variants after adding or replacing a PNG in public/assets/screens/. Deliberately NOT part of `build`: the variants are committed, and the GitHub Actions runner has no cwebp.",
     "screens": "./scripts/build-screens.sh",

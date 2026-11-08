@@ -1,6 +1,17 @@
+import { readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { APP_RELEASE, released } from '../tools/release.mjs';
+
+// Gallery data for the release being built: the newest src/data/videos.<release>.json that is not above APP_RELEASE.
+const dataFile = readdirSync(resolve(__dirname, 'src/data'))
+  .map((f) => f.match(/^videos\.(\d+(?:\.\d+)*)\.json$/))
+  .filter((m) => m && released(m[1]))
+  .map((m) => m[1])
+  .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+  .pop();
+if (!dataFile) throw new Error('no src/data/videos.<release>.json for APP_RELEASE ' + APP_RELEASE);
 
 // Served at the custom domain liftinglab.app (see public/CNAME), so assets
 // resolve from the root. Switch back to '/lifting-lab-website/' if the
@@ -8,6 +19,9 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   base: '/',
   plugins: [react()],
+  // Release flag (tools/release.mjs), read by src/lib/release.js.
+  define: { __APP_RELEASE__: JSON.stringify(APP_RELEASE) },
+  resolve: { alias: { '@videos': resolve(__dirname, `src/data/videos.${dataFile}.json`) } },
   build: {
     rollupOptions: {
       // Multi-page, not client-side routing. GitHub Pages serves static files

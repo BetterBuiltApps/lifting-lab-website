@@ -44,15 +44,21 @@ To log a set:
 3. Tap **Made** or **Miss**.
 4. If you miss, you can tag what went wrong. The app then suggests causes, drills and cues for that fault.
 
-Some sets ask how hard it felt. Pick the answer that fits, from easy to all out. Rating a working set as all out holds the next sets at that weight instead of climbing.
+Some sets ask how hard it felt. Pick the answer that fits, from easy to all out.<!-- since 1.5 --> Rating a working set as all out holds the next sets at that weight instead of climbing.<!-- /since -->
 
 If you change a weight and make the lift, the remaining sets of that exercise move by the same amount, so you do not have to retype it each time.
 
+<!-- since 1.5 -->
+
 A complex (several lifts on one bar) is one set with its lifts listed in order. If you miss one, the app asks **Where did it go?** so you can tap the lift that failed. Complexes cannot be filmed yet. See [Build and log a complex](/help/train/complexes/).
+
+<!-- /since -->
 
 ## Rest timer
 
 Once you log a set, the rest timer starts. By default it counts up so you can see how long you have rested. In **Settings > Training** you can turn on the countdown timer, which signals when rest is up even if your phone is locked. It keeps running if you leave the session and come back.
+
+<!-- since 1.5 -->
 
 ## The Accessibility view
 
@@ -61,6 +67,8 @@ If you prop your phone on the floor, or you simply want bigger controls, turn on
 :::tip
 Switching the view on and off mid-session never changes your logged sets.
 :::
+
+<!-- /since -->
 
 ## Finish
 

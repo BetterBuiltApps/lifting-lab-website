@@ -1,0 +1,1081 @@
+{
+  "tabs": [
+    {
+      "key": "overview",
+      "label": "Overview",
+      "ids": [
+        "BR1",
+        "M0",
+        "BR2"
+      ]
+    },
+    {
+      "key": "train",
+      "label": "Train",
+      "ids": [
+        "S-A"
+      ]
+    },
+    {
+      "key": "session",
+      "label": "Guided session",
+      "ids": [
+        "B1",
+        "B3",
+        "B7",
+        "S-B",
+        "B16"
+      ]
+    },
+    {
+      "key": "build",
+      "label": "Build",
+      "ids": [
+        "C1",
+        "C5",
+        "S-C"
+      ]
+    },
+    {
+      "key": "programs",
+      "label": "Programs",
+      "ids": [
+        "D7",
+        "D8",
+        "S-D",
+        "D9"
+      ]
+    },
+    {
+      "key": "bartrace",
+      "label": "Bar Trace",
+      "ids": [
+        "F3",
+        "F9",
+        "S-F",
+        "F1",
+        "F8",
+        "F10"
+      ]
+    },
+    {
+      "key": "log",
+      "label": "PRs and log",
+      "ids": [
+        "G1",
+        "G8",
+        "G10",
+        "S-G",
+        "G6"
+      ]
+    },
+    {
+      "key": "technique",
+      "label": "Technique",
+      "ids": [
+        "S-H",
+        "H4",
+        "H2"
+      ]
+    },
+    {
+      "key": "complexes",
+      "label": "Complexes",
+      "ids": [
+        "S-E",
+        "E1"
+      ]
+    },
+    {
+      "key": "compete",
+      "label": "Compete",
+      "ids": [
+        "S-J",
+        "J5"
+      ]
+    },
+    {
+      "key": "tools",
+      "label": "Tools",
+      "ids": [
+        "I9",
+        "S-I"
+      ]
+    },
+    {
+      "key": "locker",
+      "label": "Locker",
+      "ids": [
+        "K3",
+        "S-K"
+      ]
+    },
+    {
+      "key": "platform",
+      "label": "Platform",
+      "ids": [
+        "S-L"
+      ]
+    },
+    {
+      "key": "help",
+      "label": "Help center",
+      "ids": [
+        "M1",
+        "S-M"
+      ]
+    }
+  ],
+  "videos": {
+    "BR1": {
+      "id": "BR1",
+      "title": "No account, no signup",
+      "kind": "item",
+      "plan": "Free",
+      "hook": "No account. No signup. Just lift.",
+      "body": "Pick kg or lb. Or tap Skip.",
+      "seconds": 33,
+      "mp4": "assets/video/v2/BR1.mp4",
+      "poster": "assets/video/v2/BR1-poster.webp",
+      "vtt": "assets/video/v2/BR1.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/BR1-1-600.webp",
+          "large": "assets/stills/BR1-1-900.webp",
+          "alt": "Step 1 · Open the app. No account to make. Pick kg or lb. Or tap Skip. Screen from the app."
+        },
+        {
+          "src": "assets/stills/BR1-2-600.webp",
+          "large": "assets/stills/BR1-2-900.webp",
+          "alt": "Step 2 · Optional. Your numbers are all optional. Bar, experience, bodyweight. Skip it. Screen from the app."
+        },
+        {
+          "src": "assets/stills/BR1-3-600.webp",
+          "large": "assets/stills/BR1-3-900.webp",
+          "alt": "Step 3 · One tap. One tap is required. Age 16 or older, or a guardian agrees. Screen from the app."
+        },
+        {
+          "src": "assets/stills/BR1-4-600.webp",
+          "large": "assets/stills/BR1-4-900.webp",
+          "alt": "Step 4 · Train. Straight to Train. Nothing to enter. No sign in. No permission pop-ups. Screen from the app."
+        }
+      ]
+    },
+    "M0": {
+      "id": "M0",
+      "title": "Lifting Lab, all of it",
+      "kind": "summary",
+      "plan": "Mixed",
+      "hook": "No account. No signup. Just lift.",
+      "body": "Everything Lifting Lab does.",
+      "seconds": 45,
+      "mp4": "assets/video/v2/M0.mp4",
+      "poster": "assets/video/v2/M0-poster.webp",
+      "vtt": "assets/video/v2/M0.vtt",
+      "stills": []
+    },
+    "BR2": {
+      "id": "BR2",
+      "title": "What's free",
+      "kind": "item",
+      "plan": "Free",
+      "hook": "Free that is actually useful.",
+      "body": "Your Log Book, free.",
+      "seconds": 31,
+      "mp4": "assets/video/v2/BR2.mp4",
+      "poster": "assets/video/v2/BR2-poster.webp",
+      "vtt": "assets/video/v2/BR2.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/BR2-1-600.webp",
+          "large": "assets/stills/BR2-1-900.webp",
+          "alt": "Log and history. Log every set. Keep the history. Your Log Book, free. Screen from the app."
+        },
+        {
+          "src": "assets/stills/BR2-2-600.webp",
+          "large": "assets/stills/BR2-2-900.webp",
+          "alt": "Daily workout. A workout built around your day. Build My Workout, free. Screen from the app."
+        },
+        {
+          "src": "assets/stills/BR2-3-600.webp",
+          "large": "assets/stills/BR2-3-900.webp",
+          "alt": "A full program. Beginner Foundation, ten weeks. A full program, free. Screen from the app."
+        },
+        {
+          "src": "assets/stills/BR2-4-600.webp",
+          "large": "assets/stills/BR2-4-900.webp",
+          "alt": "PR Tracker. Every PR, tracked. Your total, lift by lift. Screen from the app."
+        },
+        {
+          "src": "assets/stills/BR2-5-600.webp",
+          "large": "assets/stills/BR2-5-900.webp",
+          "alt": "Calculators. Percentages, plates, 1RM, kg and lb. The Tools tab, free. Screen from the app."
+        },
+        {
+          "src": "assets/stills/BR2-6-600.webp",
+          "large": "assets/stills/BR2-6-900.webp",
+          "alt": "Learn the Lifts. Learn the lifts, step by step. Snatch, clean and jerk. Screen from the app."
+        },
+        {
+          "src": "assets/stills/BR2-7-600.webp",
+          "large": "assets/stills/BR2-7-900.webp",
+          "alt": "Bar Trace. Three bar path analyses a month. Free, with no sensor. Screen from the app."
+        }
+      ]
+    },
+    "S-A": {
+      "id": "S-A",
+      "title": "Your Train tab",
+      "kind": "summary",
+      "plan": "Mixed",
+      "hook": "Your Train tab, in 35 seconds.",
+      "body": "Seven things. Each has its own video.",
+      "seconds": 34,
+      "mp4": "assets/video/v2/S-A.mp4",
+      "poster": "assets/video/v2/S-A-poster.webp",
+      "vtt": "assets/video/v2/S-A.vtt",
+      "stills": []
+    },
+    "B1": {
+      "id": "B1",
+      "title": "Set card and plate diagram",
+      "kind": "item",
+      "plan": "Free",
+      "hook": "Chalky hands? One big tap.",
+      "body": "Weight, set count and your cue.",
+      "seconds": 36,
+      "mp4": "assets/video/v2/B1.mp4",
+      "poster": "assets/video/v2/B1-poster.webp",
+      "vtt": "assets/video/v2/B1.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/B1-1-600.webp",
+          "large": "assets/stills/B1-1-900.webp",
+          "alt": "Step 1 · Set card. One set at a time. Built big. Weight, set count and your cue. Screen from the app."
+        },
+        {
+          "src": "assets/stills/B1-2-600.webp",
+          "large": "assets/stills/B1-2-900.webp",
+          "alt": "Step 2 · Plates. Plates worked out for you. 98 kg exact, shown per side. Screen from the app."
+        },
+        {
+          "src": "assets/stills/B1-3-600.webp",
+          "large": "assets/stills/B1-3-900.webp",
+          "alt": "Step 3 · Made. Made it? One tap. The next set loads up a step. Screen from the app."
+        },
+        {
+          "src": "assets/stills/B1-4-600.webp",
+          "large": "assets/stills/B1-4-900.webp",
+          "alt": "Step 4 · Miss. Missed it? Tag it and go on. Call the miss. Get the drills. Screen from the app."
+        }
+      ]
+    },
+    "B3": {
+      "id": "B3",
+      "title": "Rest timer",
+      "kind": "item",
+      "plan": "Free",
+      "hook": "Rest. Without watching the clock.",
+      "body": "Tap Made. The countdown begins.",
+      "seconds": 19,
+      "mp4": "assets/video/v2/B3.mp4",
+      "poster": "assets/video/v2/B3-poster.webp",
+      "vtt": "assets/video/v2/B3.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/B3-1-600.webp",
+          "large": "assets/stills/B3-1-900.webp",
+          "alt": "Rest timer. Rest starts on its own. Tap Made. The countdown begins. Screen from the app."
+        },
+        {
+          "src": "assets/stills/B3-2-600.webp",
+          "large": "assets/stills/B3-2-900.webp",
+          "alt": "Your call. Need more time? Add 30 seconds. Reset it, or skip the rest. Screen from the app."
+        }
+      ]
+    },
+    "B7": {
+      "id": "B7",
+      "title": "Miss Coach",
+      "kind": "item",
+      "plan": "Free",
+      "hook": "Tag the miss. Get the fix.",
+      "body": "In front, behind, press-out, drop.",
+      "seconds": 19,
+      "mp4": "assets/video/v2/B7.mp4",
+      "poster": "assets/video/v2/B7-poster.webp",
+      "vtt": "assets/video/v2/B7.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/B7-1-600.webp",
+          "large": "assets/stills/B7-1-900.webp",
+          "alt": "Call the miss. Missed it? Tag why. In front, behind, press-out, drop. Screen from the app."
+        },
+        {
+          "src": "assets/stills/B7-2-600.webp",
+          "large": "assets/stills/B7-2-900.webp",
+          "alt": "The fix. Causes, drills and a cue. Matched to the tag you picked. Screen from the app."
+        }
+      ]
+    },
+    "S-B": {
+      "id": "S-B",
+      "title": "Your guided session",
+      "kind": "summary",
+      "plan": "Mixed",
+      "hook": "Guided session, in under a minute.",
+      "body": "Nineteen things. Each has its own video.",
+      "seconds": 46,
+      "mp4": "assets/video/v2/S-B.mp4",
+      "poster": "assets/video/v2/S-B-poster.webp",
+      "vtt": "assets/video/v2/S-B.vtt",
+      "stills": []
+    },
+    "B16": {
+      "id": "B16",
+      "title": "Accessibility view",
+      "kind": "item",
+      "plan": "Free",
+      "hook": "Big buttons for chalky hands.",
+      "body": "Big numbers. Big Made and Miss.",
+      "seconds": 13,
+      "mp4": "assets/video/v2/B16.mp4",
+      "poster": "assets/video/v2/B16-poster.webp",
+      "vtt": "assets/video/v2/B16.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/B16-1-600.webp",
+          "large": "assets/stills/B16-1-900.webp",
+          "alt": "Accessibility view. The set goes huge. Big numbers. Big Made and Miss. Screen from the app."
+        }
+      ]
+    },
+    "C1": {
+      "id": "C1",
+      "title": "Build around how you feel",
+      "kind": "item",
+      "plan": "Free",
+      "hook": "Too tired to plan today's lifts?",
+      "body": "Energy, sore muscles and time.",
+      "seconds": 34,
+      "mp4": "assets/video/v2/C1.mp4",
+      "poster": "assets/video/v2/C1-poster.webp",
+      "vtt": "assets/video/v2/C1.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/C1-1-600.webp",
+          "large": "assets/stills/C1-1-900.webp",
+          "alt": "Step 1 · Check in. Tell it how you feel. Energy, sore muscles and time. Screen from the app."
+        },
+        {
+          "src": "assets/stills/C1-2-600.webp",
+          "large": "assets/stills/C1-2-900.webp",
+          "alt": "Step 2 · Your session. A session built around you. Sore muscles avoided. Sets and time shown. Screen from the app."
+        },
+        {
+          "src": "assets/stills/C1-3-600.webp",
+          "large": "assets/stills/C1-3-900.webp",
+          "alt": "Step 3 · Dial it. Dial any block up or down. Light, Normal or Heavy. Screen from the app."
+        },
+        {
+          "src": "assets/stills/C1-4-600.webp",
+          "large": "assets/stills/C1-4-900.webp",
+          "alt": "Step 4 · Train. Plates worked out for you. One set at a time. No program needed. Screen from the app."
+        }
+      ]
+    },
+    "C5": {
+      "id": "C5",
+      "title": "Saved routines",
+      "kind": "item",
+      "plan": "Free",
+      "hook": "Save the good ones.",
+      "body": "It waits in My Programs, under Routines.",
+      "seconds": 11,
+      "mp4": "assets/video/v2/C5.mp4",
+      "poster": "assets/video/v2/C5-poster.webp",
+      "vtt": "assets/video/v2/C5.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/C5-1-600.webp",
+          "large": "assets/stills/C5-1-900.webp",
+          "alt": "Save as routine. Keep the workout you built. It waits in My Programs, under Routines. Screen from the app."
+        }
+      ]
+    },
+    "S-C": {
+      "id": "S-C",
+      "title": "Build My Workout",
+      "kind": "summary",
+      "plan": "Mixed",
+      "hook": "Build My Workout, in 35 seconds.",
+      "body": "Six things. Each has its own video.",
+      "seconds": 32,
+      "mp4": "assets/video/v2/S-C.mp4",
+      "poster": "assets/video/v2/S-C-poster.webp",
+      "vtt": "assets/video/v2/S-C.vtt",
+      "stills": []
+    },
+    "D7": {
+      "id": "D7",
+      "title": "Program Builder",
+      "kind": "item",
+      "plan": "Pro",
+      "hook": "Write your own cycle.",
+      "body": "Write a program week by week.",
+      "seconds": 24,
+      "mp4": "assets/video/v2/D7.mp4",
+      "poster": "assets/video/v2/D7-poster.webp",
+      "vtt": "assets/video/v2/D7.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/D7-1-600.webp",
+          "large": "assets/stills/D7-1-900.webp",
+          "alt": "Program Builder. Add a week. Add a day. Write a program week by week. Screen from the app."
+        },
+        {
+          "src": "assets/stills/D7-2-600.webp",
+          "large": "assets/stills/D7-2-900.webp",
+          "alt": "Add exercises. Sets, reps and percent of your PR. Pick from the library. Load by percent. Screen from the app."
+        },
+        {
+          "src": "assets/stills/D7-3-600.webp",
+          "large": "assets/stills/D7-3-900.webp",
+          "alt": "Run it. Name it. Your cycle joins the list. Preview it, then Start This Program. Screen from the app."
+        }
+      ]
+    },
+    "D8": {
+      "id": "D8",
+      "title": "Print, PDF and share",
+      "kind": "item",
+      "plan": "Free",
+      "hook": "Take your program on paper.",
+      "body": "One tap from any program.",
+      "seconds": 14,
+      "mp4": "assets/video/v2/D8.mp4",
+      "poster": "assets/video/v2/D8-poster.webp",
+      "vtt": "assets/video/v2/D8.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/D8-1-600.webp",
+          "large": "assets/stills/D8-1-900.webp",
+          "alt": "Share a program. Print it, or save it as a PDF. One tap from any program. Screen from the app."
+        },
+        {
+          "src": "assets/stills/D8-2-600.webp",
+          "large": "assets/stills/D8-2-900.webp",
+          "alt": "Print preview. Every week, with your weights. Page 1 of 7 for Beginner Foundation. Screen from the app."
+        }
+      ]
+    },
+    "S-D": {
+      "id": "S-D",
+      "title": "Programs",
+      "kind": "summary",
+      "plan": "Mixed",
+      "hook": "Programs, in 45 seconds.",
+      "body": "Ten things. Each has its own video.",
+      "seconds": 45,
+      "mp4": "assets/video/v2/S-D.mp4",
+      "poster": "assets/video/v2/S-D-poster.webp",
+      "vtt": "assets/video/v2/S-D.vtt",
+      "stills": []
+    },
+    "D9": {
+      "id": "D9",
+      "title": "Cycle report",
+      "kind": "item",
+      "plan": "Pro",
+      "hook": "A cycle ends. Then what?",
+      "body": "Records, ratios and bar speed.",
+      "seconds": 22,
+      "mp4": "assets/video/v2/D9.mp4",
+      "poster": "assets/video/v2/D9-poster.webp",
+      "vtt": "assets/video/v2/D9.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/D9-1-600.webp",
+          "large": "assets/stills/D9-1-900.webp",
+          "alt": "End a program. End it. The report opens right away. Records, ratios and bar speed. Screen from the app."
+        },
+        {
+          "src": "assets/stills/D9-2-600.webp",
+          "large": "assets/stills/D9-2-900.webp",
+          "alt": "What to run next. It names what limited you. Then points to the next cycle. Screen from the app."
+        },
+        {
+          "src": "assets/stills/D9-3-600.webp",
+          "large": "assets/stills/D9-3-900.webp",
+          "alt": "Start to end. Records and ratios, start against end. Bar speed too, when you film. Screen from the app."
+        }
+      ]
+    },
+    "F3": {
+      "id": "F3",
+      "title": "Referee lights and grade ring",
+      "kind": "item",
+      "plan": "Free",
+      "hook": "One grade. Three parts.",
+      "body": "Pull under, bar path and rhythm.",
+      "seconds": 35,
+      "mp4": "assets/video/v2/F3.mp4",
+      "poster": "assets/video/v2/F3-poster.webp",
+      "vtt": "assets/video/v2/F3.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/F3-1-600.webp",
+          "large": "assets/stills/F3-1-900.webp",
+          "alt": "Step 1 · The grade. One grade out of 100 for the lift. Pull under, bar path and rhythm. Screen from the app."
+        },
+        {
+          "src": "assets/stills/F3-2-600.webp",
+          "large": "assets/stills/F3-2-900.webp",
+          "alt": "Step 2 · The rules. Checked against competition rules. Every rule listed with its number. Screen from the app."
+        },
+        {
+          "src": "assets/stills/F3-3-600.webp",
+          "large": "assets/stills/F3-3-900.webp",
+          "alt": "Step 3 · Not sure?. Can't see a rule? It says so. Graded on the bar alone. Screen from the app."
+        },
+        {
+          "src": "assets/stills/F3-4-600.webp",
+          "large": "assets/stills/F3-4-900.webp",
+          "alt": "Step 4 · The lights. No clear view? No guess. It says Can't judge, not a guess. Screen from the app."
+        }
+      ]
+    },
+    "F9": {
+      "id": "F9",
+      "title": "Branded share clip",
+      "kind": "item",
+      "plan": "Free",
+      "hook": "Post it. Bar trace burned in.",
+      "body": "Story or square, with a speed graph.",
+      "seconds": 19,
+      "mp4": "assets/video/v2/F9.mp4",
+      "poster": "assets/video/v2/F9-poster.webp",
+      "vtt": "assets/video/v2/F9.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/F9-1-600.webp",
+          "large": "assets/stills/F9-1-900.webp",
+          "alt": "Share Video. Your lift, with the bar path burned in. Story or square, with a speed graph. Screen from the app."
+        },
+        {
+          "src": "assets/stills/F9-2-600.webp",
+          "large": "assets/stills/F9-2-900.webp",
+          "alt": "Make it yours. Phase colors, your choice of stats. Weight, speed and path score on or off. Screen from the app."
+        }
+      ]
+    },
+    "S-F": {
+      "id": "S-F",
+      "title": "Bar Trace",
+      "kind": "summary",
+      "plan": "Mixed",
+      "hook": "Bar Trace, in 45 seconds.",
+      "body": "Thirteen things. Each has its own video.",
+      "seconds": 45,
+      "mp4": "assets/video/v2/S-F.mp4",
+      "poster": "assets/video/v2/S-F-poster.webp",
+      "vtt": "assets/video/v2/S-F.vtt",
+      "stills": []
+    },
+    "F1": {
+      "id": "F1",
+      "title": "Record or import, and where to film",
+      "kind": "item",
+      "plan": "Free",
+      "hook": "Where did that bar go?",
+      "body": "Whole lift in frame, head to feet.",
+      "seconds": 32,
+      "mp4": "assets/video/v2/F1.mp4",
+      "poster": "assets/video/v2/F1-poster.webp",
+      "vtt": "assets/video/v2/F1.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/F1-1-600.webp",
+          "large": "assets/stills/F1-1-900.webp",
+          "alt": "Step 1 · Set up. Phone side-on, 3 to 5 m back. Whole lift in frame, head to feet. Screen from the app."
+        },
+        {
+          "src": "assets/stills/F1-2-600.webp",
+          "large": "assets/stills/F1-2-900.webp",
+          "alt": "Step 2 · Get the clip. Record it, or import the clip. Pick a clip from Photos and trim it. Screen from the app."
+        },
+        {
+          "src": "assets/stills/F1-3-600.webp",
+          "large": "assets/stills/F1-3-900.webp",
+          "alt": "Step 3 · The plate. Circle one plate. It sets the scale and what to track. Screen from the app."
+        },
+        {
+          "src": "assets/stills/F1-4-600.webp",
+          "large": "assets/stills/F1-4-900.webp",
+          "alt": "Step 4 · Analyze. Every frame, read on your phone. Your clip stays on your device. Screen from the app."
+        },
+        {
+          "src": "assets/stills/F1-5-600.webp",
+          "large": "assets/stills/F1-5-900.webp",
+          "alt": "Step 5 · Your results. A grade and a speed for every clip. Three analyses a month are free. Screen from the app."
+        }
+      ]
+    },
+    "F8": {
+      "id": "F8",
+      "title": "Delayed replay",
+      "kind": "item",
+      "plan": "Free",
+      "hook": "See each rep, seconds later.",
+      "body": "A few seconds after. Nothing is recorded.",
+      "seconds": 23,
+      "mp4": "assets/video/v2/F8.mp4",
+      "poster": "assets/video/v2/F8-poster.webp",
+      "vtt": "assets/video/v2/F8.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/F8-1-600.webp",
+          "large": "assets/stills/F8-1-900.webp",
+          "alt": "Delayed Replay. Watch the rep you just lifted. A few seconds after. Nothing is recorded. Screen from the app."
+        },
+        {
+          "src": "assets/stills/F8-2-600.webp",
+          "large": "assets/stills/F8-2-900.webp",
+          "alt": "Pick the delay. 3, 5, 8 or 10 seconds behind. The header shows how far behind you are. Screen from the app."
+        },
+        {
+          "src": "assets/stills/F8-3-600.webp",
+          "large": "assets/stills/F8-3-900.webp",
+          "alt": "Hands off. Prop the phone up. Lift. Then look. Front or back camera. Screen from the app."
+        }
+      ]
+    },
+    "F10": {
+      "id": "F10",
+      "title": "Backup and iCloud clips",
+      "kind": "item",
+      "plan": "Free",
+      "hook": "Switch phones. Keep the lifts.",
+      "body": "Off, Wi-Fi only, or Wi-Fi and cellular.",
+      "seconds": 13,
+      "mp4": "assets/video/v2/F10.mp4",
+      "poster": "assets/video/v2/F10-poster.webp",
+      "vtt": "assets/video/v2/F10.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/F10-1-600.webp",
+          "large": "assets/stills/F10-1-900.webp",
+          "alt": "Data and Privacy. Sync clips to iCloud, or keep them local. Off, Wi-Fi only, or Wi-Fi and cellular. Screen from the app."
+        }
+      ]
+    },
+    "G1": {
+      "id": "G1",
+      "title": "PR Tracker",
+      "kind": "item",
+      "plan": "Free",
+      "hook": "Watch your total climb.",
+      "body": "Snatch plus clean and jerk.",
+      "seconds": 18,
+      "mp4": "assets/video/v2/G1.mp4",
+      "poster": "assets/video/v2/G1-poster.webp",
+      "vtt": "assets/video/v2/G1.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/G1-1-600.webp",
+          "large": "assets/stills/G1-1-900.webp",
+          "alt": "PR Tracker. Your total, always on top. Snatch plus clean and jerk. Screen from the app."
+        },
+        {
+          "src": "assets/stills/G1-2-600.webp",
+          "large": "assets/stills/G1-2-900.webp",
+          "alt": "Every lift. Each lift, its best, and its trend. Primary and secondary lifts. Screen from the app."
+        },
+        {
+          "src": "assets/stills/G1-3-600.webp",
+          "large": "assets/stills/G1-3-900.webp",
+          "alt": "Tap a lift. Tap one. See every PR. Your current best, over time. Screen from the app."
+        }
+      ]
+    },
+    "G8": {
+      "id": "G8",
+      "title": "Calendar view",
+      "kind": "item",
+      "plan": "Free",
+      "hook": "Trained, missed, today.",
+      "body": "Trained, missed, scheduled.",
+      "seconds": 13,
+      "mp4": "assets/video/v2/G8.mp4",
+      "poster": "assets/video/v2/G8-poster.webp",
+      "vtt": "assets/video/v2/G8.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/G8-1-600.webp",
+          "large": "assets/stills/G8-1-900.webp",
+          "alt": "Calendar. Your month, at a glance. Trained, missed, scheduled. Screen from the app."
+        }
+      ]
+    },
+    "G10": {
+      "id": "G10",
+      "title": "Reflections",
+      "kind": "item",
+      "plan": "Free",
+      "hook": "Step back every four weeks.",
+      "body": "Sleep, fatigue, difficulty and more.",
+      "seconds": 13,
+      "mp4": "assets/video/v2/G10.mp4",
+      "poster": "assets/video/v2/G10-poster.webp",
+      "vtt": "assets/video/v2/G10.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/G10-1-600.webp",
+          "large": "assets/stills/G10-1-900.webp",
+          "alt": "Reflections. Take stock of the last block. Sleep, fatigue, difficulty and more. Screen from the app."
+        }
+      ]
+    },
+    "S-G": {
+      "id": "S-G",
+      "title": "Your PRs and log",
+      "kind": "summary",
+      "plan": "Mixed",
+      "hook": "PRs and log, in 40 seconds.",
+      "body": "Eleven things. Each has its own video.",
+      "seconds": 45,
+      "mp4": "assets/video/v2/S-G.mp4",
+      "poster": "assets/video/v2/S-G-poster.webp",
+      "vtt": "assets/video/v2/S-G.vtt",
+      "stills": []
+    },
+    "G6": {
+      "id": "G6",
+      "title": "Rep records",
+      "kind": "item",
+      "plan": "Free",
+      "hook": "A triple is not your 1RM.",
+      "body": "Reps 2 to 5 are saved apart.",
+      "seconds": 20,
+      "mp4": "assets/video/v2/G6.mp4",
+      "poster": "assets/video/v2/G6-poster.webp",
+      "vtt": "assets/video/v2/G6.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/G6-1-600.webp",
+          "large": "assets/stills/G6-1-900.webp",
+          "alt": "Log a rep record. Log a double or a triple. Reps 2 to 5 are saved apart. Screen from the app."
+        },
+        {
+          "src": "assets/stills/G6-2-600.webp",
+          "large": "assets/stills/G6-2-900.webp",
+          "alt": "Your 1RM stays put. It lands as a 3RM. Your 1RM holds. Percent prescriptions stay honest. Screen from the app."
+        }
+      ]
+    },
+    "S-H": {
+      "id": "S-H",
+      "title": "Library and technique",
+      "kind": "summary",
+      "plan": "Mixed",
+      "hook": "Why do you keep missing?",
+      "body": "Library and technique, in 35 seconds.",
+      "seconds": 30,
+      "mp4": "assets/video/v2/S-H.mp4",
+      "poster": "assets/video/v2/S-H-poster.webp",
+      "vtt": "assets/video/v2/S-H.vtt",
+      "stills": []
+    },
+    "H4": {
+      "id": "H4",
+      "title": "Learn the Lifts",
+      "kind": "item",
+      "plan": "Free",
+      "hook": "Step by step. Advance when ready.",
+      "body": "Position, movement, speed, then weight.",
+      "seconds": 32,
+      "mp4": "assets/video/v2/H4.mp4",
+      "poster": "assets/video/v2/H4-poster.webp",
+      "vtt": "assets/video/v2/H4.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/H4-1-600.webp",
+          "large": "assets/stills/H4-1-900.webp",
+          "alt": "Learn the Lifts. Snatch, clean and jerk, in the right order. Position, movement, speed, then weight. Screen from the app."
+        },
+        {
+          "src": "assets/stills/H4-2-600.webp",
+          "large": "assets/stills/H4-2-900.webp",
+          "alt": "Every step. Know how to do it. Know when to move on. A how-to, plus a ready check. Screen from the app."
+        },
+        {
+          "src": "assets/stills/H4-3-600.webp",
+          "large": "assets/stills/H4-3-900.webp",
+          "alt": "Your progress. Mark it done. The next step is up. Progress is saved. 1 of 12 done. Screen from the app."
+        },
+        {
+          "src": "assets/stills/H4-4-600.webp",
+          "large": "assets/stills/H4-4-900.webp",
+          "alt": "Snatch, 12 steps. From an overhead hold to a full snatch. Clean has 9 steps. Jerk has 8. Screen from the app."
+        }
+      ]
+    },
+    "H2": {
+      "id": "H2",
+      "title": "Technique Doctor",
+      "kind": "item",
+      "plan": "Free",
+      "hook": "Why do you keep missing?",
+      "body": "From your bar traces and miss tags.",
+      "seconds": 39,
+      "mp4": "assets/video/v2/H2.mp4",
+      "poster": "assets/video/v2/H2-poster.webp",
+      "vtt": "assets/video/v2/H2.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/H2-1-600.webp",
+          "large": "assets/stills/H2-1-900.webp",
+          "alt": "Technique Doctor. It reads your lifts and names the fault. From your bar traces and miss tags. Screen from the app."
+        },
+        {
+          "src": "assets/stills/H2-2-600.webp",
+          "large": "assets/stills/H2-2-900.webp",
+          "alt": "The evidence. A cue for each fault, the clips behind it. Dates link to the lifts that show it. Screen from the app."
+        },
+        {
+          "src": "assets/stills/H2-3-600.webp",
+          "large": "assets/stills/H2-3-900.webp",
+          "alt": "Browse all faults. Causes and drills, for any miss. Where to film it, too. Screen from the app."
+        },
+        {
+          "src": "assets/stills/H2-4-600.webp",
+          "large": "assets/stills/H2-4-900.webp",
+          "alt": "Pro history. Free reads 5 lifts. Pro reads further back. So you can watch a fault shrink. Screen from the app."
+        }
+      ]
+    },
+    "S-E": {
+      "id": "S-E",
+      "title": "Complexes",
+      "kind": "summary",
+      "plan": "Mixed",
+      "hook": "Complexes, in 25 seconds.",
+      "body": "Three things. Each has its own video.",
+      "seconds": 25,
+      "mp4": "assets/video/v2/S-E.mp4",
+      "poster": "assets/video/v2/S-E-poster.webp",
+      "vtt": "assets/video/v2/S-E.vtt",
+      "stills": []
+    },
+    "E1": {
+      "id": "E1",
+      "title": "Complex Builder",
+      "kind": "item",
+      "plan": "Pro",
+      "hook": "Chain lifts on one bar.",
+      "body": "Tools, Prep, Complex Builder.",
+      "seconds": 24,
+      "mp4": "assets/video/v2/E1.mp4",
+      "poster": "assets/video/v2/E1-poster.webp",
+      "vtt": "assets/video/v2/E1.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/E1-1-600.webp",
+          "large": "assets/stills/E1-1-900.webp",
+          "alt": "Complex Builder. Pick a lift. See what fits next. Tools, Prep, Complex Builder. Screen from the app."
+        },
+        {
+          "src": "assets/stills/E1-2-600.webp",
+          "large": "assets/stills/E1-2-900.webp",
+          "alt": "Every gap checked. Clean, front squat, power jerk. Floor to rack. Rack to overhead. Screen from the app."
+        },
+        {
+          "src": "assets/stills/E1-3-600.webp",
+          "large": "assets/stills/E1-3-900.webp",
+          "alt": "Loading. The weakest lift sets the weight. Power Jerk limits this. 75% is 80 kg. Screen from the app."
+        }
+      ]
+    },
+    "S-J": {
+      "id": "S-J",
+      "title": "Compete",
+      "kind": "summary",
+      "plan": "Mixed",
+      "hook": "Compete, in 30 seconds.",
+      "body": "Seven things. Each has its own video.",
+      "seconds": 31,
+      "mp4": "assets/video/v2/S-J.mp4",
+      "poster": "assets/video/v2/S-J-poster.webp",
+      "vtt": "assets/video/v2/S-J.vtt",
+      "stills": []
+    },
+    "J5": {
+      "id": "J5",
+      "title": "Meet Planner",
+      "kind": "item",
+      "plan": "Pro",
+      "hook": "Plan back from the meet.",
+      "body": "A, B or C meet, and a target class.",
+      "seconds": 33,
+      "mp4": "assets/video/v2/J5.mp4",
+      "poster": "assets/video/v2/J5-poster.webp",
+      "vtt": "assets/video/v2/J5.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/J5-1-600.webp",
+          "large": "assets/stills/J5-1-900.webp",
+          "alt": "Step 1 · Set the meet. Name it. Date it. Pick the priority. A, B or C meet, and a target class. Screen from the app."
+        },
+        {
+          "src": "assets/stills/J5-2-600.webp",
+          "large": "assets/stills/J5-2-900.webp",
+          "alt": "Step 2 · Blocks. Blocks, worked back from meet day. 109 days out: Strength to Competition Peak. Screen from the app."
+        },
+        {
+          "src": "assets/stills/J5-3-600.webp",
+          "large": "assets/stills/J5-3-900.webp",
+          "alt": "Step 3 · Taper. A taper, then a dress rehearsal. Collars on from 4 weeks. Meet jumps from 3. Screen from the app."
+        },
+        {
+          "src": "assets/stills/J5-4-600.webp",
+          "large": "assets/stills/J5-4-900.webp",
+          "alt": "Step 4 · Class limit. See the pace to your class limit. Planning guidance, not medical advice. Screen from the app."
+        }
+      ]
+    },
+    "I9": {
+      "id": "I9",
+      "title": "Robi points",
+      "kind": "item",
+      "plan": "Free",
+      "hook": "Your total against the record.",
+      "body": "227 kg is 62.2% of 365 kg: 229 points.",
+      "seconds": 12,
+      "mp4": "assets/video/v2/I9.mp4",
+      "poster": "assets/video/v2/I9-poster.webp",
+      "vtt": "assets/video/v2/I9.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/I9-1-600.webp",
+          "large": "assets/stills/I9-1-900.webp",
+          "alt": "Robi points. Your total against the world record. 227 kg is 62.2% of 365 kg: 229 points. Screen from the app."
+        }
+      ]
+    },
+    "S-I": {
+      "id": "S-I",
+      "title": "Your Tools tab",
+      "kind": "summary",
+      "plan": "Mixed",
+      "hook": "Your Tools tab, in 40 seconds.",
+      "body": "Ten tools. Each has its own video.",
+      "seconds": 43,
+      "mp4": "assets/video/v2/S-I.mp4",
+      "poster": "assets/video/v2/S-I-poster.webp",
+      "vtt": "assets/video/v2/S-I.vtt",
+      "stills": []
+    },
+    "K3": {
+      "id": "K3",
+      "title": "Body",
+      "kind": "item",
+      "plan": "Free",
+      "hook": "Protect. Reintroduce. Rebuild.",
+      "body": "Protect, Reintroduce or Rebuild.",
+      "seconds": 26,
+      "mp4": "assets/video/v2/K3.mp4",
+      "poster": "assets/video/v2/K3-poster.webp",
+      "vtt": "assets/video/v2/K3.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/K3-1-600.webp",
+          "large": "assets/stills/K3-1-900.webp",
+          "alt": "Body. Log an injury. Pick a stage. Protect, Reintroduce or Rebuild. Screen from the app."
+        },
+        {
+          "src": "assets/stills/K3-2-600.webp",
+          "large": "assets/stills/K3-2-900.webp",
+          "alt": "Your training. Your training works around it. Movements that load it are kept out. Screen from the app."
+        },
+        {
+          "src": "assets/stills/K3-3-600.webp",
+          "large": "assets/stills/K3-3-900.webp",
+          "alt": "Not medical advice. It changes your training, not treatment. Cleared by a professional? Move on. Screen from the app."
+        }
+      ]
+    },
+    "S-K": {
+      "id": "S-K",
+      "title": "Your Locker",
+      "kind": "summary",
+      "plan": "Mixed",
+      "hook": "Your Locker, in 40 seconds.",
+      "body": "Twelve things. Each has its own video.",
+      "seconds": 45,
+      "mp4": "assets/video/v2/S-K.mp4",
+      "poster": "assets/video/v2/S-K-poster.webp",
+      "vtt": "assets/video/v2/S-K.vtt",
+      "stills": []
+    },
+    "S-L": {
+      "id": "S-L",
+      "title": "The platform",
+      "kind": "summary",
+      "plan": "Mixed",
+      "hook": "The platform, in 30 seconds.",
+      "body": "Five things. Each has its own video.",
+      "seconds": 30,
+      "mp4": "assets/video/v2/S-L.mp4",
+      "poster": "assets/video/v2/S-L-poster.webp",
+      "vtt": "assets/video/v2/S-L.vtt",
+      "stills": []
+    },
+    "M1": {
+      "id": "M1",
+      "title": "The Help center and search",
+      "kind": "item",
+      "plan": "Free",
+      "hook": "Stuck? There is a guide.",
+      "body": "Logging, workouts, Bar Trace and more.",
+      "seconds": 32,
+      "mp4": "assets/video/v2/M1.mp4",
+      "poster": "assets/video/v2/M1-poster.webp",
+      "vtt": "assets/video/v2/M1.vtt",
+      "stills": [
+        {
+          "src": "assets/stills/M1-1-600.webp",
+          "large": "assets/stills/M1-1-900.webp",
+          "alt": "The Help center. Short guides. One task each. Logging, workouts, Bar Trace and more. Screen from the app."
+        },
+        {
+          "src": "assets/stills/M1-2-600.webp",
+          "large": "assets/stills/M1-2-900.webp",
+          "alt": "Search. Type a word. Find the section. Try export. Three guides come up. Screen from the app."
+        },
+        {
+          "src": "assets/stills/M1-3-600.webp",
+          "large": "assets/stills/M1-3-900.webp",
+          "alt": "Step by step. Numbered steps. No guessing. Check weight and reps. Tap Made or Miss. Screen from the app."
+        },
+        {
+          "src": "assets/stills/M1-4-600.webp",
+          "large": "assets/stills/M1-4-900.webp",
+          "alt": "Then do it. Then try it in the app. Log a set and the rest timer starts. Screen from the app."
+        }
+      ]
+    },
+    "S-M": {
+      "id": "S-M",
+      "title": "The Help center",
+      "kind": "summary",
+      "plan": "Mixed",
+      "hook": "The Help center, in 35 seconds.",
+      "body": "Twelve guides. Each has its own video.",
+      "seconds": 45,
+      "mp4": "assets/video/v2/S-M.mp4",
+      "poster": "assets/video/v2/S-M-poster.webp",
+      "vtt": "assets/video/v2/S-M.vtt",
+      "stills": []
+    }
+  }
+}

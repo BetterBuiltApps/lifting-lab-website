@@ -4,13 +4,16 @@ import { asset } from '../lib/asset';
 import { Reveal } from '../lib/Reveal';
 import { VideoClip } from '../lib/VideoClip';
 import { useLightbox } from '../lib/Lightbox';
-import data from '../data/videos.json';
+// The data file is picked at build time for the release being built (vite.config.js, alias @videos): videos.<release>.json,
+// written by the video project's scripts/v2/web-export.mjs. A release that is not reached is not imported, so its titles,
+// captions and paths are not in the shipped JavaScript.
+import data from '@videos';
 
 /* A gallery of short walkthroughs, one tab per area: the area's summary first,
    then the videos that go deeper. Generated data: src/data/videos.json comes from
    the video project's scripts/v2/web-export.mjs, which only exports features that
    are live in the App Store build, so this section never announces a feature that
-   has not shipped. Click to play, never autoplay (see lib/VideoClip.jsx). The stills
+   has not shipped. Items for a later release are staged behind the release flag, see RELEASING.md. Click to play, never autoplay (see lib/VideoClip.jsx). The stills
    under the videos are frames from the same walkthroughs. */
 
 function Still({ still }) {

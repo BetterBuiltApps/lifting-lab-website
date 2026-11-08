@@ -48,7 +48,6 @@
       "label": "Bar Trace",
       "ids": [
         "SL-F",
-        "F1",
         "F3",
         "F9"
       ]
@@ -96,7 +95,7 @@
       "plan": "Mixed",
       "hook": "No account. No signup. Just lift.",
       "body": "The core of Lifting Lab.",
-      "seconds": 33,
+      "seconds": 30,
       "mp4": "assets/video/v2/ML0.mp4",
       "poster": "assets/video/v2/ML0-poster.webp",
       "vtt": "assets/video/v2/ML0.vtt",
@@ -382,51 +381,12 @@
       "kind": "summary",
       "plan": "Mixed",
       "hook": "Bar Trace, fast.",
-      "body": "Eleven things. Each has its own video.",
-      "seconds": 41,
+      "body": "Ten things. Each has its own video.",
+      "seconds": 39,
       "mp4": "assets/video/v2/SL-F.mp4",
       "poster": "assets/video/v2/SL-F-poster.webp",
       "vtt": "assets/video/v2/SL-F.vtt",
       "stills": []
-    },
-    "F1": {
-      "id": "F1",
-      "title": "Record or import, and where to film",
-      "kind": "item",
-      "plan": "Free",
-      "hook": "Where did that bar go?",
-      "body": "Whole lift in frame, head to feet.",
-      "seconds": 32,
-      "mp4": "assets/video/v2/F1.mp4",
-      "poster": "assets/video/v2/F1-poster.webp",
-      "vtt": "assets/video/v2/F1.vtt",
-      "stills": [
-        {
-          "src": "assets/stills/F1-1-600.webp",
-          "large": "assets/stills/F1-1-900.webp",
-          "alt": "Step 1 · Set up. Phone side-on, 3 to 5 m back. Whole lift in frame, head to feet. Screen from the app."
-        },
-        {
-          "src": "assets/stills/F1-2-600.webp",
-          "large": "assets/stills/F1-2-900.webp",
-          "alt": "Step 2 · Get the clip. Record it, or import the clip. Pick a clip from Photos and trim it. Screen from the app."
-        },
-        {
-          "src": "assets/stills/F1-3-600.webp",
-          "large": "assets/stills/F1-3-900.webp",
-          "alt": "Step 3 · The plate. Circle one plate. It sets the scale and what to track. Screen from the app."
-        },
-        {
-          "src": "assets/stills/F1-4-600.webp",
-          "large": "assets/stills/F1-4-900.webp",
-          "alt": "Step 4 · Analyze. Every frame, read on your phone. Your clip stays on your device. Screen from the app."
-        },
-        {
-          "src": "assets/stills/F1-5-600.webp",
-          "large": "assets/stills/F1-5-900.webp",
-          "alt": "Step 5 · Your results. A grade and a speed for every clip. Three analyses a month are free. Screen from the app."
-        }
-      ]
     },
     "F3": {
       "id": "F3",

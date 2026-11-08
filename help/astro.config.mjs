@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import remarkSince from './src/plugins/remark-since.mjs';
 
 // Served at liftinglab.app/help/. The deploy workflow copies dist/ into
 // site/dist/help, so the base has to match that path exactly.
@@ -7,6 +8,8 @@ export default defineConfig({
   site: 'https://liftinglab.app',
   base: '/help',
   trailingSlash: 'always',
+  // Release gating: text between since markers is dropped until APP_RELEASE reaches that version (tools/release.mjs).
+  markdown: { remarkPlugins: [remarkSince] },
   integrations: [
     starlight({
       title: 'Lifting Lab Help',

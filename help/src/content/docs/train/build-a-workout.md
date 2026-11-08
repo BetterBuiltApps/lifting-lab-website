@@ -42,12 +42,23 @@ Cards on this screen explain the draft: what the app adjusted from your history,
 
 ## Change exercises
 
-- **Swap:** tap Swap on an exercise. The closest matches from the same kind of lift appear first, and the list is limited to the equipment you have.
+- **Swap:** tap Swap on an exercise<!-- since 1.5 -->. The closest matches from the same kind of lift appear first<!-- /since -->, and the list is limited to the equipment you have.
 - **Add exercise:** use Add exercise at the foot of a block.
+
+<!-- since 1.5 -->
+
 - **Remove an exercise:** tap its delete button and confirm.
-- **Remove a block:** use Remove block. Emptying a block removes it, and the time it frees is shared among the blocks that are left.
+
+<!-- /since -->
+
+- **Remove a block:** use Remove block.<!-- since 1.5 --> Emptying a block removes it, and the time it frees is shared among the blocks that are left.<!-- /since -->
 - **Add block:** use Add block to bring in a whole new part of the session.
+
+<!-- since 1.5 -->
+
 - **Complexes (Pro):** the exercise list shows complexes beside single lifts under **Complexes**, with **Build a new complex** below them. Pro members may also find the app has put one complex in the classic lift block. See [Build and log a complex](/help/train/complexes/).
+
+<!-- /since -->
 
 ## Edit sets and weights
 
@@ -59,7 +70,7 @@ Sliders for volume and intensity scale the whole session.
 
 ## Reshuffle
 
-Not keen on the draft? Tap **Reshuffle** for a different set of movements. Anything you have swapped, added or deleted stays as you left it. Only the parts you have not touched change, and sets and reps you typed in are kept.
+Not keen on the draft? Tap **Reshuffle** for a different set of movements.<!-- since 1.5 --> Anything you have swapped, added or deleted stays as you left it. Only the parts you have not touched change, and sets and reps you typed in are kept.<!-- /since -->
 
 :::tip
 Press Save as routine to keep a draft you like. It appears under Routines in My Programs. Percentages are worked out when you start it, so a routine follows your latest records rather than the weights you had when you saved it.

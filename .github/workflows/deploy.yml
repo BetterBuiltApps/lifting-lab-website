@@ -11,6 +11,8 @@ on:
       # CSS without touching anything under site/. Without this line the deploy
       # silently never fires for a colour or type change.
       - "tokens/**"
+      # The release flag and its guard change what a build contains.
+      - "tools/**"
       - ".github/workflows/deploy.yml"
   workflow_dispatch:
 
@@ -43,6 +45,11 @@ jobs:
   build:
     needs: quality
     runs-on: ubuntu-latest
+    env:
+      # The release flag (tools/release.mjs, RELEASING.md): which app version the site and the guides describe.
+      # Unset means the default, what is live in the App Store. To release, set the repository variable APP_RELEASE
+      # to the new version and run this workflow ("Run workflow").
+      APP_RELEASE: ${{ vars.APP_RELEASE }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -73,6 +80,11 @@ jobs:
         run: |
           mkdir -p site/dist/help
           cp -R help/dist/. site/dist/help/
+      # Fails the deploy if content for a release that has not been reached is anywhere in the output.
+      - name: Release guard
+        run: node tools/release-guard.mjs
+      - name: Record the release
+        run: echo "Built for APP_RELEASE=${APP_RELEASE:-default (live)}" >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

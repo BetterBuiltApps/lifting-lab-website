@@ -1,6 +1,6 @@
 ---
 title: Pick and run a program
-description: Choose a program, follow its sessions, handle missed or skipped days, and read the cycle report when it ends.
+description: Choose a program, follow its sessions, and handle the days you miss.
 covers:
   - Docs/FEATURES.md#Programs (`Train/Programs/`)
   - Docs/FEATURES.md#Missed sessions (`Train/MissedSession/`)
@@ -46,6 +46,8 @@ Open one to see its tradition card, such as **The Bulgarian Tradition**: the pri
 
 On a daily-heavy-single day, the back-off sets are a percentage of the top single you actually made, so their weight appears once you log it.
 
+<!-- since 1.5 -->
+
 ## Complexes in a program (Pro)
 
 In Program Builder, a day's exercise list includes complexes beside single lifts. See [Build and log a complex](/help/train/complexes/).
@@ -53,6 +55,8 @@ In Program Builder, a day's exercise list includes complexes beside single lifts
 :::note[Android]
 On Android, an exercise row in Program Builder also offers **Make it a complex**, and a day offers **Add complex**.
 :::
+
+<!-- /since -->
 
 ## How sessions are made
 
@@ -66,7 +70,11 @@ On the Programs list and on the running program's own page you can **End Program
 
 ## Skipping and missed days
 
+<!-- since 1.5 -->
+
 To skip a day on purpose, tap **Skip Today** on the Train tab before you start it. The day is recorded as skipped and the program carries on with the next one.
+
+<!-- /since -->
 
 If a scheduled day passes without a session, the app asks what to do about it:
 
@@ -82,6 +90,8 @@ If you missed several days, you get one question about the most recent one. The 
 Not sure? Skip it. One missed session does not break a program.
 :::
 
+<!-- since 1.5 -->
+
 ## The cycle report (Pro)
 
 When a program ends, Pro members see a report of what it changed:
@@ -94,3 +104,5 @@ When a program ends, Pro members see a report of what it changed:
 Ending from inside a workout does not interrupt you with the report. Finished programs keep their report under **Previous Programs** on the Programs list.
 
 ![The Train tab with an active program: a Start Today's Program button, today's session, Skip Today and End Program, and this week's schedule.](../../../assets/screens/train-dashboard.png)
+
+<!-- /since -->
