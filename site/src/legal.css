@@ -54,6 +54,9 @@ body {
 .legal {
   max-width: 68ch;
   margin: 0 auto;
+  /* The container identifier in the privacy page is one unbroken token that
+     is wider than a 320px viewport. */
+  overflow-wrap: anywhere;
   padding: clamp(32px, 6vw, 64px) clamp(20px, 5vw, 40px) 80px;
 }
 
@@ -86,7 +89,7 @@ body {
 .legal li { margin-bottom: 8px; }
 .legal strong { color: var(--text-primary); font-weight: 700; }
 
-.legal a { color: var(--amber); text-underline-offset: 3px; }
+.legal a { color: var(--amber); text-decoration: underline; text-underline-offset: 3px; }
 /* These documents put a link immediately after a colon with no space, so the
    generated markup can read "at:https://...". Give links room to breathe
    rather than editing the legal text to insert a space. */
