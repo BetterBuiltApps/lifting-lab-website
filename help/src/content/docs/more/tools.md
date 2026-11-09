@@ -10,7 +10,9 @@ covers:
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/tools/ToolsHubScreen.kt
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/tools/BarbellLoaderScreen.kt
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/tools/OneRMScreen.kt
-verified_for: "1.4"
+  - LiftingLab/Features/Compete/MeetDayView.swift
+  - LiftingLab/Features/Compete/MeetPlannerView.swift
+verified_for: "1.5"
 ---
 
 The Tools tab holds quick calculators and planners. They work offline, and weights show in the unit you chose in Settings.
@@ -38,7 +40,7 @@ The Tools tab holds quick calculators and planners. They work offline, and weigh
 
 **Calculate**
 
-- **Training %**: working weights at each percentage of a lift, with the plates to load.
+- **Training %**: working weights at each percentage of a lift, with the plates to load.<!-- since 1.5 --> A lift you reset under Reset Your Numbers loads from that number, not its old record.<!-- /since -->
 - **Barbell Loader**: shows which plates to put on the bar for a target weight.
 - **kg and lb**: converts between the two.
 
@@ -49,18 +51,18 @@ The Tools tab holds quick calculators and planners. They work offline, and weigh
 
 **Compete**
 
-- **Meet Day** (Pro): a warm-up room and six-attempt board<!-- since 1.5 -->, with a clock for attempt timing and a check of your attempts against the platform rules<!-- /since -->.
+- **Meet Day** (Pro): a warm-up room and six-attempt board<!-- since 1.5 -->, with a clock for attempt timing and a check of your attempts against the platform rules. Type your official weigh-in on the setup screen, or change it on the meet screen once you have weighed in: the Sinclair score and the saved meet use that number, not the weight in your profile. The attempt count, the warm-up marker and the clock stay where you left them if you switch tabs or the app closes mid-meet. The warm-ups build to your first attempt as it stands on the board, so if you change your opener, the warm-ups and the hold weight change with it<!-- /since -->.
 
 <!-- since 1.5 -->
 
-- **Meet Planner** (Pro): counts down to your meets and works your training blocks backward from them.
+- **Meet Planner** (Pro): counts down to your meets and works your training blocks backward from them. Opening it does not plan a meet: nothing is saved until you change the name, date, priority or target class. In the days before a meet, workouts you build drop their volume, use lighter loads in the last two days, and give only recovery work on meet day.
 
 <!-- /since -->
 
 - **Sinclair**: a score that lets you compare totals across bodyweights.
 - **Robi Points**: your total against the world record for your category.
 
-Pro tools show a lock until you subscribe.
+Pro tools show a lock until you subscribe<!-- since 1.5 -->, and a locked screen has a See Pro button that opens the subscription<!-- /since -->.
 
 ## Load the bar
 
@@ -86,7 +88,7 @@ Opening a tool from a workout or a logged set can fill in the weight for you.
 Estimates get less reliable as reps go up, so sets of five or fewer give the best guide.
 
 :::note
-An estimated PR is only a starting point. Your own logged lifts replace it as you train.
+An estimated PR is only a starting point. It stays your PR, and programs keep loading from it, until you log a heavier single. A lift you make at a meet that is heavier than anything you have actually lifted is still saved as a competition PR, even when the estimate is higher. To let your real lifts take over from an estimate, delete it from the lift's history in the PR Tracker.
 :::
 
 ## Strength Ratios in a nutshell

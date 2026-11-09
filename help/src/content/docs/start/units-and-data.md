@@ -8,6 +8,7 @@ covers:
   - LiftingLab/Features/Me/DataExportView.swift
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/locker/SettingsScreen.kt
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/locker/DataPrivacyScreen.kt
+  - LiftingLab/App/AppData.swift
 verified_for: "1.4"
 ---
 
@@ -38,12 +39,22 @@ The session screen has a kg/lb button in its toolbar. It shows what that screen 
 
 ## Where your data lives
 
-Your sessions, sets and records are stored on your device, so the app works without a connection. The Data & Privacy screen lists the data location as "This device + iCloud" and notes that training data syncs to iCloud.
+Your sessions, sets and records are stored on your device, so the app works without a connection. The Data & Privacy screen shows where your training data is kept.<!-- since 1.5 --> Right now it says one of three things:<!-- /since -->
+
+<!-- since 1.5 -->
+
+- **This device + iCloud** when it is syncing to iCloud.
+- **This device only** when it is not. The note underneath says why: you are not signed in to iCloud, or iCloud sync could not start this time. Your data is safe on the phone but is not backed up to iCloud, so check this before you wipe or replace your iPhone.
+- **Not saving** if the app could not open your training data. Nothing logged then is saved. Quit and reopen the app to try again.
+
+On a new iPhone signed in to the same iCloud account, the app waits a few seconds on first launch for your profile to arrive before it asks you to set up. If you open it with no connection, set-up appears as usual, and your synced profile replaces the empty one the next time you launch.
+
+<!-- /since -->
 
 Bar Trace video clips are handled separately. They save to your photo library either way. You can choose in Data & Privacy whether they also sync to iCloud so your other devices can play them, and the screen shows how much space your clips use.
 
 :::note[Android]
-Android keeps everything on the phone. There is no iCloud sync and no sync setting. Your sessions, records, profile and Bar Trace clips are stored on this device only, clips are copied into the app's private storage, and the app makes no network calls of its own.
+Android keeps everything on the phone. There is no iCloud sync and no sync setting. Your sessions, records, profile and Bar Trace clips are stored on this device only, clips are copied into the app's private storage, and the app makes no network calls of its own.<!-- since 1.5 --> Clips you record in the app are also copied to your gallery (Movies, then Lifting Lab) on Android 10 and newer, so you keep the video if you change phones. What your gallery backs up is up to you; Lifting Lab sends nothing.<!-- /since -->
 :::
 
 <!-- since 1.5 -->
@@ -61,9 +72,13 @@ The three files are:
 
 - **Lift Summary.** One row per lift: your best PR, your training max, your heaviest made set, your best estimated one-rep max, how many sessions and sets you have done, your total tonnage, and when you last trained it.
 - **Personal Records.** Every PR you have logged.
-- **Training History.** Every set you have logged. Warm-up sets are marked and never counted toward your totals.
+- **Training History.** Every set you have logged. Warm-up sets are marked and never counted toward your totals. The last two columns, Metric and Quantity, say what a set was measured in: a timed set such as a plank shows its seconds, and a distance set such as a row shows its meters, so neither reads as a rep count or a zero weight.
 
 Weights in the files appear in kilograms and in your chosen unit.
+
+:::note[Android]
+The Android export has the same Metric and Quantity columns at the end of Training History.
+:::
 
 :::note
 Data & Privacy also holds the Terms & Conditions and Privacy Policy, which you can read offline, a record of when you accepted the Terms, and an About the Data screen that names the sources behind the app's numbers.

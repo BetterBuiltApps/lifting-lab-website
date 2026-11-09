@@ -17,6 +17,7 @@
   /* ---- Semantic: make / miss ---- */
   --make: #34c759;            /* BPColor.make */
   --miss: #ff3b30;            /* BPColor.miss */
+  --miss-text: #ff6b63;       /* BPColor.missText */
   --good: var(--make);
   --caution: var(--amber);
   --bad: var(--miss);

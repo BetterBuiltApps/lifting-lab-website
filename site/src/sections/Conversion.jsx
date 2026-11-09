@@ -34,7 +34,7 @@ export function ProofStrip() {
    says Pro is free: only the download is. */
 export function DownloadRow({ title = 'Ready to lift?' }) {
   return (
-    <section aria-label="Download Lifting Lab" className="download-row">
+    <section aria-label={`Download Lifting Lab: ${title}`} className="download-row">
       <div style={siteWrap}>
         <Reveal>
           <div className="download-row-inner">
