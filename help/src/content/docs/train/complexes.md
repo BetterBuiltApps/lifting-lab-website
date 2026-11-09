@@ -38,6 +38,8 @@ Each place opens the same list: **Yours** and eight **Starters**. Open a starter
 
 You can add a lift whose transition does not work yet and fix the order after. Saving waits until every gap works.
 
+If you edit a complex you have archived, saving keeps your changes but it stays archived, and the app says so. Restore it from the library to use it again.
+
 ## How the weight is chosen
 
 One bar means one weight, so it has to suit the hardest part. Under **Loading**, the app shows what your records support for each part on its own and names the **limiter**: the part your records support least. Doing the lifts in a row costs more, so start below the lowest.
