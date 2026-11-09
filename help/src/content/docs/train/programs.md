@@ -82,7 +82,7 @@ Starting a day opens a short check-in first. The percentages stay as the program
 
 <!-- since 1.5 -->
 
-A lift is only backed off after a stall when you were really straining on it: a missed rep, an effort of RPE 8 or more, or a set made well under its target percentage. If a program holds a lift at 68% and you made every rep, you are not backed off for it. A rise is a small weekly step, paid in whole kilos when the usual plate step would round down to nothing, so lighter lifters can advance too. After a long break the weights you start from stay a little under your record, rather than jumping back to it.
+A lift is only backed off after a stall when you were really straining on it: a missed rep, an effort of RPE 8 or more, or a set made well under its target percentage. If a program holds a lift at 68% and you made every rep, you are not backed off for it. A rise is a small weekly step, paid in whole kilos when the usual plate step would round down to nothing, so lighter lifters can advance too. After a long break the weights you start from stay a little under your record, rather than jumping back to it. Rises and back-offs land on a weight your gym's bar and plates can build, so a pound gym moves in the plate steps it really has, not in a fractional number.
 
 <!-- /since -->
 
