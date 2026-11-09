@@ -9,11 +9,13 @@ covers:
   - LiftingLab/Features/Train/History/LogBookView.swift
   - LiftingLab/Features/Train/History/SessionDetailView.swift
   - LiftingLab/Domain/Complex/ComplexHistory.swift
+  - LiftingLab/App/SessionDeletion.swift
   - LiftingLab/Features/Train/History/VBTImport/VBTImporter.swift
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/prtracker/PRTrackerScreen.kt
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/logbook/LogBookScreen.kt
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/interop/vbt/VBTImportScreen.kt
-verified_for: "1.4"
+  - LiftingLab/Domain/LoadVelocityProfile.swift
+verified_for: "1.5"
 ---
 
 The PR Tracker holds your records. The Log Book holds everything you have trained.
@@ -37,6 +39,10 @@ A record on the board is always a single. When you make a heavier set during a s
 
 <!-- since 1.5 -->
 
+The **NEW PR** banner and the **Recent PRs** strip on the Train tab only show a real record: a single heavier than your best on the day it was set. If you add an older or lighter single by hand, it goes into the lift's history but is not celebrated and does not appear as a recent PR.
+
+A record follows the set that earned it. If you step back to a set you just logged and correct the weight or the reps, or log it again as a miss, the record the session saved for it is corrected or removed to match. A record from an earlier session, or one you added by hand, is never touched.
+
 A heavier set of 2 to 5 reps is saved as a **rep record**, such as a 2RM or 3RM. Rep records appear under **Rep records** on the lift's history. They never change your 1RM, your Total, or the weights the app prescribes. The first rep record at a given rep count has to be close to your max, so an ordinary working double is not celebrated.
 
 <!-- /since -->
@@ -53,7 +59,7 @@ A lift done inside a complex never counts as a record for that lift, because the
 
 Each lift's history includes **Make rate by intensity**. It shows one bar for each weight band you have attempted (as a share of your best), with the share you made and the number of sets. Bands with fewer than five sets are drawn faint, because a few sets say little. The headline names the heaviest band you make at least four times in five.
 
-Below it you may see **Effort at the same weight**, which shows whether the same loads are feeling harder or easier lately, and **Load and bar speed**, which plots how fast the bar moves at each weight.
+Below it you may see **Effort at the same weight**, which shows whether the same loads are feeling harder or easier lately, and **Load and bar speed**, which plots how fast the bar moves at each weight. It only comments on your last session when the line is a good fit and your weights sit inside the range it covers, so a PR heavier than anything on the line is not called slow. Camera peak speed is a rough measure, so a slow day there is a hint, not proof of fatigue.
 
 <!-- /since -->
 
@@ -64,7 +70,7 @@ The Log Book is a newest-first timeline grouped by month. It holds your sessions
 - Tap a session to see summary numbers and every set grouped by exercise. Filmed sets link to their bar path.
 - Switch between **List** and **Calendar** to see trained days in a month view.
 - Use the notes button to write a reflection. After 28 days the app suggests taking stock.
-- To delete a workout, press and hold its row, or use the menu on its detail screen. You are asked to confirm. A PR you set in that session, your Apple Health workout and any bar-path clip are kept.
+- To delete a workout, press and hold its row, or use the menu on its detail screen. You are asked to confirm. A PR you set in that session, your Apple Health workout and any bar-path clip are kept.<!-- since 1.5 --> If the workout belonged to a program, that day goes back on your schedule so you can train or skip it. If it was the last day of a finished program, the program opens again to take it.<!-- /since -->
 
 :::note[Android]
 Press and hold works the same on Android: the menu on a Log Book row offers share and export, and Delete Workout.
@@ -87,3 +93,11 @@ If you use a separate bar-speed device, you can bring its CSV file in.
 3. Choose the file.
 
 If the app does not recognize the layout, it asks you to match each column to what it holds (such as weight or speed), choose units, and check a preview before importing.
+
+<!-- since 1.5 -->
+
+A date given as a plain number is accepted only if it falls between the years 2000 and 2100. Anything else, such as a column of other large numbers, is reported as a date the app could not read, and those rows import without a time, as standalone readings instead of being matched to a logged set.
+
+Units printed in the column headings, such as "Mean Velocity (cm/s)" or "Weight (lb)", are always used, and speeds in m/s, cm/s and mm/s are all converted. A rep that would still read faster than 5 m/s is skipped with a note to check the speed unit, because no bar moves that fast.
+
+<!-- /since -->
