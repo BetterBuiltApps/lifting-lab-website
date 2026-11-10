@@ -1,6 +1,6 @@
 ---
 title: Add the Lifting Lab widget
-description: Put your next session, this week's tonnage, your top PR and the days to your meet on your home screen.
+description: Put your next session, this week's tonnage, your latest PR and the days to your meet on your home screen.
 covers:
   - LiftingLabWidgets/LiftingLabSummaryWidget.swift
   - LiftingLabWidgets/WidgetSnapshotMirror.swift
@@ -17,7 +17,7 @@ The Lifting Lab widget puts the numbers you check most on your home screen, so y
 
 - **Next session**: your next scheduled session. With nothing scheduled it reads **No session scheduled**.
 - **This week**: the tonnage you have lifted this week.
-- **Top PR**: your personal record. With none logged it reads **No PR logged**.
+- **Latest PR**: the personal record you set most recently. With none logged it reads **No PR logged**.
 - **Meet**: the days left to your meet. This tile only appears when a meet is planned in the Meet Planner, which is **Pro**. Without a planned meet, the widget shows the other tiles and no meet tile.
 
 It comes in two sizes, small and medium.
