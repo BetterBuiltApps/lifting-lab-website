@@ -9,7 +9,7 @@ covers:
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/locker/SettingsScreen.kt
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/locker/DataPrivacyScreen.kt
   - LiftingLab/App/AppData.swift
-verified_for: "1.4"
+verified_for: "1.5"
 ---
 
 <video controls playsinline preload="none" poster="/help/videos/v2/K10-poster.webp" width="300" aria-describedby="K10-desc">
@@ -81,7 +81,7 @@ The Android export has the same Metric and Quantity columns at the end of Traini
 :::
 
 :::note
-Data & Privacy also holds the Terms & Conditions and Privacy Policy, which you can read offline, a record of when you accepted the Terms, and an About the Data screen that names the sources behind the app's numbers.
+Data & Privacy also holds Import Training History (CSV), which brings in sessions from a spreadsheet and is covered in [Import your training history from a CSV](/help/start/import-from-csv/), the Terms & Conditions and Privacy Policy, which you can read offline, a record of when you accepted the Terms, and an About the Data screen that names the sources behind the app's numbers.
 :::
 
 <!-- /since -->

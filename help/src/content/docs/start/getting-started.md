@@ -8,7 +8,7 @@ covers:
   - LiftingLab/App/RootTabView.swift
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/onboarding/OnboardingFlowScreen.kt
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/RootTabView.kt
-verified_for: "1.4"
+verified_for: "1.5"
 ---
 
 Lifting Lab is a training companion for Olympic weightlifting. It helps you plan a session, log every set, film a lift and trace the bar, and keep track of your records. This page covers the first launch and where things live.
@@ -27,16 +27,16 @@ These guides cover Lifting Lab on iPhone and on Android. Where the two differ, a
 The first time you open the app, a short setup walks you through a few screens. Almost everything is optional, and you can change any answer later in Settings.
 
 1. **Units.** Choose kilograms or pounds. Kilograms are the competition standard. Pounds work everywhere too. See [Units and your data](/help/start/units-and-data/) for how this works.
-2. **About you.** Pick your bar (men's 20 kg or women's 15 kg), your experience level, and optionally your bodyweight. This sets your starting bar, your warm-up sets, and how programs scale. Bodyweight is also used for your Sinclair score, a number that lets lifters of different sizes be compared.<!-- since 1.5 --> If you chose pounds, the men's choice is the 45 lb bar and the women's choice is the 15 kg bar. The bar choice also sets men's or women's scoring for your Sinclair and weight classes.<!-- /since -->
-3. **Starting PRs (optional).** Enter your current best lifts if you know them. Programs use these to work out percentages. Skip any you are unsure of. You can add records later, or set them in a session.
-4. **Ready to go.** The last screen lists the tabs and asks for one confirmation: tick the box that says you are 16 or older, or that a parent or guardian is agreeing on your behalf. The Start training button stays off until you do. Weightlifting carries a risk of injury, so this screen also shows a short safety note, with the Terms and Privacy Policy one tap away.
+2. **Your Numbers.** Pick your bar (men's 20 kg or women's 15 kg), your experience level, and optionally your bodyweight. This sets your starting bar, your warm-up sets, and how programs scale. Bodyweight is also used for your Sinclair score, a number that lets lifters of different sizes be compared.<!-- since 1.5 --> If you chose pounds, the men's choice is the 45 lb bar and the women's choice is the 15 kg bar. The bar choice also sets men's or women's scoring for your Sinclair and weight classes.<!-- /since -->
+3. **Current bests (optional).** Enter your current best lifts if you know them. Programs use these to work out percentages. Skip any you are unsure of. You can add records later, or set them in a session.
+4. **Locked and Loaded.** The last screen lists the tabs and asks for one confirmation: tick the box that says you are 16 or older, or that a parent or guardian is agreeing on your behalf. The Start training button stays off until you do. Weightlifting carries a risk of injury, so this screen also shows a short safety note, with the Terms and Privacy Policy one tap away.
 
 If you tap Skip on an earlier screen, you keep anything you already entered and jump to the last screen. You still need to tick the box there.
 
 <!-- since 1.5 -->
 
 :::note[Android]
-On Android the Back gesture steps back one screen during setup, keeping what you typed. If you go back to Starting PRs and fix a number, the new number replaces the old one, and clearing a box removes that starting PR.
+On Android the Back gesture steps back one screen during setup, keeping what you typed. If you go back to Current bests and fix a number, the new number replaces the old one, and clearing a box removes that starting PR.
 :::
 
 <!-- /since -->

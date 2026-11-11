@@ -14,8 +14,8 @@ Siri and the Shortcuts app can take you straight to the part of Lifting Lab you 
 
 ## What you can ask for
 
-- **Start My Session**: opens today's session so you can start it. With nothing scheduled, it says so and starts nothing.
-- **Open My Log Book**: opens your Log Book.
+- **Start My Session**: opens today's session so you can start it. With nothing scheduled, it says so and starts nothing. If a workout is already open and nothing is scheduled, Siri also leaves you in the workout.
+- **Open My Log Book**: opens your Log Book. If a workout is open on screen, Siri leaves you in it and tells you to finish or leave it first.
 - **Show My Next Meet Countdown**: Siri answers out loud with the days left, for example "12 days to NAME." If no meet is planned, it says there is no meet planned. The Meet Planner is **Pro**, so on the free plan Siri tells you the countdown is part of Pro.
 
 ## Ask Siri
@@ -25,6 +25,8 @@ Say one of these, using the app's name at the end:
 - "Start my session in Lifting Lab"
 - "Open my Log Book in Lifting Lab"
 - "How long until my meet in Lifting Lab"
+
+On iPhone, a request made before first-time setup is finished waits until you finish it.
 
 ## Use the Shortcuts app
 
@@ -36,5 +38,5 @@ Say one of these, using the app's name at the end:
 :::note[Android]
 Android has no spoken phrases yet. Instead, touch and hold the Lifting Lab icon to see three shortcuts: **Start my session**, **Open Log Book** and **Next meet**. Drag any of them onto your home screen to keep it there.
 
-**Next meet** opens the Meet Planner. A shortcut tapped during onboarding, or while a set is in progress, does nothing.
+**Next meet** opens the Meet Planner. A shortcut tapped while a set is in progress or the camera is open does not interrupt it. A short message, **Finish or leave this workout first**, tells you it was skipped. A shortcut tapped before first-time setup is finished does nothing.
 :::

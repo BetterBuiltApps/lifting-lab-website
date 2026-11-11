@@ -51,7 +51,7 @@ The Tools tab holds quick calculators and planners. They work offline, and weigh
 
 **Compete**
 
-- **Meet Day** (Pro): a warm-up room and six-attempt board<!-- since 1.5 -->, with a clock for attempt timing and a check of your attempts against the platform rules. Type your official weigh-in on the setup screen, or change it on the meet screen once you have weighed in: the Sinclair score and the saved meet use that number, not the weight in your profile. The attempt count, the warm-up marker and the clock stay where you left them if you switch tabs or the app closes mid-meet. The warm-ups build to your first attempt as it stands on the board, so if you change your opener, the warm-ups and the hold weight change with it<!-- /since -->.
+- **Meet Day** (Pro): a warm-up room and six-attempt board<!-- since 1.5 -->, with a clock for attempt timing and a check of your attempts against the platform rules. Type your official weigh-in on the setup screen, or change it on the meet screen once you have weighed in: the Sinclair score and the saved meet use that number, not the weight in your profile. The attempt count, the warm-up marker and the clock stay where you left them if you switch tabs or the app closes mid-meet. The warm-ups build to your first attempt as it stands on the board, so if you change your opener, the warm-ups and the hold weight change with it. The warm-up card only shows a **Hold** weight while the session is running long and you should repeat a lighter set to mark time, and it never asks for more than the heaviest warm-up you have taken. If you have not taken a warm-up yet, it says **Wait**<!-- /since -->.
 
 <!-- since 1.5 -->
 
