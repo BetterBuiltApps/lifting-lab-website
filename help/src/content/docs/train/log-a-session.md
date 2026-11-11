@@ -70,7 +70,7 @@ A complex (several lifts on one bar) is one set with its lifts listed in order. 
 
 <!-- since 1.5 -->
 
-A set that asks you to go by feel, with no weight written, can open on what you lifted last time. The line under the weight says where the number came from. It names the reps that weight was made for, for example "From 100 kg for 1 last time, adjusted for 3 this set", because a weight you made for a single is not a weight to carry unchanged into a triple. Type your own number and the line goes away.
+A set that asks you to go by feel, with no weight written, can open on what you lifted last time. The line under the weight says where the number came from. It names the reps that weight was made for, for example "From 100 kg for 1 last time, adjusted for 3 this set", because a weight you made for a single is not a weight to carry unchanged into a triple. If it has been more than four weeks since you did that lift, the weight opens a little lower, by about 2% for each further week and never below 85% of what you made, so you are not reopened on the weight you left. The line still says what you actually lifted. Type your own number and the line goes away.
 
 ## Swap an exercise mid-session
 

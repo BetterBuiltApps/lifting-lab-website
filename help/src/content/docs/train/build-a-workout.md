@@ -43,7 +43,7 @@ If you leave the blocks blank, the app chooses the shape of the session. If you 
 
 Low energy changes what you get. With the blocks left blank, an energy of 1 turns the day into a short recovery session: some light cardio, core work and one easy power lift. With blocks ticked, you still get those blocks, with fewer sets and lighter top sets.
 
-Tick both Snatch and Clean & Jerk and you get both, snatch first. One of them is the day's main lift and gets the full load for your energy. The other is built one energy step lighter, so two heavy lifts do not stack.
+Tick both Snatch and Clean & Jerk and you get both, snatch first. Tick both Pulls and Squats and the pulls come first, since they match the lifts before them and squats leave the legs spent. One of them is the day's main lift and gets the full load for your energy. The other is built one energy step lighter, so two heavy lifts do not stack.
 
 If an injury you logged rules out the full snatch or clean, a strong day gives you the closest lift your injury allows, such as a power snatch, instead of leaving the lift out.
 
@@ -80,7 +80,7 @@ Cards on this screen explain the draft: what the app adjusted from your history,
 
 Under a weak point, tap a movement listed under In this session to open that exercise. The note describes what the app did when it built the draft, so it stays the same when you edit the draft yourself.
 
-The estimated time includes the warm-up sets the session adds in front of each loaded lift, when warm-up ramps are on in Settings. If you gave a time limit, the app fits the session to it in this order: core comes out first, then the cardio it added is shortened or dropped, then accessories and working sets come down, so your main lifts are cut last. If even the shortest version runs over, the note says how long it will take rather than claiming it fits.
+The estimated time includes the warm-up sets the session adds in front of each loaded lift, when warm-up ramps are on in Settings. If you gave a time limit, the app fits the session to it in this order: core comes out first (unless you ticked Core, which always stays), then the cardio it added is shortened or dropped, then accessories and working sets come down, so your main lifts are cut last. If even the shortest version runs over, the note says how long it will take rather than claiming it fits.
 
 If your sessions usually run longer than the estimate, the app fits the draft to the time your sessions really take, or to the time you gave in the check-in. A line that is greyed out is something the app noticed that changed nothing today, for example when the draft already fits your time.
 
@@ -123,6 +123,8 @@ The Intensity slider runs from 15% lighter to 10% heavier than the draft. It is 
 A percentage you typed moves with the slider from where you typed it, and holds at 95% on the bar (80% for a beginner). A weight you typed above that is never cut just for being touched. Moving the slider back to zero puts every weight back where it started.
 
 If you gave a time limit, the sets it trimmed stay trimmed when you set a block to Light, Normal or Heavy, or move the volume slider. Only what you change grows or shrinks.
+
+The Light, Normal and Heavy buttons and the Volume slider keep to the same 92% cap (80% for a beginner), even though changing the sets also changes how a ladder ends. Going Light and then back to Normal gives a set the percentage it started at, and a percentage you typed above the cap is never cut just because you touched a dial.
 
 :::note[Android]
 The Android builder gives the same loads, caps and slider range as the iPhone app, so the same check-in builds the same draft on both.

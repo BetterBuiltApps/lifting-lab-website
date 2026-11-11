@@ -77,7 +77,7 @@ Standing too close is the most common problem: the plate looks oversized and the
 A clip you record in the app is also saved to your photo library, so the video survives a new phone or a reinstall. The first time, iPhone asks for permission to add to Photos. If you decline, or a save fails, the app tells you once: your recordings then live only inside Lifting Lab and are left out of iCloud backup, so a new phone will not bring them over. You can allow "Add Photos Only" in Settings. Clips you import already live in your library and are not copied again.
 
 :::note[Android]
-Recorded clips are copied to your gallery, in the Movies folder under Lifting Lab, on Android 10 and newer, with no permission prompt. On Android 9 and older the clip stays in the app only, so keep your own copy if you want one.
+Recorded clips are copied to your gallery, in the Movies folder under Lifting Lab, on Android 10 and newer, with no permission prompt. If the phone refuses the copy or it fails, for example with no free space, Lifting Lab tells you once for each of those two cases that it holds the only copy of the clip, so a new phone or a reinstall will not bring it over. On Android 9 and older the clip stays in the app only, so keep your own copy if you want one.
 :::
 
 <!-- /since -->

@@ -16,8 +16,8 @@ The Lifting Lab widget puts the numbers you check most on your home screen, so y
 ## What it shows
 
 - **Next session**: your next scheduled session. With nothing scheduled it reads **No session scheduled**.
-- **This week**: the tonnage you have lifted this week.
-- **Latest PR**: the personal record you set most recently. With none logged it reads **No PR logged**.
+- **This week**: the tonnage you have lifted this week. A new week starts it again from zero.
+- **Latest PR**: the personal record you set most recently. With none logged it reads **No PRs yet**.
 - **Meet**: the days left to your meet. This tile only appears when a meet is planned in the Meet Planner, which is **Pro**. Without a planned meet, the widget shows the other tiles and no meet tile.
 
 It comes in two sizes, small and medium.
@@ -31,10 +31,10 @@ It comes in two sizes, small and medium.
 
 ## When it updates
 
-On iPhone the widget refreshes when you open the app or finish a session. If the numbers come from an earlier day, the widget says **As of** with that date, so you know how old they are. Open Lifting Lab to bring it up to date.
+On iPhone the widget refreshes when you open the app, leave it, finish a session, or your Pro status changes. Today and Tomorrow flip at midnight on their own. If the numbers come from an earlier day, the widget says **As of** with that date, so you know how old they are. Open Lifting Lab to bring it up to date.
 
 :::note[Android]
 To add it, touch and hold an empty spot on your home screen, tap **Widgets**, then find **Lifting Lab**.
 
-The Android widget reads your log directly instead of a saved copy, and it refreshes shortly after a session or a PR is saved.
+The Android widget reads your log directly instead of a saved copy, and it refreshes shortly after a session, a set, a PR or a program change is saved, or after your Pro status changes. With no PR logged, the tile reads **No PR logged**. If it cannot read your log it says so and asks you to open Lifting Lab.
 :::

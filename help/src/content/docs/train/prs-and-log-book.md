@@ -41,7 +41,7 @@ A record on the board is always a single. When you make a heavier set during a s
 
 The **NEW PR** banner and the **Recent PRs** strip on the Train tab only show a real record: a single heavier than your best on the day it was set. If you add an older or lighter single by hand, it goes into the lift's history but is not celebrated and does not appear as a recent PR.
 
-A record follows the set that earned it. If you step back to a set you just logged and correct the weight or the reps, or log it again as a miss, the record the session saved for it is corrected or removed to match. A record from an earlier session, or one you added by hand, is never touched.
+A record follows the set that earned it. If you step back to a set you just logged and correct the weight or the reps, or log it again as a miss, the record the session saved for it is corrected or removed to match. A record from an earlier session, or one you added by hand, is never touched. A corrected record is dated from the moment you made the correction, so it stays matched to its set.
 
 A heavier set of 2 to 5 reps is saved as a **rep record**, such as a 2RM or 3RM. Rep records appear under **Rep records** on the lift's history. They never change your 1RM, your Total, or the weights the app prescribes. The first rep record at a given rep count has to be close to your max, so an ordinary working double is not celebrated.
 
@@ -67,7 +67,7 @@ Below it you may see **Effort at the same weight**, which shows whether the same
 
 The Log Book is a newest-first timeline grouped by month. It holds your sessions and your written reflections.
 
-- Tap a session to see summary numbers and every set grouped by exercise. Filmed sets link to their bar path.
+- Tap a session to see summary numbers and every set grouped by exercise. Filmed sets link to their bar path. Warm-up sets stay in the list, labelled in words such as **Warm-up 2**, so you can read back how you worked up to the bar.
 - Switch between **List** and **Calendar** to see trained days in a month view.
 - Use the notes button to write a reflection. After 28 days the app suggests taking stock.
 - To delete a workout, press and hold its row, or use the menu on its detail screen. You are asked to confirm. A PR you set in that session, your Apple Health workout and any bar-path clip are kept.<!-- since 1.5 --> If the workout belonged to a program, that day goes back on your schedule so you can train or skip it. If it was the last day of a finished program, the program opens again to take it.<!-- /since -->
