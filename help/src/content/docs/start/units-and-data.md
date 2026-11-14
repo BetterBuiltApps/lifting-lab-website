@@ -77,11 +77,7 @@ The three files are:
 
 Weights in the files appear in kilograms and in your chosen unit.
 
-<!-- since 1.5 -->
-
 A dumbbell set's weight is per hand, so its exercise is named with "(dumbbell, per hand)", for example Push Press (dumbbell, per hand). When you import such a file again, those rows are listed as not matched rather than read as a barbell weight.
-
-<!-- /since -->
 
 :::note[Android]
 The Android export has the same Metric and Quantity columns at the end of Training History.
