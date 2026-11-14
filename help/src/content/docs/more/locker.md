@@ -35,7 +35,7 @@ Other sections in the Locker:
 
 ## Progress, XP and badges
 
-Tap the level strip to see your level, an XP breakdown, your streak and your badges. Each badge shows how close you are, and you can share a progress card as an image.
+Tap the level strip to see your level, an XP breakdown, your streak and your badges. Each badge shows how close you are, and you can share a progress card as an image.<!-- since 1.5 --> Further down, Training Volume shows how your logged sets split between the lifts, pulls and squats (see [Read your training volume](/help/train/training-volume/)).<!-- /since -->
 
 ## Settings
 
