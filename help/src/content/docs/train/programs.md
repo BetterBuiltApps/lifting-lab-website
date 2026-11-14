@@ -15,6 +15,8 @@ covers:
   - LiftingLab/Domain/MissedSessionPolicy.swift
   - LiftingLab/Domain/Progression/LoadProgression.swift
   - LiftingLab/Domain/ProgramEngine.swift
+  - LiftingLab/Domain/Crucible/Signals/CrucibleAthleteSignals.swift
+  - LiftingLab/Features/Train/Session/ReadinessSheet.swift
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/programs/MyProgramsScreen.kt
   - lifting-lab-android/domain/src/main/kotlin/com/betterbuiltapps/liftinglab/domain/MissedSessionPolicy.kt
   - lifting-lab-android/domain/src/main/kotlin/com/betterbuiltapps/liftinglab/domain/progression/LoadProgression.kt
@@ -83,6 +85,16 @@ Starting a day opens a short check-in first. The percentages stay as the program
 <!-- since 1.5 -->
 
 A lift is only backed off after a stall when you were really straining on it: a missed rep, an effort of RPE 8 or more, or a set made well under its target percentage. If a program holds a lift at 68% and you made every rep, you are not backed off for it. A rise is a small weekly step, paid in whole kilos when the usual plate step would round down to nothing, so lighter lifters can advance too. After a long break the weights you start from stay a little under your record, rather than jumping back to it. Rises and back-offs land on a weight your gym's bar and plates can build, so a pound gym moves in the plate steps it really has, not in a fractional number.
+
+<!-- /since -->
+
+<!-- since 1.5 -->
+
+**When recovery is well down.** If Suggest readiness is on in Health settings and today's HRV, resting heart rate and sleep are clearly below your usual, the Check In sheet shows "Held to Tired today" with the numbers behind it. Fresh and Normal then start the session at Tired, which eases fixed weights by 5%. Turn off "Apply this" on the card to train at the level you pick. It only uses readings from today, and it never raises your weights.
+
+:::note[Android]
+Android reads the same three measures from Health Connect. Sleep is only counted if it ended in the last six hours, so later in the day the card appears only when both HRV and resting heart rate are well off.
+:::
 
 <!-- /since -->
 

@@ -12,6 +12,7 @@ covers:
   - LiftingLab/Domain/Builder/WorkoutGenerator.swift
   - LiftingLab/Domain/Builder/WorkoutDraft.swift
   - LiftingLab/Domain/Builder/RepAwareIntensity.swift
+  - LiftingLab/Domain/Crucible/Signals/CrucibleAthleteSignals.swift
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/builder/WorkoutBuilderScreen.kt
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/session/ExercisePickerSheet.kt
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/train/CreateWorkoutSheet.kt
@@ -67,6 +68,10 @@ The draft follows what is normal in weightlifting: the classic lifts are mostly 
 The percentage shown on a single or a double is the weight you lift: when a snatch single reads 87%, 87% of your snatch is what goes on the bar. A set of eight and a set of two are not the same percentage off the same record, so the app starts a longer set lighter than a short one.
 
 If your experience level is Beginner, nothing in a loaded strength block goes above 80%. Pulls and deadlifts are the exception for everyone else: they can be prescribed at or above the lift they help, so they are not held to the 92% line.
+
+**Masters lifters.** If your profile has a date of birth and you are 35 or older, the volume dial on a built workout starts a little lower: 5% for 35 to 44, 10% for 45 to 54, 15% for 55 to 64 and 20% for 65 and over. Your loads and the exercises picked do not change, and you can move the dial back. The note under "How this session was built" says when this applied. With no date of birth in your profile, nothing changes.
+
+**Losing weight fast.** If your logged bodyweight has been dropping by about 1% a week or more, across at least two weeks of weigh-ins, the top loads in a built workout are capped 5% lighter until your weight levels off. This needs at least four weigh-ins in the last four weeks, with one in the last seven days. With fewer, nothing changes. The note names the rate and how many readings it used.
 
 <!-- /since -->
 

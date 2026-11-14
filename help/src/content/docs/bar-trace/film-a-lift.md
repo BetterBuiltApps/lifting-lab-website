@@ -102,7 +102,7 @@ If the trace fails, the app takes you back to the circle. Most failures are a ci
 
 ## Read the result
 
-The bar path is traced on your phone (on iPhone with Apple's built-in vision tools, on Android with its own on-device analysis). From the top of the result screen down you get:
+The bar path is traced on your phone<!-- since 1.5 -->, the same way on iPhone and Android<!-- /since -->. From the top of the result screen down you get:
 
 1. Your video with the traced path.
 2. Whether the lift would count, shown as three referee-style lights (for the snatch, clean, and their variations).
