@@ -15,6 +15,7 @@ import { FAQ, SiteFooter } from './sections/FAQFooter';
 import { Contact } from './sections/Contact';
 import { StructuredData } from './lib/StructuredData';
 import { LightboxProvider } from './lib/Lightbox';
+import { scrollToHashOnLoad } from './lib/hashScroll';
 
 function App() {
   return (
@@ -54,3 +55,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </MotionConfig>
   </React.StrictMode>
 );
+
+scrollToHashOnLoad();
