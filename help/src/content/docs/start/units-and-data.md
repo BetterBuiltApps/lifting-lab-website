@@ -6,6 +6,7 @@ covers:
   - LiftingLab/Features/Me/SettingsView.swift
   - LiftingLab/Features/Me/DataPrivacySettingsView.swift
   - LiftingLab/Features/Me/DataExportView.swift
+  - LiftingLab/Domain/Sharing/TrainingCSV.swift
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/locker/SettingsScreen.kt
   - lifting-lab-android/app/src/main/java/com/betterbuiltapps/liftinglab/features/locker/DataPrivacyScreen.kt
   - LiftingLab/App/AppData.swift
@@ -75,6 +76,8 @@ The three files are:
 - **Training History.** Every set you have logged. Warm-up sets are marked and never counted toward your totals. The last two columns, Metric and Quantity, say what a set was measured in: a timed set such as a plank shows its seconds, and a distance set such as a row shows its meters, so neither reads as a rep count or a zero weight.
 
 Weights in the files appear in kilograms and in your chosen unit.
+
+A dumbbell set's weight is per hand, so its exercise is named with "(dumbbell, per hand)", for example Push Press (dumbbell, per hand). When you import such a file again, those rows are listed as not matched rather than read as a barbell weight.
 
 :::note[Android]
 The Android export has the same Metric and Quantity columns at the end of Training History.
