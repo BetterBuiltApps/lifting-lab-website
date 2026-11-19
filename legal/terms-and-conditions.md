@@ -1,6 +1,6 @@
 **Terms & Conditions**
 
-These terms and conditions apply to the Lifting Lab app for iOS, operated by Better Built Apps LLC (collectively, the "Application"). Better Built Apps LLC is referred to below as "we," "us," or the "Service Provider."
+These terms and conditions apply to the Lifting Lab apps for iOS and for Android, operated by Better Built Apps LLC (collectively, the "Application"). Better Built Apps LLC is referred to below as "we," "us," or the "Service Provider."
 
 By downloading or using the Application, you agree to these Terms and Conditions. Please read them carefully.
 
@@ -30,22 +30,21 @@ The Application's technique feedback, including anything derived from camera-bas
 
 Lifting Lab is free to use for its core features: the daily dashboard, guided and manually built workouts, the Beginner Foundation program, the personal record tracker, the exercise library, the calculators, sharing, and a limited number of bar-path video analyses, all without an account.
 
-Two optional, auto-renewing subscriptions extend it:
+One optional, auto-renewing subscription extends it:
 
 *   **Pro**, for unlimited bar-path video analysis and the rest of the training programs.
-*   **Coach**, for coaches managing a roster of athletes.
 
-Where offered, subscriptions are billed through your Apple App Store account at the price shown in the app or on our website at the time of purchase. A subscription automatically renews for the same length of term unless you cancel at least 24 hours before the end of the current period. You can view, manage, or cancel a subscription at any time in your device's Settings, under your Apple ID, then Subscriptions. Payment is charged to your Apple ID account at confirmation of purchase. Refunds are handled by Apple under the App Store's own refund policies, not by us directly.
+Where offered, the subscription is billed through the store for your device: the Apple App Store on iOS, and Google Play on Android. Pro is offered as a monthly plan or an annual plan, at the price shown in the app or on our website at the time of purchase. A subscription automatically renews for the same length of term unless you cancel at least 24 hours before the end of the current period. On iOS, you can view, manage, or cancel a subscription at any time in your device's Settings, under your Apple ID, then Subscriptions, and payment is charged to your Apple ID account at confirmation of purchase. On Android, you can view, manage, or cancel a subscription at any time in Google Play, under your subscriptions, and payment is charged to your Google Play account at confirmation of purchase. Refunds are handled by Apple or Google under the store's own refund policies, not by us directly.
 
 **Acceptable use**
 
 You agree not to use the Application unlawfully, to reverse engineer or attempt to extract its source code beyond what applicable law permits, or to interfere with its normal operation.
 
-Lifting Lab does not host content on behalf of users or make it available to other users or the public: there is no feed, no profile visible to anyone else, and no comments. When you export a program or session file to share with a coach or athlete, that transfer happens directly between your device and theirs, through a share sheet you choose (AirDrop, Mail, Messages, or Files); it is not hosted, transmitted, or moderated by us.
+Lifting Lab does not host content on behalf of users or make it available to other users or the public: there is no feed, no profile visible to anyone else, and no comments. When you export a program or session file to share with a coach or athlete, that transfer happens directly between your device and theirs, through a share sheet you choose (AirDrop, Mail, Messages, or Files on iOS, or any app on your share sheet on Android); it is not hosted, transmitted, or moderated by us.
 
 **Connectivity**
 
-Lifting Lab's core training features, logging a workout, building a session, browsing your history, and the calculators, work fully offline. An internet connection is needed for iCloud sync between your own devices and, if you use them, features that verify a subscription. You're responsible for your own device's connectivity and any data charges from your carrier.
+Lifting Lab's core training features, logging a workout, building a session, browsing your history, and the calculators, work fully offline. An internet connection is needed for iCloud sync between your own devices (iOS only) and, if you use them, features that verify a subscription. You're responsible for your own device's connectivity and any data charges from your carrier.
 
 **Limitation of liability**
 
@@ -59,7 +58,7 @@ To the fullest extent permitted by law, our total liability for any claim will n
 
 To the fullest extent permitted by law, you agree to indemnify and hold harmless the Service Provider, its affiliates, officers, and employees from claims, liabilities, damages, and reasonable legal fees arising from your breach of these Terms or your intentional misuse of the Application. This does not apply to claims arising from our own negligence or breach of these Terms, and is limited to the extent consumer protection law restricts indemnification clauses like this one.
 
-The Application uses on-device computer vision (Apple's Vision framework) to analyze video you record for bar-path feedback. This runs entirely on your device; see the Privacy Policy for details. It is not a hosted or cloud-based AI service, and no video or analysis data is transmitted to us in the course of that processing.
+The Application uses on-device computer vision (Apple's Vision framework on iOS, and Google's MediaPipe pose model on Android) to analyze video you record for bar-path feedback. This runs entirely on your device; see the Privacy Policy for details. It is not a hosted or cloud-based AI service, and no video or analysis data is transmitted to us in the course of that processing.
 
 **Updates and availability**
 
@@ -87,7 +86,7 @@ These Terms, together with the Privacy Policy, are the entire agreement between 
 
 We may update these Terms from time to time; the current version is always posted here. Material changes will be reflected by a new effective date below.
 
-These terms and conditions are effective as of 2026-08-16.
+These terms and conditions are effective as of 2026-11-10.
 
 **Contact**
 
